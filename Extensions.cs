@@ -29,10 +29,20 @@ namespace MSZDialougeManager
             {
                 DialogueNodeDTO node = Form1.nodes[index];
                 NextNodesBoxItem item = new NextNodesBoxItem();
-                item.text = $"[{index}] {node.dialogueText}";
+                item.text = $"[{index}] {node.speakerName}: {node.dialogueText}";
                 item.node = node;
                 nodesBox.Items.Add(item);
             }
+        }
+
+        public static bool HasAudioClip(this DialogueNodeDTO node)
+        {
+            return FilesystemManager.DoesNodeAudioExist(node);
+        }
+
+        public static string GetAudioClip(this DialogueNodeDTO node)
+        {
+            return FilesystemManager.GetNodeAudioClip(node);
         }
     }
 }

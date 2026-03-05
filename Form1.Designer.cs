@@ -40,6 +40,9 @@
             this.nextNodesHeader = new System.Windows.Forms.Label();
             this.textHeaderLabel = new System.Windows.Forms.Label();
             this.textLabel = new System.Windows.Forms.Label();
+            this.audioFileHeader = new System.Windows.Forms.Label();
+            this.audioFileLabel = new System.Windows.Forms.Label();
+            this.selectAudioButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,9 +107,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.selectAudioButton);
             this.panel1.Controls.Add(this.nextNodesBox);
+            this.panel1.Controls.Add(this.audioFileHeader);
             this.panel1.Controls.Add(this.nextNodesHeader);
             this.panel1.Controls.Add(this.textHeaderLabel);
+            this.panel1.Controls.Add(this.audioFileLabel);
             this.panel1.Controls.Add(this.textLabel);
             this.panel1.Controls.Add(this.jsonButton);
             this.panel1.Controls.Add(this.templeteButton);
@@ -155,6 +161,36 @@
             this.textLabel.TabIndex = 1;
             this.textLabel.Text = "Text will appear here";
             // 
+            // audioFileHeader
+            // 
+            this.audioFileHeader.AutoSize = true;
+            this.audioFileHeader.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.audioFileHeader.Location = new System.Drawing.Point(3, 211);
+            this.audioFileHeader.Margin = new System.Windows.Forms.Padding(3);
+            this.audioFileHeader.Name = "audioFileHeader";
+            this.audioFileHeader.Size = new System.Drawing.Size(105, 13);
+            this.audioFileHeader.TabIndex = 2;
+            this.audioFileHeader.Text = "Selected audio file:";
+            // 
+            // audioFileLabel
+            // 
+            this.audioFileLabel.Location = new System.Drawing.Point(3, 227);
+            this.audioFileLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.audioFileLabel.Name = "audioFileLabel";
+            this.audioFileLabel.Size = new System.Drawing.Size(115, 13);
+            this.audioFileLabel.TabIndex = 1;
+            this.audioFileLabel.Text = "None";
+            // 
+            // selectAudioButton
+            // 
+            this.selectAudioButton.Location = new System.Drawing.Point(6, 246);
+            this.selectAudioButton.Name = "selectAudioButton";
+            this.selectAudioButton.Size = new System.Drawing.Size(199, 23);
+            this.selectAudioButton.TabIndex = 4;
+            this.selectAudioButton.Text = "Select an audio file...";
+            this.selectAudioButton.UseVisualStyleBackColor = true;
+            this.selectAudioButton.Click += new System.EventHandler(this.selectAudioButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,6 +223,9 @@
         private System.Windows.Forms.Label textHeaderLabel;
         private System.Windows.Forms.ListBox nextNodesBox;
         private System.Windows.Forms.Label nextNodesHeader;
+        private System.Windows.Forms.Button selectAudioButton;
+        private System.Windows.Forms.Label audioFileHeader;
+        private System.Windows.Forms.Label audioFileLabel;
     }
 }
 

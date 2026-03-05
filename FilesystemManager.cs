@@ -12,7 +12,7 @@ namespace MSZDialougeManager
         public static string BaseDir => AppDomain.CurrentDomain.BaseDirectory;
         public static string DataPath => Path.Combine(BaseDir, "Data");
 
-        public bool DoesNodeAudioExist(DialogueNodeDTO node)
+        public static bool DoesNodeAudioExist(DialogueNodeDTO node)
         {
             if (!Directory.Exists(DataPath))
             {
@@ -21,9 +21,23 @@ namespace MSZDialougeManager
             }
             string[] files = Directory.GetFiles(
                 DataPath,
-                node.id.ToString()
+                $"{node.id}.*"
             );
-            return (files.Contains(node.id.ToString()));
+            return (files.Length > 0);
+        }
+
+        public static string GetNodeAudioClip(DialogueNodeDTO node)
+        {
+            if (!Directory.Exists(DataPath))
+            {
+                Directory.CreateDirectory(DataPath);
+                return null;
+            }
+            string[] files = Directory.GetFiles(
+                DataPath,
+                $"{node.id}.*"
+            );
+            return (files.Length > 0 ? files[0] : null);
         }
     }
 }

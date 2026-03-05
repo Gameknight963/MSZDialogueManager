@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace MSZDialougeManager
 {
@@ -42,6 +43,9 @@ namespace MSZDialougeManager
                     textHeaderLabel.Visible = false;
                     nextNodesHeader.Visible = false;
                     nextNodesBox.Visible = false;
+                    selectAudioButton.Visible = false;
+                    audioFileLabel.Visible = false;
+                    audioFileHeader.Visible = false;
                     break;
                 case SidebarMode.ItemSelected:
                     jsonButton.Visible = false;
@@ -50,8 +54,22 @@ namespace MSZDialougeManager
                     textHeaderLabel.Visible = true;
                     nextNodesHeader.Visible = true;
                     nextNodesBox.Visible = true;
+                    audioFileLabel.Visible = true;
+                    audioFileHeader.Visible = true;
                     nextNodesBox.UpdateNodesBox(GetSelectedNode().nextNodeIds);
+                    int index = dialogueView.SelectedItems[0].Index;
+                    if (nodes[index].HasAudioClip())
+                    {
+                        selectAudioButton.Visible = false;
+                        audioFileLabel.Text = Path.GetFileName(nodes[index].GetAudioClip());
+                    }
+                    else
+                    {
+                        selectAudioButton.Visible = true;
+                        audioFileLabel.Text = "None";
+                    }
                     break;
+
             }
         }
 
@@ -85,9 +103,9 @@ namespace MSZDialougeManager
                 SetSidebarMode(SidebarMode.Idle);
                 return;
             }
+            DialogueNodeDTO node = GetSelectedNode();
+            textLabel.Text = $"{node.speakerName}: {node.dialogueText}";
             SetSidebarMode(SidebarMode.ItemSelected);
-
-            textLabel.Text = GetSelectedNode().dialogueText;
         }
 
         private void nextNodesBox_DoubleClick(object sender, EventArgs e)
@@ -98,6 +116,22 @@ namespace MSZDialougeManager
             dialogueView.SelectedItems.Clear();
             dialogueView.Items[item.node.id].Selected = true;
             nextNodesBox.UpdateNodesBox(GetSelectedNode().nextNodeIds);
+        }
+
+        private void selectAudioButton_Click(object sender, EventArgs e)
+        {
+            DialogueNodeDTO node = GetSelectedNode();
+
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Audio Files (*.wav;*.mp3)|*.wav;*.mp3|All Files (*.*)|*.*";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                string path = dialog.FileName;
+                string ext = Path.GetExtension(path);
+                string destinationDir = Path.Combine(FilesystemManager.DataPath, $"{node.id}{ext}");
+                File.Copy(path, destinationDir);
+            }
         }
     }
 }
