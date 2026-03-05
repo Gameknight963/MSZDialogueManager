@@ -101,6 +101,13 @@ namespace MSZDialougeManager
             }
         }
 
+        private void templeteButton_Click(object sender, EventArgs e)
+        {
+            string json = File.ReadAllText(FilesystemManager.Templete);
+            nodes = JsonConvert.DeserializeObject<List<DialogueNodeDTO>>(json);
+            dialogueView.UpdateDialogueView(nodes);
+        }
+
         private DialogueNodeDTO GetSelectedNode()
         {
             int index = dialogueView.SelectedItems[0].Index;
