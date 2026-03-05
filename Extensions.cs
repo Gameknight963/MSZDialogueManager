@@ -21,5 +21,18 @@ namespace MSZDialougeManager
                 dialogueView.Items.Add(item);
             }
         }
+
+        public static void UpdateNodesBox(this ListBox nodesBox, int[] nodeIndicies)
+        {
+            nodesBox.Items.Clear();
+            foreach (int index in nodeIndicies)
+            {
+                DialogueNodeDTO node = Form1.nodes[index];
+                NextNodesBoxItem item = new NextNodesBoxItem();
+                item.text = $"[{index}] {node.dialogueText}";
+                item.node = node;
+                nodesBox.Items.Add(item);
+            }
+        }
     }
 }
