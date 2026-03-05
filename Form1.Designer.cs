@@ -36,13 +36,16 @@
             this.jsonButton = new System.Windows.Forms.Button();
             this.templeteButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.audioStopButton = new System.Windows.Forms.Button();
+            this.audioPlayButton = new System.Windows.Forms.Button();
+            this.removeAudioButton = new System.Windows.Forms.Button();
+            this.selectAudioButton = new System.Windows.Forms.Button();
             this.nextNodesBox = new System.Windows.Forms.ListBox();
+            this.audioFileHeader = new System.Windows.Forms.Label();
             this.nextNodesHeader = new System.Windows.Forms.Label();
             this.textHeaderLabel = new System.Windows.Forms.Label();
-            this.textLabel = new System.Windows.Forms.Label();
-            this.audioFileHeader = new System.Windows.Forms.Label();
             this.audioFileLabel = new System.Windows.Forms.Label();
-            this.selectAudioButton = new System.Windows.Forms.Button();
+            this.textLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,6 +110,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.audioStopButton);
+            this.panel1.Controls.Add(this.audioPlayButton);
+            this.panel1.Controls.Add(this.removeAudioButton);
             this.panel1.Controls.Add(this.selectAudioButton);
             this.panel1.Controls.Add(this.nextNodesBox);
             this.panel1.Controls.Add(this.audioFileHeader);
@@ -121,6 +127,47 @@
             this.panel1.Size = new System.Drawing.Size(208, 413);
             this.panel1.TabIndex = 2;
             // 
+            // audioStopButton
+            // 
+            this.audioStopButton.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.audioStopButton.Location = new System.Drawing.Point(107, 276);
+            this.audioStopButton.Name = "audioStopButton";
+            this.audioStopButton.Size = new System.Drawing.Size(95, 23);
+            this.audioStopButton.TabIndex = 5;
+            this.audioStopButton.Text = "■ Stop";
+            this.audioStopButton.UseVisualStyleBackColor = true;
+            this.audioStopButton.Click += new System.EventHandler(this.audioStopButton_Click);
+            // 
+            // audioPlayButton
+            // 
+            this.audioPlayButton.Location = new System.Drawing.Point(6, 276);
+            this.audioPlayButton.Name = "audioPlayButton";
+            this.audioPlayButton.Size = new System.Drawing.Size(95, 23);
+            this.audioPlayButton.TabIndex = 5;
+            this.audioPlayButton.Text = "▶ Play";
+            this.audioPlayButton.UseVisualStyleBackColor = true;
+            this.audioPlayButton.Click += new System.EventHandler(this.audioPlayButton_Click);
+            // 
+            // removeAudioButton
+            // 
+            this.removeAudioButton.Location = new System.Drawing.Point(6, 305);
+            this.removeAudioButton.Name = "removeAudioButton";
+            this.removeAudioButton.Size = new System.Drawing.Size(196, 23);
+            this.removeAudioButton.TabIndex = 4;
+            this.removeAudioButton.Text = "Remove file";
+            this.removeAudioButton.UseVisualStyleBackColor = true;
+            this.removeAudioButton.Click += new System.EventHandler(this.removeAudioButton_Click);
+            // 
+            // selectAudioButton
+            // 
+            this.selectAudioButton.Location = new System.Drawing.Point(6, 246);
+            this.selectAudioButton.Name = "selectAudioButton";
+            this.selectAudioButton.Size = new System.Drawing.Size(196, 23);
+            this.selectAudioButton.TabIndex = 4;
+            this.selectAudioButton.Text = "Select an audio file...";
+            this.selectAudioButton.UseVisualStyleBackColor = true;
+            this.selectAudioButton.Click += new System.EventHandler(this.selectAudioButton_Click);
+            // 
             // nextNodesBox
             // 
             this.nextNodesBox.FormattingEnabled = true;
@@ -129,6 +176,17 @@
             this.nextNodesBox.Size = new System.Drawing.Size(199, 56);
             this.nextNodesBox.TabIndex = 3;
             this.nextNodesBox.DoubleClick += new System.EventHandler(this.nextNodesBox_DoubleClick);
+            // 
+            // audioFileHeader
+            // 
+            this.audioFileHeader.AutoSize = true;
+            this.audioFileHeader.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.audioFileHeader.Location = new System.Drawing.Point(3, 211);
+            this.audioFileHeader.Margin = new System.Windows.Forms.Padding(3);
+            this.audioFileHeader.Name = "audioFileHeader";
+            this.audioFileHeader.Size = new System.Drawing.Size(98, 13);
+            this.audioFileHeader.TabIndex = 2;
+            this.audioFileHeader.Text = "Internal filename:";
             // 
             // nextNodesHeader
             // 
@@ -152,26 +210,6 @@
             this.textHeaderLabel.TabIndex = 2;
             this.textHeaderLabel.Text = "Selected item text:";
             // 
-            // textLabel
-            // 
-            this.textLabel.Location = new System.Drawing.Point(3, 25);
-            this.textLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.textLabel.Name = "textLabel";
-            this.textLabel.Size = new System.Drawing.Size(202, 99);
-            this.textLabel.TabIndex = 1;
-            this.textLabel.Text = "Text will appear here";
-            // 
-            // audioFileHeader
-            // 
-            this.audioFileHeader.AutoSize = true;
-            this.audioFileHeader.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.audioFileHeader.Location = new System.Drawing.Point(3, 211);
-            this.audioFileHeader.Margin = new System.Windows.Forms.Padding(3);
-            this.audioFileHeader.Name = "audioFileHeader";
-            this.audioFileHeader.Size = new System.Drawing.Size(105, 13);
-            this.audioFileHeader.TabIndex = 2;
-            this.audioFileHeader.Text = "Selected audio file:";
-            // 
             // audioFileLabel
             // 
             this.audioFileLabel.Location = new System.Drawing.Point(3, 227);
@@ -181,15 +219,14 @@
             this.audioFileLabel.TabIndex = 1;
             this.audioFileLabel.Text = "None";
             // 
-            // selectAudioButton
+            // textLabel
             // 
-            this.selectAudioButton.Location = new System.Drawing.Point(6, 246);
-            this.selectAudioButton.Name = "selectAudioButton";
-            this.selectAudioButton.Size = new System.Drawing.Size(199, 23);
-            this.selectAudioButton.TabIndex = 4;
-            this.selectAudioButton.Text = "Select an audio file...";
-            this.selectAudioButton.UseVisualStyleBackColor = true;
-            this.selectAudioButton.Click += new System.EventHandler(this.selectAudioButton_Click);
+            this.textLabel.Location = new System.Drawing.Point(3, 25);
+            this.textLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.textLabel.Name = "textLabel";
+            this.textLabel.Size = new System.Drawing.Size(202, 99);
+            this.textLabel.TabIndex = 1;
+            this.textLabel.Text = "Text will appear here";
             // 
             // Form1
             // 
@@ -226,6 +263,9 @@
         private System.Windows.Forms.Button selectAudioButton;
         private System.Windows.Forms.Label audioFileHeader;
         private System.Windows.Forms.Label audioFileLabel;
+        private System.Windows.Forms.Button audioPlayButton;
+        private System.Windows.Forms.Button audioStopButton;
+        private System.Windows.Forms.Button removeAudioButton;
     }
 }
 

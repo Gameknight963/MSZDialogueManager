@@ -12,12 +12,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using WMPLib;
 
 namespace MSZDialougeManager
 {
     public partial class Form1 : Form
     {
         public static List<DialogueNodeDTO> nodes;
+        WindowsMediaPlayer wmp = new WindowsMediaPlayer();
 
         public Form1()
         {
@@ -36,6 +38,7 @@ namespace MSZDialougeManager
         {
             switch (mode)
             {
+                // panels are for noobs
                 case SidebarMode.Idle:
                     jsonButton.Visible = true;
                     templeteButton.Visible = true;
@@ -46,6 +49,9 @@ namespace MSZDialougeManager
                     selectAudioButton.Visible = false;
                     audioFileLabel.Visible = false;
                     audioFileHeader.Visible = false;
+                    audioPlayButton.Visible = false;
+                    audioStopButton.Visible = false;
+                    removeAudioButton.Visible = false;
                     break;
                 case SidebarMode.ItemSelected:
                     jsonButton.Visible = false;
@@ -56,17 +62,22 @@ namespace MSZDialougeManager
                     nextNodesBox.Visible = true;
                     audioFileLabel.Visible = true;
                     audioFileHeader.Visible = true;
+                    selectAudioButton.Visible = true;
+                    removeAudioButton.Visible = true;
                     nextNodesBox.UpdateNodesBox(GetSelectedNode().nextNodeIds);
                     int index = dialogueView.SelectedItems[0].Index;
                     if (nodes[index].HasAudioClip())
                     {
-                        selectAudioButton.Visible = false;
                         audioFileLabel.Text = Path.GetFileName(nodes[index].GetAudioClip());
+                        audioPlayButton.Visible = true;
+                        audioStopButton.Visible = true;
                     }
                     else
                     {
-                        selectAudioButton.Visible = true;
                         audioFileLabel.Text = "None";
+                        audioPlayButton.Visible = false;
+                        audioStopButton.Visible = false;
+                        removeAudioButton.Visible = false;
                     }
                     break;
 
@@ -129,9 +140,32 @@ namespace MSZDialougeManager
             {
                 string path = dialog.FileName;
                 string ext = Path.GetExtension(path);
-                string destinationDir = Path.Combine(FilesystemManager.DataPath, $"{node.id}{ext}");
-                File.Copy(path, destinationDir);
+                string destination = Path.Combine(FilesystemManager.DataPath, $"{node.id}{ext}");
+
+                if (File.Exists(destination))
+                {
+                    File.Delete(destination);
+                }    
+                File.Copy(path, destination);
+                SetSidebarMode(SidebarMode.ItemSelected);
             }
+        }
+
+        private void audioPlayButton_Click(object sender, EventArgs e)
+        {
+            wmp.URL = GetSelectedNode().GetAudioClip();
+            wmp.controls.play();
+        }
+
+        private void audioStopButton_Click(object sender, EventArgs e)
+        {
+            wmp.controls.stop();
+        }
+
+        private void removeAudioButton_Click(object sender, EventArgs e)
+        {
+            File.Delete(GetSelectedNode().GetAudioClip());
+            SetSidebarMode(SidebarMode.ItemSelected);
         }
     }
 }
