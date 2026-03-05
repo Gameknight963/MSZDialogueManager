@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dialogueView = new System.Windows.Forms.ListView();
             this.indexColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.speakerColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -107,6 +108,7 @@
             this.templeteButton.TabIndex = 0;
             this.templeteButton.Text = "Initialize Templete";
             this.templeteButton.UseVisualStyleBackColor = true;
+            this.templeteButton.Click += new System.EventHandler(this.templeteButton_Click);
             // 
             // panel1
             // 
@@ -237,8 +239,9 @@
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.dialogueView);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Miside Zero Dialogue Manager";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

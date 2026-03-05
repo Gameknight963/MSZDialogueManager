@@ -16,7 +16,6 @@ namespace MSZDialougeManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            ConsoleHelper.ShowConsole();
             Application.Run(new Form1());
         }
     }
