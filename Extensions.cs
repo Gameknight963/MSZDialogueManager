@@ -24,6 +24,7 @@ namespace MSZDialougeManager
 
         public static void UpdateNodesBox(this ListBox nodesBox, int[] nodeIndicies)
         {
+            nodesBox.BeginUpdate();
             nodesBox.Items.Clear();
             foreach (int index in nodeIndicies)
             {
@@ -33,6 +34,7 @@ namespace MSZDialougeManager
                 item.node = node;
                 nodesBox.Items.Add(item);
             }
+            nodesBox.EndUpdate();
         }
 
         public static bool HasAudioClip(this DialogueNodeDTO node)
