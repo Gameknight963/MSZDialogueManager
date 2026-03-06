@@ -53,6 +53,9 @@
             // 
             // dialogueView
             // 
+            this.dialogueView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dialogueView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.indexColumn,
             this.speakerColumn,
@@ -84,6 +87,7 @@
             // 
             // statusLabel
             // 
+            this.statusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.statusLabel.AutoSize = true;
             this.statusLabel.Location = new System.Drawing.Point(12, 428);
             this.statusLabel.Name = "statusLabel";
@@ -93,6 +97,7 @@
             // 
             // loadButton
             // 
+            this.loadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.loadButton.Location = new System.Drawing.Point(6, 354);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(196, 23);
@@ -103,6 +108,7 @@
             // 
             // templeteButton
             // 
+            this.templeteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.templeteButton.Location = new System.Drawing.Point(6, 383);
             this.templeteButton.Name = "templeteButton";
             this.templeteButton.Size = new System.Drawing.Size(196, 23);
@@ -113,6 +119,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.audioStopButton);
             this.panel1.Controls.Add(this.audioPlayButton);
             this.panel1.Controls.Add(this.removeAudioButton);
@@ -234,6 +242,7 @@
             // 
             // saveButton
             // 
+            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.Location = new System.Drawing.Point(6, 325);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(196, 23);

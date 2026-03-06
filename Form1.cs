@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using WMPLib;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MSZDialougeManager
 {
@@ -21,6 +22,10 @@ namespace MSZDialougeManager
             this.KeyDown += Form1_KeyDown;
             this.FormClosing += Form1_FormClosing;
             this.Shown += Form1_Shown;
+
+            dialogueView.ColumnWidthChanging += dialogueView_ColumnWidthChanging;
+            dialogueView.ColumnWidthChanged += dialogueView_ColumnWidthChanged;
+            dialogueView.SizeChanged += dialogueView_SizeChanged;
         }
 
         private void Form1_Shown(object sender, EventArgs e)
@@ -56,6 +61,46 @@ namespace MSZDialougeManager
             }
         }
 
+        private const int MinTextColumnWidth = 415;
+
+        private void ResizeTextColumn()
+        {
+            if (dialogueView.Columns.Count < 3) return;
+
+            int totalOtherColumns = 0;
+            for (int i = 0; i < dialogueView.Columns.Count - 1; i++)
+                totalOtherColumns += dialogueView.Columns[i].Width;
+
+            int remaining = dialogueView.ClientSize.Width - totalOtherColumns;
+
+            // Show scrollbar if we can't fit the minimum width
+            bool needsScroll = remaining < MinTextColumnWidth;
+            if (needsScroll) remaining = MinTextColumnWidth;
+
+            dialogueView.Columns[2].Width = remaining-50;
+
+            // Hide or show horizontal scrollbar depending on whether we need it
+            ScrollbarHelper.Set(dialogueView, ScrollbarHelper.Scrollbar.Horz, needsScroll);
+        }
+
+        private void dialogueView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            if (e.ColumnIndex == 2 && e.NewWidth < MinTextColumnWidth)
+                e.NewWidth = MinTextColumnWidth;
+        }
+
+        private void dialogueView_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+            if (e.ColumnIndex != 2)
+                ResizeTextColumn();
+        }
+
+        private void dialogueView_SizeChanged(object sender, EventArgs e)
+        {
+            ResizeTextColumn();
+        }
+
+
         private enum SidebarMode
         {
             ItemSelected,
@@ -64,12 +109,20 @@ namespace MSZDialougeManager
 
         private void SetSidebarMode(SidebarMode mode)
         {
+            if(FilesystemManager.IsFileLoaded)
+            {
+                saveButton.Visible = true;
+            }
+            else
+            {
+                saveButton.Visible = false;
+            }
             switch (mode)
             {
                 // panels are for noobs
                 case SidebarMode.Idle:
-                    loadButton.Visible = true;
-                    templeteButton.Visible = true;
+                    //loadButton.Visible = true;
+                    //templeteButton.Visible = true;
                     textLabel.Visible = false;
                     textHeaderLabel.Visible = false;
                     nextNodesHeader.Visible = false;
@@ -80,11 +133,10 @@ namespace MSZDialougeManager
                     audioPlayButton.Visible = false;
                     audioStopButton.Visible = false;
                     removeAudioButton.Visible = false;
-                    saveButton.Visible = false;
                     break;
                 case SidebarMode.ItemSelected:
-                    loadButton.Visible = false;
-                    templeteButton.Visible = false;
+                    //loadButton.Visible = false;
+                    //templeteButton.Visible = false;
                     textLabel.Visible = true;
                     textHeaderLabel.Visible = true;
                     nextNodesHeader.Visible = true;
@@ -93,7 +145,6 @@ namespace MSZDialougeManager
                     audioFileHeader.Visible = true;
                     selectAudioButton.Visible = true;
                     removeAudioButton.Visible = true;
-                    saveButton.Visible = true;
                     nextNodesBox.UpdateNodesBox(GetSelectedNode().nextNodeIds);
                     int index = dialogueView.SelectedItems[0].Index;
                     if (nodes[index].HasAudioClip())
@@ -127,6 +178,7 @@ namespace MSZDialougeManager
                     forest = FilesystemManager.LoadProj(fd.FileName);
                     dialogueView.UpdateDialogueView(nodes);
                 }
+                SetSidebarMode(SidebarMode.Idle);
             }
         }
 
