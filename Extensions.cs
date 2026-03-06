@@ -46,5 +46,15 @@ namespace MSZDialougeManager
         {
             return FilesystemManager.GetNodeAudioClip(node);
         }
+
+        public static void AddAudioClip(this DialogueNodeDTO node, string audioPath)
+        {
+            FilesystemManager.AddNodeAudio(node, audioPath);
+        }
+
+        public static void RemoveAudioClip(this DialogueNodeDTO node)
+        {
+            FilesystemManager.RemoveNodeAudio(node);
+        }
     }
 }

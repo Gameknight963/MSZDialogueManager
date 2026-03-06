@@ -1,17 +1,7 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using WMPLib;
 
 namespace MSZDialougeManager
@@ -30,12 +20,32 @@ namespace MSZDialougeManager
             this.KeyPreview = true;
             this.KeyDown += Form1_KeyDown;
             this.FormClosing += Form1_FormClosing;
+            this.Shown += Form1_Shown;
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form1_Shown(object sender, EventArgs e)
         {
-            // put a comfirmation prompt here or smth
+            if (Directory.Exists(FilesystemManager.DataPath))
+            {
+                Directory.Delete(FilesystemManager.DataPath, true);
+                Directory.CreateDirectory(FilesystemManager.DataPath);
+
+                /* Confirmation with dialog
+                DialogResult result = MessageBox.Show("Restore previous state?", "Temporary files found", 
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    Stopwatch sw = new Stopwatch(); sw.Start();
+                    forest = FilesystemManager.LoadJson(FilesystemManager.NodesJsonPath);
+                    SetStatus("Loading project...");
+                    dialogueView.UpdateDialogueView(nodes);
+                    SetStatus($"Loaded project from temporary files, time: {sw.ElapsedMilliseconds}ms");
+                }
+                */
+            }
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e) { }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -58,7 +68,7 @@ namespace MSZDialougeManager
             {
                 // panels are for noobs
                 case SidebarMode.Idle:
-                    jsonButton.Visible = true;
+                    loadButton.Visible = true;
                     templeteButton.Visible = true;
                     textLabel.Visible = false;
                     textHeaderLabel.Visible = false;
@@ -73,7 +83,7 @@ namespace MSZDialougeManager
                     saveButton.Visible = false;
                     break;
                 case SidebarMode.ItemSelected:
-                    jsonButton.Visible = false;
+                    loadButton.Visible = false;
                     templeteButton.Visible = false;
                     textLabel.Visible = true;
                     textHeaderLabel.Visible = true;
@@ -104,18 +114,17 @@ namespace MSZDialougeManager
             }
         }
 
-        private void jsonButton_Click(object sender, EventArgs e)
+        private void loadButton_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog fd = new OpenFileDialog())
             {
                 fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                fd.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
+                fd.Filter = $"Miside Zero Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}|All files (*.*)|*.*";
                 fd.Multiselect = false;
 
                 if (fd.ShowDialog() == DialogResult.OK)
                 {
-                    string json = File.ReadAllText(fd.FileName);
-                    forest = JsonConvert.DeserializeObject<DialogueForest>(json);
+                    forest = FilesystemManager.LoadProj(fd.FileName);
                     dialogueView.UpdateDialogueView(nodes);
                 }
             }
@@ -123,8 +132,7 @@ namespace MSZDialougeManager
 
         private void templeteButton_Click(object sender, EventArgs e)
         {
-            string json = File.ReadAllText(FilesystemManager.Templete);
-            forest = JsonConvert.DeserializeObject<DialogueForest>(json);
+            forest =  FilesystemManager.LoadJson(FilesystemManager.Templete);
             dialogueView.UpdateDialogueView(nodes);
         }
 
@@ -138,6 +146,8 @@ namespace MSZDialougeManager
 
         private void dialogueView_SelectedIndexChanged(object sender, EventArgs e)
         {
+            wmp.controls.stop();
+
             if (dialogueView.SelectedItems.Count == 0)
             {
                 SetSidebarMode(SidebarMode.Idle);
@@ -161,22 +171,16 @@ namespace MSZDialougeManager
 
         private void selectAudioButton_Click(object sender, EventArgs e)
         {
+            wmp.controls.stop();
+
             DialogueNodeDTO node = GetSelectedNode();
 
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Audio Files (*.wav;*.mp3)|*.wav;*.mp3|All Files (*.*)|*.*";
+            dialog.Filter = "Audio Files (*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac)|*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac|All Files (*.*)|*.*";
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                string path = dialog.FileName;
-                string ext = Path.GetExtension(path);
-                string destination = Path.Combine(FilesystemManager.DataPath, $"{node.id}{ext}");
-
-                if (File.Exists(destination))
-                {
-                    File.Delete(destination);
-                }
-                File.Copy(path, destination);
+                node.AddAudioClip(dialog.FileName);
                 SetSidebarMode(SidebarMode.ItemSelected);
             }
         }
@@ -194,8 +198,9 @@ namespace MSZDialougeManager
 
         private void removeAudioButton_Click(object sender, EventArgs e)
         {
-            File.Delete(GetSelectedNode().GetAudioClip());
+            GetSelectedNode().RemoveAudioClip();
             SetSidebarMode(SidebarMode.ItemSelected);
+            wmp.controls.stop();
         }
 
         private void saveButton_Click(object sender, EventArgs e)

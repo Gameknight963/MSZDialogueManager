@@ -34,7 +34,7 @@
             this.speakerColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.statusLabel = new System.Windows.Forms.Label();
-            this.jsonButton = new System.Windows.Forms.Button();
+            this.loadButton = new System.Windows.Forms.Button();
             this.templeteButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.audioStopButton = new System.Windows.Forms.Button();
@@ -91,15 +91,15 @@
             this.statusLabel.TabIndex = 1;
             this.statusLabel.Text = "Click \"Load from JSON\" or \"Initialize Templete\" to get started";
             // 
-            // jsonButton
+            // loadButton
             // 
-            this.jsonButton.Location = new System.Drawing.Point(6, 354);
-            this.jsonButton.Name = "jsonButton";
-            this.jsonButton.Size = new System.Drawing.Size(196, 23);
-            this.jsonButton.TabIndex = 0;
-            this.jsonButton.Text = "Load from JSON...";
-            this.jsonButton.UseVisualStyleBackColor = true;
-            this.jsonButton.Click += new System.EventHandler(this.jsonButton_Click);
+            this.loadButton.Location = new System.Drawing.Point(6, 354);
+            this.loadButton.Name = "loadButton";
+            this.loadButton.Size = new System.Drawing.Size(196, 23);
+            this.loadButton.TabIndex = 0;
+            this.loadButton.Text = "Load from dialouge pack...";
+            this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
             // 
             // templeteButton
             // 
@@ -124,7 +124,7 @@
             this.panel1.Controls.Add(this.audioFileLabel);
             this.panel1.Controls.Add(this.textLabel);
             this.panel1.Controls.Add(this.saveButton);
-            this.panel1.Controls.Add(this.jsonButton);
+            this.panel1.Controls.Add(this.loadButton);
             this.panel1.Controls.Add(this.templeteButton);
             this.panel1.Location = new System.Drawing.Point(580, 12);
             this.panel1.Name = "panel1";
@@ -268,7 +268,7 @@
         private System.Windows.Forms.ColumnHeader speakerColumn;
         private System.Windows.Forms.ColumnHeader textColumn;
         private System.Windows.Forms.Label statusLabel;
-        private System.Windows.Forms.Button jsonButton;
+        private System.Windows.Forms.Button loadButton;
         private System.Windows.Forms.Button templeteButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label textLabel;
