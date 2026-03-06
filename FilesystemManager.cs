@@ -22,6 +22,8 @@ namespace MSZDialougeManager
         /// </summary>
         public static readonly string ext = "mszdlg";
 
+        public static bool IsFileLoaded = false;
+
         public static void SaveProj(string path, DialogueForest forest)
         {
             if (File.Exists(path)) File.Delete(path);
@@ -47,7 +49,8 @@ namespace MSZDialougeManager
             Directory.CreateDirectory(DataPath);
             ZipFile.ExtractToDirectory(path, DataPath);
             string json = File.ReadAllText(Path.Combine(NodesJsonPath)); 
-            DialogueForest forest = JsonConvert.DeserializeObject<DialogueForest>(json); 
+            DialogueForest forest = JsonConvert.DeserializeObject<DialogueForest>(json);
+            IsFileLoaded = true;
             return forest;
         }
 
@@ -55,6 +58,7 @@ namespace MSZDialougeManager
         {
             string json = File.ReadAllText(path);
             DialogueForest forest = JsonConvert.DeserializeObject<DialogueForest>(json);
+            IsFileLoaded = true;
             return forest;
         }
 
