@@ -47,6 +47,7 @@
             this.textHeaderLabel = new System.Windows.Forms.Label();
             this.audioFileLabel = new System.Windows.Forms.Label();
             this.textLabel = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,15 +87,15 @@
             this.statusLabel.AutoSize = true;
             this.statusLabel.Location = new System.Drawing.Point(12, 428);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(313, 13);
+            this.statusLabel.Size = new System.Drawing.Size(314, 13);
             this.statusLabel.TabIndex = 1;
             this.statusLabel.Text = "Click \"Load from JSON\" or \"Initialize Templete\" to get started";
             // 
             // jsonButton
             // 
-            this.jsonButton.Location = new System.Drawing.Point(3, 354);
+            this.jsonButton.Location = new System.Drawing.Point(6, 354);
             this.jsonButton.Name = "jsonButton";
-            this.jsonButton.Size = new System.Drawing.Size(202, 23);
+            this.jsonButton.Size = new System.Drawing.Size(196, 23);
             this.jsonButton.TabIndex = 0;
             this.jsonButton.Text = "Load from JSON...";
             this.jsonButton.UseVisualStyleBackColor = true;
@@ -102,9 +103,9 @@
             // 
             // templeteButton
             // 
-            this.templeteButton.Location = new System.Drawing.Point(3, 383);
+            this.templeteButton.Location = new System.Drawing.Point(6, 383);
             this.templeteButton.Name = "templeteButton";
-            this.templeteButton.Size = new System.Drawing.Size(202, 23);
+            this.templeteButton.Size = new System.Drawing.Size(196, 23);
             this.templeteButton.TabIndex = 0;
             this.templeteButton.Text = "Initialize Templete";
             this.templeteButton.UseVisualStyleBackColor = true;
@@ -122,6 +123,7 @@
             this.panel1.Controls.Add(this.textHeaderLabel);
             this.panel1.Controls.Add(this.audioFileLabel);
             this.panel1.Controls.Add(this.textLabel);
+            this.panel1.Controls.Add(this.saveButton);
             this.panel1.Controls.Add(this.jsonButton);
             this.panel1.Controls.Add(this.templeteButton);
             this.panel1.Location = new System.Drawing.Point(580, 12);
@@ -132,7 +134,7 @@
             // audioStopButton
             // 
             this.audioStopButton.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.audioStopButton.Location = new System.Drawing.Point(107, 276);
+            this.audioStopButton.Location = new System.Drawing.Point(107, 267);
             this.audioStopButton.Name = "audioStopButton";
             this.audioStopButton.Size = new System.Drawing.Size(95, 23);
             this.audioStopButton.TabIndex = 5;
@@ -142,7 +144,7 @@
             // 
             // audioPlayButton
             // 
-            this.audioPlayButton.Location = new System.Drawing.Point(6, 276);
+            this.audioPlayButton.Location = new System.Drawing.Point(6, 267);
             this.audioPlayButton.Name = "audioPlayButton";
             this.audioPlayButton.Size = new System.Drawing.Size(95, 23);
             this.audioPlayButton.TabIndex = 5;
@@ -152,7 +154,7 @@
             // 
             // removeAudioButton
             // 
-            this.removeAudioButton.Location = new System.Drawing.Point(6, 305);
+            this.removeAudioButton.Location = new System.Drawing.Point(6, 296);
             this.removeAudioButton.Name = "removeAudioButton";
             this.removeAudioButton.Size = new System.Drawing.Size(196, 23);
             this.removeAudioButton.TabIndex = 4;
@@ -162,7 +164,7 @@
             // 
             // selectAudioButton
             // 
-            this.selectAudioButton.Location = new System.Drawing.Point(6, 246);
+            this.selectAudioButton.Location = new System.Drawing.Point(6, 238);
             this.selectAudioButton.Name = "selectAudioButton";
             this.selectAudioButton.Size = new System.Drawing.Size(196, 23);
             this.selectAudioButton.TabIndex = 4;
@@ -173,7 +175,7 @@
             // nextNodesBox
             // 
             this.nextNodesBox.FormattingEnabled = true;
-            this.nextNodesBox.Location = new System.Drawing.Point(6, 149);
+            this.nextNodesBox.Location = new System.Drawing.Point(6, 138);
             this.nextNodesBox.Name = "nextNodesBox";
             this.nextNodesBox.Size = new System.Drawing.Size(199, 56);
             this.nextNodesBox.TabIndex = 3;
@@ -183,7 +185,7 @@
             // 
             this.audioFileHeader.AutoSize = true;
             this.audioFileHeader.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.audioFileHeader.Location = new System.Drawing.Point(3, 211);
+            this.audioFileHeader.Location = new System.Drawing.Point(3, 200);
             this.audioFileHeader.Margin = new System.Windows.Forms.Padding(3);
             this.audioFileHeader.Name = "audioFileHeader";
             this.audioFileHeader.Size = new System.Drawing.Size(98, 13);
@@ -194,7 +196,7 @@
             // 
             this.nextNodesHeader.AutoSize = true;
             this.nextNodesHeader.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextNodesHeader.Location = new System.Drawing.Point(3, 130);
+            this.nextNodesHeader.Location = new System.Drawing.Point(3, 119);
             this.nextNodesHeader.Margin = new System.Windows.Forms.Padding(3);
             this.nextNodesHeader.Name = "nextNodesHeader";
             this.nextNodesHeader.Size = new System.Drawing.Size(70, 13);
@@ -214,7 +216,7 @@
             // 
             // audioFileLabel
             // 
-            this.audioFileLabel.Location = new System.Drawing.Point(3, 227);
+            this.audioFileLabel.Location = new System.Drawing.Point(3, 219);
             this.audioFileLabel.Margin = new System.Windows.Forms.Padding(3);
             this.audioFileLabel.Name = "audioFileLabel";
             this.audioFileLabel.Size = new System.Drawing.Size(115, 13);
@@ -226,9 +228,19 @@
             this.textLabel.Location = new System.Drawing.Point(3, 25);
             this.textLabel.Margin = new System.Windows.Forms.Padding(3);
             this.textLabel.Name = "textLabel";
-            this.textLabel.Size = new System.Drawing.Size(202, 99);
+            this.textLabel.Size = new System.Drawing.Size(202, 88);
             this.textLabel.TabIndex = 1;
             this.textLabel.Text = "Text will appear here";
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(6, 325);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(196, 23);
+            this.saveButton.TabIndex = 0;
+            this.saveButton.Text = "Save as dialouge pack";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // Form1
             // 
@@ -269,6 +281,7 @@
         private System.Windows.Forms.Button audioPlayButton;
         private System.Windows.Forms.Button audioStopButton;
         private System.Windows.Forms.Button removeAudioButton;
+        private System.Windows.Forms.Button saveButton;
     }
 }
 

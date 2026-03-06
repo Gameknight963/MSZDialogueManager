@@ -18,7 +18,8 @@ namespace MSZDialougeManager
 {
     public partial class Form1 : Form
     {
-        public static List<DialogueNodeDTO> nodes;
+        public static DialogueForest forest;
+        public static List<DialogueNodeDTO> nodes => forest.nodes;
         WindowsMediaPlayer wmp = new WindowsMediaPlayer();
 
         public Form1()
@@ -26,6 +27,23 @@ namespace MSZDialougeManager
             InitializeComponent();
             dialogueView.Columns[2].Width -= SystemInformation.VerticalScrollBarWidth;
             SetSidebarMode(SidebarMode.Idle);
+            this.KeyPreview = true;
+            this.KeyDown += Form1_KeyDown;
+            this.FormClosing += Form1_FormClosing;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // put a comfirmation prompt here or smth
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                dialogueView.SelectedItems.Clear();
+                SetSidebarMode(SidebarMode.Idle);
+            }
         }
 
         private enum SidebarMode
@@ -52,6 +70,7 @@ namespace MSZDialougeManager
                     audioPlayButton.Visible = false;
                     audioStopButton.Visible = false;
                     removeAudioButton.Visible = false;
+                    saveButton.Visible = false;
                     break;
                 case SidebarMode.ItemSelected:
                     jsonButton.Visible = false;
@@ -64,6 +83,7 @@ namespace MSZDialougeManager
                     audioFileHeader.Visible = true;
                     selectAudioButton.Visible = true;
                     removeAudioButton.Visible = true;
+                    saveButton.Visible = true;
                     nextNodesBox.UpdateNodesBox(GetSelectedNode().nextNodeIds);
                     int index = dialogueView.SelectedItems[0].Index;
                     if (nodes[index].HasAudioClip())
@@ -95,7 +115,7 @@ namespace MSZDialougeManager
                 if (fd.ShowDialog() == DialogResult.OK)
                 {
                     string json = File.ReadAllText(fd.FileName);
-                    nodes = JsonConvert.DeserializeObject<List<DialogueNodeDTO>>(json);
+                    forest = JsonConvert.DeserializeObject<DialogueForest>(json);
                     dialogueView.UpdateDialogueView(nodes);
                 }
             }
@@ -104,7 +124,7 @@ namespace MSZDialougeManager
         private void templeteButton_Click(object sender, EventArgs e)
         {
             string json = File.ReadAllText(FilesystemManager.Templete);
-            nodes = JsonConvert.DeserializeObject<List<DialogueNodeDTO>>(json);
+            forest = JsonConvert.DeserializeObject<DialogueForest>(json);
             dialogueView.UpdateDialogueView(nodes);
         }
 
@@ -113,6 +133,8 @@ namespace MSZDialougeManager
             int index = dialogueView.SelectedItems[0].Index;
             return nodes[index];
         }
+
+        private void SetStatus(string text) => statusLabel.Text = text;
 
         private void dialogueView_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -123,6 +145,7 @@ namespace MSZDialougeManager
             }
             DialogueNodeDTO node = GetSelectedNode();
             textLabel.Text = $"{node.speakerName}: {node.dialogueText}";
+            SetStatus($"Selected: node {node.id}, spoken by {node.speakerName}");
             SetSidebarMode(SidebarMode.ItemSelected);
         }
 
@@ -152,7 +175,7 @@ namespace MSZDialougeManager
                 if (File.Exists(destination))
                 {
                     File.Delete(destination);
-                }    
+                }
                 File.Copy(path, destination);
                 SetSidebarMode(SidebarMode.ItemSelected);
             }
@@ -173,6 +196,23 @@ namespace MSZDialougeManager
         {
             File.Delete(GetSelectedNode().GetAudioClip());
             SetSidebarMode(SidebarMode.ItemSelected);
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog dialog = new SaveFileDialog())
+            {
+                dialog.Title = "Save dialogue pack";
+                dialog.Filter = $"Miside Zero Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}";
+                dialog.FileName = $"CustomDialogue.{FilesystemManager.ext}";
+                dialog.AddExtension = true;
+                dialog.DefaultExt = FilesystemManager.ext;
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    FilesystemManager.SaveProj(dialog.FileName, forest);
+                }
+            }
         }
     }
 }
