@@ -77,27 +77,24 @@ namespace MSZDialougeManager
             bool needsScroll = remaining < MinTextColumnWidth;
             if (needsScroll) remaining = MinTextColumnWidth;
 
-            dialogueView.Columns[2].Width = remaining-50;
+            dialogueView.Columns[2].Width = remaining;
 
-            // Hide or show horizontal scrollbar depending on whether we need it
             ScrollbarHelper.Set(dialogueView, ScrollbarHelper.Scrollbar.Horz, needsScroll);
         }
 
         private void dialogueView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
-            if (e.ColumnIndex == 2 && e.NewWidth < MinTextColumnWidth)
-                e.NewWidth = MinTextColumnWidth;
+            // if (e.ColumnIndex == 2 && e.NewWidth < MinTextColumnWidth) e.NewWidth = MinTextColumnWidth;
         }
 
         private void dialogueView_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
         {
-            if (e.ColumnIndex != 2)
-                ResizeTextColumn();
+            // if (e.ColumnIndex != 2) ResizeTextColumn();
         }
 
         private void dialogueView_SizeChanged(object sender, EventArgs e)
         {
-            ResizeTextColumn();
+            //ResizeTextColumn();
         }
 
 
