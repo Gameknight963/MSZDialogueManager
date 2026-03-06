@@ -162,6 +162,8 @@
             // 
             // removeAudioButton
             // 
+            this.removeAudioButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.removeAudioButton.Location = new System.Drawing.Point(6, 296);
             this.removeAudioButton.Name = "removeAudioButton";
             this.removeAudioButton.Size = new System.Drawing.Size(196, 23);
