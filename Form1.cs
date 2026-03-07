@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using WMPLib;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -25,6 +26,8 @@ namespace MSZDialougeManager
 
             dialogueView.ColumnWidthChanging += dialogueView_ColumnWidthChanging;
             dialogueView.ColumnWidthChanged += dialogueView_ColumnWidthChanged;
+
+            searchBox.SetPlaceholder("Search by dialogue text...");
         }
 
         private void Form1_Shown(object sender, EventArgs e)
@@ -33,19 +36,6 @@ namespace MSZDialougeManager
             {
                 Directory.Delete(FilesystemManager.DataPath, true);
                 Directory.CreateDirectory(FilesystemManager.DataPath);
-
-                /* Confirmation with dialog
-                DialogResult result = MessageBox.Show("Restore previous state?", "Temporary files found", 
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    Stopwatch sw = new Stopwatch(); sw.Start();
-                    forest = FilesystemManager.LoadJson(FilesystemManager.NodesJsonPath);
-                    SetStatus("Loading project...");
-                    dialogueView.UpdateDialogueView(nodes);
-                    SetStatus($"Loaded project from temporary files, time: {sw.ElapsedMilliseconds}ms");
-                }
-                */
             }
         }
 
@@ -56,6 +46,7 @@ namespace MSZDialougeManager
             if (e.KeyCode == Keys.Escape)
             {
                 dialogueView.SelectedItems.Clear();
+                dialogueView.Focus();
                 SetSidebarMode(SidebarMode.Idle);
             }
         }
@@ -271,6 +262,12 @@ namespace MSZDialougeManager
                     FilesystemManager.SaveProj(dialog.FileName, forest);
                 }
             }
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            if (forest == null || nodes.Count == 0) return;
+            dialogueView.UpdateDialogueViewFiltered(nodes, searchBox.Text);
         }
     }
 }
