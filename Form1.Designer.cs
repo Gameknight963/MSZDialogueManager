@@ -48,6 +48,7 @@
             this.audioFileLabel = new System.Windows.Forms.Label();
             this.textLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
+            this.searchBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -253,11 +254,20 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // searchBox
+            // 
+            this.searchBox.Location = new System.Drawing.Point(354, 425);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(220, 22);
+            this.searchBox.TabIndex = 3;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.searchBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.dialogueView);
@@ -293,6 +303,7 @@
         private System.Windows.Forms.Button audioStopButton;
         private System.Windows.Forms.Button removeAudioButton;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.TextBox searchBox;
     }
 }
 
