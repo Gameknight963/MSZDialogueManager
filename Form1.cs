@@ -25,7 +25,6 @@ namespace MSZDialougeManager
 
             dialogueView.ColumnWidthChanging += dialogueView_ColumnWidthChanging;
             dialogueView.ColumnWidthChanged += dialogueView_ColumnWidthChanged;
-            dialogueView.SizeChanged += dialogueView_SizeChanged;
         }
 
         private void Form1_Shown(object sender, EventArgs e)
@@ -73,7 +72,6 @@ namespace MSZDialougeManager
 
             int remaining = dialogueView.ClientSize.Width - totalOtherColumns;
 
-            // Show scrollbar if we can't fit the minimum width
             bool needsScroll = remaining < MinTextColumnWidth;
             if (needsScroll) remaining = MinTextColumnWidth;
 
@@ -84,17 +82,23 @@ namespace MSZDialougeManager
 
         private void dialogueView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
-            // if (e.ColumnIndex == 2 && e.NewWidth < MinTextColumnWidth) e.NewWidth = MinTextColumnWidth;
+            if (e.ColumnIndex == 2 && e.NewWidth < MinTextColumnWidth)
+                e.NewWidth = MinTextColumnWidth;
         }
 
         private void dialogueView_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
         {
-            // if (e.ColumnIndex != 2) ResizeTextColumn();
+            if (e.ColumnIndex != 2) ResizeTextColumn();
         }
 
-        private void dialogueView_SizeChanged(object sender, EventArgs e)
+        protected override void WndProc(ref Message m)
         {
-            //ResizeTextColumn();
+            const int WM_EXITSIZEMOVE = 0x0232;
+
+            if (m.Msg == WM_EXITSIZEMOVE)
+                ResizeTextColumn();
+
+            base.WndProc(ref m);
         }
 
 
