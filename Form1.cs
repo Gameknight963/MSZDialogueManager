@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using WMPLib;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using NAudio.Wave;
+using NAudio.Vorbis;
 
 namespace MSZDialougeManager
 {
@@ -12,7 +11,10 @@ namespace MSZDialougeManager
     {
         public static DialogueForest forest;
         public static List<DialogueNodeDTO> nodes => forest.nodes;
-        WindowsMediaPlayer wmp = new WindowsMediaPlayer();
+
+        // NAudio playback
+        private IWavePlayer waveOut;
+        private WaveStream audioStream;
 
         public Form1()
         {
@@ -39,7 +41,10 @@ namespace MSZDialougeManager
             }
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e) { }
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            StopAudio();
+        }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -92,7 +97,6 @@ namespace MSZDialougeManager
             base.WndProc(ref m);
         }
 
-
         private enum SidebarMode
         {
             ItemSelected,
@@ -101,20 +105,14 @@ namespace MSZDialougeManager
 
         private void SetSidebarMode(SidebarMode mode)
         {
-            if(FilesystemManager.IsFileLoaded)
-            {
+            if (FilesystemManager.IsFileLoaded)
                 saveButton.Visible = true;
-            }
             else
-            {
                 saveButton.Visible = false;
-            }
+
             switch (mode)
             {
-                // panels are for noobs
                 case SidebarMode.Idle:
-                    //loadButton.Visible = true;
-                    //templeteButton.Visible = true;
                     textLabel.Visible = false;
                     textHeaderLabel.Visible = false;
                     nextNodesHeader.Visible = false;
@@ -126,9 +124,8 @@ namespace MSZDialougeManager
                     audioStopButton.Visible = false;
                     removeAudioButton.Visible = false;
                     break;
+
                 case SidebarMode.ItemSelected:
-                    //loadButton.Visible = false;
-                    //templeteButton.Visible = false;
                     textLabel.Visible = true;
                     textHeaderLabel.Visible = true;
                     nextNodesHeader.Visible = true;
@@ -137,6 +134,7 @@ namespace MSZDialougeManager
                     audioFileHeader.Visible = true;
                     selectAudioButton.Visible = true;
                     removeAudioButton.Visible = true;
+
                     nextNodesBox.UpdateNodesBox(GetSelectedNode().nextNodeIds);
                     int index = dialogueView.SelectedItems[0].Index;
                     if (nodes[index].HasAudioClip())
@@ -153,7 +151,6 @@ namespace MSZDialougeManager
                         removeAudioButton.Visible = false;
                     }
                     break;
-
             }
         }
 
@@ -176,7 +173,7 @@ namespace MSZDialougeManager
 
         private void templeteButton_Click(object sender, EventArgs e)
         {
-            forest =  FilesystemManager.LoadJson(FilesystemManager.Templete);
+            forest = FilesystemManager.LoadJson(FilesystemManager.Templete);
             dialogueView.UpdateDialogueView(nodes);
         }
 
@@ -190,13 +187,14 @@ namespace MSZDialougeManager
 
         private void dialogueView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            wmp.controls.stop();
+            StopAudio();
 
             if (dialogueView.SelectedItems.Count == 0)
             {
                 SetSidebarMode(SidebarMode.Idle);
                 return;
             }
+
             DialogueNodeDTO node = GetSelectedNode();
             textLabel.Text = $"{node.speakerName}: {node.dialogueText}";
             SetStatus($"Selected: node {node.id}, spoken by {node.speakerName}");
@@ -215,12 +213,12 @@ namespace MSZDialougeManager
 
         private void selectAudioButton_Click(object sender, EventArgs e)
         {
-            wmp.controls.stop();
+            StopAudio();
 
             DialogueNodeDTO node = GetSelectedNode();
 
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Audio Files (*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac)|*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac|All Files (*.*)|*.*";
+            dialog.Filter = "Audio Files (*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac;*.ogg)|*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac;*.ogg|All Files (*.*)|*.*";
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
@@ -231,20 +229,19 @@ namespace MSZDialougeManager
 
         private void audioPlayButton_Click(object sender, EventArgs e)
         {
-            wmp.URL = GetSelectedNode().GetAudioClip();
-            wmp.controls.play();
+            PlayAudio(GetSelectedNode().GetAudioClip());
         }
 
         private void audioStopButton_Click(object sender, EventArgs e)
         {
-            wmp.controls.stop();
+            StopAudio();
         }
 
         private void removeAudioButton_Click(object sender, EventArgs e)
         {
             GetSelectedNode().RemoveAudioClip();
             SetSidebarMode(SidebarMode.ItemSelected);
-            wmp.controls.stop();
+            StopAudio();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -268,6 +265,33 @@ namespace MSZDialougeManager
         {
             if (forest == null || nodes.Count == 0) return;
             dialogueView.UpdateDialogueViewFiltered(nodes, searchBox.Text);
+        }
+
+        // --- NAudio helpers ---
+        private void PlayAudio(string file)
+        {
+            if (string.IsNullOrEmpty(file) || !File.Exists(file)) return;
+
+            StopAudio();
+
+            if (Path.GetExtension(file).ToLower() == ".ogg")
+                audioStream = new VorbisWaveReader(file);
+            else
+                audioStream = new AudioFileReader(file);
+
+            waveOut = new WaveOutEvent();
+            waveOut.Init(audioStream);
+            waveOut.Play();
+        }
+
+        private void StopAudio()
+        {
+            waveOut?.Stop();
+            waveOut?.Dispose();
+            waveOut = null;
+
+            audioStream?.Dispose();
+            audioStream = null;
         }
     }
 }
