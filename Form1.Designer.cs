@@ -163,8 +163,7 @@
             // 
             // removeAudioButton
             // 
-            this.removeAudioButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.removeAudioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.removeAudioButton.Location = new System.Drawing.Point(6, 296);
             this.removeAudioButton.Name = "removeAudioButton";
             this.removeAudioButton.Size = new System.Drawing.Size(196, 23);
@@ -256,6 +255,7 @@
             // 
             // searchBox
             // 
+            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.searchBox.Location = new System.Drawing.Point(354, 425);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(220, 22);
