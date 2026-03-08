@@ -131,6 +131,7 @@ namespace MSZDialougeManager
             playAudioToolStripMenuItem.Enabled = itemSelected;
             stopAudioToolStripMenuItem.Enabled = itemSelected;
             assignAudioToolStripMenuItem.Enabled = itemSelected;
+            removeAudioToolStripMenuItem.Enabled = itemSelected;
             generateWithTTSToolStripMenuItem.Enabled = !init;
 
             removeAudioButton.Visible = false;
@@ -157,6 +158,7 @@ namespace MSZDialougeManager
 
         void LoadPack()
         {
+            Cursor = Cursors.WaitCursor;
             using (OpenFileDialog fd = new OpenFileDialog())
             {
                 fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -172,6 +174,7 @@ namespace MSZDialougeManager
                     SetUIMode(UIMode.Idle);
                 }
             }
+            Cursor = Cursors.Default;
         }
 
         void SavePack()
@@ -204,6 +207,13 @@ namespace MSZDialougeManager
             }
         }
 
+        void RemoveAudio(DialogueNodeDTO node)
+        {
+            node.RemoveAudioClip();
+            SetUIMode(UIMode.ItemSelected);
+            StopAudio();
+        }
+
         private void loadButton_Click(object sender, EventArgs e) => LoadPack();
         private void toolStripLoadPack_Click(object sender, EventArgs e) => LoadPack();
 
@@ -222,12 +232,9 @@ namespace MSZDialougeManager
         private void audioStopButton_Click(object sender, EventArgs e) => StopAudio();
         private void stopAudioToolStripMenuItem_Click(object sender, EventArgs e) => StopAudio();
 
-        private void removeAudioButton_Click(object sender, EventArgs e)
-        {
-            GetSelectedNode().RemoveAudioClip();
-            SetUIMode(UIMode.ItemSelected);
-            StopAudio();
-        }
+        private void removeAudioButton_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode());
+
+        private void removeAudioToolStripMenuItem_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode());
 
         private DialogueNodeDTO GetSelectedNode()
         {

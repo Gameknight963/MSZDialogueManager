@@ -59,6 +59,7 @@
             this.playAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assignAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -329,10 +330,11 @@
             this.nodeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.playAudioToolStripMenuItem,
             this.stopAudioToolStripMenuItem,
-            this.assignAudioToolStripMenuItem});
+            this.assignAudioToolStripMenuItem,
+            this.removeAudioToolStripMenuItem});
             this.nodeToolStripMenuItem.Name = "nodeToolStripMenuItem";
-            this.nodeToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.nodeToolStripMenuItem.Text = "Node";
+            this.nodeToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.nodeToolStripMenuItem.Text = " Node";
             // 
             // playAudioToolStripMenuItem
             // 
@@ -354,6 +356,13 @@
             this.assignAudioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.assignAudioToolStripMenuItem.Text = "Assign audio";
             this.assignAudioToolStripMenuItem.Click += new System.EventHandler(this.assignAudioToolStripMenuItem_Click);
+            // 
+            // removeAudioToolStripMenuItem
+            // 
+            this.removeAudioToolStripMenuItem.Name = "removeAudioToolStripMenuItem";
+            this.removeAudioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeAudioToolStripMenuItem.Text = "Remove audio";
+            this.removeAudioToolStripMenuItem.Click += new System.EventHandler(this.removeAudioToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -411,6 +420,7 @@
         private System.Windows.Forms.ToolStripMenuItem playAudioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopAudioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assignAudioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeAudioToolStripMenuItem;
     }
 }
 
