@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -44,6 +45,12 @@ namespace MSZDialougeManager
             dialogueView.EndUpdate();
         }
 
+        public static void UpdateItem(this ListViewItem item, DialogueNodeDTO node)
+        {
+            item.SubItems[0].Text = node.id.ToString();
+            item.SubItems[1].Text = node.speakerName;
+            item.SubItems[2].Text = node.dialogueText;
+        }
 
         public static void UpdateNodesBox(this ListBox nodesBox, int[] nodeIndicies)
         {
@@ -59,7 +66,6 @@ namespace MSZDialougeManager
             }
             nodesBox.EndUpdate();
         }
-
 
         public static bool HasAudioClip(this DialogueNodeDTO node)
         {
