@@ -20,7 +20,7 @@ namespace MSZDialougeManager
         public Form1()
         {
             InitializeComponent();
-            SetSidebarMode(SidebarMode.Init);
+            SetUIMode(UIMode.Init);
             this.KeyPreview = true;
             this.KeyDown += Form1_KeyDown;
             this.Shown += Form1_Shown;
@@ -50,7 +50,7 @@ namespace MSZDialougeManager
                 if (dialogueView.Items.Count == 0) return;
                 if (dialogueView.SelectedItems.Count == 0) 
                     dialogueView.Items[0].Selected = true;
-                SetSidebarMode(SidebarMode.ItemSelected);
+                SetUIMode(UIMode.ItemSelected);
             }
         }
 
@@ -98,19 +98,19 @@ namespace MSZDialougeManager
             base.WndProc(ref m);
         }
 
-        private enum SidebarMode
+        private enum UIMode
         {
             ItemSelected,
             Idle,
             Init
         }
 
-        private void SetSidebarMode(SidebarMode mode)
+        private void SetUIMode(UIMode mode)
         {
             // removing savebutton soon
             saveButton.Visible = false;
 
-            bool itemSelected = (mode == SidebarMode.ItemSelected);
+            bool itemSelected = (mode == UIMode.ItemSelected);
             textLabel.Visible = itemSelected;
             textHeaderLabel.Visible = itemSelected;
             nextNodesHeader.Visible = itemSelected;
@@ -120,8 +120,8 @@ namespace MSZDialougeManager
             audioFileHeader.Visible = itemSelected;
             audioPlayButton.Visible = itemSelected;
             audioStopButton.Visible = itemSelected;
-            templeteButton.Visible = (mode == SidebarMode.Init);
-            loadButton.Visible = (mode == SidebarMode.Init);
+            templeteButton.Visible = (mode == UIMode.Init);
+            loadButton.Visible = (mode == UIMode.Init);
 
             removeAudioButton.Visible = false;
             if (!itemSelected) return;
@@ -138,7 +138,7 @@ namespace MSZDialougeManager
 
         void InitTemplete()
         {
-            SetSidebarMode(SidebarMode.Idle);
+            SetUIMode(UIMode.Idle);
             forest = FilesystemManager.LoadJson(FilesystemManager.Templete);
             dialogueView.UpdateDialogueView(nodes);
             dialogueView.Items[0].Selected = true;
@@ -147,7 +147,7 @@ namespace MSZDialougeManager
 
         void LoadPack()
         {
-            SetSidebarMode(SidebarMode.Idle);
+            SetUIMode(UIMode.Idle);
             using (OpenFileDialog fd = new OpenFileDialog())
             {
                 fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -190,7 +190,7 @@ namespace MSZDialougeManager
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 node.AddAudioClip(dialog.FileName);
-                SetSidebarMode(SidebarMode.ItemSelected);
+                SetUIMode(UIMode.ItemSelected);
             }
         }
 
@@ -215,14 +215,14 @@ namespace MSZDialougeManager
 
             if (dialogueView.SelectedItems.Count == 0)
             {
-                SetSidebarMode(SidebarMode.Idle);
+                SetUIMode(UIMode.Idle);
                 return;
             }
 
             DialogueNodeDTO node = GetSelectedNode();
             textLabel.Text = $"{node.speakerName}: {node.dialogueText}";
             SetStatus($"Selected: node {node.id}, spoken by {node.speakerName}");
-            SetSidebarMode(SidebarMode.ItemSelected);
+            SetUIMode(UIMode.ItemSelected);
         }
 
         private void nextNodesBox_DoubleClick(object sender, EventArgs e)
@@ -248,7 +248,7 @@ namespace MSZDialougeManager
         private void removeAudioButton_Click(object sender, EventArgs e)
         {
             GetSelectedNode().RemoveAudioClip();
-            SetSidebarMode(SidebarMode.ItemSelected);
+            SetUIMode(UIMode.ItemSelected);
             StopAudio();
         }
 
@@ -256,7 +256,7 @@ namespace MSZDialougeManager
         {
             if (forest == null || nodes.Count == 0) return;
             dialogueView.UpdateDialogueViewFiltered(nodes, searchBox.Text);
-            SetSidebarMode(SidebarMode.Idle);
+            SetUIMode(UIMode.Idle);
         }
 
         // --- NAudio helpers ---
@@ -277,8 +277,20 @@ namespace MSZDialougeManager
                     forest = FilesystemManager.LoadProj(fd.FileName);
                     dialogueView.UpdateDialogueView(nodes);
                 }
-                SetSidebarMode(SidebarMode.Idle);
+                SetUIMode(UIMode.Idle);
             }
+        }
+
+        private void generateWithTTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (forest == null) return;
+            Cursor = Cursors.WaitCursor;
+            foreach (DialogueNodeDTO node in nodes)
+            {
+                TTSManager.GenerateAudio(node, FilesystemManager.DataPath);
+            }
+            Cursor = Cursors.Default;
+            SetUIMode(UIMode.ItemSelected);
         }
     }
 }
