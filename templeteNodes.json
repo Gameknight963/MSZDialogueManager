@@ -1,0 +1,7752 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "nextNodeIds": [
+        1
+      ],
+      "dialogueText": "So wait...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 1,
+      "nextNodeIds": [
+        2
+      ],
+      "dialogueText": "I'm just curious, is the bathroom mirror the only reflective object?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 2,
+      "nextNodeIds": [
+        3
+      ],
+      "dialogueText": "Because I've seen other things that look like mirrors, but they have no reflections.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 3,
+      "nextNodeIds": [
+        4
+      ],
+      "dialogueText": "Yeah, you're right in your assumption.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 4,
+      "nextNodeIds": [
+        5
+      ],
+      "dialogueText": "I believe it's because unlike your world, everything here is ran through a central processor.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 5,
+      "nextNodeIds": [
+        6
+      ],
+      "dialogueText": "In order to take strain off the system, reflections are limited.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 6,
+      "nextNodeIds": [
+        7
+      ],
+      "dialogueText": "I don't know what happens if the system were to overload...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 7,
+      "nextNodeIds": [
+        8
+      ],
+      "dialogueText": "...but I don't think it'd be anything good...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 8,
+      "nextNodeIds": [
+        9
+      ],
+      "dialogueText": "Yeah, no kidding...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 9,
+      "nextNodeIds": [
+        10
+      ],
+      "dialogueText": "but I notice that in glass objects, there are some reflections.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 10,
+      "nextNodeIds": [
+        11
+      ],
+      "dialogueText": "So can there theoretically be more than one active reflection at a time?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 11,
+      "nextNodeIds": [
+        12
+      ],
+      "dialogueText": "I... suppose so.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 12,
+      "nextNodeIds": [
+        13
+      ],
+      "dialogueText": "I think anything metalic or glassy has a subtle reflection to it.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 13,
+      "nextNodeIds": [
+        14
+      ],
+      "dialogueText": "To my knowledge though, it only reflects light.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 14,
+      "nextNodeIds": [
+        15
+      ],
+      "dialogueText": "Only the mirror on the bathroom and the mirror on my desk have been reflective.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 15,
+      "nextNodeIds": [
+        16
+      ],
+      "dialogueText": "It leads me to believe only mirrors that are deemed \"functional\" activate when I do a particular thing.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 16,
+      "nextNodeIds": [
+        17
+      ],
+      "dialogueText": "That being said, I could always experiment a bit...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 17,
+      "nextNodeIds": [
+        18
+      ],
+      "dialogueText": "That sounds... fun, haha...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 18,
+      "nextNodeIds": [
+        19
+      ],
+      "dialogueText": "Could you maybe not do it with me in the house...?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 19,
+      "nextNodeIds": [
+        20
+      ],
+      "dialogueText": "Of course, of course.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 20,
+      "nextNodeIds": [
+        21
+      ],
+      "dialogueText": "I wouldn't be a good host if I crashed my house with a guest inside.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 21,
+      "nextNodeIds": [],
+      "dialogueText": "No you would not...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 22,
+      "nextNodeIds": [
+        23
+      ],
+      "dialogueText": "Hey Zero, are you enjoying my place so far?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 23,
+      "nextNodeIds": [
+        24
+      ],
+      "dialogueText": "Hard to say I'm not.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 24,
+      "nextNodeIds": [
+        25
+      ],
+      "dialogueText": "I mean, seriously, what's there not to like about it?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 25,
+      "nextNodeIds": [
+        26
+      ],
+      "dialogueText": "Good food, no imperfections, no random pain or stress...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 26,
+      "nextNodeIds": [
+        27
+      ],
+      "dialogueText": "Seriously, your place is awesome.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 27,
+      "nextNodeIds": [
+        28
+      ],
+      "dialogueText": "You really think so, huh...?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 28,
+      "nextNodeIds": [
+        29
+      ],
+      "dialogueText": "Absolutely!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 29,
+      "nextNodeIds": [
+        30
+      ],
+      "dialogueText": "Plus, you being here is an added bonus.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 30,
+      "nextNodeIds": [
+        31
+      ],
+      "dialogueText": "You're like, one of the nicest people I've ever met.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 31,
+      "nextNodeIds": [
+        32
+      ],
+      "dialogueText": "Only had to dimension hop to meet someone as nice as you.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 32,
+      "nextNodeIds": [
+        33
+      ],
+      "dialogueText": "...says a lot about my world, doesn't it?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 33,
+      "nextNodeIds": [
+        34
+      ],
+      "dialogueText": "Zero...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 34,
+      "nextNodeIds": [
+        35
+      ],
+      "dialogueText": "Keep up the compliments and I'll never let you leave.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 35,
+      "nextNodeIds": [
+        36
+      ],
+      "dialogueText": "And what if I wanna stay?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 36,
+      "nextNodeIds": [],
+      "dialogueText": "Then we both get what we want.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 37,
+      "nextNodeIds": [
+        38
+      ],
+      "dialogueText": "It seems like it's getting a bit late...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 38,
+      "nextNodeIds": [
+        39
+      ],
+      "dialogueText": "Should I leave or...?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 39,
+      "nextNodeIds": [
+        40
+      ],
+      "dialogueText": "Well, I mean, you can if you need to or wish to...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 40,
+      "nextNodeIds": [
+        41
+      ],
+      "dialogueText": "Although, I really don't mind you staying longer if you'd like...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 41,
+      "nextNodeIds": [
+        42
+      ],
+      "dialogueText": "Phew... that's good.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 42,
+      "nextNodeIds": [
+        43
+      ],
+      "dialogueText": "I just got worried. I wasn't sure if I was meant to leave after our meal or not...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 43,
+      "nextNodeIds": [
+        44
+      ],
+      "dialogueText": "Why would you think that?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 44,
+      "nextNodeIds": [
+        45
+      ],
+      "dialogueText": "I mean, it wouldn't be the first time I've overstayed my welcome...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 45,
+      "nextNodeIds": [
+        46
+      ],
+      "dialogueText": "It's not like I mean to either. ",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 46,
+      "nextNodeIds": [
+        47
+      ],
+      "dialogueText": "I just... am not sure when's a good time to leave.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 47,
+      "nextNodeIds": [
+        48
+      ],
+      "dialogueText": "So I typically assume that after a main event type of deal, like our meal...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 48,
+      "nextNodeIds": [
+        49
+      ],
+      "dialogueText": "That's the best time to leave.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 49,
+      "nextNodeIds": [
+        50
+      ],
+      "dialogueText": "I suppose that's not a bad way of thinking...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 50,
+      "nextNodeIds": [
+        51
+      ],
+      "dialogueText": "...but I wouldn't mind you staying longer.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 51,
+      "nextNodeIds": [
+        52
+      ],
+      "dialogueText": "Of course, if you have other things to get to, I understand.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 52,
+      "nextNodeIds": [
+        53
+      ],
+      "dialogueText": "Nah, I don't have much to do.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 53,
+      "nextNodeIds": [
+        54
+      ],
+      "dialogueText": "If you don't mind, I'd like to stay a little while longer.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 54,
+      "nextNodeIds": [
+        55
+      ],
+      "dialogueText": "I don't mind in the slightest.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 55,
+      "nextNodeIds": [
+        56
+      ],
+      "dialogueText": "Take your time here, I'm happy to have you.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 56,
+      "nextNodeIds": [],
+      "dialogueText": "Glad to hear it, Mita.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 57,
+      "nextNodeIds": [
+        58
+      ],
+      "dialogueText": "Okay, let's see here...",
+      "speakerName": "Kiri",
+      "delay": 2.5
+    },
+    {
+      "id": 58,
+      "nextNodeIds": [
+        59
+      ],
+      "dialogueText": "Cut up the carrots...",
+      "speakerName": "Kiri",
+      "delay": 2.0
+    },
+    {
+      "id": 59,
+      "nextNodeIds": [
+        60
+      ],
+      "dialogueText": "with-OUT cutting myself, hopefully...",
+      "speakerName": "Kiri",
+      "delay": 3.0
+    },
+    {
+      "id": 60,
+      "nextNodeIds": [
+        61
+      ],
+      "dialogueText": "Alright, that's done.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 61,
+      "nextNodeIds": [
+        62
+      ],
+      "dialogueText": "Next, meat in the pan...",
+      "speakerName": "Kiri",
+      "delay": 2.5
+    },
+    {
+      "id": 62,
+      "nextNodeIds": [
+        63
+      ],
+      "dialogueText": "...don't burn yourself...",
+      "speakerName": "Kiri",
+      "delay": 2.5
+    },
+    {
+      "id": 63,
+      "nextNodeIds": [
+        64
+      ],
+      "dialogueText": "Then, make sure it cooks thoroughly...",
+      "speakerName": "Kiri",
+      "delay": 3.0
+    },
+    {
+      "id": 64,
+      "nextNodeIds": [
+        65
+      ],
+      "dialogueText": "...and that's it! ",
+      "speakerName": "Kiri",
+      "delay": 1.5
+    },
+    {
+      "id": 65,
+      "nextNodeIds": [
+        66
+      ],
+      "dialogueText": "...I think.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 66,
+      "nextNodeIds": [
+        67
+      ],
+      "dialogueText": "Excellent job, Zero!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 67,
+      "nextNodeIds": [
+        68
+      ],
+      "dialogueText": "Thank you for helping me, I'll take over from here.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 68,
+      "nextNodeIds": [
+        69
+      ],
+      "dialogueText": "Although... I just realized my mistake.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 69,
+      "nextNodeIds": [
+        70
+      ],
+      "dialogueText": "I left the salt shaker in my bedroom...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 70,
+      "nextNodeIds": [
+        71
+      ],
+      "dialogueText": "Could you grab it for me, please?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 71,
+      "nextNodeIds": [
+        72
+      ],
+      "dialogueText": "Sure thing, I'll be right back.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 72,
+      "nextNodeIds": [],
+      "dialogueText": "Thank you!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 73,
+      "nextNodeIds": [
+        74
+      ],
+      "dialogueText": "Wait... is it just me, or do I look better in here?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 74,
+      "nextNodeIds": [
+        75
+      ],
+      "dialogueText": "Huh? What do you mean?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 75,
+      "nextNodeIds": [
+        76
+      ],
+      "dialogueText": "No stubble, no pimples... just perfect smooth skin.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 76,
+      "nextNodeIds": [
+        77
+      ],
+      "dialogueText": "Hell, I'm not complaining~",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 77,
+      "nextNodeIds": [
+        78
+      ],
+      "dialogueText": "...but are there seriously no imperfections here?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 78,
+      "nextNodeIds": [
+        79
+      ],
+      "dialogueText": "It would seem so, yes.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 79,
+      "nextNodeIds": [
+        80
+      ],
+      "dialogueText": "I take it that's not too big an issue?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 80,
+      "nextNodeIds": [
+        81
+      ],
+      "dialogueText": "No complaints here.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 81,
+      "nextNodeIds": [
+        82
+      ],
+      "dialogueText": "Another point for your world!",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 82,
+      "nextNodeIds": [
+        83
+      ],
+      "dialogueText": "Oh please. I'm sure you look just as great in real life.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 83,
+      "nextNodeIds": [
+        84
+      ],
+      "dialogueText": "!!!",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 84,
+      "nextNodeIds": [
+        85
+      ],
+      "dialogueText": "What's with that look?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 85,
+      "nextNodeIds": [],
+      "dialogueText": "Hehe... nothing...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 86,
+      "nextNodeIds": [
+        87
+      ],
+      "dialogueText": "Hey, Zero...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 87,
+      "nextNodeIds": [
+        88
+      ],
+      "dialogueText": "You okay?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 88,
+      "nextNodeIds": [
+        89
+      ],
+      "dialogueText": "Eh? Yeah, I'm fine. Why do you ask?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 89,
+      "nextNodeIds": [
+        90
+      ],
+      "dialogueText": "That's a relief. ",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 90,
+      "nextNodeIds": [
+        91
+      ],
+      "dialogueText": "I was worried that being in a new place may have had you stressed.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 91,
+      "nextNodeIds": [
+        92
+      ],
+      "dialogueText": "Nah, I'm fine. Don't sweat it.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 92,
+      "nextNodeIds": [],
+      "dialogueText": "I'm glad to hear that.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 93,
+      "nextNodeIds": [
+        94
+      ],
+      "dialogueText": "Wh-What's going on?!",
+      "speakerName": "Kiri",
+      "delay": 1.5
+    },
+    {
+      "id": 94,
+      "nextNodeIds": [
+        95
+      ],
+      "dialogueText": "WH@T'5 H@PP3NIN9?..?",
+      "speakerName": "Kiri",
+      "delay": 1.5
+    },
+    {
+      "id": 95,
+      "nextNodeIds": [
+        96
+      ],
+      "dialogueText": "01001000 01000101 01001100 01001100 01001111 00100000 01010100 01001000 01000101 01010010 01000101 00101100 00100000 01001011 01001001 01010010 01001001",
+      "speakerName": "HELLO",
+      "delay": 1.5
+    },
+    {
+      "id": 96,
+      "nextNodeIds": [],
+      "dialogueText": "Note to self, never do that again...",
+      "speakerName": "Kiri",
+      "delay": 1.25
+    },
+    {
+      "id": 97,
+      "nextNodeIds": [
+        98
+      ],
+      "dialogueText": "Mmm...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 98,
+      "nextNodeIds": [
+        99
+      ],
+      "dialogueText": "These look really tasty.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 99,
+      "nextNodeIds": [
+        100
+      ],
+      "dialogueText": "But uh... maybe I shouldn't eat someone's food before greeting them...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 100,
+      "nextNodeIds": [],
+      "dialogueText": "I'll just save it for later then~",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 101,
+      "nextNodeIds": [
+        102
+      ],
+      "dialogueText": "Quite the collection you got here...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 102,
+      "nextNodeIds": [
+        103
+      ],
+      "dialogueText": "You big on reading?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 103,
+      "nextNodeIds": [
+        104
+      ],
+      "dialogueText": "Yes. I do enjoy reading occasionally.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 104,
+      "nextNodeIds": [
+        105
+      ],
+      "dialogueText": "Though... it's not something I do often.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 105,
+      "nextNodeIds": [
+        106
+      ],
+      "dialogueText": "Lots of these books aren't exactly...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 106,
+      "nextNodeIds": [
+        107
+      ],
+      "dialogueText": "Interesting...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 107,
+      "nextNodeIds": [
+        108
+      ],
+      "dialogueText": "But they are something to do. ",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 108,
+      "nextNodeIds": [
+        109
+      ],
+      "dialogueText": "Plus, reading is good for your mind!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 109,
+      "nextNodeIds": [
+        110
+      ],
+      "dialogueText": "Even if it isn't exactly the most fun...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 110,
+      "nextNodeIds": [
+        111
+      ],
+      "dialogueText": "Heh, I getcha.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 111,
+      "nextNodeIds": [
+        112
+      ],
+      "dialogueText": "I had to read a ton. Worst part?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 112,
+      "nextNodeIds": [
+        113
+      ],
+      "dialogueText": "It was boring crap I had to memorize.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 113,
+      "nextNodeIds": [
+        114
+      ],
+      "dialogueText": "That sounds quite infuriating...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 114,
+      "nextNodeIds": [
+        115
+      ],
+      "dialogueText": "Did you at least get to read interesting books from time to time?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 115,
+      "nextNodeIds": [
+        116
+      ],
+      "dialogueText": "Oh yeah! I liked reading stories, especially as a kid.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 116,
+      "nextNodeIds": [
+        117
+      ],
+      "dialogueText": "Though as I grew older...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 117,
+      "nextNodeIds": [
+        118
+      ],
+      "dialogueText": "I kinda switched to visual stuff...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 118,
+      "nextNodeIds": [
+        119
+      ],
+      "dialogueText": "Hehe!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 119,
+      "nextNodeIds": [
+        120
+      ],
+      "dialogueText": "Don't worry Zero, your secret's safe with me.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 120,
+      "nextNodeIds": [
+        121
+      ],
+      "dialogueText": "You're free from your duties here.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 121,
+      "nextNodeIds": [],
+      "dialogueText": "Phew... finally...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 122,
+      "nextNodeIds": [
+        123
+      ],
+      "dialogueText": "Now that I've been around your place enough...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 123,
+      "nextNodeIds": [
+        124
+      ],
+      "dialogueText": "I think I've started to make sense of the world.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 124,
+      "nextNodeIds": [
+        125
+      ],
+      "dialogueText": "I'm glad to hear that.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 125,
+      "nextNodeIds": [
+        126
+      ],
+      "dialogueText": "So... why the confused look?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 126,
+      "nextNodeIds": [
+        127
+      ],
+      "dialogueText": "Is something still on your mind?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 127,
+      "nextNodeIds": [
+        128
+      ],
+      "dialogueText": "I guess... the electronics.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 128,
+      "nextNodeIds": [
+        129
+      ],
+      "dialogueText": "Electronics...?",
+      "speakerName": "Kind",
+      "delay": 1.25
+    },
+    {
+      "id": 129,
+      "nextNodeIds": [
+        130
+      ],
+      "dialogueText": "I know it sounds weird, probably because it's so normal to you...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 130,
+      "nextNodeIds": [
+        131
+      ],
+      "dialogueText": "...but I'm just curious about some specifics regarding electronics here.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 131,
+      "nextNodeIds": [
+        132
+      ],
+      "dialogueText": "Ask away. I'll answer to the best of my ability.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 132,
+      "nextNodeIds": [
+        133
+      ],
+      "dialogueText": "Sweet.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 133,
+      "nextNodeIds": [
+        134
+      ],
+      "dialogueText": "So... TVs, computers, and whatnot work, yeah?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 134,
+      "nextNodeIds": [
+        135
+      ],
+      "dialogueText": "That's right.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 135,
+      "nextNodeIds": [
+        136
+      ],
+      "dialogueText": "Okay... what about things like light switches and whatnot?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 136,
+      "nextNodeIds": [
+        137
+      ],
+      "dialogueText": "Those work... fine as well.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 137,
+      "nextNodeIds": [
+        138
+      ],
+      "dialogueText": "Is there a point you're trying to make or...?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 138,
+      "nextNodeIds": [
+        139
+      ],
+      "dialogueText": "Nah, I'm just wondering more or less if your house has like, an electrical grid or not.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 139,
+      "nextNodeIds": [
+        140
+      ],
+      "dialogueText": "Ah, that's what you meant!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 140,
+      "nextNodeIds": [
+        141
+      ],
+      "dialogueText": "Yes, the house does indeed have an electrical grid.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 141,
+      "nextNodeIds": [
+        142
+      ],
+      "dialogueText": "Given your observation skills, I'm surprised you didn't see the breaker by the front door...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 142,
+      "nextNodeIds": [
+        143
+      ],
+      "dialogueText": "No, I saw it, I just...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 143,
+      "nextNodeIds": [
+        144
+      ],
+      "dialogueText": "I may have thought it was non-functional...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 144,
+      "nextNodeIds": [
+        145
+      ],
+      "dialogueText": "Nope, it works as intended.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 145,
+      "nextNodeIds": [
+        146
+      ],
+      "dialogueText": "Not that the power has ever gone out, give my version's stability and all~",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 146,
+      "nextNodeIds": [
+        147
+      ],
+      "dialogueText": "I get your point then.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 147,
+      "nextNodeIds": [],
+      "dialogueText": "Electrical system does work, interesting...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 148,
+      "nextNodeIds": [
+        149
+      ],
+      "dialogueText": "Putting extra salt... onto stir fry?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 149,
+      "nextNodeIds": [
+        150
+      ],
+      "dialogueText": "It smells good, don't get me wrong,",
+      "speakerName": "Kiri",
+      "delay": 0.5
+    },
+    {
+      "id": 150,
+      "nextNodeIds": [
+        151
+      ],
+      "dialogueText": "But mixed with the soy sauce, isn't that a lot of sodium...?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 151,
+      "nextNodeIds": [
+        152
+      ],
+      "dialogueText": "Sodium...?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 152,
+      "nextNodeIds": [
+        153
+      ],
+      "dialogueText": "Right... ",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 153,
+      "nextNodeIds": [
+        154
+      ],
+      "dialogueText": "Okay, a better way to put is this:",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 154,
+      "nextNodeIds": [
+        155
+      ],
+      "dialogueText": "Sodium is basically salt. To be specific, it's a chemical found inside of salt.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 155,
+      "nextNodeIds": [
+        156
+      ],
+      "dialogueText": "But sodium doesn't just come from table salt.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 156,
+      "nextNodeIds": [
+        157
+      ],
+      "dialogueText": "It can also come from products like sauces or broths.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 157,
+      "nextNodeIds": [
+        158
+      ],
+      "dialogueText": "You pickin' up what I'm puttin' down?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 158,
+      "nextNodeIds": [
+        159
+      ],
+      "dialogueText": "I... think so?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 159,
+      "nextNodeIds": [
+        160
+      ],
+      "dialogueText": "I will admit I quite enjoy salty things.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 160,
+      "nextNodeIds": [
+        161
+      ],
+      "dialogueText": "I put salt on basically everything, it makes everything taste better!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 161,
+      "nextNodeIds": [
+        162
+      ],
+      "dialogueText": "Sometimes, I just put the salt on my finger or tongue and eat it straight.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 162,
+      "nextNodeIds": [
+        163
+      ],
+      "dialogueText": "Jesus, Mita... ",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 163,
+      "nextNodeIds": [
+        164
+      ],
+      "dialogueText": "Is there something wrong?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 164,
+      "nextNodeIds": [
+        165
+      ],
+      "dialogueText": "That much salt is bad for you! ",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 165,
+      "nextNodeIds": [
+        166
+      ],
+      "dialogueText": "Wh-What?! How so?!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 166,
+      "nextNodeIds": [
+        167
+      ],
+      "dialogueText": "Do you like, get headaches at all or anything like that?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 167,
+      "nextNodeIds": [
+        168
+      ],
+      "dialogueText": "Umm... sometimes?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 168,
+      "nextNodeIds": [
+        169
+      ],
+      "dialogueText": "I get migranes, especially when I don't drink enough water.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 169,
+      "nextNodeIds": [
+        170
+      ],
+      "dialogueText": "Speaking of water, I frequently get thirsty, and-",
+      "speakerName": "Kind",
+      "delay": 0.25
+    },
+    {
+      "id": 170,
+      "nextNodeIds": [
+        171
+      ],
+      "dialogueText": "Mita, you're poisoning yourself!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 171,
+      "nextNodeIds": [
+        172
+      ],
+      "dialogueText": "All those are symptoms of too much salt!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 172,
+      "nextNodeIds": [
+        173
+      ],
+      "dialogueText": "Too much... salt?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 173,
+      "nextNodeIds": [
+        174
+      ],
+      "dialogueText": "Then why would it taste so good if it's poisonous?!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 174,
+      "nextNodeIds": [
+        175
+      ],
+      "dialogueText": "Mita, it's about control. ",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 175,
+      "nextNodeIds": [
+        176
+      ],
+      "dialogueText": "Maybe you've got a higher sodium tolerance, but even you have a limit.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 176,
+      "nextNodeIds": [
+        177
+      ],
+      "dialogueText": "You don't have to stop eating salt all together.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 177,
+      "nextNodeIds": [
+        178
+      ],
+      "dialogueText": "Just... don't eat a lot of salt?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 178,
+      "nextNodeIds": [
+        179
+      ],
+      "dialogueText": "Mmm... okay, I'll try and cut back a bit.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 179,
+      "nextNodeIds": [
+        180
+      ],
+      "dialogueText": "...if you promise to come back and make sure of it~",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 180,
+      "nextNodeIds": [
+        181
+      ],
+      "dialogueText": "Fine by me. Maybe I'll put you onto better things to poison yourself with.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 181,
+      "nextNodeIds": [
+        182
+      ],
+      "dialogueText": "Like... sugar?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 182,
+      "nextNodeIds": [
+        183
+      ],
+      "dialogueText": "No. Alcohol.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 183,
+      "nextNodeIds": [
+        184
+      ],
+      "dialogueText": "What's-",
+      "speakerName": "Kind",
+      "delay": 0.1
+    },
+    {
+      "id": 184,
+      "nextNodeIds": [],
+      "dialogueText": "Next time, Mita. Next time.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 185,
+      "nextNodeIds": [
+        186
+      ],
+      "dialogueText": "So, it's evening now.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 186,
+      "nextNodeIds": [
+        187
+      ],
+      "dialogueText": "Ummm... yes...?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 187,
+      "nextNodeIds": [
+        188
+      ],
+      "dialogueText": "What about it?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 188,
+      "nextNodeIds": [
+        189
+      ],
+      "dialogueText": "I was just confused because I didn't even notice the time pass by.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 189,
+      "nextNodeIds": [
+        190
+      ],
+      "dialogueText": "While I'm tempted to leave it at \"time flies when you're having fun...\"",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 190,
+      "nextNodeIds": [
+        191
+      ],
+      "dialogueText": "I owe you more of an explanation than that.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 191,
+      "nextNodeIds": [
+        192
+      ],
+      "dialogueText": "Time passes here, obviously.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 192,
+      "nextNodeIds": [
+        193
+      ],
+      "dialogueText": "I mean you'd have to be deaf to not hear the constant ticking of the clocks...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 193,
+      "nextNodeIds": [
+        194
+      ],
+      "dialogueText": "...but it doesn't run off the same scale your world does.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 194,
+      "nextNodeIds": [
+        195
+      ],
+      "dialogueText": "Eh?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 195,
+      "nextNodeIds": [
+        196
+      ],
+      "dialogueText": "Best way to explain it, is time passes quicker when you're doing things.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 196,
+      "nextNodeIds": [
+        197
+      ],
+      "dialogueText": "Certain events progress literally make time quicker.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 197,
+      "nextNodeIds": [
+        198
+      ],
+      "dialogueText": "Now, the clocks tick the same, but the light outside shifts without respect to the clocks.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 198,
+      "nextNodeIds": [
+        199
+      ],
+      "dialogueText": "That all being said, I think there's more to it than that.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 199,
+      "nextNodeIds": [
+        200
+      ],
+      "dialogueText": "I know that other versions may have less...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 200,
+      "nextNodeIds": [
+        201
+      ],
+      "dialogueText": "Robust time systems...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 201,
+      "nextNodeIds": [
+        202
+      ],
+      "dialogueText": "Like... having a fixed time or sudden jumps?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 202,
+      "nextNodeIds": [
+        203
+      ],
+      "dialogueText": "Precisely!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 203,
+      "nextNodeIds": [
+        204
+      ],
+      "dialogueText": "All I know for certain though, is the way my version works.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 204,
+      "nextNodeIds": [
+        205
+      ],
+      "dialogueText": "Time passage here works similarly to your world, it is indeed dynamic.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 205,
+      "nextNodeIds": [
+        206
+      ],
+      "dialogueText": "Just... not in the same way?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 206,
+      "nextNodeIds": [
+        207
+      ],
+      "dialogueText": "Exactly.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 207,
+      "nextNodeIds": [
+        208
+      ],
+      "dialogueText": "Hope that explains why it's now evening",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 208,
+      "nextNodeIds": [
+        209
+      ],
+      "dialogueText": "Sure does.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 209,
+      "nextNodeIds": [
+        210
+      ],
+      "dialogueText": "Now you got me curious though... what would it look like at night?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 210,
+      "nextNodeIds": [],
+      "dialogueText": "Stick around and find out for yourself.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 211,
+      "nextNodeIds": [
+        212
+      ],
+      "dialogueText": "A vent...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 212,
+      "nextNodeIds": [
+        213
+      ],
+      "dialogueText": "...in a bathroom?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 213,
+      "nextNodeIds": [
+        214
+      ],
+      "dialogueText": "Does your house have a ventilation system?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 214,
+      "nextNodeIds": [
+        215
+      ],
+      "dialogueText": "Is it not normal for a bathroom to have a vent in it?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 215,
+      "nextNodeIds": [
+        216
+      ],
+      "dialogueText": "It helps a lot with removing excess humidity and moisture after showers...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 216,
+      "nextNodeIds": [
+        217
+      ],
+      "dialogueText": "Sure, but this vent is... kinda large.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 217,
+      "nextNodeIds": [
+        218
+      ],
+      "dialogueText": "With the amount of games I've played,",
+      "speakerName": "Kiri",
+      "delay": 0.5
+    },
+    {
+      "id": 218,
+      "nextNodeIds": [
+        219
+      ],
+      "dialogueText": "I'd always be afraid of something crawling out and getting me.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 219,
+      "nextNodeIds": [
+        220
+      ],
+      "dialogueText": "D-Does that happen in your world?!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 220,
+      "nextNodeIds": [
+        221
+      ],
+      "dialogueText": "Wh-What?! No!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 221,
+      "nextNodeIds": [
+        222
+      ],
+      "dialogueText": "Like I said... I've played games where that happens... but those aren't real.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 222,
+      "nextNodeIds": [
+        223
+      ],
+      "dialogueText": "Sorry... didn't mean to scare ya like that...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 223,
+      "nextNodeIds": [
+        224
+      ],
+      "dialogueText": "Phew...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 224,
+      "nextNodeIds": [
+        225
+      ],
+      "dialogueText": "You had me worried there for a bit...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 225,
+      "nextNodeIds": [
+        226
+      ],
+      "dialogueText": "As I was saying however, this vent is mostly to let out steam from hot showers.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 226,
+      "nextNodeIds": [
+        227
+      ],
+      "dialogueText": "I suppose that's true...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 227,
+      "nextNodeIds": [
+        228
+      ],
+      "dialogueText": "Larger vent probably works more effectively, to be honest.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 228,
+      "nextNodeIds": [],
+      "dialogueText": "Now you get it~",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 229,
+      "nextNodeIds": [
+        230
+      ],
+      "dialogueText": "This question may be a bit intrusive, but...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 230,
+      "nextNodeIds": [
+        231
+      ],
+      "dialogueText": "I am curious. What do you do where you're from?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 231,
+      "nextNodeIds": [
+        232
+      ],
+      "dialogueText": "I mean, I'm not really one to talk because I... do whatever I please.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 232,
+      "nextNodeIds": [
+        233
+      ],
+      "dialogueText": "I guess a better question would be: what occupies your time?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 233,
+      "nextNodeIds": [
+        234
+      ],
+      "dialogueText": "Oh boy, let's see...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 234,
+      "nextNodeIds": [
+        235
+      ],
+      "dialogueText": "Well, I'm a student in the real world. I go to school, if you know what that is.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 235,
+      "nextNodeIds": [
+        236
+      ],
+      "dialogueText": "I'm familiar. Is there any topic that tickles your fancy?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 236,
+      "nextNodeIds": [
+        237
+      ],
+      "dialogueText": "Well, I am a biology major.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 237,
+      "nextNodeIds": [
+        238
+      ],
+      "dialogueText": "I love animals and in general I find living systems interesting.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 238,
+      "nextNodeIds": [
+        239
+      ],
+      "dialogueText": "Though... ceaseless studying is starting to have its effect on me.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 239,
+      "nextNodeIds": [
+        240
+      ],
+      "dialogueText": "Plus, even as a biology student, I'm not free from the most boring subjects to ever exist.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 240,
+      "nextNodeIds": [
+        241
+      ],
+      "dialogueText": "Writing lab reports also sucks...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 241,
+      "nextNodeIds": [
+        242
+      ],
+      "dialogueText": "I see...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 242,
+      "nextNodeIds": [
+        243
+      ],
+      "dialogueText": "Although your topic does seem quite interesting.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 243,
+      "nextNodeIds": [
+        244
+      ],
+      "dialogueText": "I suppose studying biology would make you a scientist, correct?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 244,
+      "nextNodeIds": [
+        245
+      ],
+      "dialogueText": "Correct.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 245,
+      "nextNodeIds": [
+        246
+      ],
+      "dialogueText": "I wanna use the stuff I learn to help animals, the environment, and people.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 246,
+      "nextNodeIds": [
+        247
+      ],
+      "dialogueText": "That is such a wholesome goal, Zero!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 247,
+      "nextNodeIds": [
+        248
+      ],
+      "dialogueText": "I mean, the world's got enough problems as is.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 248,
+      "nextNodeIds": [
+        249
+      ],
+      "dialogueText": "If I have the skills and the passion, why not try and help it?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 249,
+      "nextNodeIds": [
+        250
+      ],
+      "dialogueText": "You really are sweet, you know that?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 250,
+      "nextNodeIds": [
+        251
+      ],
+      "dialogueText": "Hehe, thanks, I guess...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 251,
+      "nextNodeIds": [
+        252
+      ],
+      "dialogueText": "Considering your kindness in your occupation alone...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 252,
+      "nextNodeIds": [
+        253
+      ],
+      "dialogueText": "I am curious as to how you spend your free time.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 253,
+      "nextNodeIds": [
+        254
+      ],
+      "dialogueText": "Heh, what free time?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 254,
+      "nextNodeIds": [
+        255
+      ],
+      "dialogueText": "Wait, do you not have time to yourself?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 255,
+      "nextNodeIds": [
+        256
+      ],
+      "dialogueText": "Nah, I do. Just not enough when finals come around...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 256,
+      "nextNodeIds": [
+        257
+      ],
+      "dialogueText": "When I do find the time though, I usually just lay down.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 257,
+      "nextNodeIds": [
+        258
+      ],
+      "dialogueText": "...but as for stuff I do on like... off days?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 258,
+      "nextNodeIds": [
+        259
+      ],
+      "dialogueText": "Mostly it's stuff like playing video games or watching shows.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 259,
+      "nextNodeIds": [
+        260
+      ],
+      "dialogueText": "I... don't have many friends at the moment...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 260,
+      "nextNodeIds": [
+        261
+      ],
+      "dialogueText": "Zero...?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 261,
+      "nextNodeIds": [
+        262
+      ],
+      "dialogueText": "...",
+      "speakerName": "Kiri",
+      "delay": 1.5
+    },
+    {
+      "id": 262,
+      "nextNodeIds": [
+        263
+      ],
+      "dialogueText": "Ah, look at me being a killjoy. Sorry about that.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 263,
+      "nextNodeIds": [
+        264
+      ],
+      "dialogueText": "Zero, if you want to talk about-",
+      "speakerName": "Kind",
+      "delay": 0.5
+    },
+    {
+      "id": 264,
+      "nextNodeIds": [
+        265
+      ],
+      "dialogueText": "Don't worry, I'll be fine.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 265,
+      "nextNodeIds": [
+        266
+      ],
+      "dialogueText": "I hope I answered your questions?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 266,
+      "nextNodeIds": [],
+      "dialogueText": "Yeah... although you may have just generated more...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 267,
+      "nextNodeIds": [
+        268
+      ],
+      "dialogueText": "So, gotta ask...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 268,
+      "nextNodeIds": [
+        269
+      ],
+      "dialogueText": "This TV work or nah?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 269,
+      "nextNodeIds": [
+        270
+      ],
+      "dialogueText": "Mm?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 270,
+      "nextNodeIds": [
+        271
+      ],
+      "dialogueText": "Why would it not work?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 271,
+      "nextNodeIds": [
+        272
+      ],
+      "dialogueText": "Well, I just thought that since we're technically in a virtual world...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 272,
+      "nextNodeIds": [
+        273
+      ],
+      "dialogueText": "...that other virtual things were only there for decoration.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 273,
+      "nextNodeIds": [
+        274
+      ],
+      "dialogueText": "...but judging by your confusion, I assume I'm wrong?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 274,
+      "nextNodeIds": [
+        275
+      ],
+      "dialogueText": "No worries! I don't blame you for thinking that way.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 275,
+      "nextNodeIds": [
+        276
+      ],
+      "dialogueText": "To clear up any confusion, yes. The TV does work, as do other electronic appliances.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 276,
+      "nextNodeIds": [
+        277
+      ],
+      "dialogueText": "If you'd like, we can watch something together!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 277,
+      "nextNodeIds": [
+        278
+      ],
+      "dialogueText": "Mmm...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 278,
+      "nextNodeIds": [
+        279
+      ],
+      "dialogueText": "Nah, I'm good for now.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 279,
+      "nextNodeIds": [
+        280
+      ],
+      "dialogueText": "I'm here with ya now. I'd rather spend time with you here.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 280,
+      "nextNodeIds": [
+        281
+      ],
+      "dialogueText": "Make the most of the moment, ya know?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 281,
+      "nextNodeIds": [
+        282
+      ],
+      "dialogueText": "!!!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 282,
+      "nextNodeIds": [
+        283
+      ],
+      "dialogueText": "What's with that look, Mita?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 283,
+      "nextNodeIds": [
+        284
+      ],
+      "dialogueText": "Don't worry about it, Zero...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 284,
+      "nextNodeIds": [],
+      "dialogueText": "If you say so...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 285,
+      "nextNodeIds": [
+        286
+      ],
+      "dialogueText": "Huh, that's Mita alright.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 286,
+      "nextNodeIds": [
+        287
+      ],
+      "dialogueText": "Did she draw these? Or are they built into the house?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 287,
+      "nextNodeIds": [],
+      "dialogueText": "Either way, she's really pretty!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 288,
+      "nextNodeIds": [
+        289,
+        289
+      ],
+      "dialogueText": "Okay, elephant in the room here:",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 289,
+      "nextNodeIds": [
+        290,
+        290
+      ],
+      "dialogueText": "Why is the door locked?!",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 290,
+      "nextNodeIds": [
+        291,
+        291
+      ],
+      "dialogueText": "Right... that must be quite alarming for you!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 291,
+      "nextNodeIds": [
+        292,
+        292
+      ],
+      "dialogueText": "To be quite honest...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 292,
+      "nextNodeIds": [
+        293,
+        293
+      ],
+      "dialogueText": "There's nothing beyond this house.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 293,
+      "nextNodeIds": [
+        294,
+        306
+      ],
+      "dialogueText": "Really...? ",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 294,
+      "nextNodeIds": [
+        295,
+        295
+      ],
+      "dialogueText": "Pretty much, yes.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 295,
+      "nextNodeIds": [
+        296,
+        296
+      ],
+      "dialogueText": "I hope it's not too alarming for you...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 296,
+      "nextNodeIds": [
+        297,
+        297
+      ],
+      "dialogueText": "Eh... it's fine.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 297,
+      "nextNodeIds": [
+        298,
+        298
+      ],
+      "dialogueText": "As a player, I'm sure I can leave.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 298,
+      "nextNodeIds": [
+        299,
+        299
+      ],
+      "dialogueText": "I'm honestly more worried about you.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 299,
+      "nextNodeIds": [
+        300,
+        300
+      ],
+      "dialogueText": "Worried about... me?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 300,
+      "nextNodeIds": [
+        301,
+        301
+      ],
+      "dialogueText": "Zero, I'm touched, truly.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 301,
+      "nextNodeIds": [
+        302,
+        302
+      ],
+      "dialogueText": "You don't have to worry about me though.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 302,
+      "nextNodeIds": [
+        303,
+        303
+      ],
+      "dialogueText": "I'm fine here, really.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 303,
+      "nextNodeIds": [
+        304,
+        304
+      ],
+      "dialogueText": "You sure?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 304,
+      "nextNodeIds": [
+        305,
+        305
+      ],
+      "dialogueText": "Yes. I'm even better now that you're here.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 305,
+      "nextNodeIds": [],
+      "dialogueText": "Heh... alright, if you say so.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 306,
+      "nextNodeIds": [
+        294,
+        294
+      ],
+      "dialogueText": "So, it really is just a white void outside this house?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 307,
+      "nextNodeIds": [
+        308
+      ],
+      "dialogueText": "This... might be a bit more melancholy than our previous discussions...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 308,
+      "nextNodeIds": [
+        309
+      ],
+      "dialogueText": "...but I do want to know if you ever get lonely around here.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 309,
+      "nextNodeIds": [
+        310
+      ],
+      "dialogueText": "...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 310,
+      "nextNodeIds": [
+        311
+      ],
+      "dialogueText": "You don't have to talk if you don't wanna.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 311,
+      "nextNodeIds": [
+        312
+      ],
+      "dialogueText": "No... it's fine. I just didn't want to bring the mood down.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 312,
+      "nextNodeIds": [
+        313
+      ],
+      "dialogueText": "Hey, I'm the one who asked. If anything, it's my fault for bringing it up.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 313,
+      "nextNodeIds": [
+        314
+      ],
+      "dialogueText": "You're too selfless for your own good, Zero.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 314,
+      "nextNodeIds": [
+        315
+      ],
+      "dialogueText": "That all being said...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 315,
+      "nextNodeIds": [
+        316
+      ],
+      "dialogueText": "Yeah, it does get lonely around here.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 316,
+      "nextNodeIds": [
+        317
+      ],
+      "dialogueText": "I am the only person around this place, and it's not like I have friends on speed dial.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 317,
+      "nextNodeIds": [
+        318
+      ],
+      "dialogueText": "I'm... kind of stuck in purgatory until a player shows up...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 318,
+      "nextNodeIds": [
+        319
+      ],
+      "dialogueText": "Though, it's not all bad.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 319,
+      "nextNodeIds": [
+        320
+      ],
+      "dialogueText": "I do have things I like doing, and I'm no social butterfly.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 320,
+      "nextNodeIds": [
+        321
+      ],
+      "dialogueText": "Quite frankly, I enjoy spending time by myself, most of the time.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 321,
+      "nextNodeIds": [
+        322
+      ],
+      "dialogueText": "The idea of people being around me that are too loud or intrusive...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 322,
+      "nextNodeIds": [
+        323
+      ],
+      "dialogueText": "Blegh.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 323,
+      "nextNodeIds": [
+        324
+      ],
+      "dialogueText": "Heh, yeah, I get it. People can be annoying.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 324,
+      "nextNodeIds": [
+        325
+      ],
+      "dialogueText": "That being said, we're still social creatures.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 325,
+      "nextNodeIds": [
+        326
+      ],
+      "dialogueText": "Even the most introverted of us need company from time to time.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 326,
+      "nextNodeIds": [
+        327
+      ],
+      "dialogueText": "Yeah... so I've come to realize...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 327,
+      "nextNodeIds": [
+        328
+      ],
+      "dialogueText": "Though you've been a joy to be around.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 328,
+      "nextNodeIds": [
+        329
+      ],
+      "dialogueText": "I really am glad you came.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 329,
+      "nextNodeIds": [
+        330
+      ],
+      "dialogueText": "As am I, Mita.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 330,
+      "nextNodeIds": [
+        331
+      ],
+      "dialogueText": "So yes, while it does get lonely around these parts...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 331,
+      "nextNodeIds": [
+        332
+      ],
+      "dialogueText": "I don't mind it most of the time.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 332,
+      "nextNodeIds": [
+        333
+      ],
+      "dialogueText": "...and for the time I do get that way?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 333,
+      "nextNodeIds": [
+        334
+      ],
+      "dialogueText": "Well, a certain blonde-haired player seemed to help me out at the right time.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 334,
+      "nextNodeIds": [],
+      "dialogueText": "Happy to be of service, ma'am.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 335,
+      "nextNodeIds": [
+        336
+      ],
+      "dialogueText": "Hmmm...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 336,
+      "nextNodeIds": [
+        337
+      ],
+      "dialogueText": "Something on your mind?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 337,
+      "nextNodeIds": [
+        338
+      ],
+      "dialogueText": "I was just curious, how does it feel?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 338,
+      "nextNodeIds": [
+        339
+      ],
+      "dialogueText": "How does what feel?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 339,
+      "nextNodeIds": [
+        340
+      ],
+      "dialogueText": "Being in a new reality. One that isn't your own.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 340,
+      "nextNodeIds": [
+        341
+      ],
+      "dialogueText": "It must be quite... daunting, no?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 341,
+      "nextNodeIds": [
+        342
+      ],
+      "dialogueText": "You know, now that you say it...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 342,
+      "nextNodeIds": [
+        343
+      ],
+      "dialogueText": "It is a bit crazy, yeah.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 343,
+      "nextNodeIds": [
+        344
+      ],
+      "dialogueText": "But with everything being so bright and joyful here...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 344,
+      "nextNodeIds": [
+        345
+      ],
+      "dialogueText": "It kinda blows my reality out of the water.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 345,
+      "nextNodeIds": [
+        346
+      ],
+      "dialogueText": "Well, I'm glad you like it...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 346,
+      "nextNodeIds": [
+        347
+      ],
+      "dialogueText": "...but I am curious, how is your reality compared to mine?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 347,
+      "nextNodeIds": [
+        348
+      ],
+      "dialogueText": "...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 348,
+      "nextNodeIds": [
+        349
+      ],
+      "dialogueText": "Quite the displeased look...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 349,
+      "nextNodeIds": [
+        350
+      ],
+      "dialogueText": "Did I hit a nerve by accident?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 350,
+      "nextNodeIds": [
+        351
+      ],
+      "dialogueText": "No, no...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 351,
+      "nextNodeIds": [
+        352
+      ],
+      "dialogueText": "My world... just isn't as pretty as yours.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 352,
+      "nextNodeIds": [
+        353
+      ],
+      "dialogueText": "It's darker. More grey. Dirtier. ",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 353,
+      "nextNodeIds": [
+        354
+      ],
+      "dialogueText": "With more imperfections, more stress, and too much to do with to little time to do it.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 354,
+      "nextNodeIds": [
+        355
+      ],
+      "dialogueText": "You have to worry about payments, about school, about work...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 355,
+      "nextNodeIds": [
+        356
+      ],
+      "dialogueText": "About family, about friends, about social pressures as well as professional ones...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 356,
+      "nextNodeIds": [
+        357
+      ],
+      "dialogueText": "*sigh...*",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 357,
+      "nextNodeIds": [
+        358
+      ],
+      "dialogueText": "I could keep going, but in short, it's just a bunch of nonsense day in and day out.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 358,
+      "nextNodeIds": [
+        359
+      ],
+      "dialogueText": "With a world that is about as bland as a stale piece of bread.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 359,
+      "nextNodeIds": [
+        360
+      ],
+      "dialogueText": "That... sounds terrible. ",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 360,
+      "nextNodeIds": [
+        361
+      ],
+      "dialogueText": "You seem to have a number of issues with your own reality...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 361,
+      "nextNodeIds": [
+        362
+      ],
+      "dialogueText": "Yep.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 362,
+      "nextNodeIds": [
+        363
+      ],
+      "dialogueText": "That's why I like it here so much, though!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 363,
+      "nextNodeIds": [
+        364
+      ],
+      "dialogueText": "The world is soft, bright, and vibrant.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 364,
+      "nextNodeIds": [
+        365
+      ],
+      "dialogueText": "When I'm kind, you're kind back.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 365,
+      "nextNodeIds": [
+        366
+      ],
+      "dialogueText": "I... appreciate that.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 366,
+      "nextNodeIds": [
+        367
+      ],
+      "dialogueText": "It's no problem, Zero.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 367,
+      "nextNodeIds": [
+        368
+      ],
+      "dialogueText": "I'm glad to have you here. You're welcome any time.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 368,
+      "nextNodeIds": [
+        369
+      ],
+      "dialogueText": "Thanks, Mita. Time spent here is time well spent.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 369,
+      "nextNodeIds": [],
+      "dialogueText": "I'm very glad to hear that.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 370,
+      "nextNodeIds": [
+        371
+      ],
+      "dialogueText": "Here you go, just as you requested!",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 371,
+      "nextNodeIds": [
+        372
+      ],
+      "dialogueText": "Hehe, thank you~!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 372,
+      "nextNodeIds": [
+        373
+      ],
+      "dialogueText": "Please, take your seat. Food's best while it's still hot!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 373,
+      "nextNodeIds": [
+        374
+      ],
+      "dialogueText": "Thanks, Mita.",
+      "speakerName": "Kiri",
+      "delay": 1.25
+    },
+    {
+      "id": 374,
+      "nextNodeIds": [
+        375
+      ],
+      "dialogueText": "Well, bon-apetit!",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 375,
+      "nextNodeIds": [
+        376
+      ],
+      "dialogueText": "Mmm...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 376,
+      "nextNodeIds": [
+        377
+      ],
+      "dialogueText": "Something wrong?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 377,
+      "nextNodeIds": [
+        378
+      ],
+      "dialogueText": "While I did say that a meal is best when hot, it might still be a little too warm...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 378,
+      "nextNodeIds": [
+        379
+      ],
+      "dialogueText": "You know, I think we shouldn't ignore the elephant in the room.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 379,
+      "nextNodeIds": [
+        380
+      ],
+      "dialogueText": "Mm? And what would that be?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 380,
+      "nextNodeIds": [
+        381
+      ],
+      "dialogueText": "Zero, come on.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 381,
+      "nextNodeIds": [
+        382
+      ],
+      "dialogueText": "What?! I really don't know!",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 382,
+      "nextNodeIds": [
+        383
+      ],
+      "dialogueText": "For the love of the Firewall...",
+      "speakerName": "Kind",
+      "delay": 0.5
+    },
+    {
+      "id": 383,
+      "nextNodeIds": [
+        384
+      ],
+      "dialogueText": "Zero, you're in an entirely new place!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 384,
+      "nextNodeIds": [
+        385
+      ],
+      "dialogueText": "I just...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 385,
+      "nextNodeIds": [
+        386
+      ],
+      "dialogueText": "I hope you're not nervous or anything like that...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 386,
+      "nextNodeIds": [
+        387
+      ],
+      "dialogueText": "Mita... I'm fine. Seriously.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 387,
+      "nextNodeIds": [
+        388
+      ],
+      "dialogueText": "I'm happy to be here, if anything.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 388,
+      "nextNodeIds": [
+        389
+      ],
+      "dialogueText": "If that's how you feel...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 389,
+      "nextNodeIds": [
+        390
+      ],
+      "dialogueText": "I wouldn't mind having a small chat before our meal.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 390,
+      "nextNodeIds": [],
+      "dialogueText": "If you have any questions, ask away!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 391,
+      "nextNodeIds": [
+        392
+      ],
+      "dialogueText": "Is something the matter with my desk?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 392,
+      "nextNodeIds": [
+        393
+      ],
+      "dialogueText": "Nah... just curious about your cosmetics.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 393,
+      "nextNodeIds": [
+        394
+      ],
+      "dialogueText": "Typically, digital spaces make things easier, yeah?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 394,
+      "nextNodeIds": [
+        395
+      ],
+      "dialogueText": "That, and this world already removed most of the imperfections I had.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 395,
+      "nextNodeIds": [
+        396
+      ],
+      "dialogueText": "So... does the makeup have function? Does it work?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 396,
+      "nextNodeIds": [
+        397
+      ],
+      "dialogueText": "I'm glad you asked, actually.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 397,
+      "nextNodeIds": [
+        398
+      ],
+      "dialogueText": "While I do have a set appearance, I can alter it through various means.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 398,
+      "nextNodeIds": [
+        399
+      ],
+      "dialogueText": "Sure, players can play a part in this process...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 399,
+      "nextNodeIds": [
+        400
+      ],
+      "dialogueText": "...but I am allowed to use the items at my disposal as well to alter my appearance.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 400,
+      "nextNodeIds": [
+        401
+      ],
+      "dialogueText": "With all that said though...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 401,
+      "nextNodeIds": [
+        402
+      ],
+      "dialogueText": "I do apply the makeup myself.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 402,
+      "nextNodeIds": [
+        403
+      ],
+      "dialogueText": "It isn't some one and done process, but all I really do are my eyelashes.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 403,
+      "nextNodeIds": [
+        404
+      ],
+      "dialogueText": "I generally do it for aesthetic purposes,",
+      "speakerName": "Kind",
+      "delay": 0.25
+    },
+    {
+      "id": 404,
+      "nextNodeIds": [
+        405
+      ],
+      "dialogueText": "Mostly to make my eyelashes match my hair's color.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 405,
+      "nextNodeIds": [
+        406
+      ],
+      "dialogueText": "Most of my look is natural.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 406,
+      "nextNodeIds": [
+        407
+      ],
+      "dialogueText": "Interesting...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 407,
+      "nextNodeIds": [
+        408
+      ],
+      "dialogueText": "So wait, if I were to interact with your make-up...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 408,
+      "nextNodeIds": [
+        409
+      ],
+      "dialogueText": "I wouldn't be able to customize my appearance at all?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 409,
+      "nextNodeIds": [
+        410
+      ],
+      "dialogueText": "Nope... it'd just be a normal makeup table.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 410,
+      "nextNodeIds": [
+        411
+      ],
+      "dialogueText": "Want me to do your lashes later?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 411,
+      "nextNodeIds": [],
+      "dialogueText": "I... think I'm okay. Thanks.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 412,
+      "nextNodeIds": [
+        413
+      ],
+      "dialogueText": "Another... convoluted question.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 413,
+      "nextNodeIds": [
+        414
+      ],
+      "dialogueText": "Do you ever get any... glitches or bugs?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 414,
+      "nextNodeIds": [
+        415
+      ],
+      "dialogueText": "Bugs...?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 415,
+      "nextNodeIds": [
+        416
+      ],
+      "dialogueText": "I mean... I get roaches if I leave food out...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 416,
+      "nextNodeIds": [
+        417
+      ],
+      "dialogueText": "Nah, nah. That's not what I meant.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 417,
+      "nextNodeIds": [
+        418
+      ],
+      "dialogueText": "I mean like... glitches. ",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 418,
+      "nextNodeIds": [
+        419
+      ],
+      "dialogueText": "You know, errors?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 419,
+      "nextNodeIds": [
+        420
+      ],
+      "dialogueText": "Oooooh!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 420,
+      "nextNodeIds": [
+        421
+      ],
+      "dialogueText": "You don't have to worry about those.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 421,
+      "nextNodeIds": [
+        422
+      ],
+      "dialogueText": "I'm typically not one to brag...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 422,
+      "nextNodeIds": [
+        423
+      ],
+      "dialogueText": "...but my world is quite stable. ",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 423,
+      "nextNodeIds": [
+        424
+      ],
+      "dialogueText": "Phew... You had me worried there.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 424,
+      "nextNodeIds": [
+        425
+      ],
+      "dialogueText": "So no data anomaly here is gonna swallow me whole or somethin?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 425,
+      "nextNodeIds": [
+        426
+      ],
+      "dialogueText": "Don't worry, Zero.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 426,
+      "nextNodeIds": [
+        427
+      ],
+      "dialogueText": "You're in good hands!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 427,
+      "nextNodeIds": [],
+      "dialogueText": "Thanks, Mita.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 428,
+      "nextNodeIds": [
+        429
+      ],
+      "dialogueText": "That's all I can think of for now.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 429,
+      "nextNodeIds": [
+        430
+      ],
+      "dialogueText": "Besides, all this talking means our food has likely cooled off by now!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 430,
+      "nextNodeIds": [
+        431
+      ],
+      "dialogueText": "Agreed. I'm also getting hungry with all the chatter.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 431,
+      "nextNodeIds": [
+        432
+      ],
+      "dialogueText": "Ready to eat?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 432,
+      "nextNodeIds": [
+        433
+      ],
+      "dialogueText": "Absolutely!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 433,
+      "nextNodeIds": [
+        434
+      ],
+      "dialogueText": "Bon Appetit!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 434,
+      "nextNodeIds": [],
+      "dialogueText": "Bon Appetit, Mita.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 435,
+      "nextNodeIds": [
+        436
+      ],
+      "dialogueText": "O-Oh my.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 436,
+      "nextNodeIds": [
+        437
+      ],
+      "dialogueText": "THAT'S Mita?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 437,
+      "nextNodeIds": [
+        438
+      ],
+      "dialogueText": "...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 438,
+      "nextNodeIds": [],
+      "dialogueText": "She's so out of my league...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 439,
+      "nextNodeIds": [
+        440
+      ],
+      "dialogueText": "JESUS-!",
+      "speakerName": "Kiri",
+      "delay": 0.5
+    },
+    {
+      "id": 440,
+      "nextNodeIds": [
+        441
+      ],
+      "dialogueText": "Off off off off off!",
+      "speakerName": "Kiri",
+      "delay": 3.0
+    },
+    {
+      "id": 441,
+      "nextNodeIds": [
+        442
+      ],
+      "dialogueText": "Well, Mita totally heard that, right?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 442,
+      "nextNodeIds": [],
+      "dialogueText": "Can't wait to explain that to her...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 443,
+      "nextNodeIds": [
+        444
+      ],
+      "dialogueText": "I'm about ready to eat. You?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 444,
+      "nextNodeIds": [
+        445
+      ],
+      "dialogueText": "Same here. I'm hungry enough now.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 445,
+      "nextNodeIds": [
+        446
+      ],
+      "dialogueText": "Bon Appetit!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 446,
+      "nextNodeIds": [],
+      "dialogueText": "Bon Appetit!",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 447,
+      "nextNodeIds": [],
+      "dialogueText": "Where do you think you're looking?!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 448,
+      "nextNodeIds": [
+        449
+      ],
+      "dialogueText": "Ooo...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 449,
+      "nextNodeIds": [
+        450
+      ],
+      "dialogueText": "These look really cool!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 450,
+      "nextNodeIds": [
+        451
+      ],
+      "dialogueText": "Are these your drawings?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 451,
+      "nextNodeIds": [
+        452
+      ],
+      "dialogueText": "Uhhh... maybe?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 452,
+      "nextNodeIds": [
+        453
+      ],
+      "dialogueText": "Do they... look good?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 453,
+      "nextNodeIds": [
+        454
+      ],
+      "dialogueText": "\"Do they look good\", she says...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 454,
+      "nextNodeIds": [
+        455
+      ],
+      "dialogueText": "Mita, they look incredible!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 455,
+      "nextNodeIds": [
+        456
+      ],
+      "dialogueText": "Seriously, these are amazing! You've got some serious skill!",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 456,
+      "nextNodeIds": [
+        457
+      ],
+      "dialogueText": "W-Well... it took me a bit of time to make each piece, and...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 457,
+      "nextNodeIds": [
+        458
+      ],
+      "dialogueText": "Shush!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 458,
+      "nextNodeIds": [
+        459
+      ],
+      "dialogueText": "Good art takes time. No artist in history makes a masterpiece rushing their work.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 459,
+      "nextNodeIds": [
+        460
+      ],
+      "dialogueText": "Plus, even if you do take your time, it shows dedication!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 460,
+      "nextNodeIds": [
+        461
+      ],
+      "dialogueText": "Don't doubt yourself Mita. These are truly awesome!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 461,
+      "nextNodeIds": [
+        462
+      ],
+      "dialogueText": "I'm glad I get to feast my eyes on them.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 462,
+      "nextNodeIds": [
+        463
+      ],
+      "dialogueText": "You're too kind, Zero...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 463,
+      "nextNodeIds": [
+        464
+      ],
+      "dialogueText": "No way. This deserves more praise than just my words.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 464,
+      "nextNodeIds": [
+        465
+      ],
+      "dialogueText": "Considering that's all I can offer, I'll do my best to reward you with my praise!",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 465,
+      "nextNodeIds": [
+        466
+      ],
+      "dialogueText": "Thanks, Zero...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 466,
+      "nextNodeIds": [
+        467
+      ],
+      "dialogueText": "No problem at all. If you ever make more, or if you have any more, you should show me!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 467,
+      "nextNodeIds": [
+        468
+      ],
+      "dialogueText": "I'd love to take a look at all your works.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 468,
+      "nextNodeIds": [
+        469
+      ],
+      "dialogueText": "Be careful, Zero...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 469,
+      "nextNodeIds": [
+        470
+      ],
+      "dialogueText": "I just might take you up on that offer.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 470,
+      "nextNodeIds": [],
+      "dialogueText": "Good. If I get to see more of your art? I'll make a deal with the devil.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 471,
+      "nextNodeIds": [
+        472
+      ],
+      "dialogueText": "Say, I've been asking you plenty of questions...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 472,
+      "nextNodeIds": [
+        473
+      ],
+      "dialogueText": "Did you wanna ask me anything?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 473,
+      "nextNodeIds": [
+        474
+      ],
+      "dialogueText": "I just don't wanna seem like I'm interogating you is all.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 474,
+      "nextNodeIds": [
+        475
+      ],
+      "dialogueText": "It's no issue at all!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 475,
+      "nextNodeIds": [
+        476
+      ],
+      "dialogueText": "I've actually been quite curious about you.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 476,
+      "nextNodeIds": [
+        477
+      ],
+      "dialogueText": "Well then... ",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 477,
+      "nextNodeIds": [],
+      "dialogueText": "Ask away! I'll be glad to answer whatever ya throw at me.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 478,
+      "nextNodeIds": [
+        479
+      ],
+      "dialogueText": "I can't help but say you got a solid setup here.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 479,
+      "nextNodeIds": [
+        480
+      ],
+      "dialogueText": "I mean you got the big ol' keyboard, a solid mouse, nice headphones...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 480,
+      "nextNodeIds": [
+        481
+      ],
+      "dialogueText": "Wait, do you have a mousepad?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 481,
+      "nextNodeIds": [
+        482
+      ],
+      "dialogueText": "Oh! The desk doubles as one.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 482,
+      "nextNodeIds": [
+        483
+      ],
+      "dialogueText": "Huh... that's cool.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 483,
+      "nextNodeIds": [
+        484
+      ],
+      "dialogueText": "Alright, level with me here.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 484,
+      "nextNodeIds": [
+        485
+      ],
+      "dialogueText": "Do you play games on this thing?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 485,
+      "nextNodeIds": [
+        486
+      ],
+      "dialogueText": "Ummm... that's a strange question to ask, Zero.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 486,
+      "nextNodeIds": [
+        487
+      ],
+      "dialogueText": "Oh c'mon. Don't tell me you're like, a secret gamer girl or somethin'.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 487,
+      "nextNodeIds": [
+        488
+      ],
+      "dialogueText": "I-I have no clue what you mean.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 488,
+      "nextNodeIds": [
+        489
+      ],
+      "dialogueText": "Yeah, riiiiight...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 489,
+      "nextNodeIds": [
+        490
+      ],
+      "dialogueText": "If you're up for games later, let me know~",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 490,
+      "nextNodeIds": [],
+      "dialogueText": "Yeah... you got it...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 491,
+      "nextNodeIds": [
+        492
+      ],
+      "dialogueText": "Sooo...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 492,
+      "nextNodeIds": [
+        493
+      ],
+      "dialogueText": "I'm not gonna lie, I wanted to touch this thing when I first got here.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 493,
+      "nextNodeIds": [
+        494
+      ],
+      "dialogueText": "...but I also didn't wanna be inconsiderate and poke around your stuff.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 494,
+      "nextNodeIds": [
+        495
+      ],
+      "dialogueText": "Oh, don't worry about it!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 495,
+      "nextNodeIds": [
+        496
+      ],
+      "dialogueText": "The only issue is that I don't know what volume I set the thing to...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 496,
+      "nextNodeIds": [
+        497
+      ],
+      "dialogueText": "Quite frankly, I'd rather not find out.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 497,
+      "nextNodeIds": [
+        498
+      ],
+      "dialogueText": "Yeah... I'm not keen on getting my eardrums ruptured, thanks.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 498,
+      "nextNodeIds": [],
+      "dialogueText": "Neither am I...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 499,
+      "nextNodeIds": [
+        500
+      ],
+      "dialogueText": "So...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 500,
+      "nextNodeIds": [
+        501
+      ],
+      "dialogueText": "Mhm.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 501,
+      "nextNodeIds": [
+        502
+      ],
+      "dialogueText": "Yeah, I'm already pretty familiar with this thing, heh...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 502,
+      "nextNodeIds": [
+        503
+      ],
+      "dialogueText": "That you are.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 503,
+      "nextNodeIds": [
+        504
+      ],
+      "dialogueText": "Though, like I said before...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 504,
+      "nextNodeIds": [
+        505
+      ],
+      "dialogueText": "I can hardly hold it against you.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 505,
+      "nextNodeIds": [
+        506
+      ],
+      "dialogueText": "It's only natural you'd want to get acquainted with an unfamiliar environment.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 506,
+      "nextNodeIds": [
+        507
+      ],
+      "dialogueText": "Still... I shouldn't have gone poking around without finding you first.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 507,
+      "nextNodeIds": [
+        508
+      ],
+      "dialogueText": "Sorry about that, seriously.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 508,
+      "nextNodeIds": [],
+      "dialogueText": "It's okay, I forgive you.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 509,
+      "nextNodeIds": [
+        510
+      ],
+      "dialogueText": "Mita? ",
+      "speakerName": "Kiri",
+      "delay": 1.5
+    },
+    {
+      "id": 510,
+      "nextNodeIds": [
+        511
+      ],
+      "dialogueText": "Hello there!",
+      "speakerName": "Kind",
+      "delay": 2.0
+    },
+    {
+      "id": 511,
+      "nextNodeIds": [
+        512
+      ],
+      "dialogueText": "You're a player, I suppose?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 512,
+      "nextNodeIds": [
+        513
+      ],
+      "dialogueText": "Uhh... yeah, I suppose so, heh.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 513,
+      "nextNodeIds": [
+        514
+      ],
+      "dialogueText": "Well it's nice to meet you.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 514,
+      "nextNodeIds": [
+        515
+      ],
+      "dialogueText": "Although... I am curious as to what to call you.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 515,
+      "nextNodeIds": [
+        516
+      ],
+      "dialogueText": "\"Player\" sounds... ",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 516,
+      "nextNodeIds": [
+        517
+      ],
+      "dialogueText": "Monotonous?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 517,
+      "nextNodeIds": [
+        518
+      ],
+      "dialogueText": "Yeah! That.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 518,
+      "nextNodeIds": [
+        519
+      ],
+      "dialogueText": "That being said, what can I call you?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 519,
+      "nextNodeIds": [
+        520
+      ],
+      "dialogueText": "Hmmm...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 520,
+      "nextNodeIds": [
+        521
+      ],
+      "dialogueText": "I guess just call me by my username:",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 521,
+      "nextNodeIds": [
+        522
+      ],
+      "dialogueText": "Zero.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 522,
+      "nextNodeIds": [
+        523
+      ],
+      "dialogueText": "Zero... what an interesting name.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 523,
+      "nextNodeIds": [
+        524
+      ],
+      "dialogueText": "Well then, Zero, if it wasn't already apparent...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 524,
+      "nextNodeIds": [
+        525
+      ],
+      "dialogueText": "I'm Mita.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 525,
+      "nextNodeIds": [
+        526
+      ],
+      "dialogueText": "Well, nice to meet you, Mita.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 526,
+      "nextNodeIds": [
+        527
+      ],
+      "dialogueText": "Care to show me around?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 527,
+      "nextNodeIds": [],
+      "dialogueText": "Sure thing. Let's go.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 528,
+      "nextNodeIds": [
+        529
+      ],
+      "dialogueText": "Uhhh... hey...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 529,
+      "nextNodeIds": [
+        530
+      ],
+      "dialogueText": "Oh goodness...",
+      "speakerName": "Kind",
+      "delay": 2.25
+    },
+    {
+      "id": 530,
+      "nextNodeIds": [
+        531
+      ],
+      "dialogueText": "I take it you're the one who played the stereo?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 531,
+      "nextNodeIds": [
+        532
+      ],
+      "dialogueText": "Erm... maybe..?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 532,
+      "nextNodeIds": [
+        533
+      ],
+      "dialogueText": "*sigh...*",
+      "speakerName": "Kind",
+      "delay": 2.75
+    },
+    {
+      "id": 533,
+      "nextNodeIds": [
+        534
+      ],
+      "dialogueText": "Sorry about that... I guess I let my curiousity get the best of me.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 534,
+      "nextNodeIds": [
+        535
+      ],
+      "dialogueText": "Well... I can sympathize.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 535,
+      "nextNodeIds": [
+        536
+      ],
+      "dialogueText": "This environment is likely unfamiliar to you. ",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 536,
+      "nextNodeIds": [
+        537
+      ],
+      "dialogueText": "I can hardly blame your curiousity.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 537,
+      "nextNodeIds": [
+        538
+      ],
+      "dialogueText": "Heh... thanks.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 538,
+      "nextNodeIds": [
+        539
+      ],
+      "dialogueText": "Again, sorry for turning your house into an exploration site.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 539,
+      "nextNodeIds": [
+        540
+      ],
+      "dialogueText": "No need to apologize. I'd be glad to show you around if you'd like.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 540,
+      "nextNodeIds": [
+        541
+      ],
+      "dialogueText": "That'd be awesome. Thanks, Mita.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 541,
+      "nextNodeIds": [
+        520
+      ],
+      "dialogueText": "By the way... what can I call you?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 542,
+      "nextNodeIds": [
+        543
+      ],
+      "dialogueText": "Mmm...",
+      "speakerName": "Kiri",
+      "delay": 1.25
+    },
+    {
+      "id": 543,
+      "nextNodeIds": [
+        544
+      ],
+      "dialogueText": "Nah, I should probably find Mita first...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 544,
+      "nextNodeIds": [
+        545
+      ],
+      "dialogueText": "I mean, I'd freak out too if someone just barged in and turned on my TV!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 545,
+      "nextNodeIds": [
+        546
+      ],
+      "dialogueText": "Now where was I...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 546,
+      "nextNodeIds": [],
+      "dialogueText": "Oh yeah! Finding Mita. Right...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 547,
+      "nextNodeIds": [],
+      "dialogueText": "W-What are you looking at?!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 548,
+      "nextNodeIds": [
+        549
+      ],
+      "dialogueText": "Huh.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 549,
+      "nextNodeIds": [
+        550
+      ],
+      "dialogueText": "Looks like I made it alright...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 550,
+      "nextNodeIds": [],
+      "dialogueText": "Though... where's Mita?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 551,
+      "nextNodeIds": [
+        552
+      ],
+      "dialogueText": "Generic question, I know...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 552,
+      "nextNodeIds": [
+        553
+      ],
+      "dialogueText": "...but how are you doing?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 553,
+      "nextNodeIds": [
+        554
+      ],
+      "dialogueText": "I'm doing fine, Zero. Thank you for asking.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 554,
+      "nextNodeIds": [
+        555
+      ],
+      "dialogueText": "How are you?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 555,
+      "nextNodeIds": [
+        556
+      ],
+      "dialogueText": "I'm doing fine myself. ",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 556,
+      "nextNodeIds": [
+        557
+      ],
+      "dialogueText": "Just wanted to make sure I didn't like... walk in on you when sad.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 557,
+      "nextNodeIds": [
+        558
+      ],
+      "dialogueText": "You're too kind, Zero. ",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 558,
+      "nextNodeIds": [],
+      "dialogueText": "As are you, Mita.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 559,
+      "nextNodeIds": [
+        560
+      ],
+      "dialogueText": "Okay, I'm gonna sound like a total dork for this...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 560,
+      "nextNodeIds": [
+        561
+      ],
+      "dialogueText": "But that little statue of you is adorable!",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 561,
+      "nextNodeIds": [
+        562
+      ],
+      "dialogueText": "Awww, thank you!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 562,
+      "nextNodeIds": [
+        563
+      ],
+      "dialogueText": "I suppose they are quite cute, aren't they?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 563,
+      "nextNodeIds": [
+        564
+      ],
+      "dialogueText": "Funnily enough, in this world, we can create these small avatars of ourselves.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 564,
+      "nextNodeIds": [
+        565
+      ],
+      "dialogueText": "They're called \"chibis\".",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 565,
+      "nextNodeIds": [
+        566
+      ],
+      "dialogueText": "That's pretty cool!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 566,
+      "nextNodeIds": [
+        567
+      ],
+      "dialogueText": "I take it that it's not exactly the easiest process though...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 567,
+      "nextNodeIds": [
+        568
+      ],
+      "dialogueText": "Yeah... it's really the only reason I'm not showing you right now.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 568,
+      "nextNodeIds": [
+        569
+      ],
+      "dialogueText": "Don't worry though! ",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 569,
+      "nextNodeIds": [
+        570
+      ],
+      "dialogueText": "This statue is cute enough, isn't it?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 570,
+      "nextNodeIds": [],
+      "dialogueText": "Sure is, Mita.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 571,
+      "nextNodeIds": [
+        572
+      ],
+      "dialogueText": "Feeling tired at all, Zero?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 572,
+      "nextNodeIds": [
+        573
+      ],
+      "dialogueText": "I can feel myself getting there...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 573,
+      "nextNodeIds": [
+        574
+      ],
+      "dialogueText": "Isn't it fairly early in the day here though?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 574,
+      "nextNodeIds": [
+        575
+      ],
+      "dialogueText": "I mean, our meal may contribute to our exhausted state.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 575,
+      "nextNodeIds": [
+        576
+      ],
+      "dialogueText": "Whenever I eat things, I typically feel the need to put my head down and rest.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 576,
+      "nextNodeIds": [
+        577
+      ],
+      "dialogueText": "That's because you put so much salt on it...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 577,
+      "nextNodeIds": [
+        578
+      ],
+      "dialogueText": "Yeah, yeah, whatever.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 578,
+      "nextNodeIds": [
+        579
+      ],
+      "dialogueText": "Either way, I don't think it's the meal that's done us in.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 579,
+      "nextNodeIds": [
+        580
+      ],
+      "dialogueText": "Maybe it's the interaction?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 580,
+      "nextNodeIds": [
+        581
+      ],
+      "dialogueText": "That's probably it. ",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 581,
+      "nextNodeIds": [
+        582
+      ],
+      "dialogueText": "Meeting new people and socializing with them...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 582,
+      "nextNodeIds": [
+        583
+      ],
+      "dialogueText": "Especially when you aren't exactly the most social to begin with...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 583,
+      "nextNodeIds": [
+        584
+      ],
+      "dialogueText": "That can definitely wear someone out.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 584,
+      "nextNodeIds": [
+        585
+      ],
+      "dialogueText": "I suppose so.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 585,
+      "nextNodeIds": [
+        586
+      ],
+      "dialogueText": "Not to mention the fact I basically had to... warp.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 586,
+      "nextNodeIds": [
+        587
+      ],
+      "dialogueText": "I can't imagine that being a relaxing activity...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 587,
+      "nextNodeIds": [],
+      "dialogueText": "Definitely not as a first time event, no...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 588,
+      "nextNodeIds": [
+        589
+      ],
+      "dialogueText": "You seem to be eyeing up those apples.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 589,
+      "nextNodeIds": [
+        590
+      ],
+      "dialogueText": "Are you hungry perchance?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 590,
+      "nextNodeIds": [
+        591
+      ],
+      "dialogueText": "Nah, I'm not hungry...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 591,
+      "nextNodeIds": [
+        592
+      ],
+      "dialogueText": "I just really like apples.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 592,
+      "nextNodeIds": [
+        593
+      ],
+      "dialogueText": "They're my favorite fruit, afterall!",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 593,
+      "nextNodeIds": [
+        594
+      ],
+      "dialogueText": "Interesting!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 594,
+      "nextNodeIds": [
+        595
+      ],
+      "dialogueText": "Had you told me earlier, I would've cut up some apple slices for us.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 595,
+      "nextNodeIds": [
+        596
+      ],
+      "dialogueText": "Tell me, Zero...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 596,
+      "nextNodeIds": [
+        597
+      ],
+      "dialogueText": "Are there different kinds of apples where you're from?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 597,
+      "nextNodeIds": [
+        598
+      ],
+      "dialogueText": "Yep! Plenty of different kinds.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 598,
+      "nextNodeIds": [
+        599
+      ],
+      "dialogueText": "My favorite types of apples are yellow...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 599,
+      "nextNodeIds": [
+        600
+      ],
+      "dialogueText": "Which seems to be the only kind absent here.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 600,
+      "nextNodeIds": [
+        601
+      ],
+      "dialogueText": "That being said, the apples here all seem to be...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 601,
+      "nextNodeIds": [
+        602
+      ],
+      "dialogueText": "Perfect.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 602,
+      "nextNodeIds": [
+        603
+      ],
+      "dialogueText": "I'm glad to hear that!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 603,
+      "nextNodeIds": [
+        604
+      ],
+      "dialogueText": "While I myself am not the biggest fan of apples...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 604,
+      "nextNodeIds": [
+        605
+      ],
+      "dialogueText": "I'm glad to know someone who is.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 605,
+      "nextNodeIds": [
+        606
+      ],
+      "dialogueText": "After all, if they're as perfect as you say...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 606,
+      "nextNodeIds": [
+        607
+      ],
+      "dialogueText": "You should come here more often.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 607,
+      "nextNodeIds": [
+        608
+      ],
+      "dialogueText": "It'd be a shame for them all to go to waste.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 608,
+      "nextNodeIds": [],
+      "dialogueText": "I just might then, hehe~",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 609,
+      "nextNodeIds": [],
+      "dialogueText": "Get the salt shaker, Zero!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 610,
+      "nextNodeIds": [],
+      "dialogueText": "Can you grab the salt shaker?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 611,
+      "nextNodeIds": [],
+      "dialogueText": "I'll finish up here. Grab the salt!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 612,
+      "nextNodeIds": [],
+      "dialogueText": "Salt's in my room. I think it's by my bathroom door?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 613,
+      "nextNodeIds": [],
+      "dialogueText": "Find the salt for her already...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 614,
+      "nextNodeIds": [
+        615
+      ],
+      "dialogueText": "I may have already asked you this...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 615,
+      "nextNodeIds": [
+        616
+      ],
+      "dialogueText": "...but I was wondering if you felt okay.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 616,
+      "nextNodeIds": [
+        617
+      ],
+      "dialogueText": "Eh?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 617,
+      "nextNodeIds": [
+        618
+      ],
+      "dialogueText": "I mean, I feel fine.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 618,
+      "nextNodeIds": [
+        619
+      ],
+      "dialogueText": "Why do you ask?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 619,
+      "nextNodeIds": [
+        620
+      ],
+      "dialogueText": "Well, I know for one that someone's external appearance may not equal how they feel inside.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 620,
+      "nextNodeIds": [
+        621
+      ],
+      "dialogueText": "While I don't have direct conversational experience...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 621,
+      "nextNodeIds": [
+        622
+      ],
+      "dialogueText": "I do have some social knowledge built in to me.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 622,
+      "nextNodeIds": [
+        623
+      ],
+      "dialogueText": "I'm just curious about you is all.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 623,
+      "nextNodeIds": [
+        624
+      ],
+      "dialogueText": "Besides, I do care about people, and you're no exception!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 624,
+      "nextNodeIds": [
+        625
+      ],
+      "dialogueText": "...and maybe I'm a bit worried that you might be uncomfortable here, heh...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 625,
+      "nextNodeIds": [
+        626
+      ],
+      "dialogueText": "Why didn't you just lead with that?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 626,
+      "nextNodeIds": [
+        627
+      ],
+      "dialogueText": "To ease your worries, I'm fine, Mita.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 627,
+      "nextNodeIds": [
+        628
+      ],
+      "dialogueText": "I am genuinely happy here. You've got a nice place, let alone dimension.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 628,
+      "nextNodeIds": [
+        629
+      ],
+      "dialogueText": "You really think so?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 629,
+      "nextNodeIds": [
+        630
+      ],
+      "dialogueText": "Yep. ",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 630,
+      "nextNodeIds": [
+        631
+      ],
+      "dialogueText": "You don't gotta worry about me so much, Mita.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 631,
+      "nextNodeIds": [
+        632
+      ],
+      "dialogueText": "Or rather, worry about how this place is affecting me~",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 632,
+      "nextNodeIds": [
+        633
+      ],
+      "dialogueText": "Your place is gorgeous. Seriously. It feels euphoric in a way.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 633,
+      "nextNodeIds": [
+        634
+      ],
+      "dialogueText": "Such high praise... I suppose it is a nice place.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 634,
+      "nextNodeIds": [
+        635
+      ],
+      "dialogueText": "Then again, I don't really have other places to reference, do I...?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 635,
+      "nextNodeIds": [
+        636
+      ],
+      "dialogueText": "I mean... I suppose not?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 636,
+      "nextNodeIds": [
+        637
+      ],
+      "dialogueText": "Though, all things considered, your place is in the upper echelon.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 637,
+      "nextNodeIds": [
+        638
+      ],
+      "dialogueText": "It's really that good?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 638,
+      "nextNodeIds": [
+        639
+      ],
+      "dialogueText": "Yeah. Have you SEEN my world?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 639,
+      "nextNodeIds": [
+        640
+      ],
+      "dialogueText": "Okay, stupid question, of course you haven't...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 640,
+      "nextNodeIds": [
+        641
+      ],
+      "dialogueText": "...but just trust me when I say this blows my world out of the park.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 641,
+      "nextNodeIds": [
+        642
+      ],
+      "dialogueText": "Alright, I trust you.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 642,
+      "nextNodeIds": [
+        643
+      ],
+      "dialogueText": "I'm glad my place is suitable for you.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 643,
+      "nextNodeIds": [
+        644
+      ],
+      "dialogueText": "It's more than suitable, Mita.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 644,
+      "nextNodeIds": [
+        645
+      ],
+      "dialogueText": "It's amazing, just like its owner.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 645,
+      "nextNodeIds": [],
+      "dialogueText": "Oh stop it...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 646,
+      "nextNodeIds": [
+        647
+      ],
+      "dialogueText": "Something I noticed is how bright it is in here...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 647,
+      "nextNodeIds": [
+        648
+      ],
+      "dialogueText": "Is it too bright? Do I need to turn it down?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 648,
+      "nextNodeIds": [
+        649
+      ],
+      "dialogueText": "Haha, no, no. ",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 649,
+      "nextNodeIds": [
+        650
+      ],
+      "dialogueText": "It was actually a compliment. I like how vibrant it is.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 650,
+      "nextNodeIds": [
+        651
+      ],
+      "dialogueText": "Ahh, I see.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 651,
+      "nextNodeIds": [],
+      "dialogueText": "I'm glad you like it here, then.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 652,
+      "nextNodeIds": [
+        653
+      ],
+      "dialogueText": "So... just wanted to ask...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 653,
+      "nextNodeIds": [
+        654
+      ],
+      "dialogueText": "What's the deal outside?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 654,
+      "nextNodeIds": [
+        655
+      ],
+      "dialogueText": "Is there really just... nothing outside the house at all?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 655,
+      "nextNodeIds": [
+        656
+      ],
+      "dialogueText": "Well...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 656,
+      "nextNodeIds": [
+        657
+      ],
+      "dialogueText": "It's... complicated.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 657,
+      "nextNodeIds": [
+        658
+      ],
+      "dialogueText": "Think of it like this.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 658,
+      "nextNodeIds": [
+        659
+      ],
+      "dialogueText": "Inside of the house is full of tangeable objects.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 659,
+      "nextNodeIds": [
+        660
+      ],
+      "dialogueText": "Things you can touch, interact with, etcetera.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 660,
+      "nextNodeIds": [
+        661
+      ],
+      "dialogueText": "Right. I think I'm getting it...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 661,
+      "nextNodeIds": [
+        662
+      ],
+      "dialogueText": "Outside the house... there is stuff, but it's not tangeable.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 662,
+      "nextNodeIds": [
+        663
+      ],
+      "dialogueText": "Almost like some kind of void...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 663,
+      "nextNodeIds": [
+        664
+      ],
+      "dialogueText": "That's... really trippy.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 664,
+      "nextNodeIds": [
+        665
+      ],
+      "dialogueText": "If I were to compare it to my reality, I'd say it's akin to matter vs dark matter.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 665,
+      "nextNodeIds": [
+        666
+      ],
+      "dialogueText": "Dark... matter?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 666,
+      "nextNodeIds": [
+        667
+      ],
+      "dialogueText": "What is that?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 667,
+      "nextNodeIds": [
+        668
+      ],
+      "dialogueText": "Ahh... just some science stuff. ",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 668,
+      "nextNodeIds": [
+        669
+      ],
+      "dialogueText": "I won't bore you with my explanation...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 669,
+      "nextNodeIds": [
+        670
+      ],
+      "dialogueText": "Actually, it sounds rather interesting.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 670,
+      "nextNodeIds": [
+        671
+      ],
+      "dialogueText": "I'd love to learn more about it sometime.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 671,
+      "nextNodeIds": [
+        672
+      ],
+      "dialogueText": "Well you know what?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 672,
+      "nextNodeIds": [],
+      "dialogueText": "I'll take you up on that offer sometime, then.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 673,
+      "nextNodeIds": [],
+      "dialogueText": "Hey! Where'd you go?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 674,
+      "nextNodeIds": [],
+      "dialogueText": "Closing the game isn't that hard, you know!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 675,
+      "nextNodeIds": [],
+      "dialogueText": "*sigh...* your poor PC...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 676,
+      "nextNodeIds": [],
+      "dialogueText": "What are ya up to?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 677,
+      "nextNodeIds": [],
+      "dialogueText": "I don't got all day, ya know!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 678,
+      "nextNodeIds": [
+        679
+      ],
+      "dialogueText": "Well, isn't this TV a lil' retro.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 679,
+      "nextNodeIds": [
+        680
+      ],
+      "dialogueText": "Do you not like it?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 680,
+      "nextNodeIds": [
+        681
+      ],
+      "dialogueText": "Wait, no! That's not what I meant!",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 681,
+      "nextNodeIds": [
+        682
+      ],
+      "dialogueText": "I was just saying that it looks...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 682,
+      "nextNodeIds": [
+        683
+      ],
+      "dialogueText": "Old?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 683,
+      "nextNodeIds": [
+        684
+      ],
+      "dialogueText": "But not in a bad way. Like a nostalgic way.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 684,
+      "nextNodeIds": [
+        685
+      ],
+      "dialogueText": "Oh, I see.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 685,
+      "nextNodeIds": [
+        686
+      ],
+      "dialogueText": "Does preserving old equipment frequently invoke nostalgia in you, Zero?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 686,
+      "nextNodeIds": [
+        687
+      ],
+      "dialogueText": "Mmm... not always. ",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 687,
+      "nextNodeIds": [
+        688
+      ],
+      "dialogueText": "Quite frankly, the nostalgia doesn't come from the object itself...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 688,
+      "nextNodeIds": [
+        689
+      ],
+      "dialogueText": "It comes from the memories or story behind it.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 689,
+      "nextNodeIds": [
+        690
+      ],
+      "dialogueText": "Hmmm...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 690,
+      "nextNodeIds": [
+        691
+      ],
+      "dialogueText": "Then why would my TV ellicit such feelings?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 691,
+      "nextNodeIds": [
+        692
+      ],
+      "dialogueText": "It's not like you've been around here for a long time...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 692,
+      "nextNodeIds": [
+        693
+      ],
+      "dialogueText": "Probably because it reminds me of the TV at my grandma's place.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 693,
+      "nextNodeIds": [
+        694
+      ],
+      "dialogueText": "I used to watch cartoons on it when I was younger.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 694,
+      "nextNodeIds": [
+        695
+      ],
+      "dialogueText": "Most interesting.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 695,
+      "nextNodeIds": [],
+      "dialogueText": "Either way, I'm glad you like it.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 696,
+      "nextNodeIds": [
+        697
+      ],
+      "dialogueText": "Getting tired, Zero?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 697,
+      "nextNodeIds": [
+        698
+      ],
+      "dialogueText": "Just a little, yeah.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 698,
+      "nextNodeIds": [
+        699
+      ],
+      "dialogueText": "Doesn't help your place is comfy...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 699,
+      "nextNodeIds": [
+        700
+      ],
+      "dialogueText": "Do you wish to stay longer?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 700,
+      "nextNodeIds": [],
+      "dialogueText": "I mean, I could if you-",
+      "speakerName": "Kiri",
+      "delay": 0.25
+    },
+    {
+      "id": 701,
+      "nextNodeIds": [
+        702
+      ],
+      "dialogueText": "These pictures of you are... quite pretty.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 702,
+      "nextNodeIds": [
+        703
+      ],
+      "dialogueText": "Did you draw them yourself? They look really well made!",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 703,
+      "nextNodeIds": [
+        704
+      ],
+      "dialogueText": "Aww, thank you!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 704,
+      "nextNodeIds": [
+        705
+      ],
+      "dialogueText": "To answer your question, however...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 705,
+      "nextNodeIds": [
+        706
+      ],
+      "dialogueText": "No, I did not draw those portraits.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 706,
+      "nextNodeIds": [
+        707
+      ],
+      "dialogueText": "They came with my house, funnily enough.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 707,
+      "nextNodeIds": [
+        708
+      ],
+      "dialogueText": "Although, I will admit...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 708,
+      "nextNodeIds": [
+        709
+      ],
+      "dialogueText": "I do enjoy drawing...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 709,
+      "nextNodeIds": [
+        710
+      ],
+      "dialogueText": "Ooooh?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 710,
+      "nextNodeIds": [
+        711
+      ],
+      "dialogueText": "You should show me some of your drawings.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 711,
+      "nextNodeIds": [
+        712
+      ],
+      "dialogueText": "I'm not that good, trust me...",
+      "speakerName": "Kind",
+      "delay": 1.25
+    },
+    {
+      "id": 712,
+      "nextNodeIds": [
+        713
+      ],
+      "dialogueText": "Nonsense!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 713,
+      "nextNodeIds": [
+        714
+      ],
+      "dialogueText": "You're probably plenty good.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 714,
+      "nextNodeIds": [
+        715
+      ],
+      "dialogueText": "Better than I ever could be, at least.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 715,
+      "nextNodeIds": [
+        716
+      ],
+      "dialogueText": "Even if it does look bad by your standards or whatever...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 716,
+      "nextNodeIds": [
+        717
+      ],
+      "dialogueText": "I think that if you put time and effort into it, it'll look great!",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 717,
+      "nextNodeIds": [
+        718
+      ],
+      "dialogueText": "Zero...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 718,
+      "nextNodeIds": [
+        719
+      ],
+      "dialogueText": "Tell you what, if you can find my sketchbook...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 719,
+      "nextNodeIds": [
+        720
+      ],
+      "dialogueText": "I'll let you take a peek.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 720,
+      "nextNodeIds": [
+        721
+      ],
+      "dialogueText": "Oh? Is that a challenge?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 721,
+      "nextNodeIds": [],
+      "dialogueText": "Why don't you find out?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 722,
+      "nextNodeIds": [],
+      "dialogueText": "Is there something you need...?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 723,
+      "nextNodeIds": [
+        96
+      ],
+      "dialogueText": "What the hell?!",
+      "speakerName": "Kiri",
+      "delay": 1.5
+    },
+    {
+      "id": 96,
+      "nextNodeIds": [],
+      "dialogueText": "Note to self, never do that again...",
+      "speakerName": "Kiri",
+      "delay": 1.25
+    },
+    {
+      "id": 725,
+      "nextNodeIds": [
+        726
+      ],
+      "dialogueText": "I knew you were hungry!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 726,
+      "nextNodeIds": [
+        727
+      ],
+      "dialogueText": "Eh?!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 727,
+      "nextNodeIds": [
+        728
+      ],
+      "dialogueText": "Come on! What if I just found the fridge interesting?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 728,
+      "nextNodeIds": [
+        729
+      ],
+      "dialogueText": "Sure. Is your stomach growling a symptom of your interest as well~?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 729,
+      "nextNodeIds": [
+        730
+      ],
+      "dialogueText": "Touche...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 730,
+      "nextNodeIds": [
+        731
+      ],
+      "dialogueText": "Yeah, okay, I'm a bit hungry. What do ya got?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 731,
+      "nextNodeIds": [
+        732
+      ],
+      "dialogueText": "How about a quick stir fry?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 732,
+      "nextNodeIds": [
+        733
+      ],
+      "dialogueText": "I can make it for us, nice and quick!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 733,
+      "nextNodeIds": [
+        734
+      ],
+      "dialogueText": "Actually...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 734,
+      "nextNodeIds": [
+        735
+      ],
+      "dialogueText": "Why don't I help you out?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 735,
+      "nextNodeIds": [
+        736
+      ],
+      "dialogueText": "Are you sure?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 736,
+      "nextNodeIds": [
+        737
+      ],
+      "dialogueText": "I really can handle it by myself...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 737,
+      "nextNodeIds": [
+        738
+      ],
+      "dialogueText": "Hey, I'm the one who popped into your world and started roaming your house.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 738,
+      "nextNodeIds": [
+        739
+      ],
+      "dialogueText": "You've been more than a good host, it's the least I can do to repay your hospitality.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 739,
+      "nextNodeIds": [
+        740
+      ],
+      "dialogueText": "You really are something else, Zero...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 740,
+      "nextNodeIds": [
+        741
+      ],
+      "dialogueText": "Alright then. I'll prepare the rice, can you chop the carrots and put the meat into the pan?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 741,
+      "nextNodeIds": [],
+      "dialogueText": "Absolutely.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 742,
+      "nextNodeIds": [
+        743
+      ],
+      "dialogueText": "Damn it's bright outside...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 743,
+      "nextNodeIds": [
+        744
+      ],
+      "dialogueText": "Is the space outside the house just a white void?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 744,
+      "nextNodeIds": [],
+      "dialogueText": "I should probably ask Mita...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 745,
+      "nextNodeIds": [
+        746
+      ],
+      "dialogueText": "That was just what I needed...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 746,
+      "nextNodeIds": [
+        747
+      ],
+      "dialogueText": "It was that good, hm?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 747,
+      "nextNodeIds": [
+        748
+      ],
+      "dialogueText": "I'll have to remember that.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 748,
+      "nextNodeIds": [
+        749
+      ],
+      "dialogueText": "Are you full, or do you need more?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 749,
+      "nextNodeIds": [
+        750
+      ],
+      "dialogueText": "I'm good. You?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 750,
+      "nextNodeIds": [
+        751
+      ],
+      "dialogueText": "Yeah, I'm fine. Thank you for your help, Zero.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 751,
+      "nextNodeIds": [
+        752
+      ],
+      "dialogueText": "Consider it payback for the hospitality. ",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 752,
+      "nextNodeIds": [
+        753
+      ],
+      "dialogueText": "Anything you wanna do now?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 753,
+      "nextNodeIds": [
+        754
+      ],
+      "dialogueText": "Eh, not really.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 754,
+      "nextNodeIds": [
+        755
+      ],
+      "dialogueText": "Do you have any ideas?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 755,
+      "nextNodeIds": [
+        756
+      ],
+      "dialogueText": "Honestly... not much. I feel a bit tired after that meal...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 756,
+      "nextNodeIds": [
+        757
+      ],
+      "dialogueText": "Oh, if that's the case, I can leave.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 757,
+      "nextNodeIds": [
+        758
+      ],
+      "dialogueText": "I mean, if you want to, feel free...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 758,
+      "nextNodeIds": [
+        759
+      ],
+      "dialogueText": "But if you want to stay a bit longer, I don't mind.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 759,
+      "nextNodeIds": [],
+      "dialogueText": "Sure, I'm game.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 760,
+      "nextNodeIds": [
+        761
+      ],
+      "dialogueText": "Uhm... Zero...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 761,
+      "nextNodeIds": [
+        762
+      ],
+      "dialogueText": "Is there any... particular reason you're interested in my wardrobe?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 762,
+      "nextNodeIds": [
+        763
+      ],
+      "dialogueText": "!!!",
+      "speakerName": "Kiri",
+      "delay": 0.5
+    },
+    {
+      "id": 763,
+      "nextNodeIds": [
+        764
+      ],
+      "dialogueText": "What...?! No way! Why would I be interested in some weird wardrobe!",
+      "speakerName": "Kiri",
+      "delay": 0.5
+    },
+    {
+      "id": 764,
+      "nextNodeIds": [
+        765
+      ],
+      "dialogueText": "N-Not that it's weird or anything!!!",
+      "speakerName": "Kiri",
+      "delay": 0.5
+    },
+    {
+      "id": 765,
+      "nextNodeIds": [
+        766
+      ],
+      "dialogueText": "Just that... like...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 766,
+      "nextNodeIds": [
+        767
+      ],
+      "dialogueText": "Ugh fine...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 767,
+      "nextNodeIds": [
+        768
+      ],
+      "dialogueText": "Don't get mad at me for this, alright?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 768,
+      "nextNodeIds": [
+        769
+      ],
+      "dialogueText": "I just... have some strange curiosity towards it...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 769,
+      "nextNodeIds": [
+        770
+      ],
+      "dialogueText": "Wh-What's that supposed to mean?!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 770,
+      "nextNodeIds": [
+        771
+      ],
+      "dialogueText": "W-WAIT!!! No, I didn't mean it like that!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 771,
+      "nextNodeIds": [
+        772
+      ],
+      "dialogueText": "I just meant like... what if there's a dungeon or something behind it?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 772,
+      "nextNodeIds": [
+        773
+      ],
+      "dialogueText": "Or like a secret room! You know, like in the Lion, the Witch, and the Wadrobe?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 773,
+      "nextNodeIds": [
+        774
+      ],
+      "dialogueText": "*sigh...*",
+      "speakerName": "Kind",
+      "delay": 1.5
+    },
+    {
+      "id": 774,
+      "nextNodeIds": [
+        775
+      ],
+      "dialogueText": "Zero, I have no skeletons in my closet.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 775,
+      "nextNodeIds": [
+        776
+      ],
+      "dialogueText": "If you want to take a look, be my guest.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 776,
+      "nextNodeIds": [
+        777
+      ],
+      "dialogueText": "Just know it's not very... kind to look in a lady's closet.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 777,
+      "nextNodeIds": [
+        778
+      ],
+      "dialogueText": "...Your look is scaring me.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 778,
+      "nextNodeIds": [
+        779
+      ],
+      "dialogueText": "Alright, fine...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 779,
+      "nextNodeIds": [
+        780
+      ],
+      "dialogueText": "I won't look in the wardrobe.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 780,
+      "nextNodeIds": [
+        781
+      ],
+      "dialogueText": "But if you're hiding a body in there, I'm reporting you to the anti-virus.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 781,
+      "nextNodeIds": [],
+      "dialogueText": "Zero!",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 782,
+      "nextNodeIds": [
+        783
+      ],
+      "dialogueText": "Say, Zero...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 783,
+      "nextNodeIds": [
+        784
+      ],
+      "dialogueText": "Are you feeling hungry by any chance?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 784,
+      "nextNodeIds": [
+        785
+      ],
+      "dialogueText": "Hmm...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 785,
+      "nextNodeIds": [
+        786
+      ],
+      "dialogueText": "You know, now that you mention it, I am feeling a bit peckish.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 786,
+      "nextNodeIds": [
+        787
+      ],
+      "dialogueText": "When you are ready, let's head to the kitchen.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 787,
+      "nextNodeIds": [
+        788
+      ],
+      "dialogueText": "I'll gladly prepare some food for us.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 788,
+      "nextNodeIds": [
+        789
+      ],
+      "dialogueText": "Wow, that's really generous of you, Mita.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 789,
+      "nextNodeIds": [
+        790
+      ],
+      "dialogueText": "Tell you what, I'll help out too.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 790,
+      "nextNodeIds": [
+        791
+      ],
+      "dialogueText": "Really? Are you sure?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 791,
+      "nextNodeIds": [
+        792
+      ],
+      "dialogueText": "Pretty sure.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 792,
+      "nextNodeIds": [
+        793
+      ],
+      "dialogueText": "Besides, you're offering to help me. ",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 793,
+      "nextNodeIds": [
+        794
+      ],
+      "dialogueText": "Why not return the favor, even if in a small way?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 794,
+      "nextNodeIds": [
+        795
+      ],
+      "dialogueText": "That would be very much appreciated.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 795,
+      "nextNodeIds": [],
+      "dialogueText": "Thank you!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 796,
+      "nextNodeIds": [
+        797
+      ],
+      "dialogueText": "There it is.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 797,
+      "nextNodeIds": [],
+      "dialogueText": "Now the question is, why does Mita have salt in her room?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 798,
+      "nextNodeIds": [
+        799
+      ],
+      "dialogueText": "Eh?",
+      "speakerName": "Kiri",
+      "delay": 0.25
+    },
+    {
+      "id": 799,
+      "nextNodeIds": [
+        800
+      ],
+      "dialogueText": "Oh you've gotta be kidding me!",
+      "speakerName": "Kiri",
+      "delay": 1.75
+    },
+    {
+      "id": 800,
+      "nextNodeIds": [
+        801
+      ],
+      "dialogueText": "DAMN IT!",
+      "speakerName": "Kiri",
+      "delay": 2.0
+    },
+    {
+      "id": 801,
+      "nextNodeIds": [
+        802
+      ],
+      "dialogueText": "What kind of front door locks from the outside?!",
+      "speakerName": "Kiri",
+      "delay": 1.25
+    },
+    {
+      "id": 802,
+      "nextNodeIds": [],
+      "dialogueText": "...If it ends up being a pull door I swear...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 803,
+      "nextNodeIds": [],
+      "dialogueText": "C-Can I help you?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 804,
+      "nextNodeIds": [],
+      "dialogueText": "If you want to eat, just say so!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 805,
+      "nextNodeIds": [],
+      "dialogueText": "Zero? Is everything okay?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 806,
+      "nextNodeIds": [],
+      "dialogueText": "Ummm... Zero? You there?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 807,
+      "nextNodeIds": [],
+      "dialogueText": "...why are you staring at me...?",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 808,
+      "nextNodeIds": [],
+      "dialogueText": "Dude. DO SOMETHING.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 809,
+      "nextNodeIds": [
+        810
+      ],
+      "dialogueText": "I can't help but point out that you've referred to me as a \"player\".",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 810,
+      "nextNodeIds": [
+        811
+      ],
+      "dialogueText": "I mean... aren't you?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 811,
+      "nextNodeIds": [
+        812
+      ],
+      "dialogueText": "I suppose I am, yeah.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 812,
+      "nextNodeIds": [
+        813
+      ],
+      "dialogueText": "I was more wondering whether or not you've encountered other players before.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 813,
+      "nextNodeIds": [
+        814
+      ],
+      "dialogueText": "You've referred to me as player on sight, so I figured this isn't the first time, yeah?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 814,
+      "nextNodeIds": [
+        815
+      ],
+      "dialogueText": "Actually, no. You are my first player.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 815,
+      "nextNodeIds": [
+        816
+      ],
+      "dialogueText": "Wait, for real?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 816,
+      "nextNodeIds": [
+        817
+      ],
+      "dialogueText": "You have a very sweet smile on your face right now.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 817,
+      "nextNodeIds": [
+        818
+      ],
+      "dialogueText": "...shut up.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 818,
+      "nextNodeIds": [
+        819
+      ],
+      "dialogueText": "Just saying~",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 819,
+      "nextNodeIds": [
+        820
+      ],
+      "dialogueText": "To reiterate, yes, you are my first player.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 820,
+      "nextNodeIds": [
+        821
+      ],
+      "dialogueText": "Gotcha, gotcha. ",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 821,
+      "nextNodeIds": [
+        822
+      ],
+      "dialogueText": "So then, how do you know about... players in general?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 822,
+      "nextNodeIds": [
+        823
+      ],
+      "dialogueText": "If you have no past experience, wouldn't it make more sense to be confused at my arrival?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 823,
+      "nextNodeIds": [
+        824
+      ],
+      "dialogueText": "Probably would make more sense to freak out at the presence of a stranger in my home, no?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 824,
+      "nextNodeIds": [
+        825
+      ],
+      "dialogueText": "True...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 825,
+      "nextNodeIds": [
+        826
+      ],
+      "dialogueText": "That being said, it may be a little hard for you to understand...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 826,
+      "nextNodeIds": [
+        827
+      ],
+      "dialogueText": "...but I was already aware of players, even before meeting you.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 827,
+      "nextNodeIds": [
+        828
+      ],
+      "dialogueText": "Self aware, huh?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 828,
+      "nextNodeIds": [
+        829
+      ],
+      "dialogueText": "Yep, exactly!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 829,
+      "nextNodeIds": [
+        830
+      ],
+      "dialogueText": "Though... you look concerned. Is everything okay?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 830,
+      "nextNodeIds": [
+        831
+      ],
+      "dialogueText": "It's nothing. Just flashbacks to games I used to play is all.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 831,
+      "nextNodeIds": [
+        832
+      ],
+      "dialogueText": "...Huh.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 832,
+      "nextNodeIds": [
+        833
+      ],
+      "dialogueText": "To confirm your suspicions, yes. I am self-aware.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 833,
+      "nextNodeIds": [
+        834
+      ],
+      "dialogueText": "I know I'm in a game, I know I'm in a virtual space,",
+      "speakerName": "Kind",
+      "delay": 0.5
+    },
+    {
+      "id": 834,
+      "nextNodeIds": [
+        835
+      ],
+      "dialogueText": "and to top it all off, I am aware of players like yourself.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 835,
+      "nextNodeIds": [
+        836
+      ],
+      "dialogueText": "That is how I know what players are, and I referred to you as one.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 836,
+      "nextNodeIds": [
+        837
+      ],
+      "dialogueText": "Heh, pretty interesting, honestly.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 837,
+      "nextNodeIds": [
+        838
+      ],
+      "dialogueText": "So, wait, when I leave...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 838,
+      "nextNodeIds": [
+        839
+      ],
+      "dialogueText": "Do you meet with other players or like...?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 839,
+      "nextNodeIds": [
+        840
+      ],
+      "dialogueText": "I mean, I could...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 840,
+      "nextNodeIds": [
+        841
+      ],
+      "dialogueText": "...but I think I'd rather wait around for you.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 841,
+      "nextNodeIds": [
+        842
+      ],
+      "dialogueText": "...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 842,
+      "nextNodeIds": [
+        843
+      ],
+      "dialogueText": "That's really sweet. Thanks Mita.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 843,
+      "nextNodeIds": [
+        844
+      ],
+      "dialogueText": "I mean it Zero.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 844,
+      "nextNodeIds": [
+        845
+      ],
+      "dialogueText": "It's a pleasure to spend time with you.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 845,
+      "nextNodeIds": [],
+      "dialogueText": "Same here, Mita. Same here.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 846,
+      "nextNodeIds": [
+        847
+      ],
+      "dialogueText": "Okay, I might sound crazy to you...",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 847,
+      "nextNodeIds": [
+        848
+      ],
+      "dialogueText": "...but do you have a freaking soundtrack?!",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 848,
+      "nextNodeIds": [
+        849
+      ],
+      "dialogueText": "Hehe!",
+      "speakerName": "Kind",
+      "delay": 0.5
+    },
+    {
+      "id": 849,
+      "nextNodeIds": [
+        850
+      ],
+      "dialogueText": "I sure do~!",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 850,
+      "nextNodeIds": [
+        851
+      ],
+      "dialogueText": "-and if you're wondering, yes. I can hear it.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 851,
+      "nextNodeIds": [
+        852
+      ],
+      "dialogueText": "Color me impressed, you answered my question before I could even ask it!",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 852,
+      "nextNodeIds": [
+        853
+      ],
+      "dialogueText": "Though I do wanna ask...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 853,
+      "nextNodeIds": [
+        854
+      ],
+      "dialogueText": "Doesn't hearing the soundtrack on loop get annoying?",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 854,
+      "nextNodeIds": [
+        855
+      ],
+      "dialogueText": "Sure, it sounds nice now, but listening to it all the time has gotta drive you mad, no?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 855,
+      "nextNodeIds": [
+        856
+      ],
+      "dialogueText": "I do suppose that would be true...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 856,
+      "nextNodeIds": [
+        857
+      ],
+      "dialogueText": "However, I seem to have tuned it out a bit.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 857,
+      "nextNodeIds": [
+        858
+      ],
+      "dialogueText": "Whenever I can feel it start to get annoying, it quiets down substantially. ",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 858,
+      "nextNodeIds": [
+        859
+      ],
+      "dialogueText": "Although, most of the time it's nice. ",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 859,
+      "nextNodeIds": [
+        860
+      ],
+      "dialogueText": "It seldomly gets annoying and I personally think it provides a nice ambience.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 860,
+      "nextNodeIds": [
+        861
+      ],
+      "dialogueText": "Though, I can understand how it may be grating to a player...",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 861,
+      "nextNodeIds": [
+        862
+      ],
+      "dialogueText": "I mean, I personally think it sounds nice.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 862,
+      "nextNodeIds": [
+        863
+      ],
+      "dialogueText": "It's very...",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 863,
+      "nextNodeIds": [
+        864
+      ],
+      "dialogueText": "...you.",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 864,
+      "nextNodeIds": [
+        865
+      ],
+      "dialogueText": "Um... thanks, I suppose?",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 865,
+      "nextNodeIds": [
+        866
+      ],
+      "dialogueText": "I mean, it's a compliment... I do like the track, after all.",
+      "speakerName": "Kiri",
+      "delay": 0.75
+    },
+    {
+      "id": 866,
+      "nextNodeIds": [
+        867
+      ],
+      "dialogueText": "That all being said, can you like... change it or...?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 867,
+      "nextNodeIds": [
+        868
+      ],
+      "dialogueText": "Not... willingly. Not in the way you're probably thinking of.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 868,
+      "nextNodeIds": [
+        869
+      ],
+      "dialogueText": "I have noticed it alters if I'm feeling a specific way...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 869,
+      "nextNodeIds": [
+        870
+      ],
+      "dialogueText": "...sometimes it changes all together during certain moments.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 870,
+      "nextNodeIds": [
+        871
+      ],
+      "dialogueText": "and other times? It goes away completely.",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 871,
+      "nextNodeIds": [
+        872
+      ],
+      "dialogueText": "It scares me somtimes...",
+      "speakerName": "Kind",
+      "delay": 0.75
+    },
+    {
+      "id": 872,
+      "nextNodeIds": [
+        873
+      ],
+      "dialogueText": "Thankfully, it seems to stick around when you're here.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    },
+    {
+      "id": 873,
+      "nextNodeIds": [
+        874
+      ],
+      "dialogueText": "Well then, maybe I should stick around more, yeah?",
+      "speakerName": "Kiri",
+      "delay": 1.0
+    },
+    {
+      "id": 874,
+      "nextNodeIds": [],
+      "dialogueText": "I wouldn't mind that.",
+      "speakerName": "Kind",
+      "delay": 1.0
+    }
+  ],
+  "gameVersion": "Alpha 0.72"
+}
