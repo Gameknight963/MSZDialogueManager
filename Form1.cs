@@ -52,6 +52,11 @@ namespace MSZDialougeManager
                     dialogueView.Items[0].Selected = true;
                 SetUIMode(UIMode.ItemSelected);
             }
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (dialogueView.SelectedItems.Count == 0) return;
+                PlayNodeAudio(GetSelectedNode());
+            }
         }
 
         private const int MinTextColumnWidth = 415;
@@ -237,7 +242,7 @@ namespace MSZDialougeManager
 
         private void audioPlayButton_Click(object sender, EventArgs e)
         {
-            PlayAudio(GetSelectedNode().GetAudioClip());
+            PlayNodeAudio(GetSelectedNode());
         }
 
         private void audioStopButton_Click(object sender, EventArgs e)
@@ -259,8 +264,11 @@ namespace MSZDialougeManager
             SetUIMode(UIMode.Idle);
         }
 
-        // --- NAudio helpers ---
-        private void PlayAudio(string file) => NAudioHelpers.PlayAudio(file, ref waveOut, ref audioStream);
+        private void PlayNodeAudio(DialogueNodeDTO node)
+        {
+            if (node.HasAudioClip())
+                NAudioHelpers.PlayAudio(node.GetAudioClip(), ref waveOut, ref audioStream);
+        }
 
         private void StopAudio() => NAudioHelpers.StopAudio(ref waveOut, ref audioStream);
 
