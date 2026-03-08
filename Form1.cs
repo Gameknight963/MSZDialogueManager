@@ -112,10 +112,9 @@ namespace MSZDialougeManager
 
         private void SetUIMode(UIMode mode)
         {
-            // removing savebutton soon
-            saveButton.Visible = false;
-
             bool itemSelected = (mode == UIMode.ItemSelected);
+            bool init = (mode == UIMode.Init);
+
             textLabel.Visible = itemSelected;
             textHeaderLabel.Visible = itemSelected;
             nextNodesHeader.Visible = itemSelected;
@@ -125,8 +124,14 @@ namespace MSZDialougeManager
             audioFileHeader.Visible = itemSelected;
             audioPlayButton.Visible = itemSelected;
             audioStopButton.Visible = itemSelected;
-            templeteButton.Visible = (mode == UIMode.Init);
-            loadButton.Visible = (mode == UIMode.Init);
+
+            templeteButton.Visible = init;
+            loadButton.Visible = init;
+
+            playAudioToolStripMenuItem.Enabled = itemSelected;
+            stopAudioToolStripMenuItem.Enabled = itemSelected;
+            assignAudioToolStripMenuItem.Enabled = itemSelected;
+            generateWithTTSToolStripMenuItem.Enabled = !init;
 
             removeAudioButton.Visible = false;
             if (!itemSelected) return;
@@ -152,7 +157,6 @@ namespace MSZDialougeManager
 
         void LoadPack()
         {
-            SetUIMode(UIMode.Idle);
             using (OpenFileDialog fd = new OpenFileDialog())
             {
                 fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -165,6 +169,7 @@ namespace MSZDialougeManager
                     dialogueView.UpdateDialogueView(nodes);
                     dialogueView.Items[0].Selected = true;
                     dialogueView.Focus();
+                    SetUIMode(UIMode.Idle);
                 }
             }
         }
@@ -200,11 +205,29 @@ namespace MSZDialougeManager
         }
 
         private void loadButton_Click(object sender, EventArgs e) => LoadPack();
-        private void initializeTempleteToolStripMenuItem_Click(object sender, EventArgs e) => InitTemplete();
+        private void toolStripLoadPack_Click(object sender, EventArgs e) => LoadPack();
+
         private void selectAudioButton_Click(object sender, EventArgs e) => LoadAudio(GetSelectedNode());
+        private void assignAudioToolStripMenuItem_Click(object sender, EventArgs e) => LoadAudio(GetSelectedNode());
+
         private void saveAsDialougePackToolStripMenuItem_Click(object sender, EventArgs e) => SavePack();
         private void saveButton_Click(object sender, EventArgs e) => SavePack();
+
+        private void initializeTempleteToolStripMenuItem_Click(object sender, EventArgs e) => InitTemplete();
         private void templeteButton_Click(object sender, EventArgs e) => InitTemplete();
+
+        private void audioPlayButton_Click(object sender, EventArgs e) => PlayNodeAudio(GetSelectedNode());
+        private void playAudioToolStripMenuItem_Click(object sender, EventArgs e) => PlayNodeAudio(GetSelectedNode());
+
+        private void audioStopButton_Click(object sender, EventArgs e) => StopAudio();
+        private void stopAudioToolStripMenuItem_Click(object sender, EventArgs e) => StopAudio();
+
+        private void removeAudioButton_Click(object sender, EventArgs e)
+        {
+            GetSelectedNode().RemoveAudioClip();
+            SetUIMode(UIMode.ItemSelected);
+            StopAudio();
+        }
 
         private DialogueNodeDTO GetSelectedNode()
         {
@@ -240,23 +263,6 @@ namespace MSZDialougeManager
             nextNodesBox.UpdateNodesBox(GetSelectedNode().nextNodeIds);
         }
 
-        private void audioPlayButton_Click(object sender, EventArgs e)
-        {
-            PlayNodeAudio(GetSelectedNode());
-        }
-
-        private void audioStopButton_Click(object sender, EventArgs e)
-        {
-            StopAudio();
-        }
-
-        private void removeAudioButton_Click(object sender, EventArgs e)
-        {
-            GetSelectedNode().RemoveAudioClip();
-            SetUIMode(UIMode.ItemSelected);
-            StopAudio();
-        }
-
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
             if (forest == null || nodes.Count == 0) return;
@@ -271,23 +277,6 @@ namespace MSZDialougeManager
         }
 
         private void StopAudio() => NAudioHelpers.StopAudio(ref waveOut, ref audioStream);
-
-        private void toolStripLoadPack_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog fd = new OpenFileDialog())
-            {
-                fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                fd.Filter = $"Miside Zero Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}|All files (*.*)|*.*";
-                fd.Multiselect = false;
-
-                if (fd.ShowDialog() == DialogResult.OK)
-                {
-                    forest = FilesystemManager.LoadProj(fd.FileName);
-                    dialogueView.UpdateDialogueView(nodes);
-                }
-                SetUIMode(UIMode.Idle);
-            }
-        }
 
         private void generateWithTTSToolStripMenuItem_Click(object sender, EventArgs e)
         {
