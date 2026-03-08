@@ -47,7 +47,6 @@
             this.textHeaderLabel = new System.Windows.Forms.Label();
             this.audioFileLabel = new System.Windows.Forms.Label();
             this.textLabel = new System.Windows.Forms.Label();
-            this.saveButton = new System.Windows.Forms.Button();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +55,10 @@
             this.saveAsDialougePackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateWithTTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stopAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assignAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -141,7 +144,6 @@
             this.panel1.Controls.Add(this.textHeaderLabel);
             this.panel1.Controls.Add(this.audioFileLabel);
             this.panel1.Controls.Add(this.textLabel);
-            this.panel1.Controls.Add(this.saveButton);
             this.panel1.Controls.Add(this.templeteButton);
             this.panel1.Location = new System.Drawing.Point(580, 27);
             this.panel1.Name = "panel1";
@@ -250,17 +252,6 @@
             this.textLabel.TabIndex = 1;
             this.textLabel.Text = "Text will appear here";
             // 
-            // saveButton
-            // 
-            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.saveButton.Location = new System.Drawing.Point(6, 325);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(196, 23);
-            this.saveButton.TabIndex = 0;
-            this.saveButton.Text = "Save as dialouge pack";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
             // searchBox
             // 
             this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -274,7 +265,8 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.toolsToolStripMenuItem});
+            this.toolsToolStripMenuItem,
+            this.nodeToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(800, 24);
@@ -294,21 +286,25 @@
             // toolStripLoadPack
             // 
             this.toolStripLoadPack.Name = "toolStripLoadPack";
-            this.toolStripLoadPack.Size = new System.Drawing.Size(215, 22);
+            this.toolStripLoadPack.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.toolStripLoadPack.Size = new System.Drawing.Size(258, 22);
             this.toolStripLoadPack.Text = "Load from dialogue pack...";
             this.toolStripLoadPack.Click += new System.EventHandler(this.toolStripLoadPack_Click);
             // 
             // initializeTempleteToolStripMenuItem
             // 
             this.initializeTempleteToolStripMenuItem.Name = "initializeTempleteToolStripMenuItem";
-            this.initializeTempleteToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.initializeTempleteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.T)));
+            this.initializeTempleteToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
             this.initializeTempleteToolStripMenuItem.Text = "Initialize templete";
             this.initializeTempleteToolStripMenuItem.Click += new System.EventHandler(this.initializeTempleteToolStripMenuItem_Click);
             // 
             // saveAsDialougePackToolStripMenuItem
             // 
             this.saveAsDialougePackToolStripMenuItem.Name = "saveAsDialougePackToolStripMenuItem";
-            this.saveAsDialougePackToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.saveAsDialougePackToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveAsDialougePackToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
             this.saveAsDialougePackToolStripMenuItem.Text = "Save as dialouge pack...";
             this.saveAsDialougePackToolStripMenuItem.Click += new System.EventHandler(this.saveAsDialougePackToolStripMenuItem_Click);
             // 
@@ -323,9 +319,41 @@
             // generateWithTTSToolStripMenuItem
             // 
             this.generateWithTTSToolStripMenuItem.Name = "generateWithTTSToolStripMenuItem";
-            this.generateWithTTSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.generateWithTTSToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
+            this.generateWithTTSToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.generateWithTTSToolStripMenuItem.Text = "Generate with TTS";
             this.generateWithTTSToolStripMenuItem.Click += new System.EventHandler(this.generateWithTTSToolStripMenuItem_Click);
+            // 
+            // nodeToolStripMenuItem
+            // 
+            this.nodeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.playAudioToolStripMenuItem,
+            this.stopAudioToolStripMenuItem,
+            this.assignAudioToolStripMenuItem});
+            this.nodeToolStripMenuItem.Name = "nodeToolStripMenuItem";
+            this.nodeToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.nodeToolStripMenuItem.Text = "Node";
+            // 
+            // playAudioToolStripMenuItem
+            // 
+            this.playAudioToolStripMenuItem.Name = "playAudioToolStripMenuItem";
+            this.playAudioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.playAudioToolStripMenuItem.Text = "Play audio";
+            this.playAudioToolStripMenuItem.Click += new System.EventHandler(this.playAudioToolStripMenuItem_Click);
+            // 
+            // stopAudioToolStripMenuItem
+            // 
+            this.stopAudioToolStripMenuItem.Name = "stopAudioToolStripMenuItem";
+            this.stopAudioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stopAudioToolStripMenuItem.Text = "Stop audio";
+            this.stopAudioToolStripMenuItem.Click += new System.EventHandler(this.stopAudioToolStripMenuItem_Click);
+            // 
+            // assignAudioToolStripMenuItem
+            // 
+            this.assignAudioToolStripMenuItem.Name = "assignAudioToolStripMenuItem";
+            this.assignAudioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.assignAudioToolStripMenuItem.Text = "Assign audio";
+            this.assignAudioToolStripMenuItem.Click += new System.EventHandler(this.assignAudioToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -371,7 +399,6 @@
         private System.Windows.Forms.Button audioPlayButton;
         private System.Windows.Forms.Button audioStopButton;
         private System.Windows.Forms.Button removeAudioButton;
-        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -380,6 +407,10 @@
         private System.Windows.Forms.ToolStripMenuItem saveAsDialougePackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateWithTTSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nodeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem playAudioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stopAudioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem assignAudioToolStripMenuItem;
     }
 }
 
