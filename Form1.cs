@@ -9,6 +9,7 @@ namespace MSZDialougeManager
 {
     public partial class Form1 : Form
     {
+        // Dialogue data
         public static DialogueForest forest;
         public static List<DialogueNodeDTO> nodes => forest.nodes;
 
@@ -19,11 +20,9 @@ namespace MSZDialougeManager
         public Form1()
         {
             InitializeComponent();
-            dialogueView.Columns[2].Width -= SystemInformation.VerticalScrollBarWidth;
-            SetSidebarMode(SidebarMode.Idle);
+            SetSidebarMode(SidebarMode.Init);
             this.KeyPreview = true;
             this.KeyDown += Form1_KeyDown;
-            this.FormClosing += Form1_FormClosing;
             this.Shown += Form1_Shown;
 
             dialogueView.ColumnWidthChanging += dialogueView_ColumnWidthChanging;
@@ -41,18 +40,17 @@ namespace MSZDialougeManager
             }
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            StopAudio();
-        }
-
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
-                dialogueView.SelectedItems.Clear();
+                e.SuppressKeyPress = true;
                 dialogueView.Focus();
-                SetSidebarMode(SidebarMode.Idle);
+                searchBox.Clear();
+                if (dialogueView.Items.Count == 0) return;
+                if (dialogueView.SelectedItems.Count == 0) 
+                    dialogueView.Items[0].Selected = true;
+                SetSidebarMode(SidebarMode.ItemSelected);
             }
         }
 
@@ -76,6 +74,8 @@ namespace MSZDialougeManager
             ScrollbarHelper.Set(dialogueView, ScrollbarHelper.Scrollbar.Horz, needsScroll);
         }
 
+        // column resize logic
+
         private void dialogueView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
             if (e.ColumnIndex == 2 && e.NewWidth < MinTextColumnWidth)
@@ -87,6 +87,7 @@ namespace MSZDialougeManager
             if (e.ColumnIndex != 2) ResizeTextColumn();
         }
 
+        // i dont know what it fucking does
         protected override void WndProc(ref Message m)
         {
             const int WM_EXITSIZEMOVE = 0x0232;
@@ -101,61 +102,52 @@ namespace MSZDialougeManager
         {
             ItemSelected,
             Idle,
+            Init
         }
 
         private void SetSidebarMode(SidebarMode mode)
         {
-            if (FilesystemManager.IsFileLoaded)
-                saveButton.Visible = true;
-            else
-                saveButton.Visible = false;
+            // removing savebutton soon
+            saveButton.Visible = false;
 
-            switch (mode)
-            {
-                case SidebarMode.Idle:
-                    textLabel.Visible = false;
-                    textHeaderLabel.Visible = false;
-                    nextNodesHeader.Visible = false;
-                    nextNodesBox.Visible = false;
-                    selectAudioButton.Visible = false;
-                    audioFileLabel.Visible = false;
-                    audioFileHeader.Visible = false;
-                    audioPlayButton.Visible = false;
-                    audioStopButton.Visible = false;
-                    removeAudioButton.Visible = false;
-                    break;
+            bool itemSelected = (mode == SidebarMode.ItemSelected);
+            textLabel.Visible = itemSelected;
+            textHeaderLabel.Visible = itemSelected;
+            nextNodesHeader.Visible = itemSelected;
+            nextNodesBox.Visible = itemSelected;
+            selectAudioButton.Visible = itemSelected;
+            audioFileLabel.Visible = itemSelected;
+            audioFileHeader.Visible = itemSelected;
+            audioPlayButton.Visible = itemSelected;
+            audioStopButton.Visible = itemSelected;
+            templeteButton.Visible = (mode == SidebarMode.Init);
+            loadButton.Visible = (mode == SidebarMode.Init);
 
-                case SidebarMode.ItemSelected:
-                    textLabel.Visible = true;
-                    textHeaderLabel.Visible = true;
-                    nextNodesHeader.Visible = true;
-                    nextNodesBox.Visible = true;
-                    audioFileLabel.Visible = true;
-                    audioFileHeader.Visible = true;
-                    selectAudioButton.Visible = true;
-                    removeAudioButton.Visible = true;
+            removeAudioButton.Visible = false;
+            if (!itemSelected) return;
 
-                    nextNodesBox.UpdateNodesBox(GetSelectedNode().nextNodeIds);
-                    int index = dialogueView.SelectedItems[0].Index;
-                    if (nodes[index].HasAudioClip())
-                    {
-                        audioFileLabel.Text = Path.GetFileName(nodes[index].GetAudioClip());
-                        audioPlayButton.Visible = true;
-                        audioStopButton.Visible = true;
-                    }
-                    else
-                    {
-                        audioFileLabel.Text = "None";
-                        audioPlayButton.Visible = false;
-                        audioStopButton.Visible = false;
-                        removeAudioButton.Visible = false;
-                    }
-                    break;
-            }
+            DialogueNodeDTO selectedNode = GetSelectedNode();
+            nextNodesBox.UpdateNodesBox(selectedNode.nextNodeIds);
+
+            bool hasAudioClip = selectedNode.HasAudioClip();
+            audioPlayButton.Visible = hasAudioClip;
+            audioStopButton.Visible = hasAudioClip;
+            removeAudioButton.Visible = hasAudioClip;
+            audioFileLabel.Text = hasAudioClip ? Path.GetFileName(selectedNode.GetAudioClip()) : "None";
         }
 
-        private void loadButton_Click(object sender, EventArgs e)
+        void InitTemplete()
         {
+            SetSidebarMode(SidebarMode.Idle);
+            forest = FilesystemManager.LoadJson(FilesystemManager.Templete);
+            dialogueView.UpdateDialogueView(nodes);
+            dialogueView.Items[0].Selected = true;
+            dialogueView.Focus();
+        }
+
+        void LoadPack()
+        {
+            SetSidebarMode(SidebarMode.Idle);
             using (OpenFileDialog fd = new OpenFileDialog())
             {
                 fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -166,16 +158,48 @@ namespace MSZDialougeManager
                 {
                     forest = FilesystemManager.LoadProj(fd.FileName);
                     dialogueView.UpdateDialogueView(nodes);
+                    dialogueView.Items[0].Selected = true;
+                    dialogueView.Focus();
                 }
-                SetSidebarMode(SidebarMode.Idle);
             }
         }
 
-        private void templeteButton_Click(object sender, EventArgs e)
+        void SavePack()
         {
-            forest = FilesystemManager.LoadJson(FilesystemManager.Templete);
-            dialogueView.UpdateDialogueView(nodes);
+            using (SaveFileDialog dialog = new SaveFileDialog())
+            {
+                dialog.Title = "Save dialogue pack";
+                dialog.Filter = $"Miside Zero Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}";
+                dialog.FileName = $"CustomDialogue.{FilesystemManager.ext}";
+                dialog.AddExtension = true;
+                dialog.DefaultExt = FilesystemManager.ext;
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    FilesystemManager.SaveProj(dialog.FileName, forest);
+                }
+            }
         }
+
+        void LoadAudio(DialogueNodeDTO node)
+        {
+            StopAudio();
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Audio Files (*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac;*.ogg)|*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac;*.ogg|All Files (*.*)|*.*";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                node.AddAudioClip(dialog.FileName);
+                SetSidebarMode(SidebarMode.ItemSelected);
+            }
+        }
+
+        private void loadButton_Click(object sender, EventArgs e) => LoadPack();
+        private void initializeTempleteToolStripMenuItem_Click(object sender, EventArgs e) => InitTemplete();
+        private void selectAudioButton_Click(object sender, EventArgs e) => LoadAudio(GetSelectedNode());
+        private void saveAsDialougePackToolStripMenuItem_Click(object sender, EventArgs e) => SavePack();
+        private void saveButton_Click(object sender, EventArgs e) => SavePack();
+        private void templeteButton_Click(object sender, EventArgs e) => InitTemplete();
 
         private DialogueNodeDTO GetSelectedNode()
         {
@@ -211,22 +235,6 @@ namespace MSZDialougeManager
             nextNodesBox.UpdateNodesBox(GetSelectedNode().nextNodeIds);
         }
 
-        private void selectAudioButton_Click(object sender, EventArgs e)
-        {
-            StopAudio();
-
-            DialogueNodeDTO node = GetSelectedNode();
-
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Audio Files (*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac;*.ogg)|*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac;*.ogg|All Files (*.*)|*.*";
-
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                node.AddAudioClip(dialog.FileName);
-                SetSidebarMode(SidebarMode.ItemSelected);
-            }
-        }
-
         private void audioPlayButton_Click(object sender, EventArgs e)
         {
             PlayAudio(GetSelectedNode().GetAudioClip());
@@ -244,23 +252,6 @@ namespace MSZDialougeManager
             StopAudio();
         }
 
-        private void saveButton_Click(object sender, EventArgs e)
-        {
-            using (SaveFileDialog dialog = new SaveFileDialog())
-            {
-                dialog.Title = "Save dialogue pack";
-                dialog.Filter = $"Miside Zero Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}";
-                dialog.FileName = $"CustomDialogue.{FilesystemManager.ext}";
-                dialog.AddExtension = true;
-                dialog.DefaultExt = FilesystemManager.ext;
-
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    FilesystemManager.SaveProj(dialog.FileName, forest);
-                }
-            }
-        }
-
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
             if (forest == null || nodes.Count == 0) return;
@@ -269,31 +260,9 @@ namespace MSZDialougeManager
         }
 
         // --- NAudio helpers ---
-        private void PlayAudio(string file)
-        {
-            if (string.IsNullOrEmpty(file) || !File.Exists(file)) return;
+        private void PlayAudio(string file) => NAudioHelpers.PlayAudio(file, ref waveOut, ref audioStream);
 
-            StopAudio();
-
-            if (Path.GetExtension(file).ToLower() == ".ogg")
-                audioStream = new VorbisWaveReader(file);
-            else
-                audioStream = new AudioFileReader(file);
-
-            waveOut = new WaveOutEvent();
-            waveOut.Init(audioStream);
-            waveOut.Play();
-        }
-
-        private void StopAudio()
-        {
-            waveOut?.Stop();
-            waveOut?.Dispose();
-            waveOut = null;
-
-            audioStream?.Dispose();
-            audioStream = null;
-        }
+        private void StopAudio() => NAudioHelpers.StopAudio(ref waveOut, ref audioStream);
 
         private void toolStripLoadPack_Click(object sender, EventArgs e)
         {
@@ -309,29 +278,6 @@ namespace MSZDialougeManager
                     dialogueView.UpdateDialogueView(nodes);
                 }
                 SetSidebarMode(SidebarMode.Idle);
-            }
-        }
-
-        private void initializeTempleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            forest = FilesystemManager.LoadJson(FilesystemManager.Templete);
-            dialogueView.UpdateDialogueView(nodes);
-        }
-
-        private void saveAsDialougePackToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (SaveFileDialog dialog = new SaveFileDialog())
-            {
-                dialog.Title = "Save dialogue pack";
-                dialog.Filter = $"Miside Zero Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}";
-                dialog.FileName = $"CustomDialogue.{FilesystemManager.ext}";
-                dialog.AddExtension = true;
-                dialog.DefaultExt = FilesystemManager.ext;
-
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    FilesystemManager.SaveProj(dialog.FileName, forest);
-                }
             }
         }
     }
