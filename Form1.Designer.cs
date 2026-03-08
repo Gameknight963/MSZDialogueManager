@@ -54,6 +54,8 @@
             this.toolStripLoadPack = new System.Windows.Forms.ToolStripMenuItem();
             this.initializeTempleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsDialougePackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateWithTTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -98,7 +100,7 @@
             this.statusLabel.AutoSize = true;
             this.statusLabel.Location = new System.Drawing.Point(12, 439);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(314, 13);
+            this.statusLabel.Size = new System.Drawing.Size(313, 13);
             this.statusLabel.TabIndex = 1;
             this.statusLabel.Text = "Click \"Load from JSON\" or \"Initialize Templete\" to get started";
             // 
@@ -133,13 +135,13 @@
             this.panel1.Controls.Add(this.removeAudioButton);
             this.panel1.Controls.Add(this.selectAudioButton);
             this.panel1.Controls.Add(this.nextNodesBox);
+            this.panel1.Controls.Add(this.loadButton);
             this.panel1.Controls.Add(this.audioFileHeader);
             this.panel1.Controls.Add(this.nextNodesHeader);
             this.panel1.Controls.Add(this.textHeaderLabel);
             this.panel1.Controls.Add(this.audioFileLabel);
             this.panel1.Controls.Add(this.textLabel);
             this.panel1.Controls.Add(this.saveButton);
-            this.panel1.Controls.Add(this.loadButton);
             this.panel1.Controls.Add(this.templeteButton);
             this.panel1.Location = new System.Drawing.Point(580, 27);
             this.panel1.Name = "panel1";
@@ -251,7 +253,7 @@
             // saveButton
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.saveButton.Location = new System.Drawing.Point(6, 320);
+            this.saveButton.Location = new System.Drawing.Point(6, 325);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(196, 23);
             this.saveButton.TabIndex = 0;
@@ -271,7 +273,8 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.toolsToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(800, 24);
@@ -308,6 +311,21 @@
             this.saveAsDialougePackToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.saveAsDialougePackToolStripMenuItem.Text = "Save as dialouge pack...";
             this.saveAsDialougePackToolStripMenuItem.Click += new System.EventHandler(this.saveAsDialougePackToolStripMenuItem_Click);
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generateWithTTSToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // generateWithTTSToolStripMenuItem
+            // 
+            this.generateWithTTSToolStripMenuItem.Name = "generateWithTTSToolStripMenuItem";
+            this.generateWithTTSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.generateWithTTSToolStripMenuItem.Text = "Generate with TTS";
+            this.generateWithTTSToolStripMenuItem.Click += new System.EventHandler(this.generateWithTTSToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -360,6 +378,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripLoadPack;
         private System.Windows.Forms.ToolStripMenuItem initializeTempleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAsDialougePackToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generateWithTTSToolStripMenuItem;
     }
 }
 
