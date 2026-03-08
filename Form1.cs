@@ -179,7 +179,7 @@ namespace MSZDialougeManager
 
         private DialogueNodeDTO GetSelectedNode()
         {
-            int index = dialogueView.SelectedItems[0].Index;
+            int index = int.Parse(dialogueView.SelectedItems[0].Text);
             return nodes[index];
         }
 
