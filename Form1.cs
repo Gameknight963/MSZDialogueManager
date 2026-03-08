@@ -265,6 +265,7 @@ namespace MSZDialougeManager
         {
             if (forest == null || nodes.Count == 0) return;
             dialogueView.UpdateDialogueViewFiltered(nodes, searchBox.Text);
+            SetSidebarMode(SidebarMode.Idle);
         }
 
         // --- NAudio helpers ---
@@ -292,6 +293,46 @@ namespace MSZDialougeManager
 
             audioStream?.Dispose();
             audioStream = null;
+        }
+
+        private void toolStripLoadPack_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog fd = new OpenFileDialog())
+            {
+                fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                fd.Filter = $"Miside Zero Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}|All files (*.*)|*.*";
+                fd.Multiselect = false;
+
+                if (fd.ShowDialog() == DialogResult.OK)
+                {
+                    forest = FilesystemManager.LoadProj(fd.FileName);
+                    dialogueView.UpdateDialogueView(nodes);
+                }
+                SetSidebarMode(SidebarMode.Idle);
+            }
+        }
+
+        private void initializeTempleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            forest = FilesystemManager.LoadJson(FilesystemManager.Templete);
+            dialogueView.UpdateDialogueView(nodes);
+        }
+
+        private void saveAsDialougePackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog dialog = new SaveFileDialog())
+            {
+                dialog.Title = "Save dialogue pack";
+                dialog.Filter = $"Miside Zero Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}";
+                dialog.FileName = $"CustomDialogue.{FilesystemManager.ext}";
+                dialog.AddExtension = true;
+                dialog.DefaultExt = FilesystemManager.ext;
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    FilesystemManager.SaveProj(dialog.FileName, forest);
+                }
+            }
         }
     }
 }
