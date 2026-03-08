@@ -1,9 +1,10 @@
-﻿using System;
+﻿using NAudio.Vorbis;
+using NAudio.Wave;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using NAudio.Wave;
-using NAudio.Vorbis;
+using System.Xml.Linq;
 
 namespace MSZDialougeManager
 {
@@ -132,6 +133,12 @@ namespace MSZDialougeManager
             stopAudioToolStripMenuItem.Enabled = itemSelected;
             assignAudioToolStripMenuItem.Enabled = itemSelected;
             removeAudioToolStripMenuItem.Enabled = itemSelected;
+            editPropertiesButton.Visible = itemSelected;
+
+            propertiesContextMenuItem.Visible = itemSelected;
+            propertiesContextMenuItem.Enabled = itemSelected;
+            propertiesToolStripMenuItem.Enabled = itemSelected;
+
             generateWithTTSToolStripMenuItem.Enabled = !init;
 
             removeAudioButton.Visible = false;
@@ -214,6 +221,21 @@ namespace MSZDialougeManager
             StopAudio();
         }
 
+        void EditProperties()
+        {
+            DialogueNodeDTO node = GetSelectedNode();
+            NodePropertiesEditor editor = new NodePropertiesEditor(node);
+        editor.ShowDialog();
+            if (editor.DialogResult == DialogResult.OK)
+            {
+                node.dialogueText = editor.modifiedNode.dialogueText;
+                node.speakerName = editor.modifiedNode.speakerName;
+                node.delay = editor.modifiedNode.delay;
+                dialogueView.Items[node.id].UpdateItem(node);
+                UpdateUI();
+            }
+        }
+
         private void loadButton_Click(object sender, EventArgs e) => LoadPack();
         private void toolStripLoadPack_Click(object sender, EventArgs e) => LoadPack();
 
@@ -236,6 +258,20 @@ namespace MSZDialougeManager
 
         private void removeAudioToolStripMenuItem_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode());
 
+        private void editPropertiesButton_Click(object sender, EventArgs e) => EditProperties();
+
+        private void generateWithTTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (forest == null) return;
+            Cursor = Cursors.WaitCursor;
+            foreach (DialogueNodeDTO node in nodes)
+            {
+                TTSManager.GenerateAudio(node, FilesystemManager.DataPath);
+            }
+            Cursor = Cursors.Default;
+            SetUIMode(UIMode.ItemSelected);
+        }
+
         private DialogueNodeDTO GetSelectedNode()
         {
             int index = int.Parse(dialogueView.SelectedItems[0].Text);
@@ -244,7 +280,9 @@ namespace MSZDialougeManager
 
         private void SetStatus(string text) => statusLabel.Text = text;
 
-        private void dialogueView_SelectedIndexChanged(object sender, EventArgs e)
+        private void dialogueView_SelectedIndexChanged(object sender, EventArgs e) => UpdateUI();
+
+        void UpdateUI()
         {
             StopAudio();
 
@@ -284,17 +322,5 @@ namespace MSZDialougeManager
         }
 
         private void StopAudio() => NAudioHelpers.StopAudio(ref waveOut, ref audioStream);
-
-        private void generateWithTTSToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (forest == null) return;
-            Cursor = Cursors.WaitCursor;
-            foreach (DialogueNodeDTO node in nodes)
-            {
-                TTSManager.GenerateAudio(node, FilesystemManager.DataPath);
-            }
-            Cursor = Cursors.Default;
-            SetUIMode(UIMode.ItemSelected);
-        }
     }
 }

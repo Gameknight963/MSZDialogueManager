@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dialogueView = new System.Windows.Forms.ListView();
             this.indexColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -39,6 +40,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.audioStopButton = new System.Windows.Forms.Button();
             this.audioPlayButton = new System.Windows.Forms.Button();
+            this.editPropertiesButton = new System.Windows.Forms.Button();
             this.removeAudioButton = new System.Windows.Forms.Button();
             this.selectAudioButton = new System.Windows.Forms.Button();
             this.nextNodesBox = new System.Windows.Forms.ListBox();
@@ -60,8 +62,12 @@
             this.stopAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assignAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dialogueViewContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.propertiesContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            this.dialogueViewContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // dialogueView
@@ -73,6 +79,7 @@
             this.indexColumn,
             this.speakerColumn,
             this.textColumn});
+            this.dialogueView.ContextMenuStrip = this.dialogueViewContextMenu;
             this.dialogueView.FullRowSelect = true;
             this.dialogueView.HideSelection = false;
             this.dialogueView.Location = new System.Drawing.Point(12, 27);
@@ -136,6 +143,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.audioStopButton);
             this.panel1.Controls.Add(this.audioPlayButton);
+            this.panel1.Controls.Add(this.editPropertiesButton);
             this.panel1.Controls.Add(this.removeAudioButton);
             this.panel1.Controls.Add(this.selectAudioButton);
             this.panel1.Controls.Add(this.nextNodesBox);
@@ -171,6 +179,17 @@
             this.audioPlayButton.Text = "▶ Play";
             this.audioPlayButton.UseVisualStyleBackColor = true;
             this.audioPlayButton.Click += new System.EventHandler(this.audioPlayButton_Click);
+            // 
+            // editPropertiesButton
+            // 
+            this.editPropertiesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.editPropertiesButton.Location = new System.Drawing.Point(6, 325);
+            this.editPropertiesButton.Name = "editPropertiesButton";
+            this.editPropertiesButton.Size = new System.Drawing.Size(196, 23);
+            this.editPropertiesButton.TabIndex = 4;
+            this.editPropertiesButton.Text = "Edit node properties...";
+            this.editPropertiesButton.UseVisualStyleBackColor = true;
+            this.editPropertiesButton.Click += new System.EventHandler(this.editPropertiesButton_Click);
             // 
             // removeAudioButton
             // 
@@ -331,7 +350,8 @@
             this.playAudioToolStripMenuItem,
             this.stopAudioToolStripMenuItem,
             this.assignAudioToolStripMenuItem,
-            this.removeAudioToolStripMenuItem});
+            this.removeAudioToolStripMenuItem,
+            this.propertiesToolStripMenuItem});
             this.nodeToolStripMenuItem.Name = "nodeToolStripMenuItem";
             this.nodeToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.nodeToolStripMenuItem.Text = " Node";
@@ -364,6 +384,29 @@
             this.removeAudioToolStripMenuItem.Text = "Remove audio";
             this.removeAudioToolStripMenuItem.Click += new System.EventHandler(this.removeAudioToolStripMenuItem_Click);
             // 
+            // dialogueViewContextMenu
+            // 
+            this.dialogueViewContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.propertiesContextMenuItem});
+            this.dialogueViewContextMenu.Name = "dialogueViewContextMenu";
+            this.dialogueViewContextMenu.Size = new System.Drawing.Size(169, 26);
+            // 
+            // propertiesContextMenuItem
+            // 
+            this.propertiesContextMenuItem.Name = "propertiesContextMenuItem";
+            this.propertiesContextMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.propertiesContextMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.propertiesContextMenuItem.Text = "Properties";
+            this.propertiesContextMenuItem.Click += new System.EventHandler(this.editPropertiesButton_Click);
+            // 
+            // propertiesToolStripMenuItem
+            // 
+            this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
+            this.propertiesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.propertiesToolStripMenuItem.Text = "Properties";
+            this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.editPropertiesButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,6 +426,7 @@
             this.panel1.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.dialogueViewContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,6 +465,10 @@
         private System.Windows.Forms.ToolStripMenuItem stopAudioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assignAudioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeAudioToolStripMenuItem;
+        private System.Windows.Forms.Button editPropertiesButton;
+        private System.Windows.Forms.ContextMenuStrip dialogueViewContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem propertiesContextMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
     }
 }
 
