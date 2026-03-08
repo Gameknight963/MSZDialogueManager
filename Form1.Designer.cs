@@ -49,7 +49,13 @@
             this.textLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.searchBox = new System.Windows.Forms.TextBox();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripLoadPack = new System.Windows.Forms.ToolStripMenuItem();
+            this.initializeTempleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsDialougePackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // dialogueView
@@ -63,9 +69,9 @@
             this.textColumn});
             this.dialogueView.FullRowSelect = true;
             this.dialogueView.HideSelection = false;
-            this.dialogueView.Location = new System.Drawing.Point(12, 12);
+            this.dialogueView.Location = new System.Drawing.Point(12, 27);
             this.dialogueView.Name = "dialogueView";
-            this.dialogueView.Size = new System.Drawing.Size(562, 413);
+            this.dialogueView.Size = new System.Drawing.Size(562, 409);
             this.dialogueView.TabIndex = 0;
             this.dialogueView.UseCompatibleStateImageBehavior = false;
             this.dialogueView.View = System.Windows.Forms.View.Details;
@@ -90,7 +96,7 @@
             // 
             this.statusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.statusLabel.AutoSize = true;
-            this.statusLabel.Location = new System.Drawing.Point(12, 428);
+            this.statusLabel.Location = new System.Drawing.Point(12, 439);
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.Size = new System.Drawing.Size(314, 13);
             this.statusLabel.TabIndex = 1;
@@ -99,7 +105,7 @@
             // loadButton
             // 
             this.loadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.loadButton.Location = new System.Drawing.Point(6, 354);
+            this.loadButton.Location = new System.Drawing.Point(6, 349);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(196, 23);
             this.loadButton.TabIndex = 0;
@@ -110,7 +116,7 @@
             // templeteButton
             // 
             this.templeteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.templeteButton.Location = new System.Drawing.Point(6, 383);
+            this.templeteButton.Location = new System.Drawing.Point(6, 378);
             this.templeteButton.Name = "templeteButton";
             this.templeteButton.Size = new System.Drawing.Size(196, 23);
             this.templeteButton.TabIndex = 0;
@@ -135,9 +141,9 @@
             this.panel1.Controls.Add(this.saveButton);
             this.panel1.Controls.Add(this.loadButton);
             this.panel1.Controls.Add(this.templeteButton);
-            this.panel1.Location = new System.Drawing.Point(580, 12);
+            this.panel1.Location = new System.Drawing.Point(580, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(208, 413);
+            this.panel1.Size = new System.Drawing.Size(208, 409);
             this.panel1.TabIndex = 2;
             // 
             // audioStopButton
@@ -245,7 +251,7 @@
             // saveButton
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.saveButton.Location = new System.Drawing.Point(6, 325);
+            this.saveButton.Location = new System.Drawing.Point(6, 320);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(196, 23);
             this.saveButton.TabIndex = 0;
@@ -256,27 +262,72 @@
             // searchBox
             // 
             this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchBox.Location = new System.Drawing.Point(354, 425);
+            this.searchBox.Location = new System.Drawing.Point(354, 436);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(220, 22);
             this.searchBox.TabIndex = 3;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
+            // menuStrip
+            // 
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip.TabIndex = 4;
+            this.menuStrip.Text = "menuStrip";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLoadPack,
+            this.initializeTempleteToolStripMenuItem,
+            this.saveAsDialougePackToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // toolStripLoadPack
+            // 
+            this.toolStripLoadPack.Name = "toolStripLoadPack";
+            this.toolStripLoadPack.Size = new System.Drawing.Size(215, 22);
+            this.toolStripLoadPack.Text = "Load from dialogue pack...";
+            this.toolStripLoadPack.Click += new System.EventHandler(this.toolStripLoadPack_Click);
+            // 
+            // initializeTempleteToolStripMenuItem
+            // 
+            this.initializeTempleteToolStripMenuItem.Name = "initializeTempleteToolStripMenuItem";
+            this.initializeTempleteToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.initializeTempleteToolStripMenuItem.Text = "Initialize templete";
+            this.initializeTempleteToolStripMenuItem.Click += new System.EventHandler(this.initializeTempleteToolStripMenuItem_Click);
+            // 
+            // saveAsDialougePackToolStripMenuItem
+            // 
+            this.saveAsDialougePackToolStripMenuItem.Name = "saveAsDialougePackToolStripMenuItem";
+            this.saveAsDialougePackToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.saveAsDialougePackToolStripMenuItem.Text = "Save as dialouge pack...";
+            this.saveAsDialougePackToolStripMenuItem.Click += new System.EventHandler(this.saveAsDialougePackToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 461);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.dialogueView);
+            this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "Form1";
             this.Text = "Miside Zero Dialogue Manager";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,6 +355,11 @@
         private System.Windows.Forms.Button removeAudioButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripLoadPack;
+        private System.Windows.Forms.ToolStripMenuItem initializeTempleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAsDialougePackToolStripMenuItem;
     }
 }
 
