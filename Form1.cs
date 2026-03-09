@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using System.Drawing;
 using System.Xml.Linq;
 
 namespace MSZDialougeManager
@@ -152,6 +153,9 @@ namespace MSZDialougeManager
             audioStopButton.Visible = hasAudioClip;
             removeAudioButton.Visible = hasAudioClip;
             audioFileLabel.Text = hasAudioClip ? Path.GetFileName(selectedNode.GetAudioClip()) : "None";
+            // You can reposition the edit properties button like this
+            // I chose not to include it since it adds too much complexity
+            // editPropertiesButton.Location = hasAudioClip ? new Point(6, 325) : new Point(6, 267);
         }
 
         void InitTemplete()
@@ -263,13 +267,17 @@ namespace MSZDialougeManager
         private void generateWithTTSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (forest == null) return;
+            TTSEditor editor = new TTSEditor(nodes);
+            editor.ShowDialog();
+            if (editor.DialogResult != DialogResult.OK) return;
+
             Cursor = Cursors.WaitCursor;
             foreach (DialogueNodeDTO node in nodes)
             {
-                TTSManager.GenerateAudio(node, FilesystemManager.DataPath);
+                TTSManager.GenerateAudio(node, FilesystemManager.DataPath, editor.speakerVoices[node.speakerName]);
             }
             Cursor = Cursors.Default;
-            SetUIMode(UIMode.ItemSelected);
+            UpdateUI();
         }
 
         private DialogueNodeDTO GetSelectedNode()

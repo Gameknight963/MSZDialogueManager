@@ -18,18 +18,39 @@ namespace MSZDialougeManager
             synth.Volume = 100;
         }
 
-        public static void GenerateAudio(DialogueNodeDTO node, string outputFolder)
+        public static void GenerateAudio(DialogueNodeDTO node, string outputFolder, string voice = "Microsoft David Desktop")
         {
+            if (voice == null) return;
+
             if (!Directory.Exists(outputFolder))
                 Directory.CreateDirectory(outputFolder);
 
             string filePath = Path.Combine(outputFolder, $"{node.id}.wav");
 
-            synth.SelectVoice("Microsoft David Desktop");
-            synth.SetOutputToWaveFile(filePath);
-            synth.Speak(node.dialogueText);
+            using (var synth = new System.Speech.Synthesis.SpeechSynthesizer())
+            {
+                synth.SelectVoice(voice);
+                synth.SetOutputToWaveFile(filePath);
+                synth.Speak(node.dialogueText);
+            }
+        }
+
+
+        public static async Task PlayText(string text, string voice = "Microsoft David Desktop")
+        {
+            synth.SelectVoice(voice);
             synth.SetOutputToDefaultAudioDevice();
+            synth.Speak(text);
+        }
+
+        public static List<string> GetVoices()
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            List<string> voices = new List<string>();
+            foreach (var v in synth.GetInstalledVoices())
+                voices.Add(v.VoiceInfo.Name);
+
+            return voices;
         }
     }
-
 }
