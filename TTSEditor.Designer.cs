@@ -115,7 +115,7 @@
             this.Controls.Add(this.dgv);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "TTSEditor";
-            this.Text = "Text-to-Speech Generator";
+            this.Text = "SAPI Speech Generator";
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
 
