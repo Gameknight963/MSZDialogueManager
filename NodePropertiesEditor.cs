@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 
@@ -67,6 +60,7 @@ namespace MSZDialougeManager
         private void customSpeakerLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string input = Interaction.InputBox("Enter a custom speaker name:", "Custom Speaker");
+            if (input == "") return;
             speakerDropDown.Items.Add(input);
             speakerDropDown.SelectedItem = input;
         }
