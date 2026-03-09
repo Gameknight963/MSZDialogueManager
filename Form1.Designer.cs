@@ -340,8 +340,8 @@
             // 
             this.generateWithTTSToolStripMenuItem.Name = "generateWithTTSToolStripMenuItem";
             this.generateWithTTSToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
-            this.generateWithTTSToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.generateWithTTSToolStripMenuItem.Text = "Generate with TTS";
+            this.generateWithTTSToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.generateWithTTSToolStripMenuItem.Text = "Generate with SAPI";
             this.generateWithTTSToolStripMenuItem.Click += new System.EventHandler(this.generateWithTTSToolStripMenuItem_Click);
             // 
             // nodeToolStripMenuItem
