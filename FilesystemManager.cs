@@ -93,7 +93,7 @@ namespace MSZDialougeManager
             return (files.Length > 0);
         }
 
-        public static string GetNodeAudioClip(DialogueNodeDTO node)
+        public static string? GetNodeAudioClip(DialogueNodeDTO node)
         {
             if (!Directory.Exists(DataPath))
             {
