@@ -8,21 +8,21 @@ namespace MSZDialougeManager
 {
     public class FilesystemManager
     {
-        public static string BaseDir => AppDomain.CurrentDomain.BaseDirectory;
-        public static string DataPath => Path.Combine(BaseDir, "Data");
-        public static string Templete => Path.Combine(BaseDir, "templeteNodes.json");
+        public static readonly string BaseDir = AppDomain.CurrentDomain.BaseDirectory;
+        public static readonly string DataPath = Path.Combine(BaseDir, "Data");
+        public static readonly string Templete = Path.Combine(BaseDir, "templeteNodes.json");
 
         /// <summary>
         /// Don't use this path if you don't currently have a nodes.json in Data/
         /// </summary>
-        public static string NodesJsonPath => Path.Combine(DataPath, "nodes.json");
+        public static readonly string NodesJsonPath = Path.Combine(DataPath, "nodes.json");
 
         /// <summary>
         /// The custom dialouge extension (without the dot)
         /// </summary>
-        public static readonly string ext = "mszdlg";
+        public const string ext = "mszdlg";
 
-        public static bool IsFileLoaded = false;
+        public static bool IsFileLoaded { get; private set; }
 
         public static void SaveProj(string path, DialogueForest forest)
         {
