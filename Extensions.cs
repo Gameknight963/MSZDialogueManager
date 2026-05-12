@@ -58,7 +58,7 @@ namespace MSZDialougeManager
             nodesBox.Items.Clear();
             foreach (int index in nodeIndicies)
             {
-                DialogueNodeDTO node = Form1.nodes[index];
+                DialogueNodeDTO node = DialogueEditor.nodes[index];
                 NextNodesBoxItem item = new NextNodesBoxItem();
                 item.text = $"[{index}] {node.speakerName}: {node.dialogueText}";
                 item.node = node;
