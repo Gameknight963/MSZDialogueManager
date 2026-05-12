@@ -10,7 +10,7 @@ namespace MSZDialougeManager
 {
     public static class TTSManager
     {
-        private static SpeechSynthesizer synth = new SpeechSynthesizer();
+        private static SpeechSynthesizer synth = new();
 
         static TTSManager()
         {
@@ -27,12 +27,9 @@ namespace MSZDialougeManager
 
             string filePath = Path.Combine(outputFolder, $"{node.id}.wav");
 
-            using (var synth = new System.Speech.Synthesis.SpeechSynthesizer())
-            {
-                synth.SelectVoice(voice);
-                synth.SetOutputToWaveFile(filePath);
-                synth.Speak(node.dialogueText);
-            }
+            synth.SelectVoice(voice);
+            synth.SetOutputToWaveFile(filePath);
+            synth.Speak(node.dialogueText);
         }
 
 
@@ -47,7 +44,7 @@ namespace MSZDialougeManager
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             List<string> voices = new List<string>();
-            foreach (var v in synth.GetInstalledVoices())
+            foreach (InstalledVoice? v in synth.GetInstalledVoices())
                 voices.Add(v.VoiceInfo.Name);
 
             return voices;

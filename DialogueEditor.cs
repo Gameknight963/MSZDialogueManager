@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace MSZDialougeManager
 {
-    public partial class Form1 : Form
+    public partial class DialogueEditor : Form
     {
         // Dialogue data
         public static DialogueForest forest;
@@ -19,7 +19,7 @@ namespace MSZDialougeManager
         private IWavePlayer waveOut;
         private WaveStream audioStream;
 
-        public Form1()
+        public DialogueEditor()
         {
             InitializeComponent();
             SetUIMode(UIMode.Init);
