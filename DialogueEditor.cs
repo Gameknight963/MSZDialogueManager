@@ -2,10 +2,12 @@
 using NAudio.Wave;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using System.Drawing;
 using System.Xml.Linq;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using static System.Net.WebRequestMethods;
 
 namespace MSZDialougeManager
 {
@@ -146,23 +148,47 @@ namespace MSZDialougeManager
             if (!itemSelected) return;
 
             DialogueNodeDTO selectedNode = GetSelectedNode();
-            nextNodesBox.UpdateNodesBox(selectedNode.nextNodeIds);
+            UpdateNodesBox(nextNodesBox, selectedNode.nextNodeIds);
 
-            bool hasAudioClip = selectedNode.HasAudioClip();
+            bool hasAudioClip = FilesystemManager.DoesNodeAudioExist(selectedNode);
             audioPlayButton.Visible = hasAudioClip;
             audioStopButton.Visible = hasAudioClip;
-            removeAudioButton.Visible = hasAudioClip;
-            audioFileLabel.Text = hasAudioClip ? Path.GetFileName(selectedNode.GetAudioClip()) : "None";
-            // You can reposition the edit properties button like this
-            // I chose not to include it since it adds too much complexity
-            // editPropertiesButton.Location = hasAudioClip ? new Point(6, 325) : new Point(6, 267);
+            removeAudioButton.Visible = hasAudioClip; 
+            audioFileLabel.Text = hasAudioClip ? Path.GetFileName(FilesystemManager.GetNodeAudioClip(selectedNode)) : "None";
+        }
+
+        void UpdateNodesBox(ListBox nodesBox, int[] nodeIndicies)
+        {
+            nodesBox.BeginUpdate();
+            nodesBox.Items.Clear();
+            foreach (int index in nodeIndicies)
+            {
+                DialogueNodeDTO node = DialogueEditor.nodes[index];
+                NextNodesBoxItem item = new NextNodesBoxItem();
+                item.text = $"[{index}] {node.speakerName}: {node.dialogueText}";
+                item.node = node;
+                nodesBox.Items.Add(item);
+            }
+            nodesBox.EndUpdate();
+        }
+
+        public static void UpdateDialogueView(ListView dialogueView, List<DialogueNodeDTO> nodes)
+        {
+            dialogueView.Items.Clear();
+            foreach (DialogueNodeDTO n in nodes)
+            {
+                ListViewItem item = new ListViewItem(n.id.ToString());
+                item.SubItems.Add(n.speakerName);
+                item.SubItems.Add(n.dialogueText);
+                dialogueView.Items.Add(item);
+            }
         }
 
         void InitTemplete()
         {
             SetUIMode(UIMode.Idle);
             forest = FilesystemManager.LoadJson(FilesystemManager.Templete);
-            dialogueView.UpdateDialogueView(nodes);
+            UpdateDialogueView(dialogueView, nodes);
             dialogueView.Items[0].Selected = true;
             dialogueView.Focus();
         }
@@ -179,7 +205,7 @@ namespace MSZDialougeManager
                 if (fd.ShowDialog() == DialogResult.OK)
                 {
                     forest = FilesystemManager.LoadProj(fd.FileName);
-                    dialogueView.UpdateDialogueView(nodes);
+                    UpdateDialogueView(dialogueView, nodes);
                     dialogueView.Items[0].Selected = true;
                     dialogueView.Focus();
                     SetUIMode(UIMode.Idle);
@@ -213,14 +239,14 @@ namespace MSZDialougeManager
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                node.AddAudioClip(dialog.FileName);
+                FilesystemManager.AddNodeAudio(node, dialog.FileName);
                 SetUIMode(UIMode.ItemSelected);
             }
         }
 
         void RemoveAudio(DialogueNodeDTO node)
         {
-            node.RemoveAudioClip();
+            FilesystemManager.RemoveNodeAudio(node);
             SetUIMode(UIMode.ItemSelected);
             StopAudio();
         }
@@ -235,7 +261,10 @@ namespace MSZDialougeManager
                 node.dialogueText = editor.modifiedNode.dialogueText;
                 node.speakerName = editor.modifiedNode.speakerName;
                 node.delay = editor.modifiedNode.delay;
-                dialogueView.Items[node.id].UpdateItem(node);
+                ListViewItem item = dialogueView.Items[node.id];
+                item.SubItems[0].Text = node.id.ToString();
+                item.SubItems[1].Text = node.speakerName;
+                item.SubItems[2].Text = node.dialogueText;
                 UpdateUI();
             }
         }
@@ -313,20 +342,39 @@ namespace MSZDialougeManager
             NextNodesBoxItem item = (NextNodesBoxItem)nextNodesBox.SelectedItem;
             dialogueView.SelectedItems.Clear();
             dialogueView.Items[item.node.id].Selected = true;
-            nextNodesBox.UpdateNodesBox(GetSelectedNode().nextNodeIds);
+            UpdateNodesBox(nextNodesBox, GetSelectedNode().nextNodeIds);
         }
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
             if (forest == null || nodes.Count == 0) return;
-            dialogueView.UpdateDialogueViewFiltered(nodes, searchBox.Text);
+
+            dialogueView.BeginUpdate();
+            dialogueView.Items.Clear();
+
+            string lowerFilter = searchBox.Text?.ToLower() ?? "";
+
+            foreach (DialogueNodeDTO n in nodes)
+            {
+                if (!string.IsNullOrEmpty(searchBox.Text) && !n.dialogueText.ToLower().Contains(searchBox.Text))
+                    continue;
+
+                ListViewItem item = new(n.id.ToString());
+                item.SubItems.Add(n.speakerName);
+                item.SubItems.Add(n.dialogueText);
+                dialogueView.Items.Add(item);
+            }
+
+            dialogueView.EndUpdate();
+
             SetUIMode(UIMode.Idle);
         }
 
         private void PlayNodeAudio(DialogueNodeDTO node)
         {
-            if (node.HasAudioClip())
-                NAudioHelpers.PlayAudio(node.GetAudioClip(), ref waveOut, ref audioStream);
+            string? audio = FilesystemManager.GetNodeAudioClip(node);
+            if (audio == null) return;
+            NAudioHelpers.PlayAudio(audio, ref waveOut, ref audioStream);
         }
 
         private void StopAudio() => NAudioHelpers.StopAudio(ref waveOut, ref audioStream);
