@@ -36,7 +36,7 @@
             this.textColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.statusLabel = new System.Windows.Forms.Label();
             this.loadButton = new System.Windows.Forms.Button();
-            this.templeteButton = new System.Windows.Forms.Button();
+            this.templateButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.audioStopButton = new System.Windows.Forms.Button();
             this.audioPlayButton = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripLoadPack = new System.Windows.Forms.ToolStripMenuItem();
-            this.initializeTempleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.initializetemplateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsDialougePackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateWithTTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -113,7 +113,7 @@
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.Size = new System.Drawing.Size(313, 13);
             this.statusLabel.TabIndex = 1;
-            this.statusLabel.Text = "Click \"Load from JSON\" or \"Initialize Templete\" to get started";
+            this.statusLabel.Text = "Click \"Load from JSON\" or \"Initialize template\" to get started";
             // 
             // loadButton
             // 
@@ -126,16 +126,16 @@
             this.loadButton.UseVisualStyleBackColor = true;
             this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
             // 
-            // templeteButton
+            // templateButton
             // 
-            this.templeteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.templeteButton.Location = new System.Drawing.Point(6, 378);
-            this.templeteButton.Name = "templeteButton";
-            this.templeteButton.Size = new System.Drawing.Size(196, 23);
-            this.templeteButton.TabIndex = 0;
-            this.templeteButton.Text = "Initialize Templete";
-            this.templeteButton.UseVisualStyleBackColor = true;
-            this.templeteButton.Click += new System.EventHandler(this.templeteButton_Click);
+            this.templateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.templateButton.Location = new System.Drawing.Point(6, 378);
+            this.templateButton.Name = "templateButton";
+            this.templateButton.Size = new System.Drawing.Size(196, 23);
+            this.templateButton.TabIndex = 0;
+            this.templateButton.Text = "Initialize template";
+            this.templateButton.UseVisualStyleBackColor = true;
+            this.templateButton.Click += new System.EventHandler(this.templateButton_Click);
             // 
             // panel1
             // 
@@ -153,7 +153,7 @@
             this.panel1.Controls.Add(this.textHeaderLabel);
             this.panel1.Controls.Add(this.audioFileLabel);
             this.panel1.Controls.Add(this.textLabel);
-            this.panel1.Controls.Add(this.templeteButton);
+            this.panel1.Controls.Add(this.templateButton);
             this.panel1.Location = new System.Drawing.Point(580, 27);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(208, 409);
@@ -297,7 +297,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLoadPack,
-            this.initializeTempleteToolStripMenuItem,
+            this.initializetemplateToolStripMenuItem,
             this.saveAsDialougePackToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -311,14 +311,14 @@
             this.toolStripLoadPack.Text = "Load from dialogue pack...";
             this.toolStripLoadPack.Click += new System.EventHandler(this.toolStripLoadPack_Click);
             // 
-            // initializeTempleteToolStripMenuItem
+            // initializetemplateToolStripMenuItem
             // 
-            this.initializeTempleteToolStripMenuItem.Name = "initializeTempleteToolStripMenuItem";
-            this.initializeTempleteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            this.initializetemplateToolStripMenuItem.Name = "initializetemplateToolStripMenuItem";
+            this.initializetemplateToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.T)));
-            this.initializeTempleteToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
-            this.initializeTempleteToolStripMenuItem.Text = "Initialize templete";
-            this.initializeTempleteToolStripMenuItem.Click += new System.EventHandler(this.initializeTempleteToolStripMenuItem_Click);
+            this.initializetemplateToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.initializetemplateToolStripMenuItem.Text = "Initialize template";
+            this.initializetemplateToolStripMenuItem.Click += new System.EventHandler(this.initializetemplateToolStripMenuItem_Click);
             // 
             // saveAsDialougePackToolStripMenuItem
             // 
@@ -440,7 +440,7 @@
         private System.Windows.Forms.ColumnHeader textColumn;
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Button loadButton;
-        private System.Windows.Forms.Button templeteButton;
+        private System.Windows.Forms.Button templateButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label textLabel;
         private System.Windows.Forms.Label textHeaderLabel;
@@ -456,7 +456,7 @@
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripLoadPack;
-        private System.Windows.Forms.ToolStripMenuItem initializeTempleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem initializetemplateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAsDialougePackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateWithTTSToolStripMenuItem;
