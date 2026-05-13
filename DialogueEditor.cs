@@ -119,7 +119,7 @@ namespace MSZDialougeManager
             audioPlayButton.Visible = itemSelected;
             audioStopButton.Visible = itemSelected;
 
-            templeteButton.Visible = init;
+            templateButton.Visible = init;
             loadButton.Visible = init;
 
             playAudioToolStripMenuItem.Enabled = itemSelected;
@@ -194,10 +194,10 @@ namespace MSZDialougeManager
                 .SelectMany((tree, treeIndex) => tree.nodes.Select(node => new NodeRef(node, treeIndex)))
                 .ToList();
 
-        void InitTemplete()
+        void Inittemplate()
         {
             SetUIMode(UIMode.Idle);
-            pack = JsonConvert.DeserializeObject<DialoguePack>(File.ReadAllText(FilesystemManager.Templete))!;
+            pack = JsonConvert.DeserializeObject<DialoguePack>(File.ReadAllText(FilesystemManager.template))!;
             nodes = FlattenPack(pack);
             UpdateDialogueView(dialogueView, nodes);
             dialogueView.Items[0].Selected = true;
@@ -287,8 +287,8 @@ namespace MSZDialougeManager
         private void saveAsDialougePackToolStripMenuItem_Click(object sender, EventArgs e) => SavePack();
         private void saveButton_Click(object sender, EventArgs e) => SavePack();
 
-        private void initializeTempleteToolStripMenuItem_Click(object sender, EventArgs e) => InitTemplete();
-        private void templeteButton_Click(object sender, EventArgs e) => InitTemplete();
+        private void initializetemplateToolStripMenuItem_Click(object sender, EventArgs e) => Inittemplate();
+        private void templateButton_Click(object sender, EventArgs e) => Inittemplate();
 
         private void audioPlayButton_Click(object sender, EventArgs e) => PlayNodeAudio(GetSelectedNode());
         private void playAudioToolStripMenuItem_Click(object sender, EventArgs e) => PlayNodeAudio(GetSelectedNode());

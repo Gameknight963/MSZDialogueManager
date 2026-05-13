@@ -6,11 +6,16 @@ For use with [Miside Zero Dialogue Override](https://github.com/Gameknight963/Mi
 
 1. Clone and build this repo.
 2. Map the dialogue with [MSZDialogueMapper](https://github.com/Gameknight963/MSZDialogueMapper)
-3. Put the mapped ``nodes.json`` in the build folder as ``templeteNodes.json``
+3. Put the mapped ``nodes.json`` in the build folder as ``
+1. 
+1. 
+1. 
+1. 
+1. Nodes.json``
 
 ## Usage
 
-1. Click "Initialize Templete"
+1. Click "Initialize template"
 2. Add audio to a node by clicking "Select an audio file..."
 3. When you're done, save the dialouge pack
 

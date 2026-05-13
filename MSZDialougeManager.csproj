@@ -26,4 +26,10 @@
       <HintPath>Miside Zero Dialogue Override.dll</HintPath>
     </Reference>
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="templateNodes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

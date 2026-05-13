@@ -8,7 +8,7 @@ namespace MSZDialougeManager
     {
         public static readonly string BaseDir = AppDomain.CurrentDomain.BaseDirectory;
         public static readonly string DataPath = Path.Combine(BaseDir, "Data");
-        public static readonly string Templete = Path.Combine(BaseDir, "templeteNodes.json");
+        public static readonly string Template = Path.Combine(BaseDir, "templateNodes.json");
 
         /// <summary>
         /// Don't use this path if you don't currently have a nodes.json in Data/
