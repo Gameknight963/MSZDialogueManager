@@ -366,9 +366,11 @@ void UpdateNodesBox(ListBox nodesBox, NodeRef current)
             int index = nextNodesBox.SelectedIndex;
             if (index == -1) return;
             NextNodesBoxItem item = (NextNodesBoxItem)nextNodesBox.Items[index];
+            NodeRef current = GetSelectedNode();
             dialogueView.SelectedItems.Clear();
+            NodeRef? target = nodes.FirstOrDefault(n => n.Node.id == item.node.id && n.TreeIndex == current.TreeIndex);
             ListViewItem? lvItem = dialogueView.Items.Cast<ListViewItem>()
-                .FirstOrDefault(i => i.Text == item.node.id.ToString());
+                .FirstOrDefault(i => (NodeRef)i.Tag! == target);
             if (lvItem != null)
             {
                 lvItem.Selected = true;
