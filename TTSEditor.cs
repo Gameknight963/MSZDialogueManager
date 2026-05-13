@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using MZDO;
 
 namespace MSZDialougeManager
 {
@@ -17,16 +9,15 @@ namespace MSZDialougeManager
         /// <summary>
         /// First item is speaker, second item is voice
         /// </summary>
-        public Dictionary<string, string> speakerVoices = new Dictionary<string, string>();
+        public Dictionary<string, string?> speakerVoices = new();
 
-        public TTSEditor(List<DialogueNodeDTO> nodes)
+        public TTSEditor(DialoguePack pack)
         {
             InitializeComponent();
 
-            foreach (DialogueNodeDTO node in nodes)
-            {
-                speakers.Add(node.speakerName);
-            }
+            foreach (DialogueTreeDTO tree in pack.trees)
+                foreach (DialogueNodeDTO node in tree.nodes)
+                    speakers.Add(node.speakerName);
 
             List<string> voices = TTSManager.GetVoices();
             voices.Add("None");
@@ -62,8 +53,8 @@ namespace MSZDialougeManager
             {
                 DataGridViewRow row = dgv.Rows[e.RowIndex];
 
-                string speaker = row.Cells[0].Value.ToString();
-                string voice = row.Cells[1].Value.ToString();
+                string speaker = row.Cells[0].Value.ToString()!;
+                string voice = row.Cells[1].Value.ToString()!;
 
                 if (voice == "None") return;
 
@@ -83,8 +74,8 @@ namespace MSZDialougeManager
             {
                 if (row.IsNewRow) continue;
 
-                string speaker = row.Cells[0].Value?.ToString();
-                string voice = row.Cells[1].Value?.ToString() == "None" ? null : row.Cells[1].Value?.ToString();
+                string speaker = row.Cells[0].Value?.ToString()!;
+                string? voice = row.Cells[1].Value?.ToString() == "None" ? null : row.Cells[1].Value?.ToString();
                 speakerVoices.Add(speaker, voice); 
             }
 

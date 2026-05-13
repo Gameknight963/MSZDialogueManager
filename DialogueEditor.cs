@@ -1,25 +1,20 @@
-﻿using NAudio.Vorbis;
+﻿using MZDO;
 using NAudio.Wave;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
-using static System.Net.WebRequestMethods;
+using Newtonsoft.Json;
 
 namespace MSZDialougeManager
 {
     public partial class DialogueEditor : Form
     {
+        public record NodeRef(DialogueNodeDTO Node, int TreeIndex);
+
         // Dialogue data
-        public static DialogueForest forest;
-        public static List<DialogueNodeDTO> nodes => forest.nodes;
+        public static DialoguePack? pack { get; private set; }
+        public static List<NodeRef> nodes { get; private set; } = new();
 
         // NAudio playback
-        private IWavePlayer waveOut;
-        private WaveStream audioStream;
+        private IWavePlayer? waveOut;
+        private WaveStream? audioStream;
 
         public DialogueEditor()
         {
@@ -35,7 +30,7 @@ namespace MSZDialougeManager
             searchBox.SetPlaceholder("Search by dialogue text...");
         }
 
-        private void Form1_Shown(object sender, EventArgs e)
+        private void Form1_Shown(object? sender, EventArgs e)
         {
             if (Directory.Exists(FilesystemManager.DataPath))
             {
@@ -44,7 +39,7 @@ namespace MSZDialougeManager
             }
         }
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        private void Form1_KeyDown(object? sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
@@ -52,7 +47,7 @@ namespace MSZDialougeManager
                 dialogueView.Focus();
                 searchBox.Clear();
                 if (dialogueView.Items.Count == 0) return;
-                if (dialogueView.SelectedItems.Count == 0) 
+                if (dialogueView.SelectedItems.Count == 0)
                     dialogueView.Items[0].Selected = true;
                 SetUIMode(UIMode.ItemSelected);
             }
@@ -83,27 +78,22 @@ namespace MSZDialougeManager
             ScrollbarHelper.Set(dialogueView, ScrollbarHelper.Scrollbar.Horz, needsScroll);
         }
 
-        // column resize logic
-
-        private void dialogueView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        private void dialogueView_ColumnWidthChanging(object? sender, ColumnWidthChangingEventArgs e)
         {
             if (e.ColumnIndex == 2 && e.NewWidth < MinTextColumnWidth)
                 e.NewWidth = MinTextColumnWidth;
         }
 
-        private void dialogueView_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        private void dialogueView_ColumnWidthChanged(object? sender, ColumnWidthChangedEventArgs e)
         {
             if (e.ColumnIndex != 2) ResizeTextColumn();
         }
 
-        // i dont know what it fucking does
         protected override void WndProc(ref Message m)
         {
             const int WM_EXITSIZEMOVE = 0x0232;
-
             if (m.Msg == WM_EXITSIZEMOVE)
                 ResizeTextColumn();
-
             base.WndProc(ref m);
         }
 
@@ -116,8 +106,8 @@ namespace MSZDialougeManager
 
         private void SetUIMode(UIMode mode)
         {
-            bool itemSelected = (mode == UIMode.ItemSelected);
-            bool init = (mode == UIMode.Init);
+            bool itemSelected = mode == UIMode.ItemSelected;
+            bool init = mode == UIMode.Init;
 
             textLabel.Visible = itemSelected;
             textHeaderLabel.Visible = itemSelected;
@@ -147,47 +137,68 @@ namespace MSZDialougeManager
             removeAudioButton.Visible = false;
             if (!itemSelected) return;
 
-            DialogueNodeDTO selectedNode = GetSelectedNode();
-            UpdateNodesBox(nextNodesBox, selectedNode.nextNodeIds);
+            NodeRef selected = GetSelectedNode();
+            UpdateNodesBox(nextNodesBox, selected.Node.nextNodeIds);
 
-            bool hasAudioClip = FilesystemManager.DoesNodeAudioExist(selectedNode);
+            bool hasAudioClip = FilesystemManager.DoesNodeAudioExist(selected.TreeIndex, selected.Node.id);
             audioPlayButton.Visible = hasAudioClip;
             audioStopButton.Visible = hasAudioClip;
-            removeAudioButton.Visible = hasAudioClip; 
-            audioFileLabel.Text = hasAudioClip ? Path.GetFileName(FilesystemManager.GetNodeAudioClip(selectedNode)) : "None";
+            removeAudioButton.Visible = hasAudioClip;
+            audioFileLabel.Text = hasAudioClip
+                ? Path.GetFileName(FilesystemManager.GetNodeAudioPath(selected.TreeIndex, selected.Node.id))
+                : "None";
         }
 
-        void UpdateNodesBox(ListBox nodesBox, int[] nodeIndicies)
+        void UpdateNodesBox(ListBox nodesBox, int[] nodeIds)
         {
             nodesBox.BeginUpdate();
             nodesBox.Items.Clear();
-            foreach (int index in nodeIndicies)
+            foreach (int id in nodeIds)
             {
-                DialogueNodeDTO node = DialogueEditor.nodes[index];
-                NextNodesBoxItem item = new NextNodesBoxItem();
-                item.text = $"[{index}] {node.speakerName}: {node.dialogueText}";
-                item.node = node;
+                NodeRef? nodeRef = nodes.FirstOrDefault(n => n.Node.id == id);
+                if (nodeRef == null) continue;
+                NextNodesBoxItem item = new()
+                {
+                    text = $"[{id}] {nodeRef.Node.speakerName}: {nodeRef.Node.dialogueText}",
+                    node = nodeRef.Node
+                };
                 nodesBox.Items.Add(item);
             }
             nodesBox.EndUpdate();
         }
 
-        public static void UpdateDialogueView(ListView dialogueView, List<DialogueNodeDTO> nodes)
+        public static void UpdateDialogueView(ListView dialogueView, List<NodeRef> nodes)
         {
             dialogueView.Items.Clear();
-            foreach (DialogueNodeDTO n in nodes)
+            dialogueView.Groups.Clear();
+            foreach (NodeRef nodeRef in nodes)
             {
-                ListViewItem item = new ListViewItem(n.id.ToString());
-                item.SubItems.Add(n.speakerName);
-                item.SubItems.Add(n.dialogueText);
+                string groupKey = $"tree_{nodeRef.TreeIndex}";
+                string groupName = pack!.trees[nodeRef.TreeIndex].name ?? $"Tree {nodeRef.TreeIndex}";
+                ListViewGroup? group = dialogueView.Groups.Cast<ListViewGroup>()
+                    .FirstOrDefault(g => g.Name == groupKey);
+                if (group == null)
+                {
+                    group = new ListViewGroup(groupKey, groupName);
+                    dialogueView.Groups.Add(group);
+                }
+                ListViewItem item = new(nodeRef.Node.id.ToString()) { Group = group };
+                item.SubItems.Add(nodeRef.Node.speakerName);
+                item.SubItems.Add(nodeRef.Node.dialogueText);
                 dialogueView.Items.Add(item);
             }
         }
 
+        static List<NodeRef> FlattenPack(DialoguePack pack) =>
+            pack.trees
+                .SelectMany((tree, treeIndex) => tree.nodes.Select(node => new NodeRef(node, treeIndex)))
+                .ToList();
+
         void InitTemplete()
         {
             SetUIMode(UIMode.Idle);
-            forest = FilesystemManager.LoadJson(FilesystemManager.Templete);
+            pack = JsonConvert.DeserializeObject<DialoguePack>(File.ReadAllText(FilesystemManager.Templete))!;
+            nodes = FlattenPack(pack);
             UpdateDialogueView(dialogueView, nodes);
             dialogueView.Items[0].Selected = true;
             dialogueView.Focus();
@@ -196,75 +207,73 @@ namespace MSZDialougeManager
         void LoadPack()
         {
             Cursor = Cursors.WaitCursor;
-            using (OpenFileDialog fd = new OpenFileDialog())
+            using OpenFileDialog fd = new()
             {
-                fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                fd.Filter = $"Miside Zero Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}|All files (*.*)|*.*";
-                fd.Multiselect = false;
-
-                if (fd.ShowDialog() == DialogResult.OK)
-                {
-                    forest = FilesystemManager.LoadProj(fd.FileName);
-                    UpdateDialogueView(dialogueView, nodes);
-                    dialogueView.Items[0].Selected = true;
-                    dialogueView.Focus();
-                    SetUIMode(UIMode.Idle);
-                }
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                Filter = $"Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}|All files (*.*)|*.*",
+                Multiselect = false
+            };
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                pack = FilesystemManager.LoadProj(fd.FileName)!;
+                nodes = FlattenPack(pack);
+                UpdateDialogueView(dialogueView, nodes);
+                dialogueView.Items[0].Selected = true;
+                dialogueView.Focus();
+                SetUIMode(UIMode.Idle);
             }
             Cursor = Cursors.Default;
         }
 
         void SavePack()
         {
-            using (SaveFileDialog dialog = new SaveFileDialog())
+            using SaveFileDialog dialog = new()
             {
-                dialog.Title = "Save dialogue pack";
-                dialog.Filter = $"Miside Zero Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}";
-                dialog.FileName = $"CustomDialogue.{FilesystemManager.ext}";
-                dialog.AddExtension = true;
-                dialog.DefaultExt = FilesystemManager.ext;
-
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    FilesystemManager.SaveProj(dialog.FileName, forest);
-                }
-            }
+                Title = "Save dialogue pack",
+                Filter = $"Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}",
+                FileName = $"CustomDialogue.{FilesystemManager.ext}",
+                AddExtension = true,
+                DefaultExt = FilesystemManager.ext
+            };
+            if (dialog.ShowDialog() == DialogResult.OK)
+                FilesystemManager.SaveProj(dialog.FileName, pack!);
         }
 
-        void LoadAudio(DialogueNodeDTO node)
+        void LoadAudio(NodeRef nodeRef)
         {
             StopAudio();
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Audio Files (*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac;*.ogg)|*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac;*.ogg|All Files (*.*)|*.*";
-
+            using OpenFileDialog dialog = new()
+            {
+                Filter = "Audio Files (*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac;*.ogg)|*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac;*.ogg|All Files (*.*)|*.*"
+            };
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                FilesystemManager.AddNodeAudio(node, dialog.FileName);
+                FilesystemManager.AddNodeAudio(nodeRef.TreeIndex, nodeRef.Node.id, dialog.FileName);
                 SetUIMode(UIMode.ItemSelected);
             }
         }
 
-        void RemoveAudio(DialogueNodeDTO node)
+        void RemoveAudio(NodeRef nodeRef)
         {
-            FilesystemManager.RemoveNodeAudio(node);
+            FilesystemManager.RemoveNodeAudio(nodeRef.TreeIndex, nodeRef.Node.id);
             SetUIMode(UIMode.ItemSelected);
             StopAudio();
         }
 
         void EditProperties()
         {
-            DialogueNodeDTO node = GetSelectedNode();
-            NodePropertiesEditor editor = new NodePropertiesEditor(node);
-        editor.ShowDialog();
+            NodeRef nodeRef = GetSelectedNode();
+            NodePropertiesEditor editor = new(nodeRef.Node);
+            editor.ShowDialog();
             if (editor.DialogResult == DialogResult.OK)
             {
-                node.dialogueText = editor.modifiedNode.dialogueText;
-                node.speakerName = editor.modifiedNode.speakerName;
-                node.delay = editor.modifiedNode.delay;
-                ListViewItem item = dialogueView.Items[node.id];
-                item.SubItems[0].Text = node.id.ToString();
-                item.SubItems[1].Text = node.speakerName;
-                item.SubItems[2].Text = node.dialogueText;
+                nodeRef.Node.dialogueText = editor.modifiedNode.dialogueText;
+                nodeRef.Node.speakerName = editor.modifiedNode.speakerName;
+                nodeRef.Node.delay = editor.modifiedNode.delay;
+                ListViewItem item = dialogueView.Items[nodeRef.Node.id];
+                item.SubItems[0].Text = nodeRef.Node.id.ToString();
+                item.SubItems[1].Text = nodeRef.Node.speakerName;
+                item.SubItems[2].Text = nodeRef.Node.dialogueText;
                 UpdateUI();
             }
         }
@@ -288,31 +297,28 @@ namespace MSZDialougeManager
         private void stopAudioToolStripMenuItem_Click(object sender, EventArgs e) => StopAudio();
 
         private void removeAudioButton_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode());
-
         private void removeAudioToolStripMenuItem_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode());
 
         private void editPropertiesButton_Click(object sender, EventArgs e) => EditProperties();
 
         private void generateWithTTSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (forest == null) return;
-            TTSEditor editor = new TTSEditor(nodes);
+            if (pack == null) return;
+            TTSEditor editor = new(pack);
             editor.ShowDialog();
             if (editor.DialogResult != DialogResult.OK) return;
 
             Cursor = Cursors.WaitCursor;
-            foreach (DialogueNodeDTO node in nodes)
-            {
-                TTSManager.GenerateAudio(node, FilesystemManager.DataPath, editor.speakerVoices[node.speakerName]);
-            }
+            foreach (NodeRef nodeRef in nodes)
+                TTSManager.GenerateAudio(nodeRef.Node, FilesystemManager.DataPath, editor.speakerVoices[nodeRef.Node.speakerName]);
             Cursor = Cursors.Default;
             UpdateUI();
         }
 
-        private DialogueNodeDTO GetSelectedNode()
+        private NodeRef GetSelectedNode()
         {
-            int index = int.Parse(dialogueView.SelectedItems[0].Text);
-            return nodes[index];
+            int id = int.Parse(dialogueView.SelectedItems[0].Text);
+            return nodes.First(n => n.Node.id == id);
         }
 
         private void SetStatus(string text) => statusLabel.Text = text;
@@ -329,9 +335,9 @@ namespace MSZDialougeManager
                 return;
             }
 
-            DialogueNodeDTO node = GetSelectedNode();
-            textLabel.Text = $"{node.speakerName}: {node.dialogueText}";
-            SetStatus($"Selected: node {node.id}, spoken by {node.speakerName}");
+            NodeRef nodeRef = GetSelectedNode();
+            textLabel.Text = $"{nodeRef.Node.speakerName}: {nodeRef.Node.dialogueText}";
+            SetStatus($"Selected: node {nodeRef.Node.id}, spoken by {nodeRef.Node.speakerName}");
             SetUIMode(UIMode.ItemSelected);
         }
 
@@ -339,40 +345,34 @@ namespace MSZDialougeManager
         {
             int index = nextNodesBox.SelectedIndex;
             if (index == -1) return;
-            NextNodesBoxItem item = (NextNodesBoxItem)nextNodesBox.SelectedItem;
+            NextNodesBoxItem item = (NextNodesBoxItem)nextNodesBox.Items[index];
             dialogueView.SelectedItems.Clear();
-            dialogueView.Items[item.node.id].Selected = true;
-            UpdateNodesBox(nextNodesBox, GetSelectedNode().nextNodeIds);
+            ListViewItem? lvItem = dialogueView.Items.Cast<ListViewItem>()
+                .FirstOrDefault(i => i.Text == item.node.id.ToString());
+            if (lvItem != null)
+            {
+                lvItem.Selected = true;
+                UpdateNodesBox(nextNodesBox, GetSelectedNode().Node.nextNodeIds);
+            }
         }
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
-            if (forest == null || nodes.Count == 0) return;
+            if (pack == null || nodes.Count == 0) return;
 
-            dialogueView.BeginUpdate();
-            dialogueView.Items.Clear();
+            string filter = searchBox.Text?.ToLower() ?? "";
 
-            string lowerFilter = searchBox.Text?.ToLower() ?? "";
+            List<NodeRef> filtered = string.IsNullOrEmpty(filter)
+                ? nodes
+                : nodes.Where(n => n.Node.dialogueText.ToLower().Contains(filter)).ToList();
 
-            foreach (DialogueNodeDTO n in nodes)
-            {
-                if (!string.IsNullOrEmpty(searchBox.Text) && !n.dialogueText.ToLower().Contains(searchBox.Text))
-                    continue;
-
-                ListViewItem item = new(n.id.ToString());
-                item.SubItems.Add(n.speakerName);
-                item.SubItems.Add(n.dialogueText);
-                dialogueView.Items.Add(item);
-            }
-
-            dialogueView.EndUpdate();
-
+            UpdateDialogueView(dialogueView, filtered);
             SetUIMode(UIMode.Idle);
         }
 
-        private void PlayNodeAudio(DialogueNodeDTO node)
+        private void PlayNodeAudio(NodeRef nodeRef)
         {
-            string? audio = FilesystemManager.GetNodeAudioClip(node);
+            string? audio = FilesystemManager.GetNodeAudioPath(nodeRef.TreeIndex, nodeRef.Node.id);
             if (audio == null) return;
             NAudioHelpers.PlayAudio(audio, ref waveOut, ref audioStream);
         }

@@ -11,7 +11,7 @@ namespace MSZDialougeManager
 {
     public class NAudioHelpers
     {
-        public static void PlayAudio(string file, ref IWavePlayer waveOut, ref WaveStream audioStream)
+        public static void PlayAudio(string file, ref IWavePlayer? waveOut, ref WaveStream? audioStream)
         {
             if (string.IsNullOrEmpty(file) || !File.Exists(file)) return;
 
@@ -26,7 +26,7 @@ namespace MSZDialougeManager
             waveOut.Init(audioStream);
             waveOut.Play();
         }
-        public static void StopAudio(ref IWavePlayer waveOut, ref WaveStream audioStream)
+        public static void StopAudio(ref IWavePlayer? waveOut, ref WaveStream? audioStream)
         {
             waveOut?.Stop();
             waveOut?.Dispose();
