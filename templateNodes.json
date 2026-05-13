@@ -207,7 +207,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "ExitMirror 4"
     },
     {
       "nodes": [
@@ -351,7 +351,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "DialogueLife 4 1"
     },
     {
       "nodes": [
@@ -540,7 +540,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "4 Option 2"
     },
     {
       "nodes": [
@@ -693,7 +693,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Cooking Dialogue"
     },
     {
       "nodes": [
@@ -819,7 +819,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "BathMirror 2"
     },
     {
       "nodes": [
@@ -891,7 +891,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "D Random 2.3"
     },
     {
       "nodes": [
@@ -936,7 +936,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "AOOB Director + Dialogue"
     },
     {
       "nodes": [
@@ -981,7 +981,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Apple 1"
     },
     {
       "nodes": [
@@ -1179,7 +1179,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Books 2"
     },
     {
       "nodes": [
@@ -1422,7 +1422,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "4 Option 3"
     },
     {
       "nodes": [
@@ -1764,7 +1764,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Mita Option 1"
     },
     {
       "nodes": [
@@ -2007,7 +2007,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "4 Option 1"
     },
     {
       "nodes": [
@@ -2178,7 +2178,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Vent 4"
     },
     {
       "nodes": [
@@ -2529,7 +2529,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Kiri Option 2"
     },
     {
       "nodes": [
@@ -2700,7 +2700,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "LivingTV 4"
     },
     {
       "nodes": [
@@ -2736,7 +2736,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Pictures 1"
     },
     {
       "nodes": [
@@ -2934,7 +2934,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "ExitDoor 2"
     },
     {
       "nodes": [
@@ -3195,7 +3195,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Mita Option 4"
     },
     {
       "nodes": [
@@ -3519,7 +3519,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Kiri Option 1"
     },
     {
       "nodes": [
@@ -3717,7 +3717,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "StartMeal Dialogue"
     },
     {
       "nodes": [
@@ -3915,7 +3915,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Make-up 2"
     },
     {
       "nodes": [
@@ -4068,7 +4068,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "2 Option 3"
     },
     {
       "nodes": [
@@ -4140,7 +4140,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "EndMita Dialogue"
     },
     {
       "nodes": [
@@ -4185,7 +4185,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Summer 1"
     },
     {
       "nodes": [
@@ -4230,7 +4230,7 @@
       "chirpTime": 0.1,
       "initialDelay": 0.1,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Stereo 1"
     },
     {
       "nodes": [
@@ -4275,7 +4275,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "EndMeal Dialogue"
     },
     {
       "nodes": [
@@ -4293,7 +4293,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Lower Stare"
     },
     {
       "nodes": [
@@ -4509,7 +4509,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Drawings 4"
     },
     {
       "nodes": [
@@ -4581,7 +4581,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Yes Dialogue"
     },
     {
       "nodes": [
@@ -4707,7 +4707,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "PC 4"
     },
     {
       "nodes": [
@@ -4877,7 +4877,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Stereo 2"
     },
     {
       "nodes": [
@@ -5184,7 +5184,7 @@
       "chirpTime": 0.115,
       "initialDelay": 1.0,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Hello Mita"
     },
     {
       "nodes": [
@@ -5238,7 +5238,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Remote 1"
     },
     {
       "nodes": [
@@ -5256,7 +5256,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Lower Stare 2"
     },
     {
       "nodes": [
@@ -5292,7 +5292,7 @@
       "chirpTime": 0.115,
       "initialDelay": 1.0,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Start"
     },
     {
       "nodes": [
@@ -5373,7 +5373,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "2 Option 1"
     },
     {
       "nodes": [
@@ -5490,7 +5490,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Chibi 2"
     },
     {
       "nodes": [
@@ -5652,7 +5652,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "DialogueLife 4 2"
     },
     {
       "nodes": [
@@ -5850,7 +5850,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Apples 4"
     },
     {
       "nodes": [
@@ -5900,7 +5900,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Idle Dialogue"
     },
     {
       "nodes": [
@@ -6197,7 +6197,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Kiri Option 3"
     },
     {
       "nodes": [
@@ -6260,7 +6260,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "D Random 2.1"
     },
     {
       "nodes": [
@@ -6458,7 +6458,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "2 Option 2"
     },
     {
       "nodes": [
@@ -6508,7 +6508,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Kiri Idle 1"
     },
     {
       "nodes": [],
@@ -6516,7 +6516,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Stare"
     },
     {
       "nodes": [
@@ -6687,7 +6687,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "DiningTV 2"
     },
     {
       "nodes": [
@@ -6741,7 +6741,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Couch 4"
     },
     {
       "nodes": [
@@ -6939,7 +6939,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Pictures 4"
     },
     {
       "nodes": [
@@ -6957,7 +6957,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Upper Stare"
     },
     {
       "nodes": [
@@ -6984,7 +6984,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "OOB Dialogue"
     },
     {
       "nodes": [
@@ -7146,7 +7146,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Fridge 2"
     },
     {
       "nodes": [
@@ -7182,7 +7182,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Windows 1"
     },
     {
       "nodes": [
@@ -7326,7 +7326,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "FinishMeal Dialogue"
     },
     {
       "nodes": [
@@ -7533,7 +7533,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Wardrobe 4"
     },
     {
       "nodes": [
@@ -7668,7 +7668,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "D Random 2.2"
     },
     {
       "nodes": [
@@ -7695,7 +7695,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Salt Shaker"
     },
     {
       "nodes": [
@@ -7749,7 +7749,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Door 1"
     },
     {
       "nodes": [
@@ -7767,7 +7767,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Upper Stare 2"
     },
     {
       "nodes": [
@@ -7817,7 +7817,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "IdleMeal Dialogue"
     },
     {
       "nodes": [
@@ -8159,7 +8159,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Mita Option 2"
     },
     {
       "nodes": [
@@ -8429,7 +8429,7 @@
       "chirpTime": 0.115,
       "initialDelay": 0.25,
       "exitDelay": 0.25,
-      "name": null
+      "name": "Mita Option 3"
     }
   ]
 }
