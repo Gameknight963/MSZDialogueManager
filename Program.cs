@@ -12,13 +12,14 @@ namespace MSZDialougeManager
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static int Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // uncomment to enable console
             // ConsoleHelper.ShowConsole();
-            Application.Run(new DialogueEditor());
+            Application.Run(new DialogueEditor(args.Length > 0 ? args[0] : null));
+            return 0;
         }
     }
 }
