@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Speech.Synthesis;
-using System.IO;
+﻿using System.Speech.Synthesis;
+using MZDO;
 
 namespace MSZDialougeManager
 {
@@ -18,7 +13,7 @@ namespace MSZDialougeManager
             synth.Volume = 100;
         }
 
-        public static void GenerateAudio(DialogueNodeDTO node, string outputFolder, string voice = "Microsoft David Desktop")
+        public static void GenerateAudio(DialogueNodeDTO node, string outputFolder, string? voice = "Microsoft David Desktop")
         {
             if (voice == null) return;
 

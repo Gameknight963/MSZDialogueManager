@@ -20,4 +20,10 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
 	<PackageReference Include="System.Speech" Version="8.0.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Miside Zero Dialogue Override">
+      <HintPath>Miside Zero Dialogue Override.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

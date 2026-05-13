@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.IO;
+using MZDO;
 using System.IO.Compression;
-using System.Windows.Forms;
 
 namespace MSZDialougeManager
 {
@@ -24,87 +22,60 @@ namespace MSZDialougeManager
 
         public static bool IsFileLoaded { get; private set; }
 
-        public static void SaveProj(string path, DialogueForest forest)
+        public static void SaveProj(string path, DialoguePack pack)
         {
             if (File.Exists(path)) File.Delete(path);
-
-            string actualExt = System.IO.Path.GetExtension(path).TrimStart('.').ToLower();
-            if (actualExt != ext) path = System.IO.Path.ChangeExtension(path, ext);
-
-            string json = JsonConvert.SerializeObject(forest, Formatting.Indented);
+            string actualExt = Path.GetExtension(path).TrimStart('.').ToLower();
+            if (actualExt != ext) path = Path.ChangeExtension(path, ext);
+            string json = JsonConvert.SerializeObject(pack, Formatting.Indented);
             File.WriteAllText(Path.Combine(DataPath, "nodes.json"), json);
             ZipFile.CreateFromDirectory(DataPath, path);
         }
 
-        public static void SaveJson(string path, DialogueForest forest)
+        public static void SaveJson(string path, DialoguePack pack)
         {
-            string json = JsonConvert.SerializeObject(forest, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(pack, Formatting.Indented);
             if (File.Exists(path)) File.Delete(path);
             File.WriteAllText(path, json);
         }
 
-        public static DialogueForest LoadProj(string path)
+        public static DialoguePack? LoadProj(string path)
         {
             if (Directory.Exists(DataPath)) Directory.Delete(DataPath, true);
             Directory.CreateDirectory(DataPath);
             ZipFile.ExtractToDirectory(path, DataPath);
-            string json = File.ReadAllText(Path.Combine(NodesJsonPath)); 
-            DialogueForest forest = JsonConvert.DeserializeObject<DialogueForest>(json);
+            string json = File.ReadAllText(NodesJsonPath);
+            DialoguePack? pack = JsonConvert.DeserializeObject<DialoguePack>(json);
             IsFileLoaded = true;
-            return forest;
+            return pack;
         }
 
-        public static DialogueForest LoadJson(string path)
+        public static void AddNodeAudio(int treeIndex, int nodeId, string audioPath)
         {
-            string json = File.ReadAllText(path);
-            DialogueForest forest = JsonConvert.DeserializeObject<DialogueForest>(json);
-            IsFileLoaded = true;
-            return forest;
-        }
-
-        public static void AddNodeAudio(DialogueNodeDTO node, string audioPath)
-        {
-            string[] existingFiles = Directory.GetFiles(FilesystemManager.DataPath, $"{node.id}.*");
+            string[] existingFiles = Directory.GetFiles(DataPath, $"{treeIndex}_{nodeId}.*");
             foreach (string file in existingFiles) File.Delete(file);
-
-            string ext = Path.GetExtension(audioPath);
-            string destination = Path.Combine(FilesystemManager.DataPath, $"{node.id}{ext}");
+            string destination = Path.Combine(DataPath, $"{treeIndex}_{nodeId}{Path.GetExtension(audioPath)}");
             File.Copy(audioPath, destination);
         }
 
-        public static void RemoveNodeAudio(DialogueNodeDTO node)
+        public static void RemoveNodeAudio(int treeIndex, int nodeId)
         {
-            string[] existingFiles = Directory.GetFiles(FilesystemManager.DataPath, $"{node.id}.*");
+            string[] existingFiles = Directory.GetFiles(DataPath, $"{treeIndex}_{nodeId}.*");
             foreach (string file in existingFiles) File.Delete(file);
         }
 
 
-        public static bool DoesNodeAudioExist(DialogueNodeDTO node)
+        public static bool DoesNodeAudioExist(int treeIndex, int nodeId)
         {
-            if (!Directory.Exists(DataPath))
-            {
-                Directory.CreateDirectory(DataPath);
-                return false;
-            }
-            string[] files = Directory.GetFiles(
-                DataPath,
-                $"{node.id}.*"
-            );
-            return (files.Length > 0);
+            if (!Directory.Exists(DataPath)) return false;
+            return Directory.GetFiles(DataPath, $"{treeIndex}_{nodeId}.*").Length > 0;
         }
 
-        public static string? GetNodeAudioClip(DialogueNodeDTO node)
+        public static string? GetNodeAudioPath(int treeIndex, int nodeId)
         {
-            if (!Directory.Exists(DataPath))
-            {
-                Directory.CreateDirectory(DataPath);
-                return null;
-            }
-            string[] files = Directory.GetFiles(
-                DataPath,
-                $"{node.id}.*"
-            );
-            return (files.Length > 0 ? files[0] : null);
+            if (!Directory.Exists(DataPath)) return null;
+            string[] files = Directory.GetFiles(DataPath, $"{treeIndex}_{nodeId}.*");
+            return files.Length > 0 ? files[0] : null;
         }
     }
 }

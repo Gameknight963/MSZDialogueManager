@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using MZDO;
 using Microsoft.VisualBasic;
 
 namespace MSZDialougeManager
@@ -36,7 +35,7 @@ namespace MSZDialougeManager
                 MessageBox.Show("Please select a valid speaker.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            modifiedNode.speakerName = speakerDropDown.SelectedItem.ToString();
+            modifiedNode.speakerName = speakerDropDown.SelectedItem.ToString()!;
 
             if (!float.TryParse(delayBox.Text, out modifiedNode.delay))
             {
@@ -45,7 +44,7 @@ namespace MSZDialougeManager
             }
 
             modifiedNode.dialogueText = textOfNodeBox.Text;
-            modifiedNode.speakerName = speakerDropDown.SelectedItem.ToString();
+            modifiedNode.speakerName = speakerDropDown.SelectedItem.ToString()!;
             float.TryParse(delayBox.Text, out modifiedNode.delay);
             this.DialogResult = DialogResult.OK;
             this.Close();
