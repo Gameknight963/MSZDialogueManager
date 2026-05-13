@@ -145,7 +145,7 @@ namespace MSZDialougeManager
             if (!itemSelected) return;
 
             NodeRef selected = GetSelectedNode();
-            UpdateNodesBox(nextNodesBox, selected.Node.nextNodeIds);
+            UpdateNodesBox(nextNodesBox, GetSelectedNode());
 
             bool hasAudioClip = FilesystemManager.DoesNodeAudioExist(selected.TreeIndex, selected.Node.id);
             audioPlayButton.Visible = hasAudioClip;
@@ -156,23 +156,23 @@ namespace MSZDialougeManager
                 : "None";
         }
 
-        void UpdateNodesBox(ListBox nodesBox, int[] nodeIds)
+void UpdateNodesBox(ListBox nodesBox, NodeRef current)
+{
+    nodesBox.BeginUpdate();
+    nodesBox.Items.Clear();
+    foreach (int id in current.Node.nextNodeIds)
+    {
+        NodeRef? nodeRef = nodes.FirstOrDefault(n => n.Node.id == id && n.TreeIndex == current.TreeIndex);
+        if (nodeRef == null) continue;
+        NextNodesBoxItem item = new()
         {
-            nodesBox.BeginUpdate();
-            nodesBox.Items.Clear();
-            foreach (int id in nodeIds)
-            {
-                NodeRef? nodeRef = nodes.FirstOrDefault(n => n.Node.id == id);
-                if (nodeRef == null) continue;
-                NextNodesBoxItem item = new()
-                {
-                    text = $"[{id}] {nodeRef.Node.speakerName}: {nodeRef.Node.dialogueText}",
-                    node = nodeRef.Node
-                };
-                nodesBox.Items.Add(item);
-            }
-            nodesBox.EndUpdate();
-        }
+            text = $"[{id}] {nodeRef.Node.speakerName}: {nodeRef.Node.dialogueText}",
+            node = nodeRef.Node
+        };
+        nodesBox.Items.Add(item);
+    }
+    nodesBox.EndUpdate();
+}
 
         public static void UpdateDialogueView(ListView dialogueView, List<NodeRef> nodes)
         {
@@ -372,7 +372,7 @@ namespace MSZDialougeManager
             if (lvItem != null)
             {
                 lvItem.Selected = true;
-                UpdateNodesBox(nextNodesBox, GetSelectedNode().Node.nextNodeIds);
+                UpdateNodesBox(nextNodesBox, GetSelectedNode());
             }
         }
 
