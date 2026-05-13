@@ -182,7 +182,7 @@ namespace MSZDialougeManager
                     group = new ListViewGroup(groupKey, groupName);
                     dialogueView.Groups.Add(group);
                 }
-                ListViewItem item = new(nodeRef.Node.id.ToString()) { Group = group };
+                ListViewItem item = new(nodeRef.Node.id.ToString()) { Group = group, Tag = nodeRef };
                 item.SubItems.Add(nodeRef.Node.speakerName);
                 item.SubItems.Add(nodeRef.Node.dialogueText);
                 dialogueView.Items.Add(item);
@@ -197,7 +197,7 @@ namespace MSZDialougeManager
         void Inittemplate()
         {
             SetUIMode(UIMode.Idle);
-            pack = JsonConvert.DeserializeObject<DialoguePack>(File.ReadAllText(FilesystemManager.template))!;
+            pack = JsonConvert.DeserializeObject<DialoguePack>(File.ReadAllText(FilesystemManager.Template))!;
             nodes = FlattenPack(pack);
             UpdateDialogueView(dialogueView, nodes);
             dialogueView.Items[0].Selected = true;
@@ -270,10 +270,14 @@ namespace MSZDialougeManager
                 nodeRef.Node.dialogueText = editor.modifiedNode.dialogueText;
                 nodeRef.Node.speakerName = editor.modifiedNode.speakerName;
                 nodeRef.Node.delay = editor.modifiedNode.delay;
-                ListViewItem item = dialogueView.Items[nodeRef.Node.id];
-                item.SubItems[0].Text = nodeRef.Node.id.ToString();
-                item.SubItems[1].Text = nodeRef.Node.speakerName;
-                item.SubItems[2].Text = nodeRef.Node.dialogueText;
+                ListViewItem? item = dialogueView.Items.Cast<ListViewItem>()
+                    .FirstOrDefault(i => (NodeRef)i.Tag! == nodeRef);
+                if (item != null)
+                {
+                    item.SubItems[0].Text = nodeRef.Node.id.ToString();
+                    item.SubItems[1].Text = nodeRef.Node.speakerName;
+                    item.SubItems[2].Text = nodeRef.Node.dialogueText;
+                }
                 UpdateUI();
             }
         }
@@ -315,11 +319,8 @@ namespace MSZDialougeManager
             UpdateUI();
         }
 
-        private NodeRef GetSelectedNode()
-        {
-            int id = int.Parse(dialogueView.SelectedItems[0].Text);
-            return nodes.First(n => n.Node.id == id);
-        }
+        private NodeRef GetSelectedNode() =>
+            (NodeRef)dialogueView.SelectedItems[0].Tag!;
 
         private void SetStatus(string text) => statusLabel.Text = text;
 
