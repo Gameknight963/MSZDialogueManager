@@ -16,7 +16,7 @@ namespace MSZDialougeManager
         private IWavePlayer? waveOut;
         private WaveStream? audioStream;
 
-        public DialogueEditor()
+        public DialogueEditor(string? filePath = null)
         {
             InitializeComponent();
             SetUIMode(UIMode.Init);
@@ -26,6 +26,13 @@ namespace MSZDialougeManager
 
             dialogueView.ColumnWidthChanging += dialogueView_ColumnWidthChanging;
             dialogueView.ColumnWidthChanged += dialogueView_ColumnWidthChanged;
+
+            if (AssociationHelper.IsFileAssociationRegistered() && !AssociationHelper.IsFileAssociationCurrent())
+                AssociationHelper.RegisterFileAssociation();
+
+            shellToolStripMenuItem.Checked = AssociationHelper.IsFileAssociationRegistered();
+
+            if (filePath != null) LoadPack(filePath);
 
             searchBox.SetPlaceholder("Search by dialogue text...");
         }
@@ -225,6 +232,18 @@ namespace MSZDialougeManager
             Cursor = Cursors.Default;
         }
 
+        void LoadPack(string path)
+        {
+            Cursor = Cursors.WaitCursor;
+            pack = FilesystemManager.LoadProj(path)!;
+            nodes = FlattenPack(pack);
+            UpdateDialogueView(dialogueView, nodes);
+            dialogueView.Items[0].Selected = true;
+            dialogueView.Focus();
+            SetUIMode(UIMode.Idle);
+            Cursor = Cursors.Default;
+        }
+
         void SavePack()
         {
             using SaveFileDialog dialog = new()
@@ -379,5 +398,13 @@ namespace MSZDialougeManager
         }
 
         private void StopAudio() => NAudioHelpers.StopAudio(ref waveOut, ref audioStream);
+
+        private void shellToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (shellToolStripMenuItem.Checked)
+                AssociationHelper.RegisterFileAssociation();
+            else
+                AssociationHelper.UnregisterFileAssociation();
+        }
     }
 }
