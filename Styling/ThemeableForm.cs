@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MSZDialougeManager.Styling
 {
@@ -60,9 +61,74 @@ namespace MSZDialougeManager.Styling
 
                 tc.DrawMode = TabDrawMode.OwnerDrawFixed;
             }
+            if (c is DataGridView dgv)
+            {
+                if (_themedControls.Add(dgv))
+                {
+                    dgv.CellPainting += Dgv_CellPainting;
+                    dgv.EnableHeadersVisualStyles = false;
+                }
+
+                dgv.BackgroundColor = _headerStyle.BackColor!.Value;
+                dgv.GridColor = Color.FromArgb(60, 60, 60);
+
+                dgv.ColumnHeadersDefaultCellStyle.BackColor = _headerStyle.BackColor!.Value;
+                dgv.ColumnHeadersDefaultCellStyle.ForeColor = _headerStyle.ForeColor!.Value;
+
+                dgv.DefaultCellStyle.BackColor = _headerStyle.BackColor!.Value;
+                dgv.DefaultCellStyle.ForeColor = _headerStyle.ForeColor!.Value;
+
+                dgv.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue;
+                dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+
+                dgv.RowHeadersDefaultCellStyle.BackColor = _headerStyle.BackColor!.Value;
+                dgv.RowHeadersDefaultCellStyle.ForeColor = _headerStyle.ForeColor!.Value;
+            }
 
             foreach (Control child in c.Controls)
                 ApplyControlTheme(child, theme);
+        }
+
+        private void Dgv_CellPainting(object? sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex >= 0 &&
+                ((DataGridView)sender!).Columns[e.ColumnIndex] is DataGridViewComboBoxColumn)
+            {
+                return;
+            }
+
+            if (e.RowIndex < 0 && e.ColumnIndex < 0)
+            {
+                return;
+            }
+
+            e.PaintBackground(e.CellBounds, true);
+
+            string text = Convert.ToString(e.FormattedValue) ?? string.Empty;
+
+            if (_useTextRenderer)
+            {
+                TextRenderer.DrawText(
+                    e.Graphics,
+                    text,
+                    e.CellStyle.Font!,
+                    e.CellBounds,
+                    e.CellStyle.ForeColor,
+                    TextFormatFlags.Left | TextFormatFlags.VerticalCenter
+                );
+            }
+            else
+            {
+                DrawShadowText(
+                    e.Graphics,
+                    text,
+                    e.CellStyle.Font!,
+                    e.CellBounds,
+                    e.CellStyle.ForeColor
+                );
+            }
+
+            e.Handled = true;
         }
 
         protected override void Dispose(bool disposing)
