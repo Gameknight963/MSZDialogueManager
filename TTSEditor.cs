@@ -1,8 +1,9 @@
-﻿using MZDO;
+﻿using MSZDialougeManager.Styling;
+using MZDO;
 
 namespace MSZDialougeManager
 {
-    public partial class TTSEditor : Form
+    public partial class TTSEditor : ThemeableForm
     {
         HashSet<string> speakers = new HashSet<string>();
 

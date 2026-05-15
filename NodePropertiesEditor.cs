@@ -27,21 +27,21 @@ namespace MSZDialougeManager
         {
             if (string.IsNullOrWhiteSpace(textOfNodeBox.Text))
             {
-                MessageBox.Show("Dialogue text cannot be empty.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CoolMessageBox.Show("Dialogue text cannot be empty.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; 
             }
             modifiedNode.dialogueText = textOfNodeBox.Text;
 
             if (speakerDropDown.SelectedItem == null || string.IsNullOrWhiteSpace(speakerDropDown.SelectedItem.ToString()))
             {
-                MessageBox.Show("Please select a valid speaker.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CoolMessageBox.Show("Please select a valid speaker.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             modifiedNode.speakerName = speakerDropDown.SelectedItem.ToString()!;
 
             if (!float.TryParse(delayBox.Text, out modifiedNode.delay))
             {
-                MessageBox.Show("Delay must be a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CoolMessageBox.Show("Delay must be a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -60,8 +60,8 @@ namespace MSZDialougeManager
 
         private void customSpeakerLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string input = Interaction.InputBox("Enter a custom speaker name:", "Custom Speaker");
-            if (input == "") return;
+            string? input = CoolInputBox.Prompt("Enter a custom speaker name:", "Custom Speaker");
+            if (input == null) return;
             speakerDropDown.Items.Add(input);
             speakerDropDown.SelectedItem = input;
         }
