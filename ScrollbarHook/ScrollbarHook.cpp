@@ -3,6 +3,7 @@
 #include <uxtheme.h>
 #include <vssym32.h>
 #include <d2d1.h>
+#include <stdio.h>
 #include "MinHook.h"
 
 #pragma comment(lib, "d2d1.lib")
@@ -10,12 +11,16 @@
 
 typedef HRESULT(WINAPI* pDrawThemeBackground)(HTHEME, HDC, int, int, LPCRECT, LPCRECT);
 static pDrawThemeBackground DrawThemeBackground_orig = nullptr;
+
+typedef HRESULT(WINAPI* pDrawThemeBackgroundEx)(HTHEME, HDC, int, int, LPCRECT, const DTBGOPTS*);
+static pDrawThemeBackgroundEx DrawThemeBackgroundEx_orig = nullptr;
+
 static ID2D1Factory* g_d2dFactory = nullptr;
 
 typedef HRESULT(WINAPI* pGetThemeClass)(HTHEME, LPWSTR, int);
 static pGetThemeClass GetThemeClass = nullptr;
 
-HRESULT CreateBoundD2DRenderTarget(HDC hdc, LPCRECT pRect, ID2D1DCRenderTarget** ppRenderTarget)
+static HRESULT CreateBoundD2DRenderTarget(HDC hdc, LPCRECT pRect, ID2D1DCRenderTarget** ppRenderTarget)
 {
     D2D1_RENDER_TARGET_PROPERTIES rtProps = D2D1::RenderTargetProperties(
         D2D1_RENDER_TARGET_TYPE_SOFTWARE,
@@ -40,7 +45,7 @@ HRESULT CreateBoundD2DRenderTarget(HDC hdc, LPCRECT pRect, ID2D1DCRenderTarget**
     return S_OK;
 }
 
-BOOL PaintScroll(HDC hdc, int iPartId, int iStateId, LPCRECT pRect)
+static BOOL PaintScroll(HDC hdc, int iPartId, int iStateId, LPCRECT pRect)
 {
     if (iPartId == SBP_UPPERTRACKVERT || iPartId == SBP_LOWERTRACKVERT
         || iPartId == SBP_UPPERTRACKHORZ || iPartId == SBP_LOWERTRACKHORZ)
@@ -88,7 +93,82 @@ BOOL PaintScroll(HDC hdc, int iPartId, int iStateId, LPCRECT pRect)
     return TRUE;
 }
 
-HRESULT WINAPI HookedDrawThemeBackground(
+static BOOL PaintScrollArrows(HDC hdc, int iPartId, int iStateId, LPCRECT pRect)
+{
+    if (iPartId != SBP_ARROWBTN || !g_d2dFactory)
+        return FALSE;
+
+    ID2D1DCRenderTarget* pRenderTarget = nullptr;
+    if (FAILED(CreateBoundD2DRenderTarget(hdc, pRect, &pRenderTarget)))
+        return FALSE;
+
+    float width = (float)(pRect->right - pRect->left);
+    float height = (float)(pRect->bottom - pRect->top);
+    float centerX = width / 2.f;
+    float centerY = height / 2.f;
+
+    float arrowLen = 4.f;
+    float dx = arrowLen * 0.866f;
+    float dy = arrowLen * 0.5f;
+
+    D2D1_COLOR_F color = (iStateId == ABS_UPHOT || iStateId == ABS_DOWNHOT ||
+        iStateId == ABS_LEFTHOT || iStateId == ABS_RIGHTHOT)
+        ? D2D1::ColorF(0.88f, 0.88f, 0.88f, 0.75f)
+        : D2D1::ColorF(0.63f, 0.63f, 0.63f, 0.5f);
+
+    D2D1_POINT_2F ptTip, ptLeft, ptRight;
+
+    if (iStateId >= ABS_UPNORMAL && iStateId <= ABS_UPDISABLED)
+    {
+        ptTip = D2D1::Point2F(centerX, centerY - dy);
+        ptLeft = D2D1::Point2F(centerX - dx, centerY + dy);
+        ptRight = D2D1::Point2F(centerX + dx, centerY + dy);
+    }
+    else if (iStateId >= ABS_DOWNNORMAL && iStateId <= ABS_DOWNDISABLED)
+    {
+        ptTip = D2D1::Point2F(centerX, centerY + dy);
+        ptLeft = D2D1::Point2F(centerX - dx, centerY - dy);
+        ptRight = D2D1::Point2F(centerX + dx, centerY - dy);
+    }
+    else if (iStateId >= ABS_LEFTNORMAL && iStateId <= ABS_LEFTDISABLED)
+    {
+        ptTip = D2D1::Point2F(centerX - dy, centerY);
+        ptLeft = D2D1::Point2F(centerX + dy, centerY - dx);
+        ptRight = D2D1::Point2F(centerX + dy, centerY + dx);
+    }
+    else if (iStateId >= ABS_RIGHTNORMAL && iStateId <= ABS_RIGHTDISABLED)
+    {
+        ptTip = D2D1::Point2F(centerX + dy, centerY);
+        ptLeft = D2D1::Point2F(centerX - dy, centerY - dx);
+        ptRight = D2D1::Point2F(centerX - dy, centerY + dx);
+    }
+    else
+    {
+        pRenderTarget->Release();
+        return FALSE;
+    }
+
+    ID2D1SolidColorBrush* brush = nullptr;
+    ID2D1SolidColorBrush* bgBrush = nullptr;
+    pRenderTarget->CreateSolidColorBrush(color, &brush);
+    pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(0.12f, 0.12f, 0.12f, 1.f), &bgBrush);
+
+    D2D1_RECT_F bg = D2D1::RectF(0, 0, width, height);
+
+    pRenderTarget->BeginDraw();
+    pRenderTarget->FillRectangle(&bg, bgBrush);
+    pRenderTarget->DrawLine(ptLeft, ptTip, brush, 1.5f);
+    pRenderTarget->DrawLine(ptRight, ptTip, brush, 1.5f);
+    pRenderTarget->EndDraw();
+
+    brush->Release();
+    bgBrush->Release();
+    pRenderTarget->Release();
+
+    return TRUE;
+}
+
+static HRESULT WINAPI HookedDrawThemeBackground(
     HTHEME hTheme, HDC hdc, int iPartId, int iStateId,
     LPCRECT pRect, LPCRECT pClipRect)
 {
@@ -100,9 +180,10 @@ HRESULT WINAPI HookedDrawThemeBackground(
         {
             if (PaintScroll(hdc, iPartId, iStateId, pRect))
                 return S_OK;
+            if (PaintScrollArrows(hdc, iPartId, iStateId, pRect))
+                return S_OK;
         }
     }
-
     return DrawThemeBackground_orig(hTheme, hdc, iPartId, iStateId, pRect, pClipRect);
 }
 
@@ -120,6 +201,7 @@ public:
             GetModuleHandleW(L"uxtheme.dll"), MAKEINTRESOURCEA(74));
 
         MH_Initialize();
+
         void* pTarget = GetProcAddress(
             GetModuleHandleW(L"uxtheme.dll"), "DrawThemeBackground");
         MH_CreateHook(pTarget, &HookedDrawThemeBackground,
