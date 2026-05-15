@@ -110,7 +110,39 @@ namespace MSZDialougeManager.Styling
                     _useTextRenderer = false;
                     break;
             }
-            this.Refresh();
+            Refresh();
+        }
+
+        public IEnumerable<ToolStripItem> GetAllToolStripItems()
+        {
+            IEnumerable<ToolStrip> toolStrips = Controls.OfType<ToolStrip>();
+
+            foreach (ToolStrip ts in toolStrips)
+            {
+                foreach (ToolStripItem item in ts.Items)
+                {
+                    foreach (ToolStripItem child in GetItemAndChildren(item))
+                    {
+                        yield return child;
+                    }
+                }
+            }
+        }
+
+        private static IEnumerable<ToolStripItem> GetItemAndChildren(ToolStripItem item)
+        {
+            yield return item;
+
+            if (item is ToolStripDropDownItem dropDown)
+            {
+                foreach (ToolStripItem subItem in dropDown.DropDownItems)
+                {
+                    foreach (var child in GetItemAndChildren(subItem))
+                    {
+                        yield return child;
+                    }
+                }
+            }
         }
 
         public void ApplyTheme(ThemeManager.Theme theme, ThemeManager.TextRenderMode? textMode = null)

@@ -22,6 +22,24 @@ namespace MSZDialougeManager.Styling
                 if (style.Font != null)
                     parent.Font = style.Font;
 
+
+                if (parent is ToolStrip ts)
+                {
+                    foreach (ToolStripItem topLevelItem in ts.Items)
+                    {
+                        if (topLevelItem is ToolStripDropDownItem dropDown)
+                        {
+                            foreach (ToolStripItem subItem in GetAllItems(dropDown))
+                            {
+                                if (style.BackColor.HasValue)
+                                    subItem.BackColor = style.BackColor.Value;
+                                if (style.ForeColor.HasValue)
+                                    subItem.ForeColor = style.ForeColor.Value;
+                            }
+                        }
+                    }
+                }
+
                 if (style.BorderStyle.HasValue)
                 {
                     if (parent is TextBox tb)
@@ -59,6 +77,16 @@ namespace MSZDialougeManager.Styling
             foreach (Control c in parent.Controls)
             {
                 SetColorRecursive(c, style, filter);
+            }
+        }
+
+        public static IEnumerable<ToolStripItem> GetAllItems(ToolStripDropDownItem container)
+        {
+            foreach (ToolStripItem item in container.DropDownItems)
+            {
+                yield return item;
+                if (item is ToolStripDropDownItem sub)
+                    foreach (var child in GetAllItems(sub)) yield return child;
             }
         }
 
