@@ -13,18 +13,18 @@ namespace MSZDialougeManager
             synth.Volume = 100;
         }
 
-        public static void GenerateAudio(DialogueNodeDTO node, string outputFolder, string? voice = "Microsoft David Desktop")
+        public static void GenerateAudio(DialogueEditor.NodeRef nodeRef, string outputFolder, string? voice = "Microsoft David Desktop")
         {
-            if (voice == null) return;
+            if (voice == null) return; 
 
             if (!Directory.Exists(outputFolder))
                 Directory.CreateDirectory(outputFolder);
 
-            string filePath = Path.Combine(outputFolder, $"{node.id}.wav");
+            string filePath = Path.Combine(outputFolder, $"{nodeRef.TreeIndex}_{nodeRef.Node.id}.wav");
 
             synth.SelectVoice(voice);
             synth.SetOutputToWaveFile(filePath);
-            synth.Speak(node.dialogueText);
+            synth.Speak(nodeRef.Node.dialogueText);
         }
 
 

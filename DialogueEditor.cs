@@ -377,7 +377,7 @@ namespace MSZDialougeManager
 
             Cursor = Cursors.WaitCursor;
             foreach (NodeRef nodeRef in nodes)
-                TTSManager.GenerateAudio(nodeRef.Node, FilesystemManager.DataPath, editor.speakerVoices[nodeRef.Node.speakerName]);
+                TTSManager.GenerateAudio(nodeRef, FilesystemManager.DataPath, editor.SpeakerVoices[nodeRef.Node.speakerName]);
             Cursor = Cursors.Default;
             UpdateUI();
         }

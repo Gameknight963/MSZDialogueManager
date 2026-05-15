@@ -10,7 +10,7 @@ namespace MSZDialougeManager
         /// <summary>
         /// First item is speaker, second item is voice
         /// </summary>
-        public Dictionary<string, string?> speakerVoices = new();
+        public Dictionary<string, string?> SpeakerVoices = new();
 
         public TTSEditor(DialoguePack pack)
         {
@@ -77,7 +77,7 @@ namespace MSZDialougeManager
 
                 string speaker = row.Cells[0].Value?.ToString()!;
                 string? voice = row.Cells[1].Value?.ToString() == "None" ? null : row.Cells[1].Value?.ToString();
-                speakerVoices.Add(speaker, voice); 
+                SpeakerVoices.Add(speaker, voice); 
             }
 
             this.Close();
