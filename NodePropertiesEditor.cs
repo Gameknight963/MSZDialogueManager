@@ -1,16 +1,18 @@
 ﻿using MZDO;
 using Microsoft.VisualBasic;
+using MSZDialougeManager.Styling;
 
 namespace MSZDialougeManager
 {
-    public partial class NodePropertiesEditor : Form
+    public partial class NodePropertiesEditor : ThemeableForm
     {
         public DialogueNodeDTO modifiedNode;
         public NodePropertiesEditor(DialogueNodeDTO node)
         {
-            modifiedNode = node;
             InitializeComponent();
+            modifiedNode = node;
             textOfNodeBox.Text = node.dialogueText;
+            StartPosition = FormStartPosition.CenterParent;
 
             if (!speakerDropDown.Items.Contains(node.speakerName))
             {
