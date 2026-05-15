@@ -12,6 +12,14 @@
 	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="ScrollbarHook\**" />
+    <Compile Remove="x64\**" />
+    <EmbeddedResource Remove="ScrollbarHook\**" />
+    <EmbeddedResource Remove="x64\**" />
+    <None Remove="ScrollbarHook\**" />
+    <None Remove="x64\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="msz.ico" />
   </ItemGroup>
 
@@ -20,6 +28,10 @@
     <PackageReference Include="NAudio.Vorbis" Version="1.5.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
 	<PackageReference Include="System.Speech" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="ScrollbarHook\ScrollbarHook.vcxproj" />
   </ItemGroup>
 
   <ItemGroup>
