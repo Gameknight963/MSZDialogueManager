@@ -35,6 +35,7 @@
             speakerColumn = new ColumnHeader();
             textColumn = new ColumnHeader();
             dialogueViewContextMenu = new ContextMenuStrip(components);
+            addNodeContextMenuItem = new ToolStripMenuItem();
             propertiesContextMenuItem = new ToolStripMenuItem();
             statusLabel = new Label();
             loadButton = new Button();
@@ -103,15 +104,23 @@
             // 
             // dialogueViewContextMenu
             // 
-            dialogueViewContextMenu.Items.AddRange(new ToolStripItem[] { propertiesContextMenuItem });
+            dialogueViewContextMenu.Items.AddRange(new ToolStripItem[] { addNodeContextMenuItem, propertiesContextMenuItem });
             dialogueViewContextMenu.Name = "dialogueViewContextMenu";
-            dialogueViewContextMenu.Size = new Size(169, 26);
+            dialogueViewContextMenu.Size = new Size(195, 70);
+            // 
+            // addNodeContextMenuItem
+            // 
+            addNodeContextMenuItem.Name = "addNodeContextMenuItem";
+            addNodeContextMenuItem.ShortcutKeys = Keys.Control | Keys.A;
+            addNodeContextMenuItem.Size = new Size(194, 22);
+            addNodeContextMenuItem.Text = "Add node here";
+            addNodeContextMenuItem.Click += addNodeContextMenuItem_Click;
             // 
             // propertiesContextMenuItem
             // 
             propertiesContextMenuItem.Name = "propertiesContextMenuItem";
             propertiesContextMenuItem.ShortcutKeys = Keys.Control | Keys.P;
-            propertiesContextMenuItem.Size = new Size(168, 22);
+            propertiesContextMenuItem.Size = new Size(194, 22);
             propertiesContextMenuItem.Text = "Properties";
             propertiesContextMenuItem.Click += editPropertiesButton_Click;
             // 
@@ -335,7 +344,7 @@
             // 
             toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { generateWithTTSToolStripMenuItem });
             toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            toolsToolStripMenuItem.Size = new Size(47, 20);
+            toolsToolStripMenuItem.Size = new Size(46, 20);
             toolsToolStripMenuItem.Text = "Tools";
             // 
             // generateWithTTSToolStripMenuItem
@@ -400,7 +409,7 @@
             // 
             shellToolStripMenuItem.CheckOnClick = true;
             shellToolStripMenuItem.Name = "shellToolStripMenuItem";
-            shellToolStripMenuItem.Size = new Size(180, 22);
+            shellToolStripMenuItem.Size = new Size(154, 22);
             shellToolStripMenuItem.Text = "File association";
             shellToolStripMenuItem.Click += shellToolStripMenuItem_Click;
             // 
@@ -465,6 +474,7 @@
         private System.Windows.Forms.Button editPropertiesButton;
         private System.Windows.Forms.ContextMenuStrip dialogueViewContextMenu;
         private System.Windows.Forms.ToolStripMenuItem propertiesContextMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNodeContextMenuItem;
         private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
         private ToolStripMenuItem settingsToolStripMenuItem;
         private ToolStripMenuItem shellToolStripMenuItem;

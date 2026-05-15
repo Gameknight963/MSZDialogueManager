@@ -1,18 +1,17 @@
-﻿using MZDO;
+﻿using MSZDialougeManager.Styling;
+using MZDO;
 using NAudio.Wave;
 using Newtonsoft.Json;
 
 namespace MSZDialougeManager
 {
-    public partial class DialogueEditor : Form
+    public partial class DialogueEditor : ThemeableForm
     {
         public record NodeRef(DialogueNodeDTO Node, int TreeIndex);
 
-        // Dialogue data
         public static DialoguePack? pack { get; private set; }
         public static List<NodeRef> nodes { get; private set; } = new();
 
-        // NAudio playback
         private IWavePlayer? waveOut;
         private WaveStream? audioStream;
 
@@ -23,6 +22,7 @@ namespace MSZDialougeManager
             this.KeyPreview = true;
             this.KeyDown += Form1_KeyDown;
             this.Shown += Form1_Shown;
+            dialogueViewContextMenu.Opening += DialogueViewContextMenu_Opening;
 
             dialogueView.ColumnWidthChanging += dialogueView_ColumnWidthChanging;
             dialogueView.ColumnWidthChanged += dialogueView_ColumnWidthChanged;
@@ -31,10 +31,20 @@ namespace MSZDialougeManager
                 AssociationHelper.RegisterFileAssociation();
 
             shellToolStripMenuItem.Checked = AssociationHelper.IsFileAssociationRegistered();
+            ThemeManager.SetGlobalTheme(ThemeManager.Theme.Acrylic);
 
             if (filePath != null) LoadPack(filePath);
 
             searchBox.SetPlaceholder("Search by dialogue text...");
+        }
+
+        private void DialogueViewContextMenu_Opening(object? sender, System.ComponentModel.CancelEventArgs e)
+        {
+            dialogueViewContextMenu.Tag = dialogueView.PointToClient(Cursor.Position);
+            DwmApi.SetAccentState(dialogueViewContextMenu.Handle, DwmApi.AccentState.ACCENT_ENABLE_BLURBEHIND);
+            dialogueViewContextMenu.BackColor = Color.Black;
+            dialogueViewContextMenu.ForeColor = Color.White;
+            dialogueViewContextMenu.ShowImageMargin = false;
         }
 
         private void Form1_Shown(object? sender, EventArgs e)
@@ -108,7 +118,7 @@ namespace MSZDialougeManager
         {
             ItemSelected,
             Idle,
-            Init
+            Init,
         }
 
         private void SetUIMode(UIMode mode)
@@ -134,6 +144,7 @@ namespace MSZDialougeManager
             assignAudioToolStripMenuItem.Enabled = itemSelected;
             removeAudioToolStripMenuItem.Enabled = itemSelected;
             editPropertiesButton.Visible = itemSelected;
+            addNodeContextMenuItem.Visible = itemSelected;
 
             propertiesContextMenuItem.Visible = itemSelected;
             propertiesContextMenuItem.Enabled = itemSelected;
@@ -156,23 +167,39 @@ namespace MSZDialougeManager
                 : "None";
         }
 
-void UpdateNodesBox(ListBox nodesBox, NodeRef current)
-{
-    nodesBox.BeginUpdate();
-    nodesBox.Items.Clear();
-    foreach (int id in current.Node.nextNodeIds)
-    {
-        NodeRef? nodeRef = nodes.FirstOrDefault(n => n.Node.id == id && n.TreeIndex == current.TreeIndex);
-        if (nodeRef == null) continue;
-        NextNodesBoxItem item = new()
+        ListViewGroup? GetGroupAtPoint(Point p)
         {
-            text = $"[{id}] {nodeRef.Node.speakerName}: {nodeRef.Node.dialogueText}",
-            node = nodeRef.Node
-        };
-        nodesBox.Items.Add(item);
-    }
-    nodesBox.EndUpdate();
-}
+            ListViewGroup? lastGroup = null;
+            foreach (ListViewGroup group in dialogueView.Groups)
+            {
+                if (group.Items.Count == 0) continue;
+                Rectangle first = group.Items[0].Bounds;
+                Rectangle last = group.Items[^1].Bounds;
+                if (p.Y >= first.Top && p.Y <= last.Bottom)
+                    return group;
+                if (p.Y > last.Bottom)
+                    lastGroup = group;
+            }
+            return lastGroup;
+        }
+
+        void UpdateNodesBox(ListBox nodesBox, NodeRef current)
+        {
+            nodesBox.BeginUpdate();
+            nodesBox.Items.Clear();
+            foreach (int id in current.Node.nextNodeIds)
+            {
+                NodeRef? nodeRef = nodes.FirstOrDefault(n => n.Node.id == id && n.TreeIndex == current.TreeIndex);
+                if (nodeRef == null) continue;
+                NextNodesBoxItem item = new()
+                {
+                    text = $"[{id}] {nodeRef.Node.speakerName}: {nodeRef.Node.dialogueText}",
+                    node = nodeRef.Node
+                };
+                nodesBox.Items.Add(item);
+            }
+            nodesBox.EndUpdate();
+        }
 
         public static void UpdateDialogueView(ListView dialogueView, List<NodeRef> nodes)
         {
@@ -323,6 +350,11 @@ void UpdateNodesBox(ListBox nodesBox, NodeRef current)
         private void removeAudioToolStripMenuItem_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode());
 
         private void editPropertiesButton_Click(object sender, EventArgs e) => EditProperties();
+
+        private void addNodeContextMenuItem_Click(object sender, EventArgs e)
+        {
+            //ListViewGroup group = GetGroupAtPoint
+        }
 
         private void generateWithTTSToolStripMenuItem_Click(object sender, EventArgs e)
         {
