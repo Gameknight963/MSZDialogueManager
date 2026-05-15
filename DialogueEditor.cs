@@ -38,6 +38,18 @@ namespace MSZDialougeManager
             searchBox.SetPlaceholder("Search by dialogue text...");
         }
 
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            ScrollHook.Install();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            ScrollHook.Uninstall();
+        }
+
         private void DialogueViewContextMenu_Opening(object? sender, System.ComponentModel.CancelEventArgs e)
         {
             dialogueViewContextMenu.Tag = dialogueView.PointToClient(Cursor.Position);

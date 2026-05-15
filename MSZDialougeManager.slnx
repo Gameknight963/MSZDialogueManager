@@ -1,3 +1,9 @@
 <Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="ScrollbarHook/ScrollbarHook.vcxproj" Id="666b98a1-27b4-80c8-07d2-7cfe5c2e06c1" />
   <Project Path="MSZDialougeManager.csproj" Id="21191cf4-97c4-4b2f-818d-550c34978ab7" />
 </Solution>
