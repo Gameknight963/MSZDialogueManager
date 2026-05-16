@@ -300,16 +300,15 @@ namespace MSZDialougeManager
 
                 if (!reachableByTree.ContainsKey(nodeRef.TreeIndex))
                     reachableByTree[nodeRef.TreeIndex] = GetReachableNodes(nodeRef.TreeIndex);
-
                 bool hasBrokenRefs = nodeRef.Node.nextNodeIds.Any(id =>
                     !allIdsByTree[nodeRef.TreeIndex].Contains(id));
-
                 bool reachable = reachableByTree[nodeRef.TreeIndex].Contains(nodeRef.Node.id);
-
                 bool isStartNode = pack!.trees[nodeRef.TreeIndex].startNodeIds?.Contains(nodeRef.Node.id) ?? false;
+                bool isTerminal = nodeRef.Node.nextNodeIds == null || nodeRef.Node.nextNodeIds.Length == 0;
 
                 item.ForeColor = hasBrokenRefs ? Color.Orange
                     : isStartNode ? Color.Green
+                    : isTerminal ? Color.Blue
                     : reachable ? item.ListView!.ForeColor
                     : Color.Red;
             }
