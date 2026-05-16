@@ -274,6 +274,11 @@ namespace MSZDialougeManager.Styling
         private void Lv_DrawSubItem(object? sender, DrawListViewSubItemEventArgs e)
         {
             Color back = e.Item!.Selected ? SystemColors.Highlight : e.Item.BackColor;
+            Color fore = e.Item.Selected
+                ? SystemColors.HighlightText
+                : e.Item.ForeColor != e.Item.ListView!.ForeColor
+                    ? e.Item.ForeColor
+                    : _headerStyle.ForeColor!.Value;
 
             using (Brush backBrush = new SolidBrush(back))
             {
@@ -282,7 +287,7 @@ namespace MSZDialougeManager.Styling
 
             if (_useTextRenderer)
             {
-                using Brush foreBrush = new SolidBrush(_headerStyle.ForeColor!.Value);
+                using Brush foreBrush = new SolidBrush(fore);
                 e.Graphics.DrawString(e.SubItem!.Text, e.SubItem.Font, foreBrush, e.Bounds);
             }
             else
