@@ -2,6 +2,7 @@
 using MZDO;
 using NAudio.Wave;
 using Newtonsoft.Json;
+using static MSZDialougeManager.DialogueEditor;
 
 namespace MSZDialougeManager
 {
@@ -36,9 +37,9 @@ namespace MSZDialougeManager
 
             shellToolStripMenuItem.Checked = AssociationHelper.IsFileAssociationRegistered();
             if (File.Exists(lastThemeFile))
-                ThemeManager.SetGlobalTheme(Enum.Parse<ThemeManager.Theme>(File.ReadAllText(lastThemeFile)));
+                ThemeManager.SetGlobalTheme(Enum.Parse<ThemeManager.Theme>(File.ReadAllText(lastThemeFile)), ThemeManager.TextRenderMode.ShadowText);
             else
-                ThemeManager.SetGlobalTheme(ThemeManager.Theme.Acrylic);
+                ThemeManager.SetGlobalTheme(ThemeManager.Theme.Acrylic, ThemeManager.TextRenderMode.ShadowText);
 
             if (filePath != null) LoadPack(filePath);
 
@@ -175,6 +176,7 @@ namespace MSZDialougeManager
             removeAudioToolStripMenuItem.Enabled = itemSelected;
             editPropertiesButton.Visible = itemSelected;
             addNodeContextMenuItem.Visible = itemSelected;
+            deleteThisNodeToolStripMenuItem.Visible = itemSelected;
 
             propertiesContextMenuItem.Visible = itemSelected;
             propertiesContextMenuItem.Enabled = itemSelected;
@@ -279,19 +281,34 @@ namespace MSZDialougeManager
 
         void RefreshReachability()
         {
-            Dictionary<int, HashSet<int>> reachableByTree = [];
+            var reachableByTree = new Dictionary<int, HashSet<int>>();
+            var allIdsByTree = new Dictionary<int, HashSet<int>>();
+
             foreach (ListViewItem item in dialogueView.Items)
             {
                 NodeRef nodeRef = (NodeRef)item.Tag!;
+                if (!allIdsByTree.ContainsKey(nodeRef.TreeIndex))
+                    allIdsByTree[nodeRef.TreeIndex] = new HashSet<int>();
+                allIdsByTree[nodeRef.TreeIndex].Add(nodeRef.Node.id);
+            }
+
+            foreach (ListViewItem item in dialogueView.Items)
+            {
+                NodeRef nodeRef = (NodeRef)item.Tag!;
+
                 if (!reachableByTree.ContainsKey(nodeRef.TreeIndex))
                     reachableByTree[nodeRef.TreeIndex] = GetReachableNodes(nodeRef.TreeIndex);
 
-                item.ForeColor = reachableByTree[nodeRef.TreeIndex].Contains(nodeRef.Node.id)
-                    ? dialogueView.ForeColor
+                bool hasBrokenRefs = nodeRef.Node.nextNodeIds.Any(id =>
+                    !allIdsByTree[nodeRef.TreeIndex].Contains(id));
+
+                bool reachable = reachableByTree[nodeRef.TreeIndex].Contains(nodeRef.Node.id);
+
+                item.ForeColor = hasBrokenRefs ? Color.Orange
+                    : reachable ? item.ListView!.ForeColor
                     : Color.Red;
             }
         }
-
 
         public void AddToDialogueView(NodeRef nodeRef, ListViewGroup group)
         {
@@ -442,6 +459,18 @@ namespace MSZDialougeManager
             AddToDialogueView(newNode, group);
         }
 
+        private void deleteThisNodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NodeRef nodeRef = GetSelectedNode();
+            nodes.Remove(nodeRef);
+            ListViewItem? item = dialogueView.Items.Cast<ListViewItem>()
+                .FirstOrDefault(i => (NodeRef)i.Tag! == nodeRef);
+            if (item != null)
+                dialogueView.Items.Remove(item);
+            RefreshReachability();
+            SetUIMode(UIMode.Idle);
+        }
+
         private void generateWithTTSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (pack == null) return;
@@ -531,30 +560,35 @@ namespace MSZDialougeManager
         {
             SetScrollHooked(false);
             ThemeManager.SetGlobalTheme(ThemeManager.Theme.Light);
+            RefreshReachability();
         }
 
         private void darkToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetScrollHooked(true);
             ThemeManager.SetGlobalTheme(ThemeManager.Theme.Dark);
+            RefreshReachability();
         }
 
         private void blurToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetScrollHooked(true);
             ThemeManager.SetGlobalTheme(ThemeManager.Theme.Blur);
+            RefreshReachability();
         }
 
         private void acrylicToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetScrollHooked(true);
             ThemeManager.SetGlobalTheme(ThemeManager.Theme.Acrylic);
+            RefreshReachability();
         }
 
         private void blackToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetScrollHooked(true);
             ThemeManager.SetGlobalTheme(ThemeManager.Theme.ExtendFrameDark);
+            RefreshReachability();
         }
     }
 }
