@@ -1,4 +1,6 @@
-﻿namespace MSZDialougeManager
+﻿using MSZDialougeManager.Properties;
+
+namespace MSZDialougeManager
 {
     partial class TreePropertiesEditor
     {
@@ -29,6 +31,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogueEditor));
             startNodesBox = new TextBox();
             label1 = new Label();
             label2 = new Label();
@@ -189,7 +192,9 @@
             Controls.Add(treeNameBox);
             Controls.Add(startNodesBox);
             ForeColor = Color.Black;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "TreePropertiesEditor";
+            Text = "Tree Properties Editor";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -1,6 +1,5 @@
 ﻿using MSZDialougeManager.Styling;
 using MZDO;
-using NAudio.CoreAudioApi;
 
 namespace MSZDialougeManager
 {
