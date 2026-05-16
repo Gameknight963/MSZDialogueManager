@@ -486,6 +486,7 @@
             treePropertiesToolStripMenuItem.Name = "treePropertiesToolStripMenuItem";
             treePropertiesToolStripMenuItem.Size = new Size(185, 22);
             treePropertiesToolStripMenuItem.Text = "Tree properties";
+            treePropertiesToolStripMenuItem.Click += treePropertiesToolStripMenuItem_Click;
             // 
             // addNodeToThisTreeToolStripMenuItem
             // 
