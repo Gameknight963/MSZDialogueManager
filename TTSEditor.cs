@@ -16,6 +16,10 @@ namespace MSZDialougeManager
         {
             InitializeComponent();
 
+            AcceptButton = generate;
+            CancelButton = cancel;
+            StartPosition = FormStartPosition.CenterParent;
+
             foreach (DialogueTreeDTO tree in pack.trees)
                 foreach (DialogueNodeDTO node in tree.nodes)
                     speakers.Add(node.speakerName);

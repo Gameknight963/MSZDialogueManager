@@ -1,5 +1,6 @@
 ﻿using MZDO;
 using MSZDialougeManager.Styling;
+using Accessibility;
 
 namespace MSZDialougeManager
 {
@@ -11,6 +12,8 @@ namespace MSZDialougeManager
             InitializeComponent();
             modifiedNode = node ?? new DialogueNodeDTO();
             StartPosition = FormStartPosition.CenterParent;
+            AcceptButton = Ok;
+            CancelButton = Cancel;
 
             if (node == null) return;
             textOfNodeBox.Text = node.dialogueText;
