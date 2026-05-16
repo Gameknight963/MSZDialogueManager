@@ -68,6 +68,12 @@
             propertiesToolStripMenuItem = new ToolStripMenuItem();
             settingsToolStripMenuItem = new ToolStripMenuItem();
             shellToolStripMenuItem = new ToolStripMenuItem();
+            themeToolStripMenuItem = new ToolStripMenuItem();
+            lightToolStripMenuItem = new ToolStripMenuItem();
+            darkToolStripMenuItem = new ToolStripMenuItem();
+            blurToolStripMenuItem = new ToolStripMenuItem();
+            acrylicToolStripMenuItem = new ToolStripMenuItem();
+            blackToolStripMenuItem = new ToolStripMenuItem();
             dialogueViewContextMenu.SuspendLayout();
             panel1.SuspendLayout();
             menuStrip.SuspendLayout();
@@ -106,7 +112,7 @@
             // 
             dialogueViewContextMenu.Items.AddRange(new ToolStripItem[] { addNodeContextMenuItem, propertiesContextMenuItem });
             dialogueViewContextMenu.Name = "dialogueViewContextMenu";
-            dialogueViewContextMenu.Size = new Size(195, 70);
+            dialogueViewContextMenu.Size = new Size(195, 48);
             // 
             // addNodeContextMenuItem
             // 
@@ -302,7 +308,7 @@
             // 
             // menuStrip
             // 
-            menuStrip.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, toolsToolStripMenuItem, nodeToolStripMenuItem, settingsToolStripMenuItem });
+            menuStrip.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, toolsToolStripMenuItem, nodeToolStripMenuItem, settingsToolStripMenuItem, themeToolStripMenuItem });
             menuStrip.Location = new Point(0, 0);
             menuStrip.Name = "menuStrip";
             menuStrip.Size = new Size(800, 24);
@@ -413,6 +419,48 @@
             shellToolStripMenuItem.Text = "File association";
             shellToolStripMenuItem.Click += shellToolStripMenuItem_Click;
             // 
+            // themeToolStripMenuItem
+            // 
+            themeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { lightToolStripMenuItem, darkToolStripMenuItem, blurToolStripMenuItem, acrylicToolStripMenuItem, blackToolStripMenuItem });
+            themeToolStripMenuItem.Name = "themeToolStripMenuItem";
+            themeToolStripMenuItem.Size = new Size(55, 20);
+            themeToolStripMenuItem.Text = "Theme";
+            // 
+            // lightToolStripMenuItem
+            // 
+            lightToolStripMenuItem.Name = "lightToolStripMenuItem";
+            lightToolStripMenuItem.Size = new Size(180, 22);
+            lightToolStripMenuItem.Text = "Light";
+            lightToolStripMenuItem.Click += lightToolStripMenuItem_Click;
+            // 
+            // darkToolStripMenuItem
+            // 
+            darkToolStripMenuItem.Name = "darkToolStripMenuItem";
+            darkToolStripMenuItem.Size = new Size(180, 22);
+            darkToolStripMenuItem.Text = "Dark";
+            darkToolStripMenuItem.Click += darkToolStripMenuItem_Click;
+            // 
+            // blurToolStripMenuItem
+            // 
+            blurToolStripMenuItem.Name = "blurToolStripMenuItem";
+            blurToolStripMenuItem.Size = new Size(180, 22);
+            blurToolStripMenuItem.Text = "Blur";
+            blurToolStripMenuItem.Click += blurToolStripMenuItem_Click;
+            // 
+            // acrylicToolStripMenuItem
+            // 
+            acrylicToolStripMenuItem.Name = "acrylicToolStripMenuItem";
+            acrylicToolStripMenuItem.Size = new Size(180, 22);
+            acrylicToolStripMenuItem.Text = "Acrylic";
+            acrylicToolStripMenuItem.Click += acrylicToolStripMenuItem_Click;
+            // 
+            // blackToolStripMenuItem
+            // 
+            blackToolStripMenuItem.Name = "blackToolStripMenuItem";
+            blackToolStripMenuItem.Size = new Size(180, 22);
+            blackToolStripMenuItem.Text = "Black";
+            blackToolStripMenuItem.Click += blackToolStripMenuItem_Click;
+            // 
             // DialogueEditor
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
@@ -424,6 +472,7 @@
             Controls.Add(dialogueView);
             Controls.Add(menuStrip);
             Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForeColor = Color.Black;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip;
             Name = "DialogueEditor";
@@ -478,6 +527,12 @@
         private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
         private ToolStripMenuItem settingsToolStripMenuItem;
         private ToolStripMenuItem shellToolStripMenuItem;
+        private ToolStripMenuItem themeToolStripMenuItem;
+        private ToolStripMenuItem lightToolStripMenuItem;
+        private ToolStripMenuItem darkToolStripMenuItem;
+        private ToolStripMenuItem blurToolStripMenuItem;
+        private ToolStripMenuItem acrylicToolStripMenuItem;
+        private ToolStripMenuItem blackToolStripMenuItem;
     }
 }
 
