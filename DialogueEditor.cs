@@ -468,10 +468,13 @@ namespace MSZDialougeManager
         {
             NodePropertiesEditor editor = new();
             editor.ShowDialog();
-            editor.modifiedNode.id = nextTemporaryNodeId--;
-            NodeRef newNode = new(editor.modifiedNode, (int)group.Tag!);
-            nodes.Add(newNode);
-            AddToDialogueView(newNode, group);
+            if (editor.DialogResult == DialogResult.OK)
+            {
+                editor.modifiedNode.id = nextTemporaryNodeId--;
+                NodeRef newNode = new(editor.modifiedNode, (int)group.Tag!);
+                nodes.Add(newNode);
+                AddToDialogueView(newNode, group);
+            }
         }
 
         private void deleteThisNodeToolStripMenuItem_Click(object sender, EventArgs e)
