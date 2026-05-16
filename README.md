@@ -2,16 +2,31 @@
 
 For use with [Miside Zero Dialogue Override](https://github.com/Gameknight963/Miside-Zero-Dialogue-Override)
 
+## here is what v2 is going to look like!
+### editor
+ - color coded items in the editor
+    - red: unreachable
+    - yellow: references item that doesn't exist
+ - themes (tranparency!!)
+### new format
+- organized by trees
+- allows adding/deleting/redirecting nodes
+- this makes it much more useful for mods (mainly mine) to use it
+ 
+v2 packs and v1 packs will not be compatible, and there will be no auto migration of any sort
+
+editor 2.0 screenshot
+
+<img width="816" height="500" alt="image" src="https://github.com/user-attachments/assets/7e639069-9bd1-4d77-899e-fe55b3f74efd" />
+
+
 ## Building
 
 1. Clone and build this repo.
 2. Map the dialogue with [MSZDialogueMapper](https://github.com/Gameknight963/MSZDialogueMapper)
-3. Put the mapped ``nodes.json`` in the build folder as ``
-1. 
-1. 
-1. 
-1. 
-1. Nodes.json``
+3. Put the mapped ``nodes.json`` in the build folder as ``templateNodes.json``
+
+Then it should work fine.
 
 ## Usage
 
