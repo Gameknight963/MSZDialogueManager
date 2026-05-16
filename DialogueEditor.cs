@@ -36,12 +36,11 @@ namespace MSZDialougeManager
                 AssociationHelper.RegisterFileAssociation();
 
             shellToolStripMenuItem.Checked = AssociationHelper.IsFileAssociationRegistered();
+            if (filePath != null) LoadPack(filePath);
             if (File.Exists(lastThemeFile))
                 ThemeManager.SetGlobalTheme(Enum.Parse<ThemeManager.Theme>(File.ReadAllText(lastThemeFile)), ThemeManager.TextRenderMode.ShadowText);
             else
                 ThemeManager.SetGlobalTheme(ThemeManager.Theme.Acrylic, ThemeManager.TextRenderMode.ShadowText);
-
-            if (filePath != null) LoadPack(filePath);
 
             searchBox.SetPlaceholder("Search by dialogue text...");
         }
@@ -340,6 +339,7 @@ namespace MSZDialougeManager
                 Filter = $"Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}|All files (*.*)|*.*",
                 Multiselect = false
             };
+            SetScrollHooked(false);
             if (fd.ShowDialog() == DialogResult.OK)
             {
                 pack = FilesystemManager.LoadProj(fd.FileName)!;
@@ -349,6 +349,7 @@ namespace MSZDialougeManager
                 dialogueView.Focus();
                 SetUIMode(UIMode.Idle);
             }
+            SetScrollHooked(ThemeManager.ActiveTheme != ThemeManager.Theme.Light);
             Cursor = Cursors.Default;
         }
 
@@ -358,6 +359,7 @@ namespace MSZDialougeManager
             pack = FilesystemManager.LoadProj(path)!;
             nodes = FlattenPack(pack);
             UpdateDialogueView(nodes);
+            RefreshReachability();
             dialogueView.Items[0].Selected = true;
             dialogueView.Focus();
             SetUIMode(UIMode.Idle);
@@ -366,6 +368,7 @@ namespace MSZDialougeManager
 
         void SavePack()
         {
+            SetScrollHooked(false);
             using SaveFileDialog dialog = new()
             {
                 Title = "Save dialogue pack",
@@ -376,6 +379,7 @@ namespace MSZDialougeManager
             };
             if (dialog.ShowDialog() == DialogResult.OK)
                 FilesystemManager.SaveProj(dialog.FileName, pack!);
+            SetScrollHooked(ThemeManager.ActiveTheme != ThemeManager.Theme.Light);
         }
 
         void LoadAudio(NodeRef nodeRef)
