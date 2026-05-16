@@ -10,7 +10,7 @@ namespace MSZDialougeManager.Styling
 {
     public class ThemeableForm : Form
     {
-        private readonly ControlStyle _headerStyle = new();
+        protected readonly ControlStyle _headerStyle = new();
 
         private bool _useTextRenderer = true;
         private static bool IsDesignTime => LicenseManager.UsageMode == LicenseUsageMode.Designtime;
@@ -220,6 +220,8 @@ namespace MSZDialougeManager.Styling
             switch (resolvedTheme)
             {
                 case ThemeManager.Theme.Light:
+                    _headerStyle.ForeColor = SystemColors.WindowText;
+                    _headerStyle.BackColor = SystemColors.Window;
                     break;
 
                 case ThemeManager.Theme.Dark:
@@ -297,7 +299,7 @@ namespace MSZDialougeManager.Styling
                     e.SubItem!.Text,
                     e.SubItem.Font,
                     e.Bounds,
-                    _headerStyle.ForeColor!.Value
+                    fore
                 );
             }
         }

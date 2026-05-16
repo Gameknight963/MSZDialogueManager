@@ -74,6 +74,7 @@
             blurToolStripMenuItem = new ToolStripMenuItem();
             acrylicToolStripMenuItem = new ToolStripMenuItem();
             blackToolStripMenuItem = new ToolStripMenuItem();
+            deleteThisNodeToolStripMenuItem = new ToolStripMenuItem();
             dialogueViewContextMenu.SuspendLayout();
             panel1.SuspendLayout();
             menuStrip.SuspendLayout();
@@ -110,15 +111,15 @@
             // 
             // dialogueViewContextMenu
             // 
-            dialogueViewContextMenu.Items.AddRange(new ToolStripItem[] { addNodeContextMenuItem, propertiesContextMenuItem });
+            dialogueViewContextMenu.Items.AddRange(new ToolStripItem[] { addNodeContextMenuItem, deleteThisNodeToolStripMenuItem, propertiesContextMenuItem });
             dialogueViewContextMenu.Name = "dialogueViewContextMenu";
-            dialogueViewContextMenu.Size = new Size(195, 48);
+            dialogueViewContextMenu.Size = new Size(201, 92);
             // 
             // addNodeContextMenuItem
             // 
             addNodeContextMenuItem.Name = "addNodeContextMenuItem";
             addNodeContextMenuItem.ShortcutKeys = Keys.Control | Keys.A;
-            addNodeContextMenuItem.Size = new Size(194, 22);
+            addNodeContextMenuItem.Size = new Size(200, 22);
             addNodeContextMenuItem.Text = "Add node here";
             addNodeContextMenuItem.Click += addNodeContextMenuItem_Click;
             // 
@@ -126,8 +127,8 @@
             // 
             propertiesContextMenuItem.Name = "propertiesContextMenuItem";
             propertiesContextMenuItem.ShortcutKeys = Keys.Control | Keys.P;
-            propertiesContextMenuItem.Size = new Size(194, 22);
-            propertiesContextMenuItem.Text = "Properties";
+            propertiesContextMenuItem.Size = new Size(200, 22);
+            propertiesContextMenuItem.Text = "Node properties";
             propertiesContextMenuItem.Click += editPropertiesButton_Click;
             // 
             // statusLabel
@@ -371,28 +372,28 @@
             // playAudioToolStripMenuItem
             // 
             playAudioToolStripMenuItem.Name = "playAudioToolStripMenuItem";
-            playAudioToolStripMenuItem.Size = new Size(168, 22);
+            playAudioToolStripMenuItem.Size = new Size(180, 22);
             playAudioToolStripMenuItem.Text = "Play audio";
             playAudioToolStripMenuItem.Click += playAudioToolStripMenuItem_Click;
             // 
             // stopAudioToolStripMenuItem
             // 
             stopAudioToolStripMenuItem.Name = "stopAudioToolStripMenuItem";
-            stopAudioToolStripMenuItem.Size = new Size(168, 22);
+            stopAudioToolStripMenuItem.Size = new Size(180, 22);
             stopAudioToolStripMenuItem.Text = "Stop audio";
             stopAudioToolStripMenuItem.Click += stopAudioToolStripMenuItem_Click;
             // 
             // assignAudioToolStripMenuItem
             // 
             assignAudioToolStripMenuItem.Name = "assignAudioToolStripMenuItem";
-            assignAudioToolStripMenuItem.Size = new Size(168, 22);
+            assignAudioToolStripMenuItem.Size = new Size(180, 22);
             assignAudioToolStripMenuItem.Text = "Assign audio";
             assignAudioToolStripMenuItem.Click += assignAudioToolStripMenuItem_Click;
             // 
             // removeAudioToolStripMenuItem
             // 
             removeAudioToolStripMenuItem.Name = "removeAudioToolStripMenuItem";
-            removeAudioToolStripMenuItem.Size = new Size(168, 22);
+            removeAudioToolStripMenuItem.Size = new Size(180, 22);
             removeAudioToolStripMenuItem.Text = "Remove audio";
             removeAudioToolStripMenuItem.Click += removeAudioToolStripMenuItem_Click;
             // 
@@ -400,7 +401,7 @@
             // 
             propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
             propertiesToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.P;
-            propertiesToolStripMenuItem.Size = new Size(168, 22);
+            propertiesToolStripMenuItem.Size = new Size(180, 22);
             propertiesToolStripMenuItem.Text = "Properties";
             propertiesToolStripMenuItem.Click += editPropertiesButton_Click;
             // 
@@ -415,7 +416,7 @@
             // 
             shellToolStripMenuItem.CheckOnClick = true;
             shellToolStripMenuItem.Name = "shellToolStripMenuItem";
-            shellToolStripMenuItem.Size = new Size(154, 22);
+            shellToolStripMenuItem.Size = new Size(180, 22);
             shellToolStripMenuItem.Text = "File association";
             shellToolStripMenuItem.Click += shellToolStripMenuItem_Click;
             // 
@@ -460,6 +461,14 @@
             blackToolStripMenuItem.Size = new Size(180, 22);
             blackToolStripMenuItem.Text = "Black";
             blackToolStripMenuItem.Click += blackToolStripMenuItem_Click;
+            // 
+            // deleteThisNodeToolStripMenuItem
+            // 
+            deleteThisNodeToolStripMenuItem.Name = "deleteThisNodeToolStripMenuItem";
+            deleteThisNodeToolStripMenuItem.ShortcutKeys = Keys.Delete;
+            deleteThisNodeToolStripMenuItem.Size = new Size(200, 22);
+            deleteThisNodeToolStripMenuItem.Text = "Delete this node";
+            deleteThisNodeToolStripMenuItem.Click += deleteThisNodeToolStripMenuItem_Click;
             // 
             // DialogueEditor
             // 
@@ -533,6 +542,7 @@
         private ToolStripMenuItem blurToolStripMenuItem;
         private ToolStripMenuItem acrylicToolStripMenuItem;
         private ToolStripMenuItem blackToolStripMenuItem;
+        private ToolStripMenuItem deleteThisNodeToolStripMenuItem;
     }
 }
 

@@ -237,6 +237,7 @@ namespace MSZDialougeManager.Styling
                 {
                     tf.ApplyTheme(theme, mode);
                 }
+                else ApplyThemeToForm(form, theme);
             }
         }
 
