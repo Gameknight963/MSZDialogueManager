@@ -2,7 +2,6 @@
 using MZDO;
 using NAudio.Wave;
 using Newtonsoft.Json;
-using static MSZDialougeManager.DialogueEditor;
 
 namespace MSZDialougeManager
 {
@@ -16,6 +15,7 @@ namespace MSZDialougeManager
         private IWavePlayer? waveOut;
         private WaveStream? audioStream;
         private int nextTemporaryNodeId = -1;
+        private const string lastThemeFile = "lasttheme";
 
         private bool scrollHooked = false;
 
@@ -35,7 +35,10 @@ namespace MSZDialougeManager
                 AssociationHelper.RegisterFileAssociation();
 
             shellToolStripMenuItem.Checked = AssociationHelper.IsFileAssociationRegistered();
-            ThemeManager.SetGlobalTheme(ThemeManager.Theme.Acrylic);
+            if (File.Exists(lastThemeFile))
+                ThemeManager.SetGlobalTheme(Enum.Parse<ThemeManager.Theme>(File.ReadAllText(lastThemeFile)));
+            else
+                ThemeManager.SetGlobalTheme(ThemeManager.Theme.Acrylic);
 
             if (filePath != null) LoadPack(filePath);
 
@@ -50,6 +53,7 @@ namespace MSZDialougeManager
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
+            File.WriteAllText(lastThemeFile, ThemeManager.ActiveTheme.ToString());
             base.OnFormClosing(e);
             ScrollHook.Uninstall();
         }
