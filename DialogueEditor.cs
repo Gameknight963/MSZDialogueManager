@@ -283,8 +283,8 @@ namespace MSZDialougeManager
 
         void RefreshReachability()
         {
-            var reachableByTree = new Dictionary<int, HashSet<int>>();
-            var allIdsByTree = new Dictionary<int, HashSet<int>>();
+            Dictionary<int, HashSet<int>> reachableByTree = [];
+            Dictionary<int, HashSet<int>> allIdsByTree = [];
 
             foreach (ListViewItem item in dialogueView.Items)
             {
@@ -306,7 +306,10 @@ namespace MSZDialougeManager
 
                 bool reachable = reachableByTree[nodeRef.TreeIndex].Contains(nodeRef.Node.id);
 
+                bool isStartNode = pack!.trees[nodeRef.TreeIndex].startNodeIds?.Contains(nodeRef.Node.id) ?? false;
+
                 item.ForeColor = hasBrokenRefs ? Color.Orange
+                    : isStartNode ? Color.Green
                     : reachable ? item.ListView!.ForeColor
                     : Color.Red;
             }
