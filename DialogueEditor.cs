@@ -72,7 +72,7 @@ namespace MSZDialougeManager
         {
             ContextMenuStrip? cms = (ContextMenuStrip)sender!;
             cms.Tag = dialogueView.PointToClient(Cursor.Position);
-            DwmApi.SetAccentState(cms.Handle, DwmApi.AccentState.ACCENT_ENABLE_BLURBEHIND);
+            DwmApi.SetAccentState(cms.Handle, DwmApi.AccentState.ACCENT_ENABLE_BLURBEHIND, 0x66000000);
             cms.BackColor = ThemeManager.AcrylicMainColor;
             cms.ForeColor = Color.White;
             cms.ShowImageMargin = false;
