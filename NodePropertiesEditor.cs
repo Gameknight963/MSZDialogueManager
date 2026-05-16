@@ -1,6 +1,7 @@
-﻿using MZDO;
+﻿using Accessibility;
 using MSZDialougeManager.Styling;
-using Accessibility;
+using MZDO;
+using Newtonsoft.Json.Linq;
 
 namespace MSZDialougeManager
 {
@@ -14,6 +15,7 @@ namespace MSZDialougeManager
             StartPosition = FormStartPosition.CenterParent;
             AcceptButton = Ok;
             CancelButton = Cancel;
+            TextBoxHelpers.SetPlaceholder(nextNodesIntArrayBox, "1,2,3");
 
             if (node == null) return;
             textOfNodeBox.Text = node.dialogueText;
@@ -25,6 +27,8 @@ namespace MSZDialougeManager
             speakerDropDown.SelectedItem = node.speakerName;
 
             delayBox.Text = node.delay.ToString();
+
+            nextNodesIntArrayBox.Text = string.Join(", ", node.nextNodeIds);
         }
 
         private void Ok_Click(object sender, EventArgs e)
@@ -49,7 +53,17 @@ namespace MSZDialougeManager
                 return;
             }
 
-            if (modifiedNode.nextNodeIds == null) modifiedNode.nextNodeIds = [];
+            List<int> values = new();
+            foreach (string part in nextNodesIntArrayBox.Text.Split(','))
+            {
+                if (!int.TryParse(part.Trim(), out int value))
+                {
+                    CoolMessageBox.Show($"Invalid integer: {part}", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                values.Add(value);
+            }
+            modifiedNode.nextNodeIds = values.ToArray();
             modifiedNode.dialogueText = textOfNodeBox.Text;
             modifiedNode.speakerName = speakerDropDown.SelectedItem.ToString()!;
             float.TryParse(delayBox.Text, out modifiedNode.delay);

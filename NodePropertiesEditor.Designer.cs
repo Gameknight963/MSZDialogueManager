@@ -28,129 +28,152 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.textOfNodeBox = new System.Windows.Forms.TextBox();
-            this.NodeTextLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.speakerDropDown = new System.Windows.Forms.ComboBox();
-            this.customSpeakerLink = new System.Windows.Forms.LinkLabel();
-            this.delayLabel = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.delayBox = new System.Windows.Forms.TextBox();
-            this.Ok = new System.Windows.Forms.Button();
-            this.Cancel = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            textOfNodeBox = new TextBox();
+            NodeTextLabel = new Label();
+            label1 = new Label();
+            speakerDropDown = new ComboBox();
+            customSpeakerLink = new LinkLabel();
+            delayLabel = new Label();
+            toolTip1 = new ToolTip(components);
+            delayBox = new TextBox();
+            nextNodesIntArrayBox = new TextBox();
+            Ok = new Button();
+            Cancel = new Button();
+            nextNodesLabel = new Label();
+            SuspendLayout();
             // 
             // textOfNodeBox
             // 
-            this.textOfNodeBox.Location = new System.Drawing.Point(15, 25);
-            this.textOfNodeBox.Multiline = true;
-            this.textOfNodeBox.Name = "textOfNodeBox";
-            this.textOfNodeBox.Size = new System.Drawing.Size(419, 71);
-            this.textOfNodeBox.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.textOfNodeBox, "The text that will appear when this node is spoken.");
+            textOfNodeBox.Location = new Point(15, 25);
+            textOfNodeBox.Multiline = true;
+            textOfNodeBox.Name = "textOfNodeBox";
+            textOfNodeBox.Size = new Size(419, 71);
+            textOfNodeBox.TabIndex = 0;
+            toolTip1.SetToolTip(textOfNodeBox, "The text that will appear when this node is spoken.");
             // 
             // NodeTextLabel
             // 
-            this.NodeTextLabel.AutoSize = true;
-            this.NodeTextLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NodeTextLabel.Location = new System.Drawing.Point(12, 9);
-            this.NodeTextLabel.Name = "NodeTextLabel";
-            this.NodeTextLabel.Size = new System.Drawing.Size(61, 13);
-            this.NodeTextLabel.TabIndex = 1;
-            this.NodeTextLabel.Text = "Node text:";
+            NodeTextLabel.AutoSize = true;
+            NodeTextLabel.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            NodeTextLabel.Location = new Point(12, 9);
+            NodeTextLabel.Name = "NodeTextLabel";
+            NodeTextLabel.Size = new Size(61, 13);
+            NodeTextLabel.TabIndex = 1;
+            NodeTextLabel.Text = "Node text:";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Speaker name:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(12, 99);
+            label1.Name = "label1";
+            label1.Size = new Size(82, 13);
+            label1.TabIndex = 1;
+            label1.Text = "Speaker name:";
             // 
             // speakerDropDown
             // 
-            this.speakerDropDown.FormattingEnabled = true;
-            this.speakerDropDown.ItemHeight = 13;
-            this.speakerDropDown.Items.AddRange(new object[] {
-            "Kiri",
-            "Kind"});
-            this.speakerDropDown.Location = new System.Drawing.Point(15, 115);
-            this.speakerDropDown.Name = "speakerDropDown";
-            this.speakerDropDown.Size = new System.Drawing.Size(176, 21);
-            this.speakerDropDown.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.speakerDropDown, "Who the node should be spoken by.");
+            speakerDropDown.FormattingEnabled = true;
+            speakerDropDown.ItemHeight = 13;
+            speakerDropDown.Items.AddRange(new object[] { "Kiri", "Kind" });
+            speakerDropDown.Location = new Point(15, 115);
+            speakerDropDown.Name = "speakerDropDown";
+            speakerDropDown.Size = new Size(176, 21);
+            speakerDropDown.TabIndex = 3;
+            toolTip1.SetToolTip(speakerDropDown, "Who the node should be spoken by.");
             // 
             // customSpeakerLink
             // 
-            this.customSpeakerLink.AutoSize = true;
-            this.customSpeakerLink.Location = new System.Drawing.Point(197, 118);
-            this.customSpeakerLink.Name = "customSpeakerLink";
-            this.customSpeakerLink.Size = new System.Drawing.Size(138, 13);
-            this.customSpeakerLink.TabIndex = 4;
-            this.customSpeakerLink.TabStop = true;
-            this.customSpeakerLink.Text = "Choose a custom speaker";
-            this.customSpeakerLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.customSpeakerLink_LinkClicked);
+            customSpeakerLink.AutoSize = true;
+            customSpeakerLink.Location = new Point(197, 118);
+            customSpeakerLink.Name = "customSpeakerLink";
+            customSpeakerLink.Size = new Size(138, 13);
+            customSpeakerLink.TabIndex = 4;
+            customSpeakerLink.TabStop = true;
+            customSpeakerLink.Text = "Choose a custom speaker";
+            customSpeakerLink.LinkClicked += customSpeakerLink_LinkClicked;
             // 
             // delayLabel
             // 
-            this.delayLabel.AutoSize = true;
-            this.delayLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delayLabel.Location = new System.Drawing.Point(12, 139);
-            this.delayLabel.Name = "delayLabel";
-            this.delayLabel.Size = new System.Drawing.Size(39, 13);
-            this.delayLabel.TabIndex = 1;
-            this.delayLabel.Text = "Delay:";
+            delayLabel.AutoSize = true;
+            delayLabel.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            delayLabel.Location = new Point(12, 139);
+            delayLabel.Name = "delayLabel";
+            delayLabel.Size = new Size(39, 13);
+            delayLabel.TabIndex = 1;
+            delayLabel.Text = "Delay:";
             // 
             // delayBox
             // 
-            this.delayBox.Location = new System.Drawing.Point(15, 156);
-            this.delayBox.Name = "delayBox";
-            this.delayBox.Size = new System.Drawing.Size(176, 22);
-            this.delayBox.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.delayBox, "The delay (in seconds) after the node is spoken.");
+            delayBox.Location = new Point(15, 156);
+            delayBox.Name = "delayBox";
+            delayBox.Size = new Size(176, 22);
+            delayBox.TabIndex = 5;
+            toolTip1.SetToolTip(delayBox, "The delay (in seconds) after the node is spoken.");
+            // 
+            // nextNodesIntArrayBox
+            // 
+            nextNodesIntArrayBox.Location = new Point(15, 197);
+            nextNodesIntArrayBox.Name = "nextNodesIntArrayBox";
+            nextNodesIntArrayBox.Size = new Size(176, 22);
+            nextNodesIntArrayBox.TabIndex = 5;
+            toolTip1.SetToolTip(nextNodesIntArrayBox, "A comma separated list that can include indicies of any node in this tree.\r\n");
             // 
             // Ok
             // 
-            this.Ok.Location = new System.Drawing.Point(12, 198);
-            this.Ok.Name = "Ok";
-            this.Ok.Size = new System.Drawing.Size(75, 23);
-            this.Ok.TabIndex = 6;
-            this.Ok.Text = "Ok";
-            this.Ok.UseVisualStyleBackColor = true;
-            this.Ok.Click += new System.EventHandler(this.Ok_Click);
+            Ok.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Ok.Location = new Point(278, 221);
+            Ok.Name = "Ok";
+            Ok.Size = new Size(75, 23);
+            Ok.TabIndex = 6;
+            Ok.Text = "Ok";
+            Ok.UseVisualStyleBackColor = true;
+            Ok.Click += Ok_Click;
             // 
             // Cancel
             // 
-            this.Cancel.Location = new System.Drawing.Point(93, 198);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(75, 23);
-            this.Cancel.TabIndex = 6;
-            this.Cancel.Text = "Cancel";
-            this.Cancel.UseVisualStyleBackColor = true;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            Cancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Cancel.Location = new Point(359, 221);
+            Cancel.Name = "Cancel";
+            Cancel.Size = new Size(75, 23);
+            Cancel.TabIndex = 6;
+            Cancel.Text = "Cancel";
+            Cancel.UseVisualStyleBackColor = true;
+            Cancel.Click += Cancel_Click;
+            // 
+            // nextNodesLabel
+            // 
+            nextNodesLabel.AutoSize = true;
+            nextNodesLabel.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            nextNodesLabel.Location = new Point(15, 181);
+            nextNodesLabel.Name = "nextNodesLabel";
+            nextNodesLabel.Size = new Size(109, 13);
+            nextNodesLabel.TabIndex = 1;
+            nextNodesLabel.Text = "Next nodes indicies:";
             // 
             // NodePropertiesEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 233);
-            this.Controls.Add(this.Cancel);
-            this.Controls.Add(this.Ok);
-            this.Controls.Add(this.delayBox);
-            this.Controls.Add(this.customSpeakerLink);
-            this.Controls.Add(this.speakerDropDown);
-            this.Controls.Add(this.delayLabel);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.NodeTextLabel);
-            this.Controls.Add(this.textOfNodeBox);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "NodePropertiesEditor";
-            this.Text = "Node Properties Editor";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(446, 256);
+            Controls.Add(Cancel);
+            Controls.Add(Ok);
+            Controls.Add(nextNodesIntArrayBox);
+            Controls.Add(delayBox);
+            Controls.Add(customSpeakerLink);
+            Controls.Add(speakerDropDown);
+            Controls.Add(nextNodesLabel);
+            Controls.Add(delayLabel);
+            Controls.Add(label1);
+            Controls.Add(NodeTextLabel);
+            Controls.Add(textOfNodeBox);
+            Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForeColor = Color.Black;
+            Name = "NodePropertiesEditor";
+            Text = "Node Properties Editor";
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -166,5 +189,7 @@
         private System.Windows.Forms.TextBox delayBox;
         private System.Windows.Forms.Button Ok;
         private System.Windows.Forms.Button Cancel;
+        private Label nextNodesLabel;
+        private TextBox nextNodesIntArrayBox;
     }
 }
