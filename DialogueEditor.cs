@@ -48,7 +48,7 @@ namespace MSZDialougeManager
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            SetScrollHooked(true);
+            SetScrollHooked(ThemeManager.ActiveTheme != ThemeManager.Theme.Light);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -235,6 +235,9 @@ namespace MSZDialougeManager
         {
             dialogueView.Items.Clear();
             dialogueView.Groups.Clear();
+
+            Dictionary<int, HashSet<int>> reachableByTree = new Dictionary<int, HashSet<int>>();
+
             foreach (NodeRef nodeRef in nodes)
             {
                 string groupKey = $"tree_{nodeRef.TreeIndex}";
@@ -247,9 +250,48 @@ namespace MSZDialougeManager
                     group.Tag = nodeRef.TreeIndex;
                     dialogueView.Groups.Add(group);
                 }
+
                 AddToDialogueView(nodeRef, group);
             }
         }
+        private HashSet<int> GetReachableNodes(int treeIndex)
+        {
+            HashSet<int> reachable = [];
+            Queue<int> queue = new();
+
+            foreach (int startId in pack!.trees[treeIndex].startNodeIds)
+                queue.Enqueue(startId);
+
+            while (queue.Count > 0)
+            {
+                int id = queue.Dequeue();
+                if (!reachable.Add(id)) continue;
+
+                NodeRef? node = nodes.FirstOrDefault(n => n.Node.id == id && n.TreeIndex == treeIndex);
+                if (node == null) continue;
+
+                foreach (int nextId in node.Node.nextNodeIds)
+                    queue.Enqueue(nextId);
+            }
+
+            return reachable;
+        }
+
+        void RefreshReachability()
+        {
+            Dictionary<int, HashSet<int>> reachableByTree = [];
+            foreach (ListViewItem item in dialogueView.Items)
+            {
+                NodeRef nodeRef = (NodeRef)item.Tag!;
+                if (!reachableByTree.ContainsKey(nodeRef.TreeIndex))
+                    reachableByTree[nodeRef.TreeIndex] = GetReachableNodes(nodeRef.TreeIndex);
+
+                item.ForeColor = reachableByTree[nodeRef.TreeIndex].Contains(nodeRef.Node.id)
+                    ? dialogueView.ForeColor
+                    : Color.Red;
+            }
+        }
+
 
         public void AddToDialogueView(NodeRef nodeRef, ListViewGroup group)
         {
@@ -257,6 +299,7 @@ namespace MSZDialougeManager
             item.SubItems.Add(nodeRef.Node.speakerName);
             item.SubItems.Add(nodeRef.Node.dialogueText);
             dialogueView.Items.Add(item);
+            RefreshReachability();
         }
 
         static List<NodeRef> FlattenPack(DialoguePack pack) =>
@@ -360,6 +403,7 @@ namespace MSZDialougeManager
                     item.SubItems[1].Text = nodeRef.Node.speakerName;
                     item.SubItems[2].Text = nodeRef.Node.dialogueText;
                 }
+                RefreshReachability();
                 UpdateUI();
             }
         }
