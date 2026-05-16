@@ -15,7 +15,7 @@ namespace MSZDialougeManager
         private IWavePlayer? waveOut;
         private WaveStream? audioStream;
         private int nextTemporaryNodeId = -1;
-        private const string lastThemeFile = "lasttheme";
+        private readonly string lastThemeFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lasttheme");
 
         private bool scrollHooked = false;
 
