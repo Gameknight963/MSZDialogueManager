@@ -12,12 +12,17 @@ For use with [Miside Zero Dialogue Override](https://github.com/Gameknight963/Mi
 - organized by trees
 - allows adding/deleting/redirecting nodes
 - this makes it much more useful for mods (mainly mine) to use it
+### other stuff
+ - switched to net 8.0 (from net 4.7.2)
+ - includes file association, so you can double click a ``.mszdlg`` and it will open
+ - instead of duplicating Miside Zero Dialogue Override's types, it just ships with Miside Zero Dialogue Override and references its types
+ - also it uses minhook to custom draw the scrollbar (man doing anything to not use wpf)
  
-v2 packs and v1 packs will not be compatible, and there will be no auto migration of any sort
+v2 packs and v1 packs will not be compatible, and there will be no auto migration of any sort! it is literally impossible to do since v1 is flat and v2 is grouped by ``DialogueTree``
 
 editor 2.0 screenshot
 
-<img width="816" height="500" alt="image" src="https://github.com/user-attachments/assets/7e639069-9bd1-4d77-899e-fe55b3f74efd" />
+<img width="816" height="500" alt="editor 2.0 screenshot" src="https://github.com/user-attachments/assets/7e639069-9bd1-4d77-899e-fe55b3f74efd" />
 
 
 ## Building
