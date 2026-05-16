@@ -54,15 +54,19 @@ namespace MSZDialougeManager
             }
 
             List<int> values = new();
-            foreach (string part in nextNodesIntArrayBox.Text.Split(','))
+            if (nextNodesIntArrayBox.Text != "")
             {
-                if (!int.TryParse(part.Trim(), out int value))
+                foreach (string part in nextNodesIntArrayBox.Text.Split(','))
                 {
-                    CoolMessageBox.Show($"Invalid integer: {part}", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    if (!int.TryParse(part.Trim(), out int value))
+                    {
+                        CoolMessageBox.Show($"Invalid integer: {part}", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    values.Add(value);
                 }
-                values.Add(value);
             }
+
             modifiedNode.nextNodeIds = values.ToArray();
             modifiedNode.dialogueText = textOfNodeBox.Text;
             modifiedNode.speakerName = speakerDropDown.SelectedItem.ToString()!;
