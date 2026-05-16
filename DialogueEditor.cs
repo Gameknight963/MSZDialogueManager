@@ -632,5 +632,20 @@ namespace MSZDialougeManager
                 }
             }
         }
+
+        private void treePropertiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListViewGroup group = (ListViewGroup)groupContextMenu.Tag!;
+            int treeIndex = (int)group.Tag!;
+            DialogueTreeDTO tree = pack!.trees[treeIndex];
+            TreePropertiesEditor editor = new(tree);
+            editor.ShowDialog();
+            if (editor.DialogResult == DialogResult.OK)
+            {
+                pack!.trees[treeIndex] = editor.ResultTree;
+                UpdateUI();
+                RefreshReachability();
+            }
+        }
     }
 }
