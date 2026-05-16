@@ -1,5 +1,4 @@
 ﻿using MZDO;
-using Microsoft.VisualBasic;
 using MSZDialougeManager.Styling;
 
 namespace MSZDialougeManager
@@ -7,12 +6,14 @@ namespace MSZDialougeManager
     public partial class NodePropertiesEditor : ThemeableForm
     {
         public DialogueNodeDTO modifiedNode;
-        public NodePropertiesEditor(DialogueNodeDTO node)
+        public NodePropertiesEditor(DialogueNodeDTO? node = null)
         {
             InitializeComponent();
-            modifiedNode = node;
-            textOfNodeBox.Text = node.dialogueText;
+            modifiedNode = node ?? new DialogueNodeDTO();
             StartPosition = FormStartPosition.CenterParent;
+
+            if (node == null) return;
+            textOfNodeBox.Text = node.dialogueText;
 
             if (!speakerDropDown.Items.Contains(node.speakerName))
             {
@@ -45,6 +46,7 @@ namespace MSZDialougeManager
                 return;
             }
 
+            if (modifiedNode.nextNodeIds == null) modifiedNode.nextNodeIds = [];
             modifiedNode.dialogueText = textOfNodeBox.Text;
             modifiedNode.speakerName = speakerDropDown.SelectedItem.ToString()!;
             float.TryParse(delayBox.Text, out modifiedNode.delay);

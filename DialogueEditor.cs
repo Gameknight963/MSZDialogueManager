@@ -2,6 +2,7 @@
 using MZDO;
 using NAudio.Wave;
 using Newtonsoft.Json;
+using static MSZDialougeManager.DialogueEditor;
 
 namespace MSZDialougeManager
 {
@@ -14,6 +15,7 @@ namespace MSZDialougeManager
 
         private IWavePlayer? waveOut;
         private WaveStream? audioStream;
+        private int nextTemporaryNodeId = -1;
 
         public DialogueEditor(string? filePath = null)
         {
@@ -213,7 +215,7 @@ namespace MSZDialougeManager
             nodesBox.EndUpdate();
         }
 
-        public static void UpdateDialogueView(ListView dialogueView, List<NodeRef> nodes)
+        public void UpdateDialogueView(List<NodeRef> nodes)
         {
             dialogueView.Items.Clear();
             dialogueView.Groups.Clear();
@@ -226,13 +228,19 @@ namespace MSZDialougeManager
                 if (group == null)
                 {
                     group = new ListViewGroup(groupKey, groupName);
+                    group.Tag = nodeRef.TreeIndex;
                     dialogueView.Groups.Add(group);
                 }
-                ListViewItem item = new(nodeRef.Node.id.ToString()) { Group = group, Tag = nodeRef };
-                item.SubItems.Add(nodeRef.Node.speakerName);
-                item.SubItems.Add(nodeRef.Node.dialogueText);
-                dialogueView.Items.Add(item);
+                AddToDialogueView(nodeRef, group);
             }
+        }
+
+        public void AddToDialogueView(NodeRef nodeRef, ListViewGroup group)
+        {
+            ListViewItem item = new(nodeRef.Node.id.ToString()) { Group = group, Tag = nodeRef };
+            item.SubItems.Add(nodeRef.Node.speakerName);
+            item.SubItems.Add(nodeRef.Node.dialogueText);
+            dialogueView.Items.Add(item);
         }
 
         static List<NodeRef> FlattenPack(DialoguePack pack) =>
@@ -245,7 +253,7 @@ namespace MSZDialougeManager
             SetUIMode(UIMode.Idle);
             pack = JsonConvert.DeserializeObject<DialoguePack>(File.ReadAllText(FilesystemManager.Template))!;
             nodes = FlattenPack(pack);
-            UpdateDialogueView(dialogueView, nodes);
+            UpdateDialogueView(nodes);
             dialogueView.Items[0].Selected = true;
             dialogueView.Focus();
         }
@@ -263,7 +271,7 @@ namespace MSZDialougeManager
             {
                 pack = FilesystemManager.LoadProj(fd.FileName)!;
                 nodes = FlattenPack(pack);
-                UpdateDialogueView(dialogueView, nodes);
+                UpdateDialogueView(nodes);
                 dialogueView.Items[0].Selected = true;
                 dialogueView.Focus();
                 SetUIMode(UIMode.Idle);
@@ -276,7 +284,7 @@ namespace MSZDialougeManager
             Cursor = Cursors.WaitCursor;
             pack = FilesystemManager.LoadProj(path)!;
             nodes = FlattenPack(pack);
-            UpdateDialogueView(dialogueView, nodes);
+            UpdateDialogueView(nodes);
             dialogueView.Items[0].Selected = true;
             dialogueView.Focus();
             SetUIMode(UIMode.Idle);
@@ -365,7 +373,13 @@ namespace MSZDialougeManager
 
         private void addNodeContextMenuItem_Click(object sender, EventArgs e)
         {
-            //ListViewGroup group = GetGroupAtPoint
+            ListViewGroup group = GetGroupAtPoint((Point)dialogueViewContextMenu.Tag!)!;
+            NodePropertiesEditor editor = new();
+            editor.ShowDialog();
+            editor.modifiedNode.id = nextTemporaryNodeId--;
+            NodeRef newNode = new(editor.modifiedNode, (int)group.Tag!);
+            nodes.Add(newNode);
+            AddToDialogueView(newNode, group);
         }
 
         private void generateWithTTSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -432,7 +446,7 @@ namespace MSZDialougeManager
                 ? nodes
                 : nodes.Where(n => n.Node.dialogueText.ToLower().Contains(filter)).ToList();
 
-            UpdateDialogueView(dialogueView, filtered);
+            UpdateDialogueView(filtered);
             SetUIMode(UIMode.Idle);
         }
 
