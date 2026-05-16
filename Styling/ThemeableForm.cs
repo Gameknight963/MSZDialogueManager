@@ -109,9 +109,9 @@ namespace MSZDialougeManager.Styling
             if (_useTextRenderer)
             {
                 TextRenderer.DrawText(
-                    e.Graphics,
+                    e.Graphics!,
                     text,
-                    e.CellStyle.Font!,
+                    e.CellStyle!.Font!,
                     e.CellBounds,
                     e.CellStyle.ForeColor,
                     TextFormatFlags.Left | TextFormatFlags.VerticalCenter
@@ -120,9 +120,9 @@ namespace MSZDialougeManager.Styling
             else
             {
                 DrawShadowText(
-                    e.Graphics,
+                    e.Graphics!,
                     text,
-                    e.CellStyle.Font!,
+                    e.CellStyle!.Font!,
                     e.CellBounds,
                     e.CellStyle.ForeColor
                 );
