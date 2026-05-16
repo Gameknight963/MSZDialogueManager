@@ -27,6 +27,7 @@ namespace MSZDialougeManager
             this.KeyDown += Form1_KeyDown;
             this.Shown += Form1_Shown;
             dialogueViewContextMenu.Opening += ContextMenu_Opening;
+            dialogueViewContextMenu.Opening += DialogueViewContextMenu_Opening;
             groupContextMenu.Opening += ContextMenu_Opening;
 
             dialogueView.ColumnWidthChanging += dialogueView_ColumnWidthChanging;
@@ -71,11 +72,15 @@ namespace MSZDialougeManager
         private void ContextMenu_Opening(object? sender, System.ComponentModel.CancelEventArgs e)
         {
             ContextMenuStrip? cms = (ContextMenuStrip)sender!;
-            cms.Tag = dialogueView.PointToClient(Cursor.Position);
             DwmApi.SetAccentState(cms.Handle, DwmApi.AccentState.ACCENT_ENABLE_BLURBEHIND, 0x66000000);
             cms.BackColor = ThemeManager.AcrylicMainColor;
             cms.ForeColor = Color.White;
             cms.ShowImageMargin = false;
+        }
+
+        private void DialogueViewContextMenu_Opening(object? sender, System.ComponentModel.CancelEventArgs e)
+        {
+            dialogueViewContextMenu.Tag = dialogueView.PointToClient(Cursor.Position);
         }
 
         private void Form1_Shown(object? sender, EventArgs e)
@@ -454,6 +459,11 @@ namespace MSZDialougeManager
         {
             ListViewGroup group = GetGroupAtPoint((Point)dialogueViewContextMenu.Tag!)!;
             AddNode(group);
+        }
+
+        private void addNodeToThisTreeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNode((ListViewGroup)groupContextMenu.Tag!);
         }
 
         private void addNodeHereToolStripMenuItem_Click(object sender, EventArgs e)

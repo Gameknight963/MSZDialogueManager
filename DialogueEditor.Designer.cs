@@ -479,7 +479,7 @@
             // 
             groupContextMenu.Items.AddRange(new ToolStripItem[] { treePropertiesToolStripMenuItem, addNodeToThisTreeToolStripMenuItem });
             groupContextMenu.Name = "groupContextMenu";
-            groupContextMenu.Size = new Size(186, 48);
+            groupContextMenu.Size = new Size(186, 70);
             // 
             // treePropertiesToolStripMenuItem
             // 
@@ -492,6 +492,7 @@
             addNodeToThisTreeToolStripMenuItem.Name = "addNodeToThisTreeToolStripMenuItem";
             addNodeToThisTreeToolStripMenuItem.Size = new Size(185, 22);
             addNodeToThisTreeToolStripMenuItem.Text = "Add node to this tree";
+            addNodeToThisTreeToolStripMenuItem.Click += addNodeToThisTreeToolStripMenuItem_Click;
             // 
             // DialogueEditor
             // 
