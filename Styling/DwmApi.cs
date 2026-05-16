@@ -109,19 +109,19 @@ namespace MSZDialougeManager.Styling
         }
 
 
-        public static void SetAccentState(IntPtr hwnd, AccentState accentState)
+        public static void SetAccentState(IntPtr hwnd, AccentState accentState, int? gradientColor = null)
         {
             AccentPolicy accent = new AccentPolicy
             {
                 AccentState = accentState,
                 AccentFlags = 2,
-                GradientColor = 0x00000000,
+                GradientColor = gradientColor ?? 0x00000000,
                 AnimationId = 0
             };
 
             if (accentState == AccentState.ACCENT_ENABLE_ACRYLICBLURBEHIND)
             {
-                accent.GradientColor = 0x66000000;
+                accent.GradientColor = gradientColor ?? 0x66000000;
             }
 
             int size = Marshal.SizeOf(accent);
