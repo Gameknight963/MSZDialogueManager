@@ -36,6 +36,7 @@
             textColumn = new ColumnHeader();
             dialogueViewContextMenu = new ContextMenuStrip(components);
             addNodeContextMenuItem = new ToolStripMenuItem();
+            deleteThisNodeToolStripMenuItem = new ToolStripMenuItem();
             propertiesContextMenuItem = new ToolStripMenuItem();
             statusLabel = new Label();
             loadButton = new Button();
@@ -74,10 +75,13 @@
             blurToolStripMenuItem = new ToolStripMenuItem();
             acrylicToolStripMenuItem = new ToolStripMenuItem();
             blackToolStripMenuItem = new ToolStripMenuItem();
-            deleteThisNodeToolStripMenuItem = new ToolStripMenuItem();
+            groupContextMenu = new ContextMenuStrip(components);
+            treePropertiesToolStripMenuItem = new ToolStripMenuItem();
+            addNodeToThisTreeToolStripMenuItem = new ToolStripMenuItem();
             dialogueViewContextMenu.SuspendLayout();
             panel1.SuspendLayout();
             menuStrip.SuspendLayout();
+            groupContextMenu.SuspendLayout();
             SuspendLayout();
             // 
             // dialogueView
@@ -93,6 +97,7 @@
             dialogueView.UseCompatibleStateImageBehavior = false;
             dialogueView.View = View.Details;
             dialogueView.SelectedIndexChanged += dialogueView_SelectedIndexChanged;
+            dialogueView.MouseUp += dialogueView_MouseUp;
             // 
             // indexColumn
             // 
@@ -113,7 +118,7 @@
             // 
             dialogueViewContextMenu.Items.AddRange(new ToolStripItem[] { addNodeContextMenuItem, deleteThisNodeToolStripMenuItem, propertiesContextMenuItem });
             dialogueViewContextMenu.Name = "dialogueViewContextMenu";
-            dialogueViewContextMenu.Size = new Size(201, 92);
+            dialogueViewContextMenu.Size = new Size(201, 70);
             // 
             // addNodeContextMenuItem
             // 
@@ -122,6 +127,14 @@
             addNodeContextMenuItem.Size = new Size(200, 22);
             addNodeContextMenuItem.Text = "Add node here";
             addNodeContextMenuItem.Click += addNodeContextMenuItem_Click;
+            // 
+            // deleteThisNodeToolStripMenuItem
+            // 
+            deleteThisNodeToolStripMenuItem.Name = "deleteThisNodeToolStripMenuItem";
+            deleteThisNodeToolStripMenuItem.ShortcutKeys = Keys.Delete;
+            deleteThisNodeToolStripMenuItem.Size = new Size(200, 22);
+            deleteThisNodeToolStripMenuItem.Text = "Delete this node";
+            deleteThisNodeToolStripMenuItem.Click += deleteThisNodeToolStripMenuItem_Click;
             // 
             // propertiesContextMenuItem
             // 
@@ -351,7 +364,7 @@
             // 
             toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { generateWithTTSToolStripMenuItem });
             toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            toolsToolStripMenuItem.Size = new Size(46, 20);
+            toolsToolStripMenuItem.Size = new Size(47, 20);
             toolsToolStripMenuItem.Text = "Tools";
             // 
             // generateWithTTSToolStripMenuItem
@@ -372,28 +385,28 @@
             // playAudioToolStripMenuItem
             // 
             playAudioToolStripMenuItem.Name = "playAudioToolStripMenuItem";
-            playAudioToolStripMenuItem.Size = new Size(180, 22);
+            playAudioToolStripMenuItem.Size = new Size(168, 22);
             playAudioToolStripMenuItem.Text = "Play audio";
             playAudioToolStripMenuItem.Click += playAudioToolStripMenuItem_Click;
             // 
             // stopAudioToolStripMenuItem
             // 
             stopAudioToolStripMenuItem.Name = "stopAudioToolStripMenuItem";
-            stopAudioToolStripMenuItem.Size = new Size(180, 22);
+            stopAudioToolStripMenuItem.Size = new Size(168, 22);
             stopAudioToolStripMenuItem.Text = "Stop audio";
             stopAudioToolStripMenuItem.Click += stopAudioToolStripMenuItem_Click;
             // 
             // assignAudioToolStripMenuItem
             // 
             assignAudioToolStripMenuItem.Name = "assignAudioToolStripMenuItem";
-            assignAudioToolStripMenuItem.Size = new Size(180, 22);
+            assignAudioToolStripMenuItem.Size = new Size(168, 22);
             assignAudioToolStripMenuItem.Text = "Assign audio";
             assignAudioToolStripMenuItem.Click += assignAudioToolStripMenuItem_Click;
             // 
             // removeAudioToolStripMenuItem
             // 
             removeAudioToolStripMenuItem.Name = "removeAudioToolStripMenuItem";
-            removeAudioToolStripMenuItem.Size = new Size(180, 22);
+            removeAudioToolStripMenuItem.Size = new Size(168, 22);
             removeAudioToolStripMenuItem.Text = "Remove audio";
             removeAudioToolStripMenuItem.Click += removeAudioToolStripMenuItem_Click;
             // 
@@ -401,7 +414,7 @@
             // 
             propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
             propertiesToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.P;
-            propertiesToolStripMenuItem.Size = new Size(180, 22);
+            propertiesToolStripMenuItem.Size = new Size(168, 22);
             propertiesToolStripMenuItem.Text = "Properties";
             propertiesToolStripMenuItem.Click += editPropertiesButton_Click;
             // 
@@ -416,7 +429,7 @@
             // 
             shellToolStripMenuItem.CheckOnClick = true;
             shellToolStripMenuItem.Name = "shellToolStripMenuItem";
-            shellToolStripMenuItem.Size = new Size(180, 22);
+            shellToolStripMenuItem.Size = new Size(154, 22);
             shellToolStripMenuItem.Text = "File association";
             shellToolStripMenuItem.Click += shellToolStripMenuItem_Click;
             // 
@@ -424,51 +437,61 @@
             // 
             themeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { lightToolStripMenuItem, darkToolStripMenuItem, blurToolStripMenuItem, acrylicToolStripMenuItem, blackToolStripMenuItem });
             themeToolStripMenuItem.Name = "themeToolStripMenuItem";
-            themeToolStripMenuItem.Size = new Size(55, 20);
+            themeToolStripMenuItem.Size = new Size(56, 20);
             themeToolStripMenuItem.Text = "Theme";
             // 
             // lightToolStripMenuItem
             // 
             lightToolStripMenuItem.Name = "lightToolStripMenuItem";
-            lightToolStripMenuItem.Size = new Size(180, 22);
+            lightToolStripMenuItem.Size = new Size(110, 22);
             lightToolStripMenuItem.Text = "Light";
             lightToolStripMenuItem.Click += lightToolStripMenuItem_Click;
             // 
             // darkToolStripMenuItem
             // 
             darkToolStripMenuItem.Name = "darkToolStripMenuItem";
-            darkToolStripMenuItem.Size = new Size(180, 22);
+            darkToolStripMenuItem.Size = new Size(110, 22);
             darkToolStripMenuItem.Text = "Dark";
             darkToolStripMenuItem.Click += darkToolStripMenuItem_Click;
             // 
             // blurToolStripMenuItem
             // 
             blurToolStripMenuItem.Name = "blurToolStripMenuItem";
-            blurToolStripMenuItem.Size = new Size(180, 22);
+            blurToolStripMenuItem.Size = new Size(110, 22);
             blurToolStripMenuItem.Text = "Blur";
             blurToolStripMenuItem.Click += blurToolStripMenuItem_Click;
             // 
             // acrylicToolStripMenuItem
             // 
             acrylicToolStripMenuItem.Name = "acrylicToolStripMenuItem";
-            acrylicToolStripMenuItem.Size = new Size(180, 22);
+            acrylicToolStripMenuItem.Size = new Size(110, 22);
             acrylicToolStripMenuItem.Text = "Acrylic";
             acrylicToolStripMenuItem.Click += acrylicToolStripMenuItem_Click;
             // 
             // blackToolStripMenuItem
             // 
             blackToolStripMenuItem.Name = "blackToolStripMenuItem";
-            blackToolStripMenuItem.Size = new Size(180, 22);
+            blackToolStripMenuItem.Size = new Size(110, 22);
             blackToolStripMenuItem.Text = "Black";
             blackToolStripMenuItem.Click += blackToolStripMenuItem_Click;
             // 
-            // deleteThisNodeToolStripMenuItem
+            // groupContextMenu
             // 
-            deleteThisNodeToolStripMenuItem.Name = "deleteThisNodeToolStripMenuItem";
-            deleteThisNodeToolStripMenuItem.ShortcutKeys = Keys.Delete;
-            deleteThisNodeToolStripMenuItem.Size = new Size(200, 22);
-            deleteThisNodeToolStripMenuItem.Text = "Delete this node";
-            deleteThisNodeToolStripMenuItem.Click += deleteThisNodeToolStripMenuItem_Click;
+            groupContextMenu.Items.AddRange(new ToolStripItem[] { treePropertiesToolStripMenuItem, addNodeToThisTreeToolStripMenuItem });
+            groupContextMenu.Name = "groupContextMenu";
+            groupContextMenu.Size = new Size(186, 48);
+            // 
+            // treePropertiesToolStripMenuItem
+            // 
+            treePropertiesToolStripMenuItem.Name = "treePropertiesToolStripMenuItem";
+            treePropertiesToolStripMenuItem.Size = new Size(185, 22);
+            treePropertiesToolStripMenuItem.Text = "Tree properties";
+            // 
+            // addNodeToThisTreeToolStripMenuItem
+            // 
+            addNodeToThisTreeToolStripMenuItem.Name = "addNodeToThisTreeToolStripMenuItem";
+            addNodeToThisTreeToolStripMenuItem.Size = new Size(185, 22);
+            addNodeToThisTreeToolStripMenuItem.Text = "Add node to this tree";
             // 
             // DialogueEditor
             // 
@@ -491,6 +514,7 @@
             panel1.PerformLayout();
             menuStrip.ResumeLayout(false);
             menuStrip.PerformLayout();
+            groupContextMenu.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
 
@@ -543,6 +567,9 @@
         private ToolStripMenuItem acrylicToolStripMenuItem;
         private ToolStripMenuItem blackToolStripMenuItem;
         private ToolStripMenuItem deleteThisNodeToolStripMenuItem;
+        private ContextMenuStrip groupContextMenu;
+        private ToolStripMenuItem treePropertiesToolStripMenuItem;
+        private ToolStripMenuItem addNodeToThisTreeToolStripMenuItem;
     }
 }
 
