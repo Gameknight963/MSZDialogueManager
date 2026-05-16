@@ -2,7 +2,6 @@
 using MZDO;
 using NAudio.Wave;
 using Newtonsoft.Json;
-using static MSZDialougeManager.DialogueEditor;
 
 namespace MSZDialougeManager
 {
@@ -27,7 +26,8 @@ namespace MSZDialougeManager
             this.KeyPreview = true;
             this.KeyDown += Form1_KeyDown;
             this.Shown += Form1_Shown;
-            dialogueViewContextMenu.Opening += DialogueViewContextMenu_Opening;
+            dialogueViewContextMenu.Opening += ContextMenu_Opening;
+            groupContextMenu.Opening += ContextMenu_Opening;
 
             dialogueView.ColumnWidthChanging += dialogueView_ColumnWidthChanging;
             dialogueView.ColumnWidthChanged += dialogueView_ColumnWidthChanged;
@@ -68,13 +68,14 @@ namespace MSZDialougeManager
             }
         }
 
-        private void DialogueViewContextMenu_Opening(object? sender, System.ComponentModel.CancelEventArgs e)
+        private void ContextMenu_Opening(object? sender, System.ComponentModel.CancelEventArgs e)
         {
-            dialogueViewContextMenu.Tag = dialogueView.PointToClient(Cursor.Position);
-            DwmApi.SetAccentState(dialogueViewContextMenu.Handle, DwmApi.AccentState.ACCENT_ENABLE_BLURBEHIND);
-            dialogueViewContextMenu.BackColor = Color.Black;
-            dialogueViewContextMenu.ForeColor = Color.White;
-            dialogueViewContextMenu.ShowImageMargin = false;
+            ContextMenuStrip? cms = (ContextMenuStrip)sender!;
+            cms.Tag = dialogueView.PointToClient(Cursor.Position);
+            DwmApi.SetAccentState(cms.Handle, DwmApi.AccentState.ACCENT_ENABLE_BLURBEHIND);
+            cms.BackColor = Color.Black;
+            cms.ForeColor = Color.White;
+            cms.ShowImageMargin = false;
         }
 
         private void Form1_Shown(object? sender, EventArgs e)
@@ -452,6 +453,19 @@ namespace MSZDialougeManager
         private void addNodeContextMenuItem_Click(object sender, EventArgs e)
         {
             ListViewGroup group = GetGroupAtPoint((Point)dialogueViewContextMenu.Tag!)!;
+            AddNode(group);
+        }
+
+        private void addNodeHereToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (groupContextMenu.Tag is ListViewGroup group)
+            {
+                AddNode(group);
+            }
+        }
+
+        void AddNode(ListViewGroup group)
+        {
             NodePropertiesEditor editor = new();
             editor.ShowDialog();
             editor.modifiedNode.id = nextTemporaryNodeId--;
@@ -489,9 +503,9 @@ namespace MSZDialougeManager
         private NodeRef GetSelectedNode() =>
             (NodeRef)dialogueView.SelectedItems[0].Tag!;
 
-        private void SetStatus(string text) => statusLabel.Text = text;
-
         private void dialogueView_SelectedIndexChanged(object sender, EventArgs e) => UpdateUI();
+
+        private void SetStatus(string text) => statusLabel.Text = text;
 
         void UpdateUI()
         {
@@ -591,6 +605,19 @@ namespace MSZDialougeManager
             SetScrollHooked(true);
             ThemeManager.SetGlobalTheme(ThemeManager.Theme.ExtendFrameDark);
             RefreshReachability();
+        }
+
+        private void dialogueView_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                ListViewGroup? clickedGroup = ListViewGroupHelpers.GetGroupAt(dialogueView, e.Location);
+                if (clickedGroup != null)
+                {
+                    groupContextMenu.Tag = clickedGroup;
+                    groupContextMenu.Show(dialogueView, e.Location);
+                }
+            }
         }
     }
 }
