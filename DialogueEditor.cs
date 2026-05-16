@@ -17,6 +17,8 @@ namespace MSZDialougeManager
         private WaveStream? audioStream;
         private int nextTemporaryNodeId = -1;
 
+        private bool scrollHooked = false;
+
         public DialogueEditor(string? filePath = null)
         {
             InitializeComponent();
@@ -43,13 +45,23 @@ namespace MSZDialougeManager
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            ScrollHook.Install();
+            SetScrollHooked(true);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
             ScrollHook.Uninstall();
+        }
+
+        private void SetScrollHooked(bool enabled)
+        {
+            if (scrollHooked != enabled)
+            {
+                if (enabled) ScrollHook.Install();
+                else ScrollHook.Uninstall();
+                scrollHooked = enabled;
+            }
         }
 
         private void DialogueViewContextMenu_Opening(object? sender, System.ComponentModel.CancelEventArgs e)
@@ -465,6 +477,36 @@ namespace MSZDialougeManager
                 AssociationHelper.RegisterFileAssociation();
             else
                 AssociationHelper.UnregisterFileAssociation();
+        }
+
+        private void lightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetScrollHooked(false);
+            ThemeManager.SetGlobalTheme(ThemeManager.Theme.Light);
+        }
+
+        private void darkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetScrollHooked(true);
+            ThemeManager.SetGlobalTheme(ThemeManager.Theme.Dark);
+        }
+
+        private void blurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetScrollHooked(true);
+            ThemeManager.SetGlobalTheme(ThemeManager.Theme.Blur);
+        }
+
+        private void acrylicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetScrollHooked(true);
+            ThemeManager.SetGlobalTheme(ThemeManager.Theme.Acrylic);
+        }
+
+        private void blackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetScrollHooked(true);
+            ThemeManager.SetGlobalTheme(ThemeManager.Theme.ExtendFrameDark);
         }
     }
 }
