@@ -222,12 +222,9 @@ namespace MSZDialougeManager
             foreach (int id in current.Node.nextNodeIds)
             {
                 NodeRef? nodeRef = nodes.FirstOrDefault(n => n.Node.id == id && n.TreeIndex == current.TreeIndex);
-                if (nodeRef == null) continue;
-                NextNodesBoxItem item = new()
-                {
-                    text = $"[{id}] {nodeRef.Node.speakerName}: {nodeRef.Node.dialogueText}",
-                    node = nodeRef.Node
-                };
+                NextNodesBoxItem item = nodeRef == null
+                    ? new() { text = $"[{id}] ⚠ This node no longer exists", node = null }
+                    : new() { text = $"[{id}] {nodeRef.Node.speakerName}: {nodeRef.Node.dialogueText}", node = nodeRef.Node };
                 nodesBox.Items.Add(item);
             }
             nodesBox.EndUpdate();
@@ -513,6 +510,7 @@ namespace MSZDialougeManager
             int index = nextNodesBox.SelectedIndex;
             if (index == -1) return;
             NextNodesBoxItem item = (NextNodesBoxItem)nextNodesBox.Items[index];
+            if (item.node == null) return;
             NodeRef current = GetSelectedNode();
             dialogueView.SelectedItems.Clear();
             NodeRef? target = nodes.FirstOrDefault(n => n.Node.id == item.node.id && n.TreeIndex == current.TreeIndex);
