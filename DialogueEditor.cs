@@ -281,7 +281,7 @@ namespace MSZDialougeManager
             return reachable;
         }
 
-        void RefreshReachability()
+        void UpdateNodeColors()
         {
             Dictionary<int, HashSet<int>> reachableByTree = [];
             Dictionary<int, HashSet<int>> allIdsByTree = [];
@@ -320,7 +320,7 @@ namespace MSZDialougeManager
             item.SubItems.Add(nodeRef.Node.speakerName);
             item.SubItems.Add(nodeRef.Node.dialogueText);
             dialogueView.Items.Add(item);
-            RefreshReachability();
+            UpdateNodeColors();
         }
 
         static List<NodeRef> FlattenPack(DialoguePack pack) =>
@@ -367,7 +367,7 @@ namespace MSZDialougeManager
             pack = FilesystemManager.LoadProj(path)!;
             nodes = FlattenPack(pack);
             UpdateDialogueView(nodes);
-            RefreshReachability();
+            UpdateNodeColors();
             dialogueView.Items[0].Selected = true;
             dialogueView.Focus();
             SetUIMode(UIMode.Idle);
@@ -429,7 +429,7 @@ namespace MSZDialougeManager
                     item.SubItems[1].Text = nodeRef.Node.speakerName;
                     item.SubItems[2].Text = nodeRef.Node.dialogueText;
                 }
-                RefreshReachability();
+                UpdateNodeColors();
                 UpdateUI();
             }
         }
@@ -497,7 +497,7 @@ namespace MSZDialougeManager
                 .FirstOrDefault(i => (NodeRef)i.Tag! == nodeRef);
             if (item != null)
                 dialogueView.Items.Remove(item);
-            RefreshReachability();
+            UpdateNodeColors();
             SetUIMode(UIMode.Idle);
         }
 
@@ -591,35 +591,35 @@ namespace MSZDialougeManager
         {
             SetScrollHooked(false);
             ThemeManager.SetGlobalTheme(ThemeManager.Theme.Light);
-            RefreshReachability();
+            UpdateNodeColors();
         }
 
         private void darkToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetScrollHooked(true);
             ThemeManager.SetGlobalTheme(ThemeManager.Theme.Dark);
-            RefreshReachability();
+            UpdateNodeColors();
         }
 
         private void blurToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetScrollHooked(true);
             ThemeManager.SetGlobalTheme(ThemeManager.Theme.Blur);
-            RefreshReachability();
+            UpdateNodeColors();
         }
 
         private void acrylicToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetScrollHooked(true);
             ThemeManager.SetGlobalTheme(ThemeManager.Theme.Acrylic);
-            RefreshReachability();
+            UpdateNodeColors();
         }
 
         private void blackToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetScrollHooked(true);
             ThemeManager.SetGlobalTheme(ThemeManager.Theme.ExtendFrameDark);
-            RefreshReachability();
+            UpdateNodeColors();
         }
 
         private void dialogueView_MouseUp(object sender, MouseEventArgs e)
@@ -646,7 +646,7 @@ namespace MSZDialougeManager
             {
                 pack!.trees[treeIndex] = editor.ResultTree;
                 UpdateUI();
-                RefreshReachability();
+                UpdateNodeColors();
             }
         }
     }
