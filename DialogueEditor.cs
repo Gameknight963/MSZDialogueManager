@@ -483,8 +483,10 @@ namespace MSZDialougeManager
             editor.ShowDialog();
             if (editor.DialogResult == DialogResult.OK)
             {
+                int treeIndex = (int)group.Tag!;
                 editor.modifiedNode.id = nextTemporaryNodeId--;
-                NodeRef newNode = new(editor.modifiedNode, (int)group.Tag!);
+                pack!.trees[treeIndex].nodes.Add(editor.modifiedNode);
+                NodeRef newNode = new(editor.modifiedNode, treeIndex);
                 nodes.Add(newNode);
                 AddToDialogueView(newNode, group);
             }
