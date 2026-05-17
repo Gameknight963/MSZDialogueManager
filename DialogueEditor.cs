@@ -235,27 +235,39 @@ namespace MSZDialougeManager
             nodesBox.EndUpdate();
         }
 
-        public void UpdateDialogueView(List<NodeRef> nodes)
+        public async Task UpdateDialogueView(List<NodeRef> nodes, CancellationToken ct = default)
         {
-            dialogueView.Items.Clear();
-            dialogueView.Groups.Clear();
-
-            Dictionary<int, HashSet<int>> reachableByTree = new Dictionary<int, HashSet<int>>();
-
-            foreach (NodeRef nodeRef in nodes)
+            dialogueView.BeginUpdate();
+            UseWaitCursor = true;
+            Cursor = Cursors.WaitCursor;
+            try
             {
-                string groupKey = $"tree_{nodeRef.TreeIndex}";
-                string groupName = pack!.trees[nodeRef.TreeIndex].name ?? $"Tree {nodeRef.TreeIndex}";
-                ListViewGroup? group = dialogueView.Groups.Cast<ListViewGroup>()
-                    .FirstOrDefault(g => g.Name == groupKey);
-                if (group == null)
+                dialogueView.Items.Clear();
+                dialogueView.Groups.Clear();
+                int i = 0;
+                foreach (NodeRef nodeRef in nodes)
                 {
-                    group = new ListViewGroup(groupKey, groupName);
-                    group.Tag = nodeRef.TreeIndex;
-                    dialogueView.Groups.Add(group);
+                    ct.ThrowIfCancellationRequested();
+                    string groupKey = $"tree_{nodeRef.TreeIndex}";
+                    string groupName = pack!.trees[nodeRef.TreeIndex].name ?? $"Tree {nodeRef.TreeIndex}";
+                    ListViewGroup? group = dialogueView.Groups.Cast<ListViewGroup>()
+                        .FirstOrDefault(g => g.Name == groupKey);
+                    if (group == null)
+                    {
+                        group = new ListViewGroup(groupKey, groupName);
+                        group.Tag = nodeRef.TreeIndex;
+                        dialogueView.Groups.Add(group);
+                    }
+                    AddToDialogueView(nodeRef, group);
+                    if (++i % 50 == 0)
+                        await Task.Delay(1);
                 }
-
-                AddToDialogueView(nodeRef, group);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+                UseWaitCursor = false;
+                dialogueView.EndUpdate();
             }
         }
         private HashSet<int> GetReachableNodes(int treeIndex)
@@ -328,18 +340,18 @@ namespace MSZDialougeManager
                 .SelectMany((tree, treeIndex) => tree.nodes.Select(node => new NodeRef(node, treeIndex)))
                 .ToList();
 
-        void Inittemplate()
+        async void Inittemplate()
         {
             SetUIMode(UIMode.Idle);
             pack = JsonConvert.DeserializeObject<DialoguePack>(File.ReadAllText(FilesystemManager.Template))!;
             pack.PackFormat = MZDO.Core.PackFormatVersion; // update pack format to latest right away
             nodes = FlattenPack(pack);
-            UpdateDialogueView(nodes);
+            await UpdateDialogueView(nodes);
             dialogueView.Items[0].Selected = true;
             dialogueView.Focus();
         }
 
-        void LoadPack()
+        async void LoadPack()
         {
             Cursor = Cursors.WaitCursor;
             using OpenFileDialog fd = new()
@@ -353,7 +365,7 @@ namespace MSZDialougeManager
             {
                 pack = FilesystemManager.LoadProj(fd.FileName)!;
                 nodes = FlattenPack(pack);
-                UpdateDialogueView(nodes);
+                await UpdateDialogueView(nodes);
                 dialogueView.Items[0].Selected = true;
                 dialogueView.Focus();
                 SetUIMode(UIMode.Idle);
@@ -362,12 +374,12 @@ namespace MSZDialougeManager
             Cursor = Cursors.Default;
         }
 
-        void LoadPack(string path)
+        async void LoadPack(string path)
         {
             Cursor = Cursors.WaitCursor;
             pack = FilesystemManager.LoadProj(path)!;
             nodes = FlattenPack(pack);
-            UpdateDialogueView(nodes);
+            await UpdateDialogueView(nodes);
             UpdateNodeColors();
             dialogueView.Items[0].Selected = true;
             dialogueView.Focus();
@@ -559,18 +571,26 @@ namespace MSZDialougeManager
             }
         }
 
-        private void searchBox_TextChanged(object sender, EventArgs e)
+        private CancellationTokenSource? _searchCts;
+
+        private async void searchBox_TextChanged(object sender, EventArgs e)
         {
             if (pack == null || nodes.Count == 0) return;
 
-            string filter = searchBox.Text?.ToLower() ?? "";
+            _searchCts?.Cancel();
+            _searchCts = new CancellationTokenSource();
 
+            string filter = searchBox.Text?.ToLower() ?? "";
             List<NodeRef> filtered = string.IsNullOrEmpty(filter)
                 ? nodes
                 : nodes.Where(n => n.Node.dialogueText.ToLower().Contains(filter)).ToList();
 
-            UpdateDialogueView(filtered);
-            SetUIMode(UIMode.Idle);
+            try
+            {
+                await UpdateDialogueView(filtered, _searchCts.Token);
+                SetUIMode(UIMode.Idle);
+            }
+            catch (OperationCanceledException) { }
         }
 
         private void PlayNodeAudio(NodeRef nodeRef)
