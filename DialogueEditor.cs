@@ -19,6 +19,8 @@ namespace MSZDialougeManager
 
         private bool scrollHooked = false;
 
+        private string? workingFilePath;
+
         public DialogueEditor(string? filePath = null)
         {
             InitializeComponent();
@@ -38,6 +40,7 @@ namespace MSZDialougeManager
 
             shellToolStripMenuItem.Checked = AssociationHelper.IsFileAssociationRegistered();
             if (filePath != null) LoadPack(filePath);
+            workingFilePath = filePath;
             if (File.Exists(lastThemeFile))
                 ThemeManager.SetGlobalTheme(Enum.Parse<ThemeManager.Theme>(File.ReadAllText(lastThemeFile)), ThemeManager.TextRenderMode.ShadowText);
             else
@@ -356,8 +359,8 @@ namespace MSZDialougeManager
             Cursor = Cursors.WaitCursor;
             using OpenFileDialog fd = new()
             {
-                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-                Filter = $"Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}|All files (*.*)|*.*",
+                InitialDirectory = workingFilePath,
+                Filter = $"Miside Zero Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}|All files (*.*)|*.*",
                 Multiselect = false
             };
             SetScrollHooked(false);
@@ -393,13 +396,17 @@ namespace MSZDialougeManager
             using SaveFileDialog dialog = new()
             {
                 Title = "Save dialogue pack",
-                Filter = $"Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}",
-                FileName = $"CustomDialogue.{FilesystemManager.ext}",
+                Filter = $"Miside Zero Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}",
+                FileName = Path.GetFileName(workingFilePath) ?? $"CoolDialogue.{FilesystemManager.ext}",
                 AddExtension = true,
-                DefaultExt = FilesystemManager.ext
+                DefaultExt = FilesystemManager.ext,
+                InitialDirectory = Path.GetDirectoryName(workingFilePath),
             };
             if (dialog.ShowDialog() == DialogResult.OK)
+            {
                 FilesystemManager.SaveProj(dialog.FileName, pack!);
+                workingFilePath = dialog.FileName;
+            }
             SetScrollHooked(ThemeManager.ActiveTheme != ThemeManager.Theme.Light);
         }
 
@@ -508,10 +515,13 @@ namespace MSZDialougeManager
         {
             NodeRef nodeRef = GetSelectedNode();
             nodes.Remove(nodeRef);
+
             ListViewItem? item = dialogueView.Items.Cast<ListViewItem>()
                 .FirstOrDefault(i => (NodeRef)i.Tag! == nodeRef);
+
             if (item != null)
                 dialogueView.Items.Remove(item);
+
             UpdateNodeColors();
             SetUIMode(UIMode.Idle);
         }
