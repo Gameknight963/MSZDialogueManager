@@ -46,6 +46,8 @@ namespace MSZDialougeManager
             ZipFile.ExtractToDirectory(path, DataPath);
             string json = File.ReadAllText(NodesJsonPath);
             DialoguePack? pack = JsonConvert.DeserializeObject<DialoguePack>(json);
+            if (pack == null) return null;
+            pack.PackFormat = MZDO.Core.PackFormatVersion; // update pack format to latest right away
             IsFileLoaded = true;
             return pack;
         }
