@@ -308,9 +308,9 @@ namespace MSZDialougeManager
 
                 item.ForeColor = hasBrokenRefs ? Color.Orange
                     : isStartNode ? Color.Green
+                    : !reachable ? Color.Red
                     : isTerminal ? Color.Blue
-                    : reachable ? item.ListView!.ForeColor
-                    : Color.Red;
+                    : item.ListView!.ForeColor;
             }
         }
 
