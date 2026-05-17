@@ -513,6 +513,9 @@ namespace MSZDialougeManager
 
         private void deleteThisNodeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (nodes.Count == 0)
+                return;
+
             NodeRef nodeRef = GetSelectedNode();
             nodes.Remove(nodeRef);
 
