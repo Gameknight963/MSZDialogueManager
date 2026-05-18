@@ -35,6 +35,8 @@ namespace MSZDialougeManager
             dialogueView.ColumnWidthChanging += dialogueView_ColumnWidthChanging;
             dialogueView.ColumnWidthChanged += dialogueView_ColumnWidthChanged;
 
+            Directory.CreateDirectory(FilesystemManager.DataPath);
+
             if (AssociationHelper.IsFileAssociationRegistered() && !AssociationHelper.IsFileAssociationCurrent())
                 AssociationHelper.RegisterFileAssociation();
 
