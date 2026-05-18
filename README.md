@@ -2,6 +2,10 @@
 
 For use with [Miside Zero Dialogue Override](https://github.com/Gameknight963/Miside-Zero-Dialogue-Override)
 
+Check out the mszdlg specification here:
+<br>
+https://github.com/Gameknight963/mszdlg
+
 ## v2 is out! here are some changes
 ### editor
  - color coded items in the editor
