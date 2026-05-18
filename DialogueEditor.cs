@@ -359,13 +359,13 @@ namespace MSZDialougeManager
         async void LoadPack()
         {
             Cursor = Cursors.WaitCursor;
+            SetScrollHooked(false);
             using OpenFileDialog fd = new()
             {
                 InitialDirectory = workingFilePath,
                 Filter = $"Miside Zero Dialogue Project (*.{FilesystemManager.ext})|*.{FilesystemManager.ext}|All files (*.*)|*.*",
                 Multiselect = false
             };
-            SetScrollHooked(false);
             if (fd.ShowDialog() == DialogResult.OK)
             {
                 pack = FilesystemManager.LoadProj(fd.FileName)!;
@@ -415,6 +415,7 @@ namespace MSZDialougeManager
         void LoadAudio(NodeRef nodeRef)
         {
             StopAudio();
+            SetScrollHooked(false);
             using OpenFileDialog dialog = new()
             {
                 Filter = "Audio Files (*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac;*.ogg)|*.wav;*.mp3;*.wma;*.aac;*.m4a;*.flac;*.ogg|All Files (*.*)|*.*"
@@ -424,6 +425,7 @@ namespace MSZDialougeManager
                 FilesystemManager.AddNodeAudio(nodeRef.TreeIndex, nodeRef.Node.id, dialog.FileName);
                 SetUIMode(UIMode.ItemSelected);
             }
+            SetScrollHooked(ThemeManager.ActiveTheme != ThemeManager.Theme.Light);
         }
 
         void RemoveAudio(NodeRef nodeRef)
