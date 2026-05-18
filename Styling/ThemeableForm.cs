@@ -91,6 +91,7 @@ namespace MSZDialougeManager.Styling
 
         private void Dgv_CellPainting(object? sender, DataGridViewCellPaintingEventArgs e)
         {
+            if (ResolvedTheme == ThemeManager.Theme.Light) return;
             if (e.RowIndex >= 0 &&
                 ((DataGridView)sender!).Columns[e.ColumnIndex] is DataGridViewComboBoxColumn)
             {
