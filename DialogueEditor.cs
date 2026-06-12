@@ -378,6 +378,7 @@ namespace MSZDialougeManager
                 dialogueView.Items[0].Selected = true;
                 dialogueView.Focus();
                 SetUIMode(UIMode.Idle);
+                Text = $"{fd.SafeFileName} - Miside Zero Dialogue Manager";
             }
             SetScrollHooked(ThemeManager.ActiveTheme != ThemeManager.Theme.Light);
             Cursor = Cursors.Default;
@@ -387,6 +388,7 @@ namespace MSZDialougeManager
         {
             Cursor = Cursors.WaitCursor;
             pack = FilesystemManager.LoadProj(path)!;
+            Text = $"{Path.GetFileName(path)} - Miside Zero Dialogue Manager";
             nodes = FlattenPack(pack);
             await UpdateDialogueView(nodes);
             UpdateNodeColors();
@@ -411,6 +413,7 @@ namespace MSZDialougeManager
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 FilesystemManager.SaveProj(dialog.FileName, pack!);
+                Text = $"{Path.GetFileName(dialog.FileName)} - Miside Zero Dialogue Manager";
                 workingFilePath = dialog.FileName;
             }
             SetScrollHooked(ThemeManager.ActiveTheme != ThemeManager.Theme.Light);
