@@ -369,8 +369,6 @@ namespace MSZDialougeManager
             if (fd.ShowDialog() == DialogResult.OK)
             {
                 pack = FilesystemManager.LoadProj(fd.FileName)!;
-                // update pack format version as soon as the editor touches it
-                pack.PackFormat = MZDO.Core.PackFormatVersion;
                 nodes = FlattenPack(pack);
                 await UpdateDialogueView(nodes);
                 dialogueView.Items[0].Selected = true;
