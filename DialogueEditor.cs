@@ -523,9 +523,9 @@ namespace MSZDialougeManager
 
             NodeRef nodeRef = GetSelectedNode()!;
             nodes.Remove(nodeRef);
+            pack!.trees[nodeRef.TreeIndex].nodes.RemoveAll(node => node.id == nodeRef.Node.id);
 
             ListViewItem? item = dialogueView.Items.Cast<ListViewItem>().FirstOrDefault(i => (NodeRef)i.Tag! == nodeRef);
-
             if (item != null) dialogueView.Items.Remove(item);
 
             UpdateNodeColors();
