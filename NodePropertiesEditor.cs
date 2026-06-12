@@ -27,6 +27,8 @@ namespace MSZDialougeManager
             delayBox.Text = node.delay.ToString();
 
             nextNodesIntArrayBox.Text = string.Join(", ", node.nextNodeIds);
+
+            expressionBox.Text = node.expression;
         }
 
         private void Ok_Click(object sender, EventArgs e)
@@ -47,7 +49,7 @@ namespace MSZDialougeManager
 
             if (!float.TryParse(delayBox.Text, out modifiedNode.delay))
             {
-                CoolMessageBox.Show("Delay must be a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CoolMessageBox.Show("Delay must be a valid float.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -68,6 +70,7 @@ namespace MSZDialougeManager
             modifiedNode.nextNodeIds = values.ToArray();
             modifiedNode.dialogueText = textOfNodeBox.Text;
             modifiedNode.speakerName = speakerDropDown.SelectedItem.ToString()!;
+            modifiedNode.expression = expressionBox.Text;
             float.TryParse(delayBox.Text, out modifiedNode.delay);
             this.DialogResult = DialogResult.OK;
             this.Close();

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogueEditor));
             textOfNodeBox = new TextBox();
             NodeTextLabel = new Label();
             label1 = new Label();
@@ -42,6 +41,8 @@
             Ok = new Button();
             Cancel = new Button();
             nextNodesLabel = new Label();
+            label2 = new Label();
+            expressionBox = new TextBox();
             SuspendLayout();
             // 
             // textOfNodeBox
@@ -124,7 +125,7 @@
             // Ok
             // 
             Ok.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            Ok.Location = new Point(278, 221);
+            Ok.Location = new Point(278, 220);
             Ok.Name = "Ok";
             Ok.Size = new Size(75, 23);
             Ok.TabIndex = 6;
@@ -135,7 +136,7 @@
             // Cancel
             // 
             Cancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            Cancel.Location = new Point(359, 221);
+            Cancel.Location = new Point(359, 220);
             Cancel.Name = "Cancel";
             Cancel.Size = new Size(75, 23);
             Cancel.TabIndex = 6;
@@ -153,17 +154,37 @@
             nextNodesLabel.TabIndex = 1;
             nextNodesLabel.Text = "Next nodes indicies:";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(197, 139);
+            label2.Name = "label2";
+            label2.Size = new Size(65, 13);
+            label2.TabIndex = 1;
+            label2.Text = "Expression:";
+            // 
+            // expressionBox
+            // 
+            expressionBox.Location = new Point(197, 156);
+            expressionBox.Name = "expressionBox";
+            expressionBox.Size = new Size(176, 22);
+            expressionBox.TabIndex = 5;
+            toolTip1.SetToolTip(expressionBox, "Expression to show when playing this node. Don't recommend changing this unless you know every expression the game will let you put in here.");
+            // 
             // NodePropertiesEditor
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(446, 256);
+            ClientSize = new Size(446, 255);
             Controls.Add(Cancel);
             Controls.Add(Ok);
+            Controls.Add(expressionBox);
             Controls.Add(nextNodesIntArrayBox);
             Controls.Add(delayBox);
             Controls.Add(customSpeakerLink);
             Controls.Add(speakerDropDown);
+            Controls.Add(label2);
             Controls.Add(nextNodesLabel);
             Controls.Add(delayLabel);
             Controls.Add(label1);
@@ -172,7 +193,6 @@
             Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = Color.Black;
             Name = "NodePropertiesEditor";
-            Icon = (Icon)resources.GetObject("$this.Icon");
             Text = "Node Properties Editor";
             ResumeLayout(false);
             PerformLayout();
@@ -193,5 +213,7 @@
         private System.Windows.Forms.Button Cancel;
         private Label nextNodesLabel;
         private TextBox nextNodesIntArrayBox;
+        private Label label2;
+        private TextBox expressionBox;
     }
 }
