@@ -520,8 +520,7 @@ namespace MSZDialougeManager
         private void deleteThisNodeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (nodes.Count == 0) return;
-
-            NodeRef nodeRef = GetSelectedNode()!;
+            if (GetSelectedNode() is not NodeRef nodeRef) return;
             nodes.Remove(nodeRef);
             pack!.trees[nodeRef.TreeIndex].nodes.RemoveAll(node => node.id == nodeRef.Node.id);
 
@@ -546,8 +545,11 @@ namespace MSZDialougeManager
             UpdateUI();
         }
 
-        private NodeRef? GetSelectedNode() =>
-            (NodeRef?)dialogueView.SelectedItems[0].Tag;
+        private NodeRef? GetSelectedNode()
+        {
+            if (dialogueView.SelectedItems.Count == 0) return null;
+            return (NodeRef?)dialogueView.SelectedItems[0].Tag;
+        }
 
         private void dialogueView_SelectedIndexChanged(object sender, EventArgs e) => UpdateUI();
 
