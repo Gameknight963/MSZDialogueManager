@@ -2,6 +2,7 @@
 using MZDO;
 using NAudio.Wave;
 using Newtonsoft.Json;
+using System.Drawing.Printing;
 
 namespace MSZDialougeManager
 {
@@ -158,6 +159,7 @@ namespace MSZDialougeManager
         private enum UIMode
         {
             ItemSelected,
+            ItemSelectedSearching,
             Idle,
             Init,
         }
@@ -191,6 +193,8 @@ namespace MSZDialougeManager
             propertiesContextMenuItem.Visible = itemSelected;
             propertiesContextMenuItem.Enabled = itemSelected;
             propertiesToolStripMenuItem.Enabled = itemSelected;
+
+            jumpToThisNodeToolStripMenuItem.Visible = mode == UIMode.ItemSelectedSearching;
 
             generateWithTTSToolStripMenuItem.Enabled = !init;
 
@@ -568,7 +572,7 @@ namespace MSZDialougeManager
             NodeRef nodeRef = GetSelectedNode()!;
             textLabel.Text = $"{nodeRef.Node.speakerName}: {nodeRef.Node.dialogueText}";
             SetStatus($"Selected: node {nodeRef.Node.id}, spoken by {nodeRef.Node.speakerName}");
-            SetUIMode(UIMode.ItemSelected);
+            SetUIMode(string.IsNullOrEmpty(searchBox.Text) ? UIMode.ItemSelected : UIMode.ItemSelectedSearching);
         }
 
         private void nextNodesBox_DoubleClick(object sender, EventArgs e)
@@ -589,11 +593,12 @@ namespace MSZDialougeManager
             }
         }
 
+        private bool _updatingText = false;
         private CancellationTokenSource? _searchCts;
 
-        private async void searchBox_TextChanged(object sender, EventArgs e)
+        private async Task SearchBoxTextChanged()
         {
-            if (pack == null || nodes.Count == 0) return;
+            if (pack == null || nodes.Count == 0 || _updatingText) return;
 
             _searchCts?.Cancel();
             _searchCts = new CancellationTokenSource();
@@ -609,6 +614,15 @@ namespace MSZDialougeManager
                 SetUIMode(UIMode.Idle);
             }
             catch (OperationCanceledException) { }
+        }
+        private async void searchBox_TextChanged(object sender, EventArgs e) => await SearchBoxTextChanged();
+
+        private async Task SetSearchBoxText(string text)
+        {
+            _updatingText = true;
+            searchBox.Text = text;
+            _updatingText = false;
+            await SearchBoxTextChanged();
         }
 
         private void PlayNodeAudio(NodeRef nodeRef)
@@ -690,6 +704,15 @@ namespace MSZDialougeManager
                 UpdateUI();
                 UpdateNodeColors();
             }
+        }
+
+        private async void jumpToThisNodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NodeRef nodeRef = GetSelectedNode()!;
+            await SetSearchBoxText("");
+            ListViewItem item = dialogueView.Items.Cast<ListViewItem>().FirstOrDefault(i => (NodeRef)i.Tag! == nodeRef)!;
+            item.EnsureVisible();
+            item.Selected = true;
         }
     }
 }

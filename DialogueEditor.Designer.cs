@@ -78,6 +78,7 @@
             groupContextMenu = new ContextMenuStrip(components);
             treePropertiesToolStripMenuItem = new ToolStripMenuItem();
             addNodeToThisTreeToolStripMenuItem = new ToolStripMenuItem();
+            jumpToThisNodeToolStripMenuItem = new ToolStripMenuItem();
             dialogueViewContextMenu.SuspendLayout();
             panel1.SuspendLayout();
             menuStrip.SuspendLayout();
@@ -116,15 +117,15 @@
             // 
             // dialogueViewContextMenu
             // 
-            dialogueViewContextMenu.Items.AddRange(new ToolStripItem[] { addNodeContextMenuItem, deleteThisNodeToolStripMenuItem, propertiesContextMenuItem });
+            dialogueViewContextMenu.Items.AddRange(new ToolStripItem[] { jumpToThisNodeToolStripMenuItem, addNodeContextMenuItem, deleteThisNodeToolStripMenuItem, propertiesContextMenuItem });
             dialogueViewContextMenu.Name = "dialogueViewContextMenu";
-            dialogueViewContextMenu.Size = new Size(201, 70);
+            dialogueViewContextMenu.Size = new Size(208, 114);
             // 
             // addNodeContextMenuItem
             // 
             addNodeContextMenuItem.Name = "addNodeContextMenuItem";
             addNodeContextMenuItem.ShortcutKeys = Keys.Control | Keys.A;
-            addNodeContextMenuItem.Size = new Size(200, 22);
+            addNodeContextMenuItem.Size = new Size(207, 22);
             addNodeContextMenuItem.Text = "Add node here";
             addNodeContextMenuItem.Click += addNodeContextMenuItem_Click;
             // 
@@ -132,7 +133,7 @@
             // 
             deleteThisNodeToolStripMenuItem.Name = "deleteThisNodeToolStripMenuItem";
             deleteThisNodeToolStripMenuItem.ShortcutKeys = Keys.Delete;
-            deleteThisNodeToolStripMenuItem.Size = new Size(200, 22);
+            deleteThisNodeToolStripMenuItem.Size = new Size(207, 22);
             deleteThisNodeToolStripMenuItem.Text = "Delete this node";
             deleteThisNodeToolStripMenuItem.Click += deleteThisNodeToolStripMenuItem_Click;
             // 
@@ -140,7 +141,7 @@
             // 
             propertiesContextMenuItem.Name = "propertiesContextMenuItem";
             propertiesContextMenuItem.ShortcutKeys = Keys.Control | Keys.P;
-            propertiesContextMenuItem.Size = new Size(200, 22);
+            propertiesContextMenuItem.Size = new Size(207, 22);
             propertiesContextMenuItem.Text = "Node properties";
             propertiesContextMenuItem.Click += editPropertiesButton_Click;
             // 
@@ -364,7 +365,7 @@
             // 
             toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { generateWithTTSToolStripMenuItem });
             toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            toolsToolStripMenuItem.Size = new Size(47, 20);
+            toolsToolStripMenuItem.Size = new Size(46, 20);
             toolsToolStripMenuItem.Text = "Tools";
             // 
             // generateWithTTSToolStripMenuItem
@@ -437,7 +438,7 @@
             // 
             themeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { lightToolStripMenuItem, darkToolStripMenuItem, blurToolStripMenuItem, acrylicToolStripMenuItem, blackToolStripMenuItem });
             themeToolStripMenuItem.Name = "themeToolStripMenuItem";
-            themeToolStripMenuItem.Size = new Size(56, 20);
+            themeToolStripMenuItem.Size = new Size(55, 20);
             themeToolStripMenuItem.Text = "Theme";
             // 
             // lightToolStripMenuItem
@@ -479,7 +480,7 @@
             // 
             groupContextMenu.Items.AddRange(new ToolStripItem[] { treePropertiesToolStripMenuItem, addNodeToThisTreeToolStripMenuItem });
             groupContextMenu.Name = "groupContextMenu";
-            groupContextMenu.Size = new Size(186, 70);
+            groupContextMenu.Size = new Size(186, 48);
             // 
             // treePropertiesToolStripMenuItem
             // 
@@ -494,6 +495,14 @@
             addNodeToThisTreeToolStripMenuItem.Size = new Size(185, 22);
             addNodeToThisTreeToolStripMenuItem.Text = "Add node to this tree";
             addNodeToThisTreeToolStripMenuItem.Click += addNodeToThisTreeToolStripMenuItem_Click;
+            // 
+            // jumpToThisNodeToolStripMenuItem
+            // 
+            jumpToThisNodeToolStripMenuItem.Name = "jumpToThisNodeToolStripMenuItem";
+            jumpToThisNodeToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.J;
+            jumpToThisNodeToolStripMenuItem.Size = new Size(207, 22);
+            jumpToThisNodeToolStripMenuItem.Text = "Jump to this node";
+            jumpToThisNodeToolStripMenuItem.Click += jumpToThisNodeToolStripMenuItem_Click;
             // 
             // DialogueEditor
             // 
@@ -572,6 +581,7 @@
         private ContextMenuStrip groupContextMenu;
         private ToolStripMenuItem treePropertiesToolStripMenuItem;
         private ToolStripMenuItem addNodeToThisTreeToolStripMenuItem;
+        private ToolStripMenuItem jumpToThisNodeToolStripMenuItem;
     }
 }
 
