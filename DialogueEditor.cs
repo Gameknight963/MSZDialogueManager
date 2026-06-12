@@ -112,7 +112,7 @@ namespace MSZDialougeManager
             if (e.KeyCode == Keys.Enter)
             {
                 if (dialogueView.SelectedItems.Count == 0) return;
-                PlayNodeAudio(GetSelectedNode());
+                PlayNodeAudio(GetSelectedNode()!);
             }
         }
 
@@ -197,8 +197,8 @@ namespace MSZDialougeManager
             removeAudioButton.Visible = false;
             if (!itemSelected) return;
 
-            NodeRef selected = GetSelectedNode();
-            UpdateNodesBox(nextNodesBox, GetSelectedNode());
+            NodeRef selected = GetSelectedNode()!;
+            UpdateNodesBox(nextNodesBox, GetSelectedNode()!);
 
             bool hasAudioClip = FilesystemManager.DoesNodeAudioExist(selected.TreeIndex, selected.Node.id);
             audioPlayButton.Visible = hasAudioClip;
@@ -414,6 +414,7 @@ namespace MSZDialougeManager
 
         void LoadAudio(NodeRef nodeRef)
         {
+            ArgumentNullException.ThrowIfNull(nodeRef);
             StopAudio();
             SetScrollHooked(false);
             using OpenFileDialog dialog = new()
@@ -430,6 +431,7 @@ namespace MSZDialougeManager
 
         void RemoveAudio(NodeRef nodeRef)
         {
+            ArgumentNullException.ThrowIfNull(nodeRef);
             FilesystemManager.RemoveNodeAudio(nodeRef.TreeIndex, nodeRef.Node.id);
             SetUIMode(UIMode.ItemSelected);
             StopAudio();
@@ -437,7 +439,7 @@ namespace MSZDialougeManager
 
         void EditProperties()
         {
-            NodeRef nodeRef = GetSelectedNode();
+            NodeRef nodeRef = GetSelectedNode() ?? throw new InvalidOperationException("Cannot edit properties when no node is selected.");
             NodePropertiesEditor editor = new(nodeRef.Node);
             editor.ShowDialog();
             if (editor.DialogResult == DialogResult.OK)
@@ -461,8 +463,8 @@ namespace MSZDialougeManager
         private void loadButton_Click(object sender, EventArgs e) => LoadPack();
         private void toolStripLoadPack_Click(object sender, EventArgs e) => LoadPack();
 
-        private void selectAudioButton_Click(object sender, EventArgs e) => LoadAudio(GetSelectedNode());
-        private void assignAudioToolStripMenuItem_Click(object sender, EventArgs e) => LoadAudio(GetSelectedNode());
+        private void selectAudioButton_Click(object sender, EventArgs e) => LoadAudio(GetSelectedNode()!);
+        private void assignAudioToolStripMenuItem_Click(object sender, EventArgs e) => LoadAudio(GetSelectedNode()!);
 
         private void saveAsDialougePackToolStripMenuItem_Click(object sender, EventArgs e) => SavePack();
         private void saveButton_Click(object sender, EventArgs e) => SavePack();
@@ -470,14 +472,14 @@ namespace MSZDialougeManager
         private void initializetemplateToolStripMenuItem_Click(object sender, EventArgs e) => Inittemplate();
         private void templateButton_Click(object sender, EventArgs e) => Inittemplate();
 
-        private void audioPlayButton_Click(object sender, EventArgs e) => PlayNodeAudio(GetSelectedNode());
-        private void playAudioToolStripMenuItem_Click(object sender, EventArgs e) => PlayNodeAudio(GetSelectedNode());
+        private void audioPlayButton_Click(object sender, EventArgs e) => PlayNodeAudio(GetSelectedNode()!);
+        private void playAudioToolStripMenuItem_Click(object sender, EventArgs e) => PlayNodeAudio(GetSelectedNode()!);
 
         private void audioStopButton_Click(object sender, EventArgs e) => StopAudio();
         private void stopAudioToolStripMenuItem_Click(object sender, EventArgs e) => StopAudio();
 
-        private void removeAudioButton_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode());
-        private void removeAudioToolStripMenuItem_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode());
+        private void removeAudioButton_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode()!);
+        private void removeAudioToolStripMenuItem_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode()!);
 
         private void editPropertiesButton_Click(object sender, EventArgs e) => EditProperties();
 
@@ -517,17 +519,14 @@ namespace MSZDialougeManager
 
         private void deleteThisNodeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (nodes.Count == 0)
-                return;
+            if (nodes.Count == 0) return;
 
-            NodeRef nodeRef = GetSelectedNode();
+            NodeRef nodeRef = GetSelectedNode()!;
             nodes.Remove(nodeRef);
 
-            ListViewItem? item = dialogueView.Items.Cast<ListViewItem>()
-                .FirstOrDefault(i => (NodeRef)i.Tag! == nodeRef);
+            ListViewItem? item = dialogueView.Items.Cast<ListViewItem>().FirstOrDefault(i => (NodeRef)i.Tag! == nodeRef);
 
-            if (item != null)
-                dialogueView.Items.Remove(item);
+            if (item != null) dialogueView.Items.Remove(item);
 
             UpdateNodeColors();
             SetUIMode(UIMode.Idle);
@@ -547,8 +546,8 @@ namespace MSZDialougeManager
             UpdateUI();
         }
 
-        private NodeRef GetSelectedNode() =>
-            (NodeRef)dialogueView.SelectedItems[0].Tag!;
+        private NodeRef? GetSelectedNode() =>
+            (NodeRef?)dialogueView.SelectedItems[0].Tag;
 
         private void dialogueView_SelectedIndexChanged(object sender, EventArgs e) => UpdateUI();
 
@@ -564,7 +563,7 @@ namespace MSZDialougeManager
                 return;
             }
 
-            NodeRef nodeRef = GetSelectedNode();
+            NodeRef nodeRef = GetSelectedNode()!;
             textLabel.Text = $"{nodeRef.Node.speakerName}: {nodeRef.Node.dialogueText}";
             SetStatus($"Selected: node {nodeRef.Node.id}, spoken by {nodeRef.Node.speakerName}");
             SetUIMode(UIMode.ItemSelected);
@@ -576,7 +575,7 @@ namespace MSZDialougeManager
             if (index == -1) return;
             NextNodesBoxItem item = (NextNodesBoxItem)nextNodesBox.Items[index];
             if (item.node == null) return;
-            NodeRef current = GetSelectedNode();
+            NodeRef current = GetSelectedNode()!;
             dialogueView.SelectedItems.Clear();
             NodeRef? target = nodes.FirstOrDefault(n => n.Node.id == item.node.id && n.TreeIndex == current.TreeIndex);
             ListViewItem? lvItem = dialogueView.Items.Cast<ListViewItem>()
@@ -584,7 +583,7 @@ namespace MSZDialougeManager
             if (lvItem != null)
             {
                 lvItem.Selected = true;
-                UpdateNodesBox(nextNodesBox, GetSelectedNode());
+                UpdateNodesBox(nextNodesBox, GetSelectedNode()!);
             }
         }
 
@@ -612,6 +611,7 @@ namespace MSZDialougeManager
 
         private void PlayNodeAudio(NodeRef nodeRef)
         {
+            ArgumentNullException.ThrowIfNull(nodeRef);
             string? audio = FilesystemManager.GetNodeAudioPath(nodeRef.TreeIndex, nodeRef.Node.id);
             if (audio == null) return;
             NAudioHelpers.PlayAudio(audio, ref waveOut, ref audioStream);
