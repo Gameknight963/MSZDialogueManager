@@ -38,11 +38,11 @@
             toolTip1 = new ToolTip(components);
             delayBox = new TextBox();
             nextNodesIntArrayBox = new TextBox();
+            expressionBox = new TextBox();
             Ok = new Button();
             Cancel = new Button();
             nextNodesLabel = new Label();
             label2 = new Label();
-            expressionBox = new TextBox();
             SuspendLayout();
             // 
             // textOfNodeBox
@@ -78,7 +78,6 @@
             // 
             speakerDropDown.FormattingEnabled = true;
             speakerDropDown.ItemHeight = 13;
-            speakerDropDown.Items.AddRange(new object[] { "Kiri", "Kind" });
             speakerDropDown.Location = new Point(15, 115);
             speakerDropDown.Name = "speakerDropDown";
             speakerDropDown.Size = new Size(176, 21);
@@ -122,6 +121,14 @@
             nextNodesIntArrayBox.TabIndex = 5;
             toolTip1.SetToolTip(nextNodesIntArrayBox, "A comma separated list that can include indicies of any node in this tree.\r\n");
             // 
+            // expressionBox
+            // 
+            expressionBox.Location = new Point(197, 156);
+            expressionBox.Name = "expressionBox";
+            expressionBox.Size = new Size(176, 22);
+            expressionBox.TabIndex = 5;
+            toolTip1.SetToolTip(expressionBox, "Expression to show when playing this node. Don't recommend changing this unless you know every expression the game will let you put in here.");
+            // 
             // Ok
             // 
             Ok.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -163,14 +170,6 @@
             label2.Size = new Size(65, 13);
             label2.TabIndex = 1;
             label2.Text = "Expression:";
-            // 
-            // expressionBox
-            // 
-            expressionBox.Location = new Point(197, 156);
-            expressionBox.Name = "expressionBox";
-            expressionBox.Size = new Size(176, 22);
-            expressionBox.TabIndex = 5;
-            toolTip1.SetToolTip(expressionBox, "Expression to show when playing this node. Don't recommend changing this unless you know every expression the game will let you put in here.");
             // 
             // NodePropertiesEditor
             // 

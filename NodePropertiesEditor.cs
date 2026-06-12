@@ -18,10 +18,8 @@ namespace MSZDialougeManager
             if (node == null) return;
             textOfNodeBox.Text = node.dialogueText;
 
-            if (!speakerDropDown.Items.Contains(node.speakerName))
-            {
-                speakerDropDown.Items.Add(node.speakerName);
-            }
+            speakerDropDown.Items.AddRange(DialogueEditor.nodes.Select(x => x.Node.speakerName).Distinct().ToArray());
+
             speakerDropDown.SelectedItem = node.speakerName;
 
             delayBox.Text = node.delay.ToString();
