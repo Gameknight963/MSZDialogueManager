@@ -38,12 +38,14 @@
             toolTip1 = new ToolTip(components);
             delayBox = new TextBox();
             nextNodesIntArrayBox = new TextBox();
+            expressionDropDown = new ComboBox();
             Ok = new Button();
             Cancel = new Button();
             nextNodesLabel = new Label();
             label2 = new Label();
             linkLabel1 = new LinkLabel();
-            expressionDropDown = new ComboBox();
+            errorProvider1 = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // textOfNodeBox
@@ -122,6 +124,15 @@
             nextNodesIntArrayBox.TabIndex = 5;
             toolTip1.SetToolTip(nextNodesIntArrayBox, "A comma separated list that can include indicies of any node in this tree.\r\n");
             // 
+            // expressionDropDown
+            // 
+            expressionDropDown.FormattingEnabled = true;
+            expressionDropDown.Location = new Point(15, 157);
+            expressionDropDown.Name = "expressionDropDown";
+            expressionDropDown.Size = new Size(176, 21);
+            expressionDropDown.TabIndex = 7;
+            toolTip1.SetToolTip(expressionDropDown, "The expression that the speaker will express when this node is played.");
+            // 
             // Ok
             // 
             Ok.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -175,14 +186,10 @@
             linkLabel1.Text = "Chose a custom expression";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
-            // expressionDropDown
+            // errorProvider1
             // 
-            expressionDropDown.FormattingEnabled = true;
-            expressionDropDown.Location = new Point(15, 157);
-            expressionDropDown.Name = "expressionDropDown";
-            expressionDropDown.Size = new Size(176, 21);
-            expressionDropDown.TabIndex = 7;
-            toolTip1.SetToolTip(expressionDropDown, "The expression that the speaker will express when this node is played.");
+            errorProvider1.BlinkRate = 40;
+            errorProvider1.ContainerControl = this;
             // 
             // NodePropertiesEditor
             // 
@@ -207,6 +214,7 @@
             ForeColor = Color.Black;
             Name = "NodePropertiesEditor";
             Text = "Node Properties Editor";
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -229,5 +237,6 @@
         private Label label2;
         private LinkLabel linkLabel1;
         private ComboBox expressionDropDown;
+        private ErrorProvider errorProvider1;
     }
 }

@@ -28,47 +28,68 @@ namespace MSZDialougeManager
 
         private void Ok_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textOfNodeBox.Text))
-            {
-                CoolMessageBox.Show("Dialogue text cannot be empty.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            if (!ValidateInput()) return;
             modifiedNode.dialogueText = textOfNodeBox.Text;
+            modifiedNode.speakerName = speakerDropDown.SelectedItem!.ToString()!;
+            modifiedNode.expression = expressionDropDown.Text;
 
-            if (speakerDropDown.SelectedItem == null || string.IsNullOrWhiteSpace(speakerDropDown.SelectedItem.ToString()))
-            {
-                CoolMessageBox.Show("Please select a valid speaker.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            modifiedNode.speakerName = speakerDropDown.SelectedItem.ToString()!;
-
-            if (!float.TryParse(delayBox.Text, out modifiedNode.delay))
-            {
-                CoolMessageBox.Show("Delay must be a valid float.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            float.TryParse(delayBox.Text, out modifiedNode.delay);
 
             List<int> values = new();
-            if (nextNodesIntArrayBox.Text != "")
+
+            if (!string.IsNullOrWhiteSpace(nextNodesIntArrayBox.Text))
             {
                 foreach (string part in nextNodesIntArrayBox.Text.Split(','))
                 {
-                    if (!int.TryParse(part.Trim(), out int value))
-                    {
-                        CoolMessageBox.Show($"Invalid integer: {part}", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-                    values.Add(value);
+                    if (int.TryParse(part.Trim(), out int value))
+                        values.Add(value);
                 }
             }
 
             modifiedNode.nextNodeIds = values.ToArray();
-            modifiedNode.dialogueText = textOfNodeBox.Text;
-            modifiedNode.speakerName = speakerDropDown.SelectedItem.ToString()!;
-            modifiedNode.expression = expressionDropDown.Text;
-            float.TryParse(delayBox.Text, out modifiedNode.delay);
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private bool ValidateInput()
+        {
+            errorProvider1.Clear();
+            bool ok = true;
+
+            if (string.IsNullOrWhiteSpace(textOfNodeBox.Text))
+            {
+                errorProvider1.SetError(textOfNodeBox, "Dialogue text cannot be empty.");
+                ok = false;
+            }
+
+            if (speakerDropDown.SelectedItem == null ||
+                string.IsNullOrWhiteSpace(speakerDropDown.SelectedItem.ToString()))
+            {
+                errorProvider1.SetError(speakerDropDown, "Please select a valid speaker.");
+                ok = false;
+            }
+
+            if (!float.TryParse(delayBox.Text, out _))
+            {
+                errorProvider1.SetError(delayBox, "Delay must be a valid float.");
+                ok = false;
+            }
+
+            if (!string.IsNullOrWhiteSpace(nextNodesIntArrayBox.Text))
+            {
+                foreach (string part in nextNodesIntArrayBox.Text.Split(','))
+                {
+                    if (!int.TryParse(part.Trim(), out _))
+                    {
+                        errorProvider1.SetError(nextNodesIntArrayBox, $"Invalid integer: {part}");
+                        ok = false;
+                        break;
+                    }
+                }
+            }
+
+            return ok;
         }
 
         private void Cancel_Click(object sender, EventArgs e)
