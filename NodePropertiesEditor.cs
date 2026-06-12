@@ -19,14 +19,11 @@ namespace MSZDialougeManager
             textOfNodeBox.Text = node.dialogueText;
 
             speakerDropDown.Items.AddRange(DialogueEditor.nodes.Select(x => x.Node.speakerName).Distinct().ToArray());
-
             speakerDropDown.SelectedItem = node.speakerName;
-
             delayBox.Text = node.delay.ToString();
-
             nextNodesIntArrayBox.Text = string.Join(", ", node.nextNodeIds);
-
-            expressionBox.Text = node.expression;
+            expressionDropDown.Items.AddRange(DialogueEditor.nodes.Select(x => x.Node.expression).Distinct().ToArray());
+            expressionDropDown.SelectedItem = node.expression;
         }
 
         private void Ok_Click(object sender, EventArgs e)
@@ -34,7 +31,7 @@ namespace MSZDialougeManager
             if (string.IsNullOrWhiteSpace(textOfNodeBox.Text))
             {
                 CoolMessageBox.Show("Dialogue text cannot be empty.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; 
+                return;
             }
             modifiedNode.dialogueText = textOfNodeBox.Text;
 
@@ -68,7 +65,7 @@ namespace MSZDialougeManager
             modifiedNode.nextNodeIds = values.ToArray();
             modifiedNode.dialogueText = textOfNodeBox.Text;
             modifiedNode.speakerName = speakerDropDown.SelectedItem.ToString()!;
-            modifiedNode.expression = expressionBox.Text;
+            modifiedNode.expression = expressionDropDown.Text;
             float.TryParse(delayBox.Text, out modifiedNode.delay);
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -82,10 +79,18 @@ namespace MSZDialougeManager
 
         private void customSpeakerLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string? input = CoolInputBox.Prompt("Enter a custom speaker name:", "Custom Speaker");
+            string? input = CoolInputBox.Prompt("Enter a custom speaker name.", "Custom Speaker");
             if (input == null) return;
             speakerDropDown.Items.Add(input);
             speakerDropDown.SelectedItem = input;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string? input = CoolInputBox.Prompt("Enter a custom expression. Not recommended unless you know what you're doing.", "Custom Expression");
+            if (input == null) return;
+            expressionDropDown.Items.Add(input);
+            expressionDropDown.SelectedItem = input;
         }
     }
 }

@@ -38,11 +38,12 @@
             toolTip1 = new ToolTip(components);
             delayBox = new TextBox();
             nextNodesIntArrayBox = new TextBox();
-            expressionBox = new TextBox();
             Ok = new Button();
             Cancel = new Button();
             nextNodesLabel = new Label();
             label2 = new Label();
+            linkLabel1 = new LinkLabel();
+            expressionDropDown = new ComboBox();
             SuspendLayout();
             // 
             // textOfNodeBox
@@ -99,7 +100,7 @@
             // 
             delayLabel.AutoSize = true;
             delayLabel.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            delayLabel.Location = new Point(12, 139);
+            delayLabel.Location = new Point(12, 179);
             delayLabel.Name = "delayLabel";
             delayLabel.Size = new Size(39, 13);
             delayLabel.TabIndex = 1;
@@ -107,7 +108,7 @@
             // 
             // delayBox
             // 
-            delayBox.Location = new Point(15, 156);
+            delayBox.Location = new Point(15, 196);
             delayBox.Name = "delayBox";
             delayBox.Size = new Size(176, 22);
             delayBox.TabIndex = 5;
@@ -115,24 +116,16 @@
             // 
             // nextNodesIntArrayBox
             // 
-            nextNodesIntArrayBox.Location = new Point(15, 197);
+            nextNodesIntArrayBox.Location = new Point(15, 237);
             nextNodesIntArrayBox.Name = "nextNodesIntArrayBox";
             nextNodesIntArrayBox.Size = new Size(176, 22);
             nextNodesIntArrayBox.TabIndex = 5;
             toolTip1.SetToolTip(nextNodesIntArrayBox, "A comma separated list that can include indicies of any node in this tree.\r\n");
             // 
-            // expressionBox
-            // 
-            expressionBox.Location = new Point(197, 156);
-            expressionBox.Name = "expressionBox";
-            expressionBox.Size = new Size(176, 22);
-            expressionBox.TabIndex = 5;
-            toolTip1.SetToolTip(expressionBox, "Expression to show when playing this node. Don't recommend changing this unless you know every expression the game will let you put in here.");
-            // 
             // Ok
             // 
             Ok.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            Ok.Location = new Point(278, 220);
+            Ok.Location = new Point(278, 258);
             Ok.Name = "Ok";
             Ok.Size = new Size(75, 23);
             Ok.TabIndex = 6;
@@ -143,7 +136,7 @@
             // Cancel
             // 
             Cancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            Cancel.Location = new Point(359, 220);
+            Cancel.Location = new Point(359, 258);
             Cancel.Name = "Cancel";
             Cancel.Size = new Size(75, 23);
             Cancel.TabIndex = 6;
@@ -155,7 +148,7 @@
             // 
             nextNodesLabel.AutoSize = true;
             nextNodesLabel.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            nextNodesLabel.Location = new Point(15, 181);
+            nextNodesLabel.Location = new Point(15, 221);
             nextNodesLabel.Name = "nextNodesLabel";
             nextNodesLabel.Size = new Size(109, 13);
             nextNodesLabel.TabIndex = 1;
@@ -165,22 +158,43 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(197, 139);
+            label2.Location = new Point(15, 137);
             label2.Name = "label2";
             label2.Size = new Size(65, 13);
             label2.TabIndex = 1;
             label2.Text = "Expression:";
             // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(197, 157);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(146, 13);
+            linkLabel1.TabIndex = 4;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Chose a custom expression";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
+            // expressionDropDown
+            // 
+            expressionDropDown.FormattingEnabled = true;
+            expressionDropDown.Location = new Point(15, 157);
+            expressionDropDown.Name = "expressionDropDown";
+            expressionDropDown.Size = new Size(176, 21);
+            expressionDropDown.TabIndex = 7;
+            toolTip1.SetToolTip(expressionDropDown, "The expression that the speaker will express when this node is played.");
+            // 
             // NodePropertiesEditor
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(446, 255);
+            ClientSize = new Size(446, 293);
+            Controls.Add(expressionDropDown);
             Controls.Add(Cancel);
             Controls.Add(Ok);
-            Controls.Add(expressionBox);
             Controls.Add(nextNodesIntArrayBox);
             Controls.Add(delayBox);
+            Controls.Add(linkLabel1);
             Controls.Add(customSpeakerLink);
             Controls.Add(speakerDropDown);
             Controls.Add(label2);
@@ -213,6 +227,7 @@
         private Label nextNodesLabel;
         private TextBox nextNodesIntArrayBox;
         private Label label2;
-        private TextBox expressionBox;
+        private LinkLabel linkLabel1;
+        private ComboBox expressionDropDown;
     }
 }
