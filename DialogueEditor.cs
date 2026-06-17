@@ -3,6 +3,7 @@ using MZDO;
 using NAudio.Wave;
 using Newtonsoft.Json;
 using System.Drawing.Printing;
+using System.Runtime.InteropServices;
 
 namespace MSZDialougeManager
 {
@@ -26,9 +27,8 @@ namespace MSZDialougeManager
         {
             InitializeComponent();
             SetUIMode(UIMode.Init);
-            this.KeyPreview = true;
-            this.KeyDown += Form1_KeyDown;
-            this.Shown += Form1_Shown;
+            KeyPreview = true;
+            KeyDown += Form1_KeyDown;
             dialogueViewContextMenu.Opening += ContextMenu_Opening;
             dialogueViewContextMenu.Opening += DialogueViewContextMenu_Opening;
             groupContextMenu.Opening += ContextMenu_Opening;
@@ -36,7 +36,11 @@ namespace MSZDialougeManager
             dialogueView.ColumnWidthChanging += dialogueView_ColumnWidthChanging;
             dialogueView.ColumnWidthChanged += dialogueView_ColumnWidthChanged;
 
-            Directory.CreateDirectory(FilesystemManager.DataPath);
+            if (Directory.Exists(FilesystemManager.DataPath))
+            {
+                Directory.Delete(FilesystemManager.DataPath, true);
+                Directory.CreateDirectory(FilesystemManager.DataPath);
+            }
 
             if (AssociationHelper.IsFileAssociationRegistered() && !AssociationHelper.IsFileAssociationCurrent())
                 AssociationHelper.RegisterFileAssociation();
@@ -50,12 +54,6 @@ namespace MSZDialougeManager
                 ThemeManager.SetGlobalTheme(ThemeManager.Theme.Acrylic, ThemeManager.TextRenderMode.ShadowText);
 
             searchBox.SetPlaceholder("Search by dialogue text...");
-        }
-
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-            SetScrollHooked(ThemeManager.ActiveTheme != ThemeManager.Theme.Light);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -89,14 +87,17 @@ namespace MSZDialougeManager
             dialogueViewContextMenu.Tag = dialogueView.PointToClient(Cursor.Position);
         }
 
-        private void Form1_Shown(object? sender, EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
-            if (Directory.Exists(FilesystemManager.DataPath))
-            {
-                Directory.Delete(FilesystemManager.DataPath, true);
-                Directory.CreateDirectory(FilesystemManager.DataPath);
-            }
+            base.OnLoad(e);
+            SetTheme(ThemeManager.ActiveTheme);
         }
+
+        [DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
+        private static extern int SetWindowTheme(
+            IntPtr hwnd,
+            string? pszSubAppName,
+            string? pszSubIdList);
 
         private void Form1_KeyDown(object? sender, KeyEventArgs e)
         {
@@ -648,36 +649,55 @@ namespace MSZDialougeManager
 
         private void lightToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SetScrollHooked(false);
-            ThemeManager.SetGlobalTheme(ThemeManager.Theme.Light);
-            UpdateNodeColors();
+            SetTheme(ThemeManager.Theme.Light);
         }
 
         private void darkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SetScrollHooked(true);
-            ThemeManager.SetGlobalTheme(ThemeManager.Theme.Dark);
-            UpdateNodeColors();
+            SetTheme(ThemeManager.Theme.Dark);
         }
 
         private void blurToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SetScrollHooked(true);
-            ThemeManager.SetGlobalTheme(ThemeManager.Theme.Blur);
-            UpdateNodeColors();
+            SetTheme(ThemeManager.Theme.Blur);
         }
 
         private void acrylicToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SetScrollHooked(true);
-            ThemeManager.SetGlobalTheme(ThemeManager.Theme.Acrylic);
-            UpdateNodeColors();
+            SetTheme(ThemeManager.Theme.Acrylic);
         }
 
         private void blackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SetScrollHooked(true);
-            ThemeManager.SetGlobalTheme(ThemeManager.Theme.ExtendFrameDark);
+            SetTheme(ThemeManager.Theme.ExtendFrameDark);
+        }
+
+        private void SetTheme(ThemeManager.Theme theme)
+        {
+            switch (theme)
+            {
+                case ThemeManager.Theme.Light:
+                    SetScrollHooked(false);
+                    Marshal.ThrowExceptionForHR(SetWindowTheme(dialogueView.Handle, "Explorer", null));
+                    break;
+                case ThemeManager.Theme.Dark:
+                    SetScrollHooked(false);
+                    Marshal.ThrowExceptionForHR(SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
+                    break;
+                case ThemeManager.Theme.Blur:
+                    SetScrollHooked(true);
+                    Marshal.ThrowExceptionForHR(SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
+                    break;
+                case ThemeManager.Theme.Acrylic:
+                    SetScrollHooked(true);
+                    Marshal.ThrowExceptionForHR(SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
+                    break;
+                case ThemeManager.Theme.ExtendFrameDark:
+                    SetScrollHooked(false);
+                    Marshal.ThrowExceptionForHR(SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
+                    break;
+            }
+            ThemeManager.SetGlobalTheme(theme);
             UpdateNodeColors();
         }
 
@@ -716,6 +736,11 @@ namespace MSZDialougeManager
             ListViewItem item = dialogueView.Items.Cast<ListViewItem>().FirstOrDefault(i => (NodeRef)i.Tag! == nodeRef)!;
             item.EnsureVisible();
             item.Selected = true;
+        }
+
+        private void previewTreeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
