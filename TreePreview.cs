@@ -1,16 +1,21 @@
 ﻿using MSZDialougeManager.Styling;
 using MZDO;
+using NAudio.Wave;
 using System.Drawing.Text;
 
 namespace MSZDialougeManager
 {
     public partial class TreePreview : ThemeableForm
     {
+        private IWavePlayer? waveOut;
+        private WaveStream? audioStream;
+
         readonly PrivateFontCollection _pfc = new();
         readonly DialogueTreeDTO _tree;
+        readonly int _treeIndex;
         readonly Dictionary<int, ListViewItem> itemsById = new();
         readonly Dictionary<int, DialogueNodeDTO> nodesById = new();
-        public TreePreview(DialogueTreeDTO tree)
+        public TreePreview(DialogueTreeDTO tree, int treeIndex)
         {
             InitializeComponent();
             _tree = tree;
@@ -28,6 +33,7 @@ namespace MSZDialougeManager
                 nodesById.Add(node.id, node);
             }
             UpdateNodeColors();
+            dialogueView.Items[0].Selected = true;
         }
 
         protected override void OnThemeWasApplied()
@@ -43,6 +49,10 @@ namespace MSZDialougeManager
             itemsById[id].EnsureVisible();
             DialogueNodeDTO node = nodesById[id];
             dialogueLabel.Text = string.Empty;
+            if (FilesystemManager.TryGetNodeAudioPath(_treeIndex, id, out string? path))
+            {
+                NAudioHelpers.PlayAudio(path, ref waveOut, ref audioStream);
+            }
             foreach (char c in node.dialogueText)
             {
                 await Task.Delay(typeSpeedMs);
@@ -53,6 +63,7 @@ namespace MSZDialougeManager
 
         private async void PlayButton_Click(object sender, EventArgs e)
         {
+            NAudioHelpers.PreloadAll(_tree.nodes.Select(n => FilesystemManager.GetNodeAudioPath(_treeIndex, n.id)).OfType<string>());
             int index = dialogueView.SelectedItems[0].Index;
             while (true)
             {
@@ -83,6 +94,11 @@ namespace MSZDialougeManager
                     : isTerminal ? Color.Blue
                     : dialogueView.ForeColor;
             }
+        }
+
+        private void dialogueView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            playButton.Enabled = dialogueView.SelectedItems.Count > 0;
         }
     }
 }

@@ -2,7 +2,6 @@
 using MZDO;
 using NAudio.Wave;
 using Newtonsoft.Json;
-using System.Drawing.Printing;
 using System.Runtime.InteropServices;
 
 namespace MSZDialougeManager
@@ -743,7 +742,7 @@ namespace MSZDialougeManager
             ListViewGroup group = (ListViewGroup)groupContextMenu.Tag!;
             int treeIndex = (int)group.Tag!;
             DialogueTreeDTO tree = pack!.trees[treeIndex];
-            using TreePreview preview = new(tree);
+            using TreePreview preview = new(tree, treeIndex);
             preview.ShowDialog();
         }
     }

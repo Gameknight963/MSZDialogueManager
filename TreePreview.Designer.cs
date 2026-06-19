@@ -53,6 +53,7 @@
             dialogueView.TabIndex = 0;
             dialogueView.UseCompatibleStateImageBehavior = false;
             dialogueView.View = View.Details;
+            dialogueView.SelectedIndexChanged += dialogueView_SelectedIndexChanged;
             // 
             // idColumn
             // 
