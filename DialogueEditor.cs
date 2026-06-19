@@ -91,12 +91,6 @@ namespace MSZDialougeManager
             SetTheme(ThemeManager.ActiveTheme);
         }
 
-        [DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
-        private static extern int SetWindowTheme(
-            IntPtr hwnd,
-            string? pszSubAppName,
-            string? pszSubIdList);
-
         private void Form1_KeyDown(object? sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
