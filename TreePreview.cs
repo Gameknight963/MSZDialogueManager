@@ -2,6 +2,7 @@
 using MZDO;
 using NAudio.Wave;
 using System.Drawing.Text;
+using System.Runtime.InteropServices;
 
 namespace MSZDialougeManager
 {
@@ -43,6 +44,25 @@ namespace MSZDialougeManager
             UpdateNodeColors();
             dialogueView.Items[0].Selected = true;
             stopButton.Enabled = false;
+
+            switch (ThemeManager.ResolvedTheme)
+            {
+                case ThemeManager.Theme.Light:
+                    Marshal.ThrowExceptionForHR(DwmApi.SetWindowTheme(dialogueView.Handle, "Explorer", null));
+                    break;
+                case ThemeManager.Theme.Dark:
+                    Marshal.ThrowExceptionForHR(DwmApi.SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
+                    break;
+                case ThemeManager.Theme.Blur:
+                    Marshal.ThrowExceptionForHR(DwmApi.SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
+                    break;
+                case ThemeManager.Theme.Acrylic:
+                    Marshal.ThrowExceptionForHR(DwmApi.SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
+                    break;
+                case ThemeManager.Theme.ExtendFrameDark:
+                    Marshal.ThrowExceptionForHR(DwmApi.SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
+                    break;
+            }
         }
 
         protected override void OnThemeWasApplied()
