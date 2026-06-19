@@ -1,5 +1,6 @@
-﻿using Newtonsoft.Json;
-using MZDO;
+﻿using MZDO;
+using Newtonsoft.Json;
+using System.Diagnostics.CodeAnalysis;
 using System.IO.Compression;
 
 namespace MSZDialougeManager
@@ -78,6 +79,15 @@ namespace MSZDialougeManager
             if (!Directory.Exists(DataPath)) return null;
             string[] files = Directory.GetFiles(DataPath, $"{treeIndex}_{nodeId}.*");
             return files.Length > 0 ? files[0] : null;
+        }
+
+        public static bool TryGetNodeAudioPath(int treeIndex, int nodeId, [NotNullWhen(true)] out string? path)
+        {
+            path = null;
+            if (!Directory.Exists(DataPath)) return false;
+            string[] files = Directory.GetFiles(DataPath, $"{treeIndex}_{nodeId}.*");
+            path = files.Length > 0 ? files[0] : null;
+            return files.Length > 0;
         }
     }
 }
