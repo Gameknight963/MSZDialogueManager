@@ -34,7 +34,7 @@
             textColumn = new ColumnHeader();
             playButton = new Button();
             panel1 = new Panel();
-            button1 = new Button();
+            closeButton = new Button();
             stopButton = new Button();
             dialogueLabel = new Label();
             panel1.SuspendLayout();
@@ -53,7 +53,7 @@
             dialogueView.TabIndex = 0;
             dialogueView.UseCompatibleStateImageBehavior = false;
             dialogueView.View = View.Details;
-            dialogueView.SelectedIndexChanged += dialogueView_SelectedIndexChanged;
+            dialogueView.SelectedIndexChanged += DialogueView_SelectedIndexChanged;
             // 
             // idColumn
             // 
@@ -84,7 +84,7 @@
             // 
             panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = SystemColors.ActiveCaption;
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(closeButton);
             panel1.Controls.Add(stopButton);
             panel1.Controls.Add(playButton);
             panel1.Location = new Point(0, 346);
@@ -93,15 +93,16 @@
             panel1.Size = new Size(427, 46);
             panel1.TabIndex = 2;
             // 
-            // button1
+            // closeButton
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.Location = new Point(340, 11);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 7;
-            button1.Text = "Close";
-            button1.UseVisualStyleBackColor = true;
+            closeButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            closeButton.Location = new Point(340, 11);
+            closeButton.Name = "closeButton";
+            closeButton.Size = new Size(75, 23);
+            closeButton.TabIndex = 7;
+            closeButton.Text = "Close";
+            closeButton.UseVisualStyleBackColor = true;
+            closeButton.Click += CloseButton_Click;
             // 
             // stopButton
             // 
@@ -146,7 +147,7 @@
         private Button playButton;
         private Panel panel1;
         private Button stopButton;
-        private Button button1;
+        private Button closeButton;
         private Label dialogueLabel;
         private ColumnHeader idColumn;
         private ColumnHeader speakerColumn;

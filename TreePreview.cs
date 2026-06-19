@@ -16,12 +16,18 @@ namespace MSZDialougeManager
         readonly Dictionary<int, ListViewItem> itemsById = new();
         readonly Dictionary<int, DialogueNodeDTO> nodesById = new();
         CancellationTokenSource? playCts;
+
+        bool updating;
+
         public TreePreview(DialogueTreeDTO tree, int treeIndex)
         {
             InitializeComponent();
             _tree = tree;
+            _treeIndex = treeIndex;
             _pfc.AddFontFile("FontRu.ttf");
             dialogueLabel.Font = new Font(_pfc.Families[0], 14, FontStyle.Regular);
+            NAudioHelpers.PreloadAll(tree.nodes.Select(n => FilesystemManager.GetNodeAudioPath(treeIndex, n.id)).OfType<string>());
+            updating = true;
             foreach (DialogueNodeDTO node in tree.nodes)
             {
                 ListViewItem lvi = new(node.id.ToString());
@@ -33,6 +39,7 @@ namespace MSZDialougeManager
                 itemsById.Add(node.id, lvi);
                 nodesById.Add(node.id, node);
             }
+            updating = false;
             UpdateNodeColors();
             dialogueView.Items[0].Selected = true;
             stopButton.Enabled = false;
@@ -43,7 +50,7 @@ namespace MSZDialougeManager
             panel1.BackColor = SystemColors.ActiveCaption;
         }
 
-        private const int typeSpeedMs = 25;
+        private const int typeSpeedMs = 25;        
         private async Task PlayNode(int id)
         {
             playCts?.Cancel();
@@ -51,8 +58,10 @@ namespace MSZDialougeManager
             playCts = new CancellationTokenSource();
 
             dialogueView.SelectedItems.Clear();
+            updating = true;
             itemsById[id].Selected = true;
             itemsById[id].EnsureVisible();
+            updating = false;
             DialogueNodeDTO node = nodesById[id];
             dialogueLabel.Text = string.Empty;
             if (FilesystemManager.TryGetNodeAudioPath(_treeIndex, id, out string? path))
@@ -67,10 +76,9 @@ namespace MSZDialougeManager
             await Task.Delay((int)(node.delay * 1000), playCts.Token);
         }
 
-        private async void PlayButton_Click(object sender, EventArgs e)
+        private async void BeginDialogue()
         {
             stopButton.Enabled = true;
-            NAudioHelpers.PreloadAll(_tree.nodes.Select(n => FilesystemManager.GetNodeAudioPath(_treeIndex, n.id)).OfType<string>());
             int index = dialogueView.SelectedItems[0].Index;
             while (true)
             {
@@ -91,10 +99,21 @@ namespace MSZDialougeManager
             }
         }
 
+        private void PlayButton_Click(object sender, EventArgs e)
+        {
+            BeginDialogue();
+        }
+
         private void StopButton_Click(object sender, EventArgs e)
         {
             playCts?.Cancel();
             stopButton.Enabled = false;
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            playCts?.Cancel();
+            Close();
         }
 
         void UpdateNodeColors()
@@ -119,9 +138,13 @@ namespace MSZDialougeManager
             }
         }
 
-        private void dialogueView_SelectedIndexChanged(object sender, EventArgs e)
+        private void DialogueView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            playButton.Enabled = dialogueView.SelectedItems.Count > 0;
+            bool selected = dialogueView.SelectedItems.Count > 0;
+            playButton.Enabled = selected;
+            if (!selected || updating) return;
+            playCts?.Cancel();
+            BeginDialogue();
         }
     }
 }
