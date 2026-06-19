@@ -447,7 +447,7 @@ namespace MSZDialougeManager
         void EditProperties()
         {
             NodeRef nodeRef = GetSelectedNode() ?? throw new InvalidOperationException("Cannot edit properties when no node is selected.");
-            NodePropertiesEditor editor = new(nodeRef.Node);
+            using NodePropertiesEditor editor = new(nodeRef.Node);
             editor.ShowDialog();
             if (editor.DialogResult == DialogResult.OK)
             {
@@ -511,7 +511,7 @@ namespace MSZDialougeManager
 
         void AddNode(ListViewGroup group)
         {
-            NodePropertiesEditor editor = new();
+            using NodePropertiesEditor editor = new();
             editor.ShowDialog();
             if (editor.DialogResult == DialogResult.OK)
             {
@@ -541,7 +541,7 @@ namespace MSZDialougeManager
         private void generateWithTTSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (pack == null) return;
-            TTSEditor editor = new(pack);
+            using TTSEditor editor = new(pack);
             editor.ShowDialog();
             if (editor.DialogResult != DialogResult.OK) return;
 
@@ -718,7 +718,7 @@ namespace MSZDialougeManager
             ListViewGroup group = (ListViewGroup)groupContextMenu.Tag!;
             int treeIndex = (int)group.Tag!;
             DialogueTreeDTO tree = pack!.trees[treeIndex];
-            TreePropertiesEditor editor = new(tree);
+            using TreePropertiesEditor editor = new(tree);
             editor.ShowDialog();
             if (editor.DialogResult == DialogResult.OK)
             {
