@@ -76,6 +76,12 @@ namespace MSZDialougeManager
             await Task.Delay((int)(node.delay * 1000), playCts.Token);
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            playCts?.Cancel();
+            base.OnFormClosing(e);
+        }
+
         private async void BeginDialogue()
         {
             stopButton.Enabled = true;
