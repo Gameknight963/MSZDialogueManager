@@ -3,12 +3,6 @@ using NAudio.Wave;
 
 namespace MSZDialougeManager
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using NAudio.Vorbis;
-    using NAudio.Wave;
-
     public static class NAudioHelpers
     {
         private static readonly Dictionary<string, CachedAudio> cache = new Dictionary<string, CachedAudio>();
@@ -32,6 +26,7 @@ namespace MSZDialougeManager
 
             audioStream = new RawSourceWaveStream(new MemoryStream(cached.PcmData), cached.Format);
             waveOut = new WaveOutEvent();
+            waveOut.Init(audioStream);
             waveOut.Init(audioStream);
             waveOut.Play();
         }
