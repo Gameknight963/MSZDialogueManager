@@ -112,6 +112,7 @@
             stopButton.TabIndex = 6;
             stopButton.Text = "■ Stop";
             stopButton.UseVisualStyleBackColor = true;
+            stopButton.Click += StopButton_Click;
             // 
             // dialogueLabel
             // 
