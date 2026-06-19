@@ -47,6 +47,7 @@
             dialogueView.FullRowSelect = true;
             dialogueView.Location = new Point(0, 0);
             dialogueView.Margin = new Padding(0);
+            dialogueView.MultiSelect = false;
             dialogueView.Name = "dialogueView";
             dialogueView.Size = new Size(427, 264);
             dialogueView.TabIndex = 0;
@@ -76,6 +77,7 @@
             playButton.TabIndex = 1;
             playButton.Text = "▶ Play";
             playButton.UseVisualStyleBackColor = true;
+            playButton.Click += PlayButton_Click;
             // 
             // panel1
             // 
@@ -92,6 +94,7 @@
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button1.Location = new Point(340, 11);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
@@ -118,7 +121,7 @@
             dialogueLabel.Name = "dialogueLabel";
             dialogueLabel.Size = new Size(421, 76);
             dialogueLabel.TabIndex = 3;
-            dialogueLabel.Text = "h-h-h-hi, i-i wtf am i writing bro";
+            dialogueLabel.Text = "Dialogue text will appear here";
             // 
             // TreePreview
             // 
