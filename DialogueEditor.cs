@@ -9,8 +9,6 @@ namespace MSZDialougeManager
 {
     public partial class DialogueEditor : ThemeableForm
     {
-        public record NodeRef(DialogueNodeDTO Node, int TreeIndex);
-
         public static DialoguePack? pack { get; private set; }
         public static List<NodeRef> nodes { get; private set; } = new();
 
@@ -281,28 +279,6 @@ namespace MSZDialougeManager
                 dialogueView.EndUpdate();
             }
         }
-        private HashSet<int> GetReachableNodes(int treeIndex)
-        {
-            HashSet<int> reachable = [];
-            Queue<int> queue = new();
-
-            foreach (int startId in pack!.trees[treeIndex].startNodeIds)
-                queue.Enqueue(startId);
-
-            while (queue.Count > 0)
-            {
-                int id = queue.Dequeue();
-                if (!reachable.Add(id)) continue;
-
-                NodeRef? node = nodes.FirstOrDefault(n => n.Node.id == id && n.TreeIndex == treeIndex);
-                if (node == null) continue;
-
-                foreach (int nextId in node.Node.nextNodeIds)
-                    queue.Enqueue(nextId);
-            }
-
-            return reachable;
-        }
 
         void UpdateNodeColors()
         {
@@ -337,6 +313,34 @@ namespace MSZDialougeManager
             }
         }
 
+        static List<NodeRef> FlattenPack(DialoguePack pack) =>
+            pack.trees
+            .SelectMany((tree, treeIndex) => tree.nodes.Select(node => new NodeRef(node, treeIndex)))
+            .ToList();
+
+        private static HashSet<int> GetReachableNodes(int treeIndex)
+        {
+            HashSet<int> reachable = [];
+            Queue<int> queue = new();
+
+            foreach (int startId in pack!.trees[treeIndex].startNodeIds)
+                queue.Enqueue(startId);
+
+            while (queue.Count > 0)
+            {
+                int id = queue.Dequeue();
+                if (!reachable.Add(id)) continue;
+
+                NodeRef? node = nodes.FirstOrDefault(n => n.Node.id == id && n.TreeIndex == treeIndex);
+                if (node == null) continue;
+
+                foreach (int nextId in node.Node.nextNodeIds)
+                    queue.Enqueue(nextId);
+            }
+
+            return reachable;
+        }
+
         public void AddToDialogueView(NodeRef nodeRef, ListViewGroup group)
         {
             ListViewItem item = new(nodeRef.Node.id.ToString()) { Group = group, Tag = nodeRef };
@@ -345,11 +349,6 @@ namespace MSZDialougeManager
             dialogueView.Items.Add(item);
             UpdateNodeColors();
         }
-
-        static List<NodeRef> FlattenPack(DialoguePack pack) =>
-            pack.trees
-                .SelectMany((tree, treeIndex) => tree.nodes.Select(node => new NodeRef(node, treeIndex)))
-                .ToList();
 
         async void Inittemplate()
         {
