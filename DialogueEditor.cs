@@ -76,7 +76,8 @@ namespace MSZDialougeManager
         private void ContextMenu_Opening(object? sender, System.ComponentModel.CancelEventArgs e)
         {
             ContextMenuStrip? cms = (ContextMenuStrip)sender!;
-            DwmApi.SetAccentState(cms.Handle, DwmApi.AccentState.ACCENT_ENABLE_BLURBEHIND, 0x66000000);
+            DwmApi.SetAccentState(cms.Handle, DwmApi.AccentState.ACCENT_ENABLE_BLURBEHIND,
+                ResolvedTheme == ThemeManager.Theme.Light ? 0x64B38867 : 0x66000000);
             cms.BackColor = ThemeManager.AcrylicMainColor;
             cms.ForeColor = Color.White;
             cms.ShowImageMargin = false;
@@ -88,7 +89,7 @@ namespace MSZDialougeManager
         }
 
         protected override void OnLoad(EventArgs e)
-        {
+        {                
             base.OnLoad(e);
             SetTheme(ThemeManager.ActiveTheme);
         }
@@ -740,7 +741,11 @@ namespace MSZDialougeManager
 
         private void previewTreeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ListViewGroup group = (ListViewGroup)groupContextMenu.Tag!;
+            int treeIndex = (int)group.Tag!;
+            DialogueTreeDTO tree = pack!.trees[treeIndex];
+            using TreePreview preview = new(tree);
+            preview.ShowDialog();
         }
     }
 }
