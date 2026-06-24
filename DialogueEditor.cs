@@ -162,12 +162,7 @@ namespace MSZDialougeManager
             addNodeContextMenuItem.Visible =
             deleteThisNodeToolStripMenuItem.Visible =
             propertiesContextMenuItem.Visible =
-            propertiesContextMenuItem.Enabled =
-            propertiesToolStripMenuItem.Enabled =
-            playAudioToolStripMenuItem.Enabled =
-            stopAudioToolStripMenuItem.Enabled =
-            assignAudioToolStripMenuItem.Enabled =
-            removeAudioToolStripMenuItem.Enabled = itemSelected;
+            propertiesContextMenuItem.Enabled = itemSelected;
 
             changeChirpsToolStripMenuItem.Enabled = FilesystemManager.IsFileLoaded;
 
@@ -460,15 +455,11 @@ namespace MSZDialougeManager
         private void TemplateButton_Click(object sender, EventArgs e) => Inittemplate();
 
         private void AudioPlayButton_Click(object sender, EventArgs e) => PlayNodeAudio(GetSelectedNode()!);
-        private void PlayAudioToolStripMenuItem_Click(object sender, EventArgs e) => PlayNodeAudio(GetSelectedNode()!);
-
         private void AudioStopButton_Click(object sender, EventArgs e) => StopAudio();
-        private void StopAudioToolStripMenuItem_Click(object sender, EventArgs e) => StopAudio();
-
         private void RemoveAudioButton_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode()!);
-        private void RemoveAudioToolStripMenuItem_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode()!);
 
-        private void EditPropertiesButton_Click(object sender, EventArgs e) => EditProperties();
+        private void PropertiesContextMenuItem_Click(object sender, EventArgs e) => EditProperties();
+        private void editPropertiesButton_Click(object sender, EventArgs e) => EditProperties();
 
         private void AddNodeContextMenuItem_Click(object sender, EventArgs e)
         {
