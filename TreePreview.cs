@@ -1,6 +1,9 @@
 ﻿using MSZDialougeManager.Styling;
 using MZDO;
 using NAudio.Wave;
+using Newtonsoft.Json.Linq;
+using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
 
@@ -27,7 +30,11 @@ namespace MSZDialougeManager
             _treeIndex = treeIndex;
             _pfc.AddFontFile("FontRu.ttf");
             dialogueLabel.Font = new Font(_pfc.Families[0], 14, FontStyle.Regular);
-            NAudioHelpers.PreloadAll(tree.nodes.Select(n => FilesystemManager.GetNodeAudioPath(treeIndex, n.id)).OfType<string>());
+            StartPosition = FormStartPosition.CenterParent;
+            List<string> speakers = tree.nodes.Select(x => x.speakerName).Distinct().ToList();
+            List<string> paths = tree.nodes.Select(n => FilesystemManager.GetNodeAudioPath(treeIndex, n.id)).OfType<string>().ToList();
+            paths.AddRange(speakers);
+            NAudioHelpers.PreloadAll(paths);
             updating = true;
             foreach (DialogueNodeDTO node in tree.nodes)
             {
@@ -88,12 +95,50 @@ namespace MSZDialougeManager
             {
                 NAudioHelpers.PlayAudio(path, ref waveOut, ref audioStream);
             }
-            foreach (char c in node.dialogueText)
+            
+            bool hasChirp = FilesystemManager.TryGetSpeakerChirp(node.speakerName, out string? path2);
+
+            CancellationToken token = playCts.Token;
+
+            Task typingTask = Task.Run(async () =>
             {
-                await Task.Delay(typeSpeedMs, playCts.Token);
-                dialogueLabel.Text += c;
-            }
-            await Task.Delay((int)(node.delay * 1000), playCts.Token);
+                Stopwatch sw = Stopwatch.StartNew();
+                long nextCharMs = typeSpeedMs;
+
+                foreach (char c in node.dialogueText)
+                {
+                    long remaining = nextCharMs - sw.ElapsedMilliseconds;
+                    if (remaining > 0)
+                        await Task.Delay((int)remaining, token);
+
+                    dialogueLabel.Invoke(() => dialogueLabel.Text += c);
+                    nextCharMs += typeSpeedMs;
+                }
+            }, token);
+
+            int chirpIntervalMs = (int)((_tree.chirpTime ?? 0.115f) * 1000);
+            Task chirpTask = Task.Run(async () =>
+            {
+                if (!hasChirp) return;
+
+                Stopwatch sw = Stopwatch.StartNew();
+                long nextChirpMs = chirpIntervalMs;
+                int totalDuration = typeSpeedMs * node.dialogueText.Length;
+                while (sw.ElapsedMilliseconds < totalDuration && !token.IsCancellationRequested)
+                {
+                    long remaining = nextChirpMs - sw.ElapsedMilliseconds;
+                    if (remaining > 0)
+                        await Task.Delay((int)remaining, token);
+
+                    IWavePlayer? chirpWaveOut = null;
+                    WaveStream? chirpAudioStream = null;
+                    NAudioHelpers.PlayAudio(path2!, ref chirpWaveOut, ref chirpAudioStream);
+                    nextChirpMs += chirpIntervalMs;
+                }
+            }, token);
+
+            await Task.WhenAll(typingTask, chirpTask);
+            await Task.Delay((int)(node.delay * 1000), token);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
