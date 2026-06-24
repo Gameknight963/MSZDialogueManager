@@ -1,8 +1,7 @@
 ﻿using MSZDialougeManager.Styling;
 using MZDO;
 using NAudio.Wave;
-using Newtonsoft.Json;
-using System.Runtime.InteropServices;
+using static MSZDialougeManager.ThemeSwitchers;
 
 namespace MSZDialougeManager
 {
@@ -15,8 +14,6 @@ namespace MSZDialougeManager
         private WaveStream? audioStream;
         private int nextTemporaryNodeId = -1;
         private readonly string lastThemeFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lasttheme");
-
-        private bool scrollHooked = false;
 
         private string? workingFilePath;
 
@@ -60,16 +57,6 @@ namespace MSZDialougeManager
             ScrollHook.Uninstall();
         }
 
-        private void SetScrollHooked(bool enabled)
-        {
-            if (scrollHooked != enabled)
-            {
-                if (enabled) ScrollHook.Install();
-                else ScrollHook.Uninstall();
-                scrollHooked = enabled;
-            }
-        }
-
         private void ContextMenu_Opening(object? sender, System.ComponentModel.CancelEventArgs e)
         {
             ContextMenuStrip? cms = (ContextMenuStrip)sender!;
@@ -86,7 +73,7 @@ namespace MSZDialougeManager
         }
 
         protected override void OnLoad(EventArgs e)
-        {                
+        {
             base.OnLoad(e);
             SetTheme(ThemeManager.ActiveTheme);
         }
@@ -162,30 +149,30 @@ namespace MSZDialougeManager
             bool itemSelected = mode == UIMode.ItemSelected;
             bool init = mode == UIMode.Init;
 
-            textLabel.Visible = itemSelected;
-            textHeaderLabel.Visible = itemSelected;
-            nextNodesHeader.Visible = itemSelected;
-            nextNodesBox.Visible = itemSelected;
-            selectAudioButton.Visible = itemSelected;
-            audioFileLabel.Visible = itemSelected;
-            audioFileHeader.Visible = itemSelected;
-            audioPlayButton.Visible = itemSelected;
-            audioStopButton.Visible = itemSelected;
-
-            templateButton.Visible = init;
-            loadButton.Visible = init;
-
-            playAudioToolStripMenuItem.Enabled = itemSelected;
-            stopAudioToolStripMenuItem.Enabled = itemSelected;
-            assignAudioToolStripMenuItem.Enabled = itemSelected;
+            textLabel.Visible =
+            textHeaderLabel.Visible =
+            nextNodesHeader.Visible =
+            nextNodesBox.Visible =
+            selectAudioButton.Visible =
+            audioFileLabel.Visible =
+            audioFileHeader.Visible =
+            audioPlayButton.Visible =
+            audioStopButton.Visible =
+            editPropertiesButton.Visible =
+            addNodeContextMenuItem.Visible =
+            deleteThisNodeToolStripMenuItem.Visible =
+            propertiesContextMenuItem.Visible =
+            propertiesContextMenuItem.Enabled =
+            propertiesToolStripMenuItem.Enabled =
+            playAudioToolStripMenuItem.Enabled =
+            stopAudioToolStripMenuItem.Enabled =
+            assignAudioToolStripMenuItem.Enabled =
             removeAudioToolStripMenuItem.Enabled = itemSelected;
-            editPropertiesButton.Visible = itemSelected;
-            addNodeContextMenuItem.Visible = itemSelected;
-            deleteThisNodeToolStripMenuItem.Visible = itemSelected;
 
-            propertiesContextMenuItem.Visible = itemSelected;
-            propertiesContextMenuItem.Enabled = itemSelected;
-            propertiesToolStripMenuItem.Enabled = itemSelected;
+            changeChirpsToolStripMenuItem.Enabled = FilesystemManager.IsFileLoaded;
+
+            templateButton.Visible =
+            loadButton.Visible = init;
 
             jumpToThisNodeToolStripMenuItem.Visible = mode == UIMode.ItemSelectedSearching;
 
@@ -651,35 +638,10 @@ namespace MSZDialougeManager
 
         private void SetTheme(ThemeManager.Theme theme)
         {
-            switch (theme)
-            {
-                case ThemeManager.Theme.Light:
-                    SetScrollHooked(false);
-                    Marshal.ThrowExceptionForHR(SetWindowTheme(dialogueView.Handle, "Explorer", null));
-                    break;
-                case ThemeManager.Theme.Dark:
-                    SetScrollHooked(false);
-                    Marshal.ThrowExceptionForHR(SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
-                    break;
-                case ThemeManager.Theme.Blur:
-                    SetScrollHooked(true);
-                    Marshal.ThrowExceptionForHR(SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
-                    break;
-                case ThemeManager.Theme.Acrylic:
-                    SetScrollHooked(true);
-                    Marshal.ThrowExceptionForHR(SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
-                    break;
-                case ThemeManager.Theme.ExtendFrameDark:
-                    SetScrollHooked(false);
-                    Marshal.ThrowExceptionForHR(SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
-                    break;
-            }
+            SetFormThemeAndStuff(theme, dialogueView);
             ThemeManager.SetGlobalTheme(theme);
             UpdateNodeColors();
         }
-
-        [DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
-        static extern int SetWindowTheme(IntPtr hwnd, string? pszSubAppName, string? pszSubIdList);
 
         private void DialogueView_MouseUp(object sender, MouseEventArgs e)
         {
@@ -725,6 +687,12 @@ namespace MSZDialougeManager
             DialogueTreeDTO tree = Pack!.trees[treeIndex];
             using TreePreview preview = new(tree, treeIndex);
             preview.ShowDialog();
+        }
+
+        private void ChangeChirpsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using ChangeChirpsForm a = new(Pack!);
+            a.ShowDialog();
         }
     }
 }

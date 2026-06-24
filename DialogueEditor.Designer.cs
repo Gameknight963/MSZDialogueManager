@@ -61,6 +61,7 @@
             initializetemplateToolStripMenuItem = new ToolStripMenuItem();
             saveAsDialougePackToolStripMenuItem = new ToolStripMenuItem();
             toolsToolStripMenuItem = new ToolStripMenuItem();
+            changeChirpsToolStripMenuItem = new ToolStripMenuItem();
             generateWithTTSToolStripMenuItem = new ToolStripMenuItem();
             nodeToolStripMenuItem = new ToolStripMenuItem();
             playAudioToolStripMenuItem = new ToolStripMenuItem();
@@ -80,7 +81,6 @@
             treePropertiesToolStripMenuItem = new ToolStripMenuItem();
             addNodeToThisTreeToolStripMenuItem = new ToolStripMenuItem();
             previewTreeToolStripMenuItem = new ToolStripMenuItem();
-            changeChirpsToolStripMenuItem = new ToolStripMenuItem();
             dialogueViewContextMenu.SuspendLayout();
             panel1.SuspendLayout();
             menuStrip.SuspendLayout();
@@ -378,6 +378,13 @@
             toolsToolStripMenuItem.Size = new Size(46, 20);
             toolsToolStripMenuItem.Text = "Tools";
             // 
+            // changeChirpsToolStripMenuItem
+            // 
+            changeChirpsToolStripMenuItem.Name = "changeChirpsToolStripMenuItem";
+            changeChirpsToolStripMenuItem.Size = new Size(216, 22);
+            changeChirpsToolStripMenuItem.Text = "Change speaker chirps";
+            changeChirpsToolStripMenuItem.Click += ChangeChirpsToolStripMenuItem_Click;
+            // 
             // generateWithTTSToolStripMenuItem
             // 
             generateWithTTSToolStripMenuItem.Name = "generateWithTTSToolStripMenuItem";
@@ -454,35 +461,35 @@
             // lightToolStripMenuItem
             // 
             lightToolStripMenuItem.Name = "lightToolStripMenuItem";
-            lightToolStripMenuItem.Size = new Size(110, 22);
+            lightToolStripMenuItem.Size = new Size(180, 22);
             lightToolStripMenuItem.Text = "Light";
             lightToolStripMenuItem.Click += LightToolStripMenuItem_Click;
             // 
             // darkToolStripMenuItem
             // 
             darkToolStripMenuItem.Name = "darkToolStripMenuItem";
-            darkToolStripMenuItem.Size = new Size(110, 22);
+            darkToolStripMenuItem.Size = new Size(180, 22);
             darkToolStripMenuItem.Text = "Dark";
             darkToolStripMenuItem.Click += DarkToolStripMenuItem_Click;
             // 
             // blurToolStripMenuItem
             // 
             blurToolStripMenuItem.Name = "blurToolStripMenuItem";
-            blurToolStripMenuItem.Size = new Size(110, 22);
+            blurToolStripMenuItem.Size = new Size(180, 22);
             blurToolStripMenuItem.Text = "Blur";
             blurToolStripMenuItem.Click += BlurToolStripMenuItem_Click;
             // 
             // acrylicToolStripMenuItem
             // 
             acrylicToolStripMenuItem.Name = "acrylicToolStripMenuItem";
-            acrylicToolStripMenuItem.Size = new Size(110, 22);
+            acrylicToolStripMenuItem.Size = new Size(180, 22);
             acrylicToolStripMenuItem.Text = "Acrylic";
             acrylicToolStripMenuItem.Click += AcrylicToolStripMenuItem_Click;
             // 
             // blackToolStripMenuItem
             // 
             blackToolStripMenuItem.Name = "blackToolStripMenuItem";
-            blackToolStripMenuItem.Size = new Size(110, 22);
+            blackToolStripMenuItem.Size = new Size(180, 22);
             blackToolStripMenuItem.Text = "Black";
             blackToolStripMenuItem.Click += BlackToolStripMenuItem_Click;
             // 
@@ -512,12 +519,6 @@
             previewTreeToolStripMenuItem.Size = new Size(185, 22);
             previewTreeToolStripMenuItem.Text = "Preview tree";
             previewTreeToolStripMenuItem.Click += PreviewTreeToolStripMenuItem_Click;
-            // 
-            // changeChirpsToolStripMenuItem
-            // 
-            changeChirpsToolStripMenuItem.Name = "changeChirpsToolStripMenuItem";
-            changeChirpsToolStripMenuItem.Size = new Size(216, 22);
-            changeChirpsToolStripMenuItem.Text = "Change speaker chirps";
             // 
             // DialogueEditor
             // 

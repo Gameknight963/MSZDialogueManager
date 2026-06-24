@@ -23,7 +23,7 @@ namespace MSZDialougeManager
         /// </summary>
         public const string ext = "mszdlg";
 
-        public static bool IsFileLoaded { get; private set; }
+        public static bool IsFileLoaded { get; private set; } = false;
 
         public static void SaveProj(string path, DialoguePack pack)
         {
@@ -68,6 +68,7 @@ namespace MSZDialougeManager
             CreateDefaultChirps(); // createdefaultchirps creates SpeakPath
             DialoguePack pack = JsonConvert.DeserializeObject<DialoguePack>(File.ReadAllText(Template))!;
             pack.PackFormat = MZDO.Core.PackFormatVersion;
+            IsFileLoaded = true;
             return pack;
         }
 
@@ -75,10 +76,10 @@ namespace MSZDialougeManager
         {
             Directory.CreateDirectory(SpeakPath);
             UnmanagedMemoryStream stream = Resources.MitaSpeak;
-            using FileStream fileStream = new(Path.Combine(SpeakPath, "MitaSpeak.wav"), FileMode.Create, FileAccess.Write);
+            using FileStream fileStream = new(Path.Combine(SpeakPath, "Kind.wav"), FileMode.Create, FileAccess.Write);
             stream.CopyTo(fileStream);
             UnmanagedMemoryStream stream2 = Resources.KiriSpeak;
-            using FileStream fileStream2 = new(Path.Combine(SpeakPath, "KiriSpeak.wav"), FileMode.Create, FileAccess.Write);
+            using FileStream fileStream2 = new(Path.Combine(SpeakPath, "Kiri.wav"), FileMode.Create, FileAccess.Write);
             stream2.CopyTo(fileStream2);
         }
 
