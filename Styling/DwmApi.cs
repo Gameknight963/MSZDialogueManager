@@ -2,7 +2,7 @@
 
 namespace MSZDialougeManager.Styling
 {
-    internal static class DwmApi
+    internal static partial class DwmApi
     {
         [DllImport("dwmapi.dll")]
         private static extern int DwmExtendFrameIntoClientArea(IntPtr hwnd, ref MARGINS pMarInset);
@@ -65,6 +65,12 @@ namespace MSZDialougeManager.Styling
             }
         }
 
+        // this isnt even part of the dwmapi but guess who doesn't care
+        [LibraryImport("uxtheme.dll", StringMarshalling = StringMarshalling.Utf16)]
+        public static partial int SetWindowTheme(
+            IntPtr hwnd,
+            string? pszSubAppName,
+            string? pszSubIdList);
 
         public static void ExtendFrame(IntPtr hwnd)
         {

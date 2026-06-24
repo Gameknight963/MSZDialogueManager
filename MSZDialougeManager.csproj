@@ -57,8 +57,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="FontRu.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="templateNodes.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\gameknight963\projects\MSZDialogueManager\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\gameknight963\projects\MSZDialogueManager\.editorconfig" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 {
-  "PackFormat": 1,
+  "PackFormat": 3,
   "TargetGameVersion": "Alpha 0.72",
   "trees": [
     {
@@ -11,6 +11,7 @@
           ],
           "dialogueText": "So wait...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -20,6 +21,7 @@
           ],
           "dialogueText": "I'm just curious, is the bathroom mirror the only reflective object?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -29,6 +31,7 @@
           ],
           "dialogueText": "Because I've seen other things that look like mirrors, but they have no reflections.",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -38,6 +41,7 @@
           ],
           "dialogueText": "Yeah, you're right in your assumption.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -47,6 +51,7 @@
           ],
           "dialogueText": "I believe it's because unlike your world, everything here is ran through a central processor.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -56,6 +61,7 @@
           ],
           "dialogueText": "In order to take strain off the system, reflections are limited.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -65,6 +71,7 @@
           ],
           "dialogueText": "I don't know what happens if the system were to overload...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -74,6 +81,7 @@
           ],
           "dialogueText": "...but I don't think it'd be anything good...",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -83,6 +91,7 @@
           ],
           "dialogueText": "Yeah, no kidding...",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 0.75
         },
         {
@@ -92,6 +101,7 @@
           ],
           "dialogueText": "but I notice that in glass objects, there are some reflections.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -101,6 +111,7 @@
           ],
           "dialogueText": "So can there theoretically be more than one active reflection at a time?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -110,6 +121,7 @@
           ],
           "dialogueText": "I... suppose so.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -119,6 +131,7 @@
           ],
           "dialogueText": "I think anything metalic or glassy has a subtle reflection to it.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -128,6 +141,7 @@
           ],
           "dialogueText": "To my knowledge though, it only reflects light.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -137,6 +151,7 @@
           ],
           "dialogueText": "Only the mirror on the bathroom and the mirror on my desk have been reflective.",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -146,6 +161,7 @@
           ],
           "dialogueText": "It leads me to believe only mirrors that are deemed \"functional\" activate when I do a particular thing.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -155,6 +171,7 @@
           ],
           "dialogueText": "That being said, I could always experiment a bit...",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         },
         {
@@ -164,6 +181,7 @@
           ],
           "dialogueText": "That sounds... fun, haha...",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -173,6 +191,7 @@
           ],
           "dialogueText": "Could you maybe not do it with me in the house...?",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -182,6 +201,7 @@
           ],
           "dialogueText": "Of course, of course.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -191,6 +211,7 @@
           ],
           "dialogueText": "I wouldn't be a good host if I crashed my house with a guest inside.",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         },
         {
@@ -198,6 +219,7 @@
           "nextNodeIds": [],
           "dialogueText": "No you would not...",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 1.0
         }
       ],
@@ -218,6 +240,7 @@
           ],
           "dialogueText": "Hey Zero, are you enjoying my place so far?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -227,6 +250,7 @@
           ],
           "dialogueText": "Hard to say I'm not.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -236,6 +260,7 @@
           ],
           "dialogueText": "I mean, seriously, what's there not to like about it?",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -245,6 +270,7 @@
           ],
           "dialogueText": "Good food, no imperfections, no random pain or stress...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -254,6 +280,7 @@
           ],
           "dialogueText": "Seriously, your place is awesome.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -263,6 +290,7 @@
           ],
           "dialogueText": "You really think so, huh...?",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 1.0
         },
         {
@@ -272,6 +300,7 @@
           ],
           "dialogueText": "Absolutely!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -281,6 +310,7 @@
           ],
           "dialogueText": "Plus, you being here is an added bonus.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -290,6 +320,7 @@
           ],
           "dialogueText": "You're like, one of the nicest people I've ever met.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -299,6 +330,7 @@
           ],
           "dialogueText": "Only had to dimension hop to meet someone as nice as you.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -308,6 +340,7 @@
           ],
           "dialogueText": "...says a lot about my world, doesn't it?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -317,6 +350,7 @@
           ],
           "dialogueText": "Zero...",
           "speakerName": "Kind",
+          "expression": "Blushing",
           "delay": 0.75
         },
         {
@@ -326,6 +360,7 @@
           ],
           "dialogueText": "Keep up the compliments and I'll never let you leave.",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 1.0
         },
         {
@@ -335,6 +370,7 @@
           ],
           "dialogueText": "And what if I wanna stay?",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -342,6 +378,7 @@
           "nextNodeIds": [],
           "dialogueText": "Then we both get what we want.",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         }
       ],
@@ -362,6 +399,7 @@
           ],
           "dialogueText": "It seems like it's getting a bit late...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -371,6 +409,7 @@
           ],
           "dialogueText": "Should I leave or...?",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 1.0
         },
         {
@@ -380,6 +419,7 @@
           ],
           "dialogueText": "Well, I mean, you can if you need to or wish to...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -389,6 +429,7 @@
           ],
           "dialogueText": "Although, I really don't mind you staying longer if you'd like...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -398,6 +439,7 @@
           ],
           "dialogueText": "Phew... that's good.",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 0.75
         },
         {
@@ -407,6 +449,7 @@
           ],
           "dialogueText": "I just got worried. I wasn't sure if I was meant to leave after our meal or not...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -416,6 +459,7 @@
           ],
           "dialogueText": "Why would you think that?",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -425,6 +469,7 @@
           ],
           "dialogueText": "I mean, it wouldn't be the first time I've overstayed my welcome...",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -434,6 +479,7 @@
           ],
           "dialogueText": "It's not like I mean to either. ",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 0.75
         },
         {
@@ -443,6 +489,7 @@
           ],
           "dialogueText": "I just... am not sure when's a good time to leave.",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 0.75
         },
         {
@@ -452,6 +499,7 @@
           ],
           "dialogueText": "So I typically assume that after a main event type of deal, like our meal...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -461,6 +509,7 @@
           ],
           "dialogueText": "That's the best time to leave.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -470,6 +519,7 @@
           ],
           "dialogueText": "I suppose that's not a bad way of thinking...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -479,6 +529,7 @@
           ],
           "dialogueText": "...but I wouldn't mind you staying longer.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -488,6 +539,7 @@
           ],
           "dialogueText": "Of course, if you have other things to get to, I understand.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -497,6 +549,7 @@
           ],
           "dialogueText": "Nah, I don't have much to do.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -506,6 +559,7 @@
           ],
           "dialogueText": "If you don't mind, I'd like to stay a little while longer.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -515,6 +569,7 @@
           ],
           "dialogueText": "I don't mind in the slightest.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -524,6 +579,7 @@
           ],
           "dialogueText": "Take your time here, I'm happy to have you.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -531,6 +587,7 @@
           "nextNodeIds": [],
           "dialogueText": "Glad to hear it, Mita.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         }
       ],
@@ -551,6 +608,7 @@
           ],
           "dialogueText": "Okay, let's see here...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 2.5
         },
         {
@@ -560,6 +618,7 @@
           ],
           "dialogueText": "Cut up the carrots...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 2.0
         },
         {
@@ -569,6 +628,7 @@
           ],
           "dialogueText": "with-OUT cutting myself, hopefully...",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 3.0
         },
         {
@@ -578,6 +638,7 @@
           ],
           "dialogueText": "Alright, that's done.",
           "speakerName": "Kiri",
+          "expression": "Neutral",
           "delay": 1.0
         },
         {
@@ -587,6 +648,7 @@
           ],
           "dialogueText": "Next, meat in the pan...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 2.5
         },
         {
@@ -596,6 +658,7 @@
           ],
           "dialogueText": "...don't burn yourself...",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 2.5
         },
         {
@@ -605,6 +668,7 @@
           ],
           "dialogueText": "Then, make sure it cooks thoroughly...",
           "speakerName": "Kiri",
+          "expression": "Neutral",
           "delay": 3.0
         },
         {
@@ -614,6 +678,7 @@
           ],
           "dialogueText": "...and that's it! ",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.5
         },
         {
@@ -623,6 +688,7 @@
           ],
           "dialogueText": "...I think.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -632,6 +698,7 @@
           ],
           "dialogueText": "Excellent job, Zero!",
           "speakerName": "Kind",
+          "expression": "BigSmile",
           "delay": 0.75
         },
         {
@@ -641,6 +708,7 @@
           ],
           "dialogueText": "Thank you for helping me, I'll take over from here.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -650,6 +718,7 @@
           ],
           "dialogueText": "Although... I just realized my mistake.",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -659,6 +728,7 @@
           ],
           "dialogueText": "I left the salt shaker in my bedroom...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -668,6 +738,7 @@
           ],
           "dialogueText": "Could you grab it for me, please?",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -677,6 +748,7 @@
           ],
           "dialogueText": "Sure thing, I'll be right back.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -684,6 +756,7 @@
           "nextNodeIds": [],
           "dialogueText": "Thank you!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         }
       ],
@@ -704,6 +777,7 @@
           ],
           "dialogueText": "Wait... is it just me, or do I look better in here?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -713,6 +787,7 @@
           ],
           "dialogueText": "Huh? What do you mean?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -722,6 +797,7 @@
           ],
           "dialogueText": "No stubble, no pimples... just perfect smooth skin.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -731,6 +807,7 @@
           ],
           "dialogueText": "Hell, I'm not complaining~",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -740,6 +817,7 @@
           ],
           "dialogueText": "...but are there seriously no imperfections here?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -749,6 +827,7 @@
           ],
           "dialogueText": "It would seem so, yes.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -758,6 +837,7 @@
           ],
           "dialogueText": "I take it that's not too big an issue?",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         },
         {
@@ -767,6 +847,7 @@
           ],
           "dialogueText": "No complaints here.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -776,6 +857,7 @@
           ],
           "dialogueText": "Another point for your world!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -785,6 +867,7 @@
           ],
           "dialogueText": "Oh please. I'm sure you look just as great in real life.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -794,6 +877,7 @@
           ],
           "dialogueText": "!!!",
           "speakerName": "Kiri",
+          "expression": "Surprised",
           "delay": 1.0
         },
         {
@@ -803,6 +887,7 @@
           ],
           "dialogueText": "What's with that look?",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -810,6 +895,7 @@
           "nextNodeIds": [],
           "dialogueText": "Hehe... nothing...",
           "speakerName": "Kiri",
+          "expression": "Love",
           "delay": 1.0
         }
       ],
@@ -830,6 +916,7 @@
           ],
           "dialogueText": "Hey, Zero...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -839,6 +926,7 @@
           ],
           "dialogueText": "You okay?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -848,6 +936,7 @@
           ],
           "dialogueText": "Eh? Yeah, I'm fine. Why do you ask?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -857,6 +946,7 @@
           ],
           "dialogueText": "That's a relief. ",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -866,6 +956,7 @@
           ],
           "dialogueText": "I was worried that being in a new place may have had you stressed.",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -875,6 +966,7 @@
           ],
           "dialogueText": "Nah, I'm fine. Don't sweat it.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -882,6 +974,7 @@
           "nextNodeIds": [],
           "dialogueText": "I'm glad to hear that.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         }
       ],
@@ -902,6 +995,7 @@
           ],
           "dialogueText": "Wh-What's going on?!",
           "speakerName": "Kiri",
+          "expression": "Terror",
           "delay": 1.5
         },
         {
@@ -911,6 +1005,7 @@
           ],
           "dialogueText": "WH@T'5 H@PP3NIN9?..?",
           "speakerName": "Kiri",
+          "expression": "Terror",
           "delay": 1.5
         },
         {
@@ -920,6 +1015,7 @@
           ],
           "dialogueText": "01001000 01000101 01001100 01001100 01001111 00100000 01010100 01001000 01000101 01010010 01000101 00101100 00100000 01001011 01001001 01010010 01001001",
           "speakerName": "HELLO",
+          "expression": "Null",
           "delay": 1.5
         },
         {
@@ -927,6 +1023,7 @@
           "nextNodeIds": [],
           "dialogueText": "Note to self, never do that again...",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 1.25
         }
       ],
@@ -947,6 +1044,7 @@
           ],
           "dialogueText": "Mmm...",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -956,6 +1054,7 @@
           ],
           "dialogueText": "These look really tasty.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -965,6 +1064,7 @@
           ],
           "dialogueText": "But uh... maybe I shouldn't eat someone's food before greeting them...",
           "speakerName": "Kiri",
+          "expression": "Neutral",
           "delay": 0.75
         },
         {
@@ -972,6 +1072,7 @@
           "nextNodeIds": [],
           "dialogueText": "I'll just save it for later then~",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         }
       ],
@@ -992,6 +1093,7 @@
           ],
           "dialogueText": "Quite the collection you got here...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1001,6 +1103,7 @@
           ],
           "dialogueText": "You big on reading?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1010,6 +1113,7 @@
           ],
           "dialogueText": "Yes. I do enjoy reading occasionally.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -1019,6 +1123,7 @@
           ],
           "dialogueText": "Though... it's not something I do often.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1028,6 +1133,7 @@
           ],
           "dialogueText": "Lots of these books aren't exactly...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1037,6 +1143,7 @@
           ],
           "dialogueText": "Interesting...",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -1046,6 +1153,7 @@
           ],
           "dialogueText": "But they are something to do. ",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -1055,6 +1163,7 @@
           ],
           "dialogueText": "Plus, reading is good for your mind!",
           "speakerName": "Kind",
+          "expression": "BigSmile",
           "delay": 0.75
         },
         {
@@ -1064,6 +1173,7 @@
           ],
           "dialogueText": "Even if it isn't exactly the most fun...",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -1073,6 +1183,7 @@
           ],
           "dialogueText": "Heh, I getcha.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -1082,6 +1193,7 @@
           ],
           "dialogueText": "I had to read a ton. Worst part?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1091,6 +1203,7 @@
           ],
           "dialogueText": "It was boring crap I had to memorize.",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 1.0
         },
         {
@@ -1100,6 +1213,7 @@
           ],
           "dialogueText": "That sounds quite infuriating...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1109,6 +1223,7 @@
           ],
           "dialogueText": "Did you at least get to read interesting books from time to time?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -1118,6 +1233,7 @@
           ],
           "dialogueText": "Oh yeah! I liked reading stories, especially as a kid.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -1127,6 +1243,7 @@
           ],
           "dialogueText": "Though as I grew older...",
           "speakerName": "Kiri",
+          "expression": "Love",
           "delay": 0.75
         },
         {
@@ -1136,6 +1253,7 @@
           ],
           "dialogueText": "I kinda switched to visual stuff...",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -1145,6 +1263,7 @@
           ],
           "dialogueText": "Hehe!",
           "speakerName": "Kind",
+          "expression": "Snicker",
           "delay": 1.0
         },
         {
@@ -1154,6 +1273,7 @@
           ],
           "dialogueText": "Don't worry Zero, your secret's safe with me.",
           "speakerName": "Kind",
+          "expression": "BigSmirk",
           "delay": 0.75
         },
         {
@@ -1163,6 +1283,7 @@
           ],
           "dialogueText": "You're free from your duties here.",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         },
         {
@@ -1170,6 +1291,7 @@
           "nextNodeIds": [],
           "dialogueText": "Phew... finally...",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 0.75
         }
       ],
@@ -1190,6 +1312,7 @@
           ],
           "dialogueText": "Now that I've been around your place enough...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1199,6 +1322,7 @@
           ],
           "dialogueText": "I think I've started to make sense of the world.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1208,6 +1332,7 @@
           ],
           "dialogueText": "I'm glad to hear that.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -1217,6 +1342,7 @@
           ],
           "dialogueText": "So... why the confused look?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1226,6 +1352,7 @@
           ],
           "dialogueText": "Is something still on your mind?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1235,6 +1362,7 @@
           ],
           "dialogueText": "I guess... the electronics.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1244,6 +1372,7 @@
           ],
           "dialogueText": "Electronics...?",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 1.25
         },
         {
@@ -1253,6 +1382,7 @@
           ],
           "dialogueText": "I know it sounds weird, probably because it's so normal to you...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1262,6 +1392,7 @@
           ],
           "dialogueText": "...but I'm just curious about some specifics regarding electronics here.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1271,6 +1402,7 @@
           ],
           "dialogueText": "Ask away. I'll answer to the best of my ability.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -1280,6 +1412,7 @@
           ],
           "dialogueText": "Sweet.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -1289,6 +1422,7 @@
           ],
           "dialogueText": "So... TVs, computers, and whatnot work, yeah?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1298,6 +1432,7 @@
           ],
           "dialogueText": "That's right.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1307,6 +1442,7 @@
           ],
           "dialogueText": "Okay... what about things like light switches and whatnot?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1316,6 +1452,7 @@
           ],
           "dialogueText": "Those work... fine as well.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1325,6 +1462,7 @@
           ],
           "dialogueText": "Is there a point you're trying to make or...?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1334,6 +1472,7 @@
           ],
           "dialogueText": "Nah, I'm just wondering more or less if your house has like, an electrical grid or not.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1343,6 +1482,7 @@
           ],
           "dialogueText": "Ah, that's what you meant!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -1352,6 +1492,7 @@
           ],
           "dialogueText": "Yes, the house does indeed have an electrical grid.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -1361,6 +1502,7 @@
           ],
           "dialogueText": "Given your observation skills, I'm surprised you didn't see the breaker by the front door...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1370,6 +1512,7 @@
           ],
           "dialogueText": "No, I saw it, I just...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1379,6 +1522,7 @@
           ],
           "dialogueText": "I may have thought it was non-functional...",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -1388,6 +1532,7 @@
           ],
           "dialogueText": "Nope, it works as intended.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -1397,6 +1542,7 @@
           ],
           "dialogueText": "Not that the power has ever gone out, give my version's stability and all~",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         },
         {
@@ -1406,6 +1552,7 @@
           ],
           "dialogueText": "I get your point then.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -1413,6 +1560,7 @@
           "nextNodeIds": [],
           "dialogueText": "Electrical system does work, interesting...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         }
       ],
@@ -1433,6 +1581,7 @@
           ],
           "dialogueText": "Putting extra salt... onto stir fry?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 0.75
         },
         {
@@ -1442,6 +1591,7 @@
           ],
           "dialogueText": "It smells good, don't get me wrong,",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.5
         },
         {
@@ -1451,6 +1601,7 @@
           ],
           "dialogueText": "But mixed with the soy sauce, isn't that a lot of sodium...?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -1460,6 +1611,7 @@
           ],
           "dialogueText": "Sodium...?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1469,6 +1621,7 @@
           ],
           "dialogueText": "Right... ",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1478,6 +1631,7 @@
           ],
           "dialogueText": "Okay, a better way to put is this:",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1487,6 +1641,7 @@
           ],
           "dialogueText": "Sodium is basically salt. To be specific, it's a chemical found inside of salt.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1496,6 +1651,7 @@
           ],
           "dialogueText": "But sodium doesn't just come from table salt.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1505,6 +1661,7 @@
           ],
           "dialogueText": "It can also come from products like sauces or broths.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1514,6 +1671,7 @@
           ],
           "dialogueText": "You pickin' up what I'm puttin' down?",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 1.0
         },
         {
@@ -1523,6 +1681,7 @@
           ],
           "dialogueText": "I... think so?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -1532,6 +1691,7 @@
           ],
           "dialogueText": "I will admit I quite enjoy salty things.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -1541,6 +1701,7 @@
           ],
           "dialogueText": "I put salt on basically everything, it makes everything taste better!",
           "speakerName": "Kind",
+          "expression": "BigSmile",
           "delay": 0.75
         },
         {
@@ -1550,6 +1711,7 @@
           ],
           "dialogueText": "Sometimes, I just put the salt on my finger or tongue and eat it straight.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -1559,6 +1721,7 @@
           ],
           "dialogueText": "Jesus, Mita... ",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 1.0
         },
         {
@@ -1568,6 +1731,7 @@
           ],
           "dialogueText": "Is there something wrong?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -1577,6 +1741,7 @@
           ],
           "dialogueText": "That much salt is bad for you! ",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 1.0
         },
         {
@@ -1586,6 +1751,7 @@
           ],
           "dialogueText": "Wh-What?! How so?!",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -1595,6 +1761,7 @@
           ],
           "dialogueText": "Do you like, get headaches at all or anything like that?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1604,6 +1771,7 @@
           ],
           "dialogueText": "Umm... sometimes?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -1613,6 +1781,7 @@
           ],
           "dialogueText": "I get migranes, especially when I don't drink enough water.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1622,6 +1791,7 @@
           ],
           "dialogueText": "Speaking of water, I frequently get thirsty, and-",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.25
         },
         {
@@ -1631,6 +1801,7 @@
           ],
           "dialogueText": "Mita, you're poisoning yourself!",
           "speakerName": "Kiri",
+          "expression": "Surprise",
           "delay": 0.75
         },
         {
@@ -1640,6 +1811,7 @@
           ],
           "dialogueText": "All those are symptoms of too much salt!",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 0.75
         },
         {
@@ -1649,6 +1821,7 @@
           ],
           "dialogueText": "Too much... salt?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -1658,6 +1831,7 @@
           ],
           "dialogueText": "Then why would it taste so good if it's poisonous?!",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -1667,6 +1841,7 @@
           ],
           "dialogueText": "Mita, it's about control. ",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -1676,6 +1851,7 @@
           ],
           "dialogueText": "Maybe you've got a higher sodium tolerance, but even you have a limit.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1685,6 +1861,7 @@
           ],
           "dialogueText": "You don't have to stop eating salt all together.",
           "speakerName": "Kiri",
+          "expression": "Love",
           "delay": 0.75
         },
         {
@@ -1694,6 +1871,7 @@
           ],
           "dialogueText": "Just... don't eat a lot of salt?",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -1703,6 +1881,7 @@
           ],
           "dialogueText": "Mmm... okay, I'll try and cut back a bit.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1712,6 +1891,7 @@
           ],
           "dialogueText": "...if you promise to come back and make sure of it~",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         },
         {
@@ -1721,6 +1901,7 @@
           ],
           "dialogueText": "Fine by me. Maybe I'll put you onto better things to poison yourself with.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -1730,6 +1911,7 @@
           ],
           "dialogueText": "Like... sugar?",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -1739,6 +1921,7 @@
           ],
           "dialogueText": "No. Alcohol.",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 1.0
         },
         {
@@ -1748,6 +1931,7 @@
           ],
           "dialogueText": "What's-",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.1
         },
         {
@@ -1755,6 +1939,7 @@
           "nextNodeIds": [],
           "dialogueText": "Next time, Mita. Next time.",
           "speakerName": "Kiri",
+          "expression": "Neutral",
           "delay": 1.0
         }
       ],
@@ -1775,6 +1960,7 @@
           ],
           "dialogueText": "So, it's evening now.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1784,6 +1970,7 @@
           ],
           "dialogueText": "Ummm... yes...?",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -1793,6 +1980,7 @@
           ],
           "dialogueText": "What about it?",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -1802,6 +1990,7 @@
           ],
           "dialogueText": "I was just confused because I didn't even notice the time pass by.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1811,6 +2000,7 @@
           ],
           "dialogueText": "While I'm tempted to leave it at \"time flies when you're having fun...\"",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 0.75
         },
         {
@@ -1820,6 +2010,7 @@
           ],
           "dialogueText": "I owe you more of an explanation than that.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1829,6 +2020,7 @@
           ],
           "dialogueText": "Time passes here, obviously.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1838,6 +2030,7 @@
           ],
           "dialogueText": "I mean you'd have to be deaf to not hear the constant ticking of the clocks...",
           "speakerName": "Kind",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -1847,6 +2040,7 @@
           ],
           "dialogueText": "...but it doesn't run off the same scale your world does.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -1856,6 +2050,7 @@
           ],
           "dialogueText": "Eh?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -1865,6 +2060,7 @@
           ],
           "dialogueText": "Best way to explain it, is time passes quicker when you're doing things.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1874,6 +2070,7 @@
           ],
           "dialogueText": "Certain events progress literally make time quicker.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1883,6 +2080,7 @@
           ],
           "dialogueText": "Now, the clocks tick the same, but the light outside shifts without respect to the clocks.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -1892,6 +2090,7 @@
           ],
           "dialogueText": "That all being said, I think there's more to it than that.",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -1901,6 +2100,7 @@
           ],
           "dialogueText": "I know that other versions may have less...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -1910,6 +2110,7 @@
           ],
           "dialogueText": "Robust time systems...",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -1919,6 +2120,7 @@
           ],
           "dialogueText": "Like... having a fixed time or sudden jumps?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1928,6 +2130,7 @@
           ],
           "dialogueText": "Precisely!",
           "speakerName": "Kind",
+          "expression": "BigSmile",
           "delay": 0.75
         },
         {
@@ -1937,6 +2140,7 @@
           ],
           "dialogueText": "All I know for certain though, is the way my version works.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -1946,6 +2150,7 @@
           ],
           "dialogueText": "Time passage here works similarly to your world, it is indeed dynamic.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -1955,6 +2160,7 @@
           ],
           "dialogueText": "Just... not in the same way?",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -1964,6 +2170,7 @@
           ],
           "dialogueText": "Exactly.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -1973,6 +2180,7 @@
           ],
           "dialogueText": "Hope that explains why it's now evening",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -1982,6 +2190,7 @@
           ],
           "dialogueText": "Sure does.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -1991,6 +2200,7 @@
           ],
           "dialogueText": "Now you got me curious though... what would it look like at night?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -1998,6 +2208,7 @@
           "nextNodeIds": [],
           "dialogueText": "Stick around and find out for yourself.",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         }
       ],
@@ -2018,6 +2229,7 @@
           ],
           "dialogueText": "A vent...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2027,6 +2239,7 @@
           ],
           "dialogueText": "...in a bathroom?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2036,6 +2249,7 @@
           ],
           "dialogueText": "Does your house have a ventilation system?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -2045,6 +2259,7 @@
           ],
           "dialogueText": "Is it not normal for a bathroom to have a vent in it?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -2054,6 +2269,7 @@
           ],
           "dialogueText": "It helps a lot with removing excess humidity and moisture after showers...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -2063,6 +2279,7 @@
           ],
           "dialogueText": "Sure, but this vent is... kinda large.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2072,6 +2289,7 @@
           ],
           "dialogueText": "With the amount of games I've played,",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.5
         },
         {
@@ -2081,6 +2299,7 @@
           ],
           "dialogueText": "I'd always be afraid of something crawling out and getting me.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -2090,6 +2309,7 @@
           ],
           "dialogueText": "D-Does that happen in your world?!",
           "speakerName": "Kind",
+          "expression": "Nervous",
           "delay": 1.0
         },
         {
@@ -2099,6 +2319,7 @@
           ],
           "dialogueText": "Wh-What?! No!",
           "speakerName": "Kiri",
+          "expression": "Surprised",
           "delay": 0.75
         },
         {
@@ -2108,6 +2329,7 @@
           ],
           "dialogueText": "Like I said... I've played games where that happens... but those aren't real.",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 0.75
         },
         {
@@ -2117,6 +2339,7 @@
           ],
           "dialogueText": "Sorry... didn't mean to scare ya like that...",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 1.0
         },
         {
@@ -2126,6 +2349,7 @@
           ],
           "dialogueText": "Phew...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -2135,6 +2359,7 @@
           ],
           "dialogueText": "You had me worried there for a bit...",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 0.75
         },
         {
@@ -2144,6 +2369,7 @@
           ],
           "dialogueText": "As I was saying however, this vent is mostly to let out steam from hot showers.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -2153,6 +2379,7 @@
           ],
           "dialogueText": "I suppose that's true...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2162,6 +2389,7 @@
           ],
           "dialogueText": "Larger vent probably works more effectively, to be honest.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -2169,6 +2397,7 @@
           "nextNodeIds": [],
           "dialogueText": "Now you get it~",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         }
       ],
@@ -2189,6 +2418,7 @@
           ],
           "dialogueText": "This question may be a bit intrusive, but...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2198,6 +2428,7 @@
           ],
           "dialogueText": "I am curious. What do you do where you're from?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2207,6 +2438,7 @@
           ],
           "dialogueText": "I mean, I'm not really one to talk because I... do whatever I please.",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -2216,6 +2448,7 @@
           ],
           "dialogueText": "I guess a better question would be: what occupies your time?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -2225,6 +2458,7 @@
           ],
           "dialogueText": "Oh boy, let's see...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2234,6 +2468,7 @@
           ],
           "dialogueText": "Well, I'm a student in the real world. I go to school, if you know what that is.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -2243,6 +2478,7 @@
           ],
           "dialogueText": "I'm familiar. Is there any topic that tickles your fancy?",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -2252,6 +2488,7 @@
           ],
           "dialogueText": "Well, I am a biology major.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -2261,6 +2498,7 @@
           ],
           "dialogueText": "I love animals and in general I find living systems interesting.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -2270,6 +2508,7 @@
           ],
           "dialogueText": "Though... ceaseless studying is starting to have its effect on me.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2279,6 +2518,7 @@
           ],
           "dialogueText": "Plus, even as a biology student, I'm not free from the most boring subjects to ever exist.",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -2288,6 +2528,7 @@
           ],
           "dialogueText": "Writing lab reports also sucks...",
           "speakerName": "Kiri",
+          "expression": "Angry",
           "delay": 1.0
         },
         {
@@ -2297,6 +2538,7 @@
           ],
           "dialogueText": "I see...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2306,6 +2548,7 @@
           ],
           "dialogueText": "Although your topic does seem quite interesting.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -2315,6 +2558,7 @@
           ],
           "dialogueText": "I suppose studying biology would make you a scientist, correct?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -2324,6 +2568,7 @@
           ],
           "dialogueText": "Correct.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -2333,6 +2578,7 @@
           ],
           "dialogueText": "I wanna use the stuff I learn to help animals, the environment, and people.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -2342,6 +2588,7 @@
           ],
           "dialogueText": "That is such a wholesome goal, Zero!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -2351,6 +2598,7 @@
           ],
           "dialogueText": "I mean, the world's got enough problems as is.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2360,6 +2608,7 @@
           ],
           "dialogueText": "If I have the skills and the passion, why not try and help it?",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -2369,6 +2618,7 @@
           ],
           "dialogueText": "You really are sweet, you know that?",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -2378,6 +2628,7 @@
           ],
           "dialogueText": "Hehe, thanks, I guess...",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -2387,6 +2638,7 @@
           ],
           "dialogueText": "Considering your kindness in your occupation alone...",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -2396,6 +2648,7 @@
           ],
           "dialogueText": "I am curious as to how you spend your free time.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -2405,6 +2658,7 @@
           ],
           "dialogueText": "Heh, what free time?",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -2414,6 +2668,7 @@
           ],
           "dialogueText": "Wait, do you not have time to yourself?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -2423,6 +2678,7 @@
           ],
           "dialogueText": "Nah, I do. Just not enough when finals come around...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2432,6 +2688,7 @@
           ],
           "dialogueText": "When I do find the time though, I usually just lay down.",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -2441,6 +2698,7 @@
           ],
           "dialogueText": "...but as for stuff I do on like... off days?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2450,6 +2708,7 @@
           ],
           "dialogueText": "Mostly it's stuff like playing video games or watching shows.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2459,6 +2718,7 @@
           ],
           "dialogueText": "I... don't have many friends at the moment...",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 1.0
         },
         {
@@ -2468,6 +2728,7 @@
           ],
           "dialogueText": "Zero...?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -2477,6 +2738,7 @@
           ],
           "dialogueText": "...",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 1.5
         },
         {
@@ -2486,6 +2748,7 @@
           ],
           "dialogueText": "Ah, look at me being a killjoy. Sorry about that.",
           "speakerName": "Kiri",
+          "expression": "HollowSmile",
           "delay": 1.0
         },
         {
@@ -2495,6 +2758,7 @@
           ],
           "dialogueText": "Zero, if you want to talk about-",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.5
         },
         {
@@ -2504,6 +2768,7 @@
           ],
           "dialogueText": "Don't worry, I'll be fine.",
           "speakerName": "Kiri",
+          "expression": "HollowSmile",
           "delay": 0.75
         },
         {
@@ -2513,6 +2778,7 @@
           ],
           "dialogueText": "I hope I answered your questions?",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -2520,6 +2786,7 @@
           "nextNodeIds": [],
           "dialogueText": "Yeah... although you may have just generated more...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         }
       ],
@@ -2540,6 +2807,7 @@
           ],
           "dialogueText": "So, gotta ask...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2549,6 +2817,7 @@
           ],
           "dialogueText": "This TV work or nah?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -2558,6 +2827,7 @@
           ],
           "dialogueText": "Mm?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2567,6 +2837,7 @@
           ],
           "dialogueText": "Why would it not work?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -2576,6 +2847,7 @@
           ],
           "dialogueText": "Well, I just thought that since we're technically in a virtual world...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2585,6 +2857,7 @@
           ],
           "dialogueText": "...that other virtual things were only there for decoration.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2594,6 +2867,7 @@
           ],
           "dialogueText": "...but judging by your confusion, I assume I'm wrong?",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -2603,6 +2877,7 @@
           ],
           "dialogueText": "No worries! I don't blame you for thinking that way.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -2612,6 +2887,7 @@
           ],
           "dialogueText": "To clear up any confusion, yes. The TV does work, as do other electronic appliances.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -2621,6 +2897,7 @@
           ],
           "dialogueText": "If you'd like, we can watch something together!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -2630,6 +2907,7 @@
           ],
           "dialogueText": "Mmm...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2639,6 +2917,7 @@
           ],
           "dialogueText": "Nah, I'm good for now.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -2648,6 +2927,7 @@
           ],
           "dialogueText": "I'm here with ya now. I'd rather spend time with you here.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -2657,6 +2937,7 @@
           ],
           "dialogueText": "Make the most of the moment, ya know?",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -2666,6 +2947,7 @@
           ],
           "dialogueText": "!!!",
           "speakerName": "Kind",
+          "expression": "Nervous",
           "delay": 0.75
         },
         {
@@ -2675,6 +2957,7 @@
           ],
           "dialogueText": "What's with that look, Mita?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -2684,6 +2967,7 @@
           ],
           "dialogueText": "Don't worry about it, Zero...",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 1.0
         },
         {
@@ -2691,6 +2975,7 @@
           "nextNodeIds": [],
           "dialogueText": "If you say so...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         }
       ],
@@ -2711,6 +2996,7 @@
           ],
           "dialogueText": "Huh, that's Mita alright.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2720,6 +3006,7 @@
           ],
           "dialogueText": "Did she draw these? Or are they built into the house?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2727,6 +3014,7 @@
           "nextNodeIds": [],
           "dialogueText": "Either way, she's really pretty!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         }
       ],
@@ -2748,6 +3036,7 @@
           ],
           "dialogueText": "Okay, elephant in the room here:",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2758,6 +3047,7 @@
           ],
           "dialogueText": "Why is the door locked?!",
           "speakerName": "Kiri",
+          "expression": "Surprised",
           "delay": 1.0
         },
         {
@@ -2768,6 +3058,7 @@
           ],
           "dialogueText": "Right... that must be quite alarming for you!",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -2778,6 +3069,7 @@
           ],
           "dialogueText": "To be quite honest...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2788,6 +3080,7 @@
           ],
           "dialogueText": "There's nothing beyond this house.",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -2798,6 +3091,7 @@
           ],
           "dialogueText": "Really...? ",
           "speakerName": "Kiri",
+          "expression": "Surprised",
           "delay": 0.75
         },
         {
@@ -2808,6 +3102,7 @@
           ],
           "dialogueText": "Pretty much, yes.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -2818,6 +3113,7 @@
           ],
           "dialogueText": "I hope it's not too alarming for you...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -2828,6 +3124,7 @@
           ],
           "dialogueText": "Eh... it's fine.",
           "speakerName": "Kiri",
+          "expression": "Neutral",
           "delay": 0.75
         },
         {
@@ -2838,6 +3135,7 @@
           ],
           "dialogueText": "As a player, I'm sure I can leave.",
           "speakerName": "Kiri",
+          "expression": "Neutral",
           "delay": 0.75
         },
         {
@@ -2848,6 +3146,7 @@
           ],
           "dialogueText": "I'm honestly more worried about you.",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 1.0
         },
         {
@@ -2858,6 +3157,7 @@
           ],
           "dialogueText": "Worried about... me?",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 0.75
         },
         {
@@ -2868,6 +3168,7 @@
           ],
           "dialogueText": "Zero, I'm touched, truly.",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 0.75
         },
         {
@@ -2878,6 +3179,7 @@
           ],
           "dialogueText": "You don't have to worry about me though.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -2888,6 +3190,7 @@
           ],
           "dialogueText": "I'm fine here, really.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -2898,6 +3201,7 @@
           ],
           "dialogueText": "You sure?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -2908,6 +3212,7 @@
           ],
           "dialogueText": "Yes. I'm even better now that you're here.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -2915,6 +3220,7 @@
           "nextNodeIds": [],
           "dialogueText": "Heh... alright, if you say so.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -2925,6 +3231,7 @@
           ],
           "dialogueText": "So, it really is just a white void outside this house?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         }
       ],
@@ -2945,6 +3252,7 @@
           ],
           "dialogueText": "This... might be a bit more melancholy than our previous discussions...",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 0.75
         },
         {
@@ -2954,6 +3262,7 @@
           ],
           "dialogueText": "...but I do want to know if you ever get lonely around here.",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 1.0
         },
         {
@@ -2963,6 +3272,7 @@
           ],
           "dialogueText": "...",
           "speakerName": "Kind",
+          "expression": "Sad",
           "delay": 0.75
         },
         {
@@ -2972,6 +3282,7 @@
           ],
           "dialogueText": "You don't have to talk if you don't wanna.",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 1.0
         },
         {
@@ -2981,6 +3292,7 @@
           ],
           "dialogueText": "No... it's fine. I just didn't want to bring the mood down.",
           "speakerName": "Kind",
+          "expression": "Sad",
           "delay": 1.0
         },
         {
@@ -2990,6 +3302,7 @@
           ],
           "dialogueText": "Hey, I'm the one who asked. If anything, it's my fault for bringing it up.",
           "speakerName": "Kiri",
+          "expression": "Love",
           "delay": 1.0
         },
         {
@@ -2999,6 +3312,7 @@
           ],
           "dialogueText": "You're too selfless for your own good, Zero.",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 0.75
         },
         {
@@ -3008,6 +3322,7 @@
           ],
           "dialogueText": "That all being said...",
           "speakerName": "Kind",
+          "expression": "Sad",
           "delay": 0.75
         },
         {
@@ -3017,6 +3332,7 @@
           ],
           "dialogueText": "Yeah, it does get lonely around here.",
           "speakerName": "Kind",
+          "expression": "Sad",
           "delay": 0.75
         },
         {
@@ -3026,6 +3342,7 @@
           ],
           "dialogueText": "I am the only person around this place, and it's not like I have friends on speed dial.",
           "speakerName": "Kind",
+          "expression": "Sad",
           "delay": 0.75
         },
         {
@@ -3035,6 +3352,7 @@
           ],
           "dialogueText": "I'm... kind of stuck in purgatory until a player shows up...",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -3044,6 +3362,7 @@
           ],
           "dialogueText": "Though, it's not all bad.",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 0.75
         },
         {
@@ -3053,6 +3372,7 @@
           ],
           "dialogueText": "I do have things I like doing, and I'm no social butterfly.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -3062,6 +3382,7 @@
           ],
           "dialogueText": "Quite frankly, I enjoy spending time by myself, most of the time.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3071,6 +3392,7 @@
           ],
           "dialogueText": "The idea of people being around me that are too loud or intrusive...",
           "speakerName": "Kind",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -3080,6 +3402,7 @@
           ],
           "dialogueText": "Blegh.",
           "speakerName": "Kind",
+          "expression": "Annoyed",
           "delay": 1.0
         },
         {
@@ -3089,6 +3412,7 @@
           ],
           "dialogueText": "Heh, yeah, I get it. People can be annoying.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -3098,6 +3422,7 @@
           ],
           "dialogueText": "That being said, we're still social creatures.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -3107,6 +3432,7 @@
           ],
           "dialogueText": "Even the most introverted of us need company from time to time.",
           "speakerName": "Kiri",
+          "expression": "Love",
           "delay": 1.0
         },
         {
@@ -3116,6 +3442,7 @@
           ],
           "dialogueText": "Yeah... so I've come to realize...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -3125,6 +3452,7 @@
           ],
           "dialogueText": "Though you've been a joy to be around.",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 0.75
         },
         {
@@ -3134,6 +3462,7 @@
           ],
           "dialogueText": "I really am glad you came.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -3143,6 +3472,7 @@
           ],
           "dialogueText": "As am I, Mita.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -3152,6 +3482,7 @@
           ],
           "dialogueText": "So yes, while it does get lonely around these parts...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3161,6 +3492,7 @@
           ],
           "dialogueText": "I don't mind it most of the time.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -3170,6 +3502,7 @@
           ],
           "dialogueText": "...and for the time I do get that way?",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -3179,6 +3512,7 @@
           ],
           "dialogueText": "Well, a certain blonde-haired player seemed to help me out at the right time.",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 1.0
         },
         {
@@ -3186,6 +3520,7 @@
           "nextNodeIds": [],
           "dialogueText": "Happy to be of service, ma'am.",
           "speakerName": "Kiri",
+          "expression": "Love",
           "delay": 1.0
         }
       ],
@@ -3206,6 +3541,7 @@
           ],
           "dialogueText": "Hmmm...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -3215,6 +3551,7 @@
           ],
           "dialogueText": "Something on your mind?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -3224,6 +3561,7 @@
           ],
           "dialogueText": "I was just curious, how does it feel?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -3233,6 +3571,7 @@
           ],
           "dialogueText": "How does what feel?",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -3242,6 +3581,7 @@
           ],
           "dialogueText": "Being in a new reality. One that isn't your own.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3251,6 +3591,7 @@
           ],
           "dialogueText": "It must be quite... daunting, no?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -3260,6 +3601,7 @@
           ],
           "dialogueText": "You know, now that you say it...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3269,6 +3611,7 @@
           ],
           "dialogueText": "It is a bit crazy, yeah.",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 0.75
         },
         {
@@ -3278,6 +3621,7 @@
           ],
           "dialogueText": "But with everything being so bright and joyful here...",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -3287,6 +3631,7 @@
           ],
           "dialogueText": "It kinda blows my reality out of the water.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -3296,6 +3641,7 @@
           ],
           "dialogueText": "Well, I'm glad you like it...",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -3305,6 +3651,7 @@
           ],
           "dialogueText": "...but I am curious, how is your reality compared to mine?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -3314,6 +3661,7 @@
           ],
           "dialogueText": "...",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 1.0
         },
         {
@@ -3323,6 +3671,7 @@
           ],
           "dialogueText": "Quite the displeased look...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -3332,6 +3681,7 @@
           ],
           "dialogueText": "Did I hit a nerve by accident?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -3341,6 +3691,7 @@
           ],
           "dialogueText": "No, no...",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 0.75
         },
         {
@@ -3350,6 +3701,7 @@
           ],
           "dialogueText": "My world... just isn't as pretty as yours.",
           "speakerName": "Kiri",
+          "expression": "Neutral",
           "delay": 0.75
         },
         {
@@ -3359,6 +3711,7 @@
           ],
           "dialogueText": "It's darker. More grey. Dirtier. ",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -3368,6 +3721,7 @@
           ],
           "dialogueText": "With more imperfections, more stress, and too much to do with to little time to do it.",
           "speakerName": "Kiri",
+          "expression": "Angry",
           "delay": 0.75
         },
         {
@@ -3377,6 +3731,7 @@
           ],
           "dialogueText": "You have to worry about payments, about school, about work...",
           "speakerName": "Kiri",
+          "expression": "Angry",
           "delay": 0.75
         },
         {
@@ -3386,6 +3741,7 @@
           ],
           "dialogueText": "About family, about friends, about social pressures as well as professional ones...",
           "speakerName": "Kiri",
+          "expression": "Angry",
           "delay": 0.75
         },
         {
@@ -3395,6 +3751,7 @@
           ],
           "dialogueText": "*sigh...*",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 0.75
         },
         {
@@ -3404,6 +3761,7 @@
           ],
           "dialogueText": "I could keep going, but in short, it's just a bunch of nonsense day in and day out.",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -3413,6 +3771,7 @@
           ],
           "dialogueText": "With a world that is about as bland as a stale piece of bread.",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 1.0
         },
         {
@@ -3422,6 +3781,7 @@
           ],
           "dialogueText": "That... sounds terrible. ",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -3431,6 +3791,7 @@
           ],
           "dialogueText": "You seem to have a number of issues with your own reality...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -3440,6 +3801,7 @@
           ],
           "dialogueText": "Yep.",
           "speakerName": "Kiri",
+          "expression": "Neutral",
           "delay": 0.75
         },
         {
@@ -3449,6 +3811,7 @@
           ],
           "dialogueText": "That's why I like it here so much, though!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -3458,6 +3821,7 @@
           ],
           "dialogueText": "The world is soft, bright, and vibrant.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -3467,6 +3831,7 @@
           ],
           "dialogueText": "When I'm kind, you're kind back.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -3476,6 +3841,7 @@
           ],
           "dialogueText": "I... appreciate that.",
           "speakerName": "Kiri",
+          "expression": "Love",
           "delay": 1.0
         },
         {
@@ -3485,6 +3851,7 @@
           ],
           "dialogueText": "It's no problem, Zero.",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 0.75
         },
         {
@@ -3494,6 +3861,7 @@
           ],
           "dialogueText": "I'm glad to have you here. You're welcome any time.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -3503,6 +3871,7 @@
           ],
           "dialogueText": "Thanks, Mita. Time spent here is time well spent.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -3510,6 +3879,7 @@
           "nextNodeIds": [],
           "dialogueText": "I'm very glad to hear that.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         }
       ],
@@ -3530,6 +3900,7 @@
           ],
           "dialogueText": "Here you go, just as you requested!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -3539,6 +3910,7 @@
           ],
           "dialogueText": "Hehe, thank you~!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -3548,6 +3920,7 @@
           ],
           "dialogueText": "Please, take your seat. Food's best while it's still hot!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -3557,6 +3930,7 @@
           ],
           "dialogueText": "Thanks, Mita.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.25
         },
         {
@@ -3566,6 +3940,7 @@
           ],
           "dialogueText": "Well, bon-apetit!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -3575,6 +3950,7 @@
           ],
           "dialogueText": "Mmm...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3584,6 +3960,7 @@
           ],
           "dialogueText": "Something wrong?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3593,6 +3970,7 @@
           ],
           "dialogueText": "While I did say that a meal is best when hot, it might still be a little too warm...",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -3602,6 +3980,7 @@
           ],
           "dialogueText": "You know, I think we shouldn't ignore the elephant in the room.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -3611,6 +3990,7 @@
           ],
           "dialogueText": "Mm? And what would that be?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -3620,6 +4000,7 @@
           ],
           "dialogueText": "Zero, come on.",
           "speakerName": "Kind",
+          "expression": "Annoyed",
           "delay": 1.0
         },
         {
@@ -3629,6 +4010,7 @@
           ],
           "dialogueText": "What?! I really don't know!",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 1.0
         },
         {
@@ -3638,6 +4020,7 @@
           ],
           "dialogueText": "For the love of the Firewall...",
           "speakerName": "Kind",
+          "expression": "Annoyed",
           "delay": 0.5
         },
         {
@@ -3647,6 +4030,7 @@
           ],
           "dialogueText": "Zero, you're in an entirely new place!",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -3656,6 +4040,7 @@
           ],
           "dialogueText": "I just...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -3665,6 +4050,7 @@
           ],
           "dialogueText": "I hope you're not nervous or anything like that...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -3674,6 +4060,7 @@
           ],
           "dialogueText": "Mita... I'm fine. Seriously.",
           "speakerName": "Kiri",
+          "expression": "Love",
           "delay": 0.75
         },
         {
@@ -3683,6 +4070,7 @@
           ],
           "dialogueText": "I'm happy to be here, if anything.",
           "speakerName": "Kiri",
+          "expression": "Love",
           "delay": 1.0
         },
         {
@@ -3692,6 +4080,7 @@
           ],
           "dialogueText": "If that's how you feel...",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 0.75
         },
         {
@@ -3701,6 +4090,7 @@
           ],
           "dialogueText": "I wouldn't mind having a small chat before our meal.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -3708,6 +4098,7 @@
           "nextNodeIds": [],
           "dialogueText": "If you have any questions, ask away!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         }
       ],
@@ -3728,6 +4119,7 @@
           ],
           "dialogueText": "Is something the matter with my desk?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -3737,6 +4129,7 @@
           ],
           "dialogueText": "Nah... just curious about your cosmetics.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3746,6 +4139,7 @@
           ],
           "dialogueText": "Typically, digital spaces make things easier, yeah?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3755,6 +4149,7 @@
           ],
           "dialogueText": "That, and this world already removed most of the imperfections I had.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3764,6 +4159,7 @@
           ],
           "dialogueText": "So... does the makeup have function? Does it work?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -3773,6 +4169,7 @@
           ],
           "dialogueText": "I'm glad you asked, actually.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -3782,6 +4179,7 @@
           ],
           "dialogueText": "While I do have a set appearance, I can alter it through various means.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3791,6 +4189,7 @@
           ],
           "dialogueText": "Sure, players can play a part in this process...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3800,6 +4199,7 @@
           ],
           "dialogueText": "...but I am allowed to use the items at my disposal as well to alter my appearance.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -3809,6 +4209,7 @@
           ],
           "dialogueText": "With all that said though...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3818,6 +4219,7 @@
           ],
           "dialogueText": "I do apply the makeup myself.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -3827,6 +4229,7 @@
           ],
           "dialogueText": "It isn't some one and done process, but all I really do are my eyelashes.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3836,6 +4239,7 @@
           ],
           "dialogueText": "I generally do it for aesthetic purposes,",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.25
         },
         {
@@ -3845,6 +4249,7 @@
           ],
           "dialogueText": "Mostly to make my eyelashes match my hair's color.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -3854,6 +4259,7 @@
           ],
           "dialogueText": "Most of my look is natural.",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         },
         {
@@ -3863,6 +4269,7 @@
           ],
           "dialogueText": "Interesting...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3872,6 +4279,7 @@
           ],
           "dialogueText": "So wait, if I were to interact with your make-up...",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 0.75
         },
         {
@@ -3881,6 +4289,7 @@
           ],
           "dialogueText": "I wouldn't be able to customize my appearance at all?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -3890,6 +4299,7 @@
           ],
           "dialogueText": "Nope... it'd just be a normal makeup table.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3899,6 +4309,7 @@
           ],
           "dialogueText": "Want me to do your lashes later?",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -3906,6 +4317,7 @@
           "nextNodeIds": [],
           "dialogueText": "I... think I'm okay. Thanks.",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 1.0
         }
       ],
@@ -3926,6 +4338,7 @@
           ],
           "dialogueText": "Another... convoluted question.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3935,6 +4348,7 @@
           ],
           "dialogueText": "Do you ever get any... glitches or bugs?",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 1.0
         },
         {
@@ -3944,6 +4358,7 @@
           ],
           "dialogueText": "Bugs...?",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 0.75
         },
         {
@@ -3953,6 +4368,7 @@
           ],
           "dialogueText": "I mean... I get roaches if I leave food out...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -3962,6 +4378,7 @@
           ],
           "dialogueText": "Nah, nah. That's not what I meant.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -3971,6 +4388,7 @@
           ],
           "dialogueText": "I mean like... glitches. ",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 0.75
         },
         {
@@ -3980,6 +4398,7 @@
           ],
           "dialogueText": "You know, errors?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -3989,6 +4408,7 @@
           ],
           "dialogueText": "Oooooh!",
           "speakerName": "Kind",
+          "expression": "BigSmile",
           "delay": 1.0
         },
         {
@@ -3998,6 +4418,7 @@
           ],
           "dialogueText": "You don't have to worry about those.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4007,6 +4428,7 @@
           ],
           "dialogueText": "I'm typically not one to brag...",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4016,6 +4438,7 @@
           ],
           "dialogueText": "...but my world is quite stable. ",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         },
         {
@@ -4025,6 +4448,7 @@
           ],
           "dialogueText": "Phew... You had me worried there.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4034,6 +4458,7 @@
           ],
           "dialogueText": "So no data anomaly here is gonna swallow me whole or somethin?",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -4043,6 +4468,7 @@
           ],
           "dialogueText": "Don't worry, Zero.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4052,6 +4478,7 @@
           ],
           "dialogueText": "You're in good hands!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -4059,6 +4486,7 @@
           "nextNodeIds": [],
           "dialogueText": "Thanks, Mita.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         }
       ],
@@ -4079,6 +4507,7 @@
           ],
           "dialogueText": "That's all I can think of for now.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4088,6 +4517,7 @@
           ],
           "dialogueText": "Besides, all this talking means our food has likely cooled off by now!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -4097,6 +4527,7 @@
           ],
           "dialogueText": "Agreed. I'm also getting hungry with all the chatter.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4106,6 +4537,7 @@
           ],
           "dialogueText": "Ready to eat?",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -4115,6 +4547,7 @@
           ],
           "dialogueText": "Absolutely!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4124,6 +4557,7 @@
           ],
           "dialogueText": "Bon Appetit!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -4131,6 +4565,7 @@
           "nextNodeIds": [],
           "dialogueText": "Bon Appetit, Mita.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         }
       ],
@@ -4151,6 +4586,7 @@
           ],
           "dialogueText": "O-Oh my.",
           "speakerName": "Kiri",
+          "expression": "Surprised",
           "delay": 0.75
         },
         {
@@ -4160,6 +4596,7 @@
           ],
           "dialogueText": "THAT'S Mita?",
           "speakerName": "Kiri",
+          "expression": "Surprised",
           "delay": 0.75
         },
         {
@@ -4169,6 +4606,7 @@
           ],
           "dialogueText": "...",
           "speakerName": "Kiri",
+          "expression": "Love",
           "delay": 0.75
         },
         {
@@ -4176,6 +4614,7 @@
           "nextNodeIds": [],
           "dialogueText": "She's so out of my league...",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 0.75
         }
       ],
@@ -4196,6 +4635,7 @@
           ],
           "dialogueText": "JESUS-!",
           "speakerName": "Kiri",
+          "expression": "Shocked",
           "delay": 0.5
         },
         {
@@ -4205,6 +4645,7 @@
           ],
           "dialogueText": "Off off off off off!",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 3.0
         },
         {
@@ -4214,6 +4655,7 @@
           ],
           "dialogueText": "Well, Mita totally heard that, right?",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -4221,6 +4663,7 @@
           "nextNodeIds": [],
           "dialogueText": "Can't wait to explain that to her...",
           "speakerName": "Kiri",
+          "expression": "Neutral",
           "delay": 0.75
         }
       ],
@@ -4241,6 +4684,7 @@
           ],
           "dialogueText": "I'm about ready to eat. You?",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -4250,6 +4694,7 @@
           ],
           "dialogueText": "Same here. I'm hungry enough now.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4259,6 +4704,7 @@
           ],
           "dialogueText": "Bon Appetit!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -4266,6 +4712,7 @@
           "nextNodeIds": [],
           "dialogueText": "Bon Appetit!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         }
       ],
@@ -4284,6 +4731,7 @@
           "nextNodeIds": [],
           "dialogueText": "Where do you think you're looking?!",
           "speakerName": "Kind",
+          "expression": "Angry",
           "delay": 0.75
         }
       ],
@@ -4304,6 +4752,7 @@
           ],
           "dialogueText": "Ooo...",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -4313,6 +4762,7 @@
           ],
           "dialogueText": "These look really cool!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4322,6 +4772,7 @@
           ],
           "dialogueText": "Are these your drawings?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -4331,6 +4782,7 @@
           ],
           "dialogueText": "Uhhh... maybe?",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -4340,6 +4792,7 @@
           ],
           "dialogueText": "Do they... look good?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -4349,6 +4802,7 @@
           ],
           "dialogueText": "\"Do they look good\", she says...",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -4358,6 +4812,7 @@
           ],
           "dialogueText": "Mita, they look incredible!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4367,6 +4822,7 @@
           ],
           "dialogueText": "Seriously, these are amazing! You've got some serious skill!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -4376,6 +4832,7 @@
           ],
           "dialogueText": "W-Well... it took me a bit of time to make each piece, and...",
           "speakerName": "Kind",
+          "expression": "Blushing",
           "delay": 1.0
         },
         {
@@ -4385,6 +4842,7 @@
           ],
           "dialogueText": "Shush!",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -4394,6 +4852,7 @@
           ],
           "dialogueText": "Good art takes time. No artist in history makes a masterpiece rushing their work.",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -4403,6 +4862,7 @@
           ],
           "dialogueText": "Plus, even if you do take your time, it shows dedication!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4412,6 +4872,7 @@
           ],
           "dialogueText": "Don't doubt yourself Mita. These are truly awesome!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4421,6 +4882,7 @@
           ],
           "dialogueText": "I'm glad I get to feast my eyes on them.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -4430,6 +4892,7 @@
           ],
           "dialogueText": "You're too kind, Zero...",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 1.0
         },
         {
@@ -4439,6 +4902,7 @@
           ],
           "dialogueText": "No way. This deserves more praise than just my words.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4448,6 +4912,7 @@
           ],
           "dialogueText": "Considering that's all I can offer, I'll do my best to reward you with my praise!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -4457,6 +4922,7 @@
           ],
           "dialogueText": "Thanks, Zero...",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 1.0
         },
         {
@@ -4466,6 +4932,7 @@
           ],
           "dialogueText": "No problem at all. If you ever make more, or if you have any more, you should show me!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4475,6 +4942,7 @@
           ],
           "dialogueText": "I'd love to take a look at all your works.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -4484,6 +4952,7 @@
           ],
           "dialogueText": "Be careful, Zero...",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4493,6 +4962,7 @@
           ],
           "dialogueText": "I just might take you up on that offer.",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         },
         {
@@ -4500,6 +4970,7 @@
           "nextNodeIds": [],
           "dialogueText": "Good. If I get to see more of your art? I'll make a deal with the devil.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         }
       ],
@@ -4520,6 +4991,7 @@
           ],
           "dialogueText": "Say, I've been asking you plenty of questions...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -4529,6 +5001,7 @@
           ],
           "dialogueText": "Did you wanna ask me anything?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 0.75
         },
         {
@@ -4538,6 +5011,7 @@
           ],
           "dialogueText": "I just don't wanna seem like I'm interogating you is all.",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 1.0
         },
         {
@@ -4547,6 +5021,7 @@
           ],
           "dialogueText": "It's no issue at all!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4556,6 +5031,7 @@
           ],
           "dialogueText": "I've actually been quite curious about you.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -4565,6 +5041,7 @@
           ],
           "dialogueText": "Well then... ",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4572,6 +5049,7 @@
           "nextNodeIds": [],
           "dialogueText": "Ask away! I'll be glad to answer whatever ya throw at me.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         }
       ],
@@ -4592,6 +5070,7 @@
           ],
           "dialogueText": "I can't help but say you got a solid setup here.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4601,6 +5080,7 @@
           ],
           "dialogueText": "I mean you got the big ol' keyboard, a solid mouse, nice headphones...",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4610,6 +5090,7 @@
           ],
           "dialogueText": "Wait, do you have a mousepad?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -4619,6 +5100,7 @@
           ],
           "dialogueText": "Oh! The desk doubles as one.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -4628,6 +5110,7 @@
           ],
           "dialogueText": "Huh... that's cool.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4637,6 +5120,7 @@
           ],
           "dialogueText": "Alright, level with me here.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -4646,6 +5130,7 @@
           ],
           "dialogueText": "Do you play games on this thing?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -4655,6 +5140,7 @@
           ],
           "dialogueText": "Ummm... that's a strange question to ask, Zero.",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -4664,6 +5150,7 @@
           ],
           "dialogueText": "Oh c'mon. Don't tell me you're like, a secret gamer girl or somethin'.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -4673,6 +5160,7 @@
           ],
           "dialogueText": "I-I have no clue what you mean.",
           "speakerName": "Kind",
+          "expression": "Blushing",
           "delay": 0.75
         },
         {
@@ -4682,6 +5170,7 @@
           ],
           "dialogueText": "Yeah, riiiiight...",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -4691,6 +5180,7 @@
           ],
           "dialogueText": "If you're up for games later, let me know~",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -4698,6 +5188,7 @@
           "nextNodeIds": [],
           "dialogueText": "Yeah... you got it...",
           "speakerName": "Kind",
+          "expression": "Blushing",
           "delay": 0.75
         }
       ],
@@ -4718,6 +5209,7 @@
           ],
           "dialogueText": "Sooo...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -4727,6 +5219,7 @@
           ],
           "dialogueText": "I'm not gonna lie, I wanted to touch this thing when I first got here.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -4736,6 +5229,7 @@
           ],
           "dialogueText": "...but I also didn't wanna be inconsiderate and poke around your stuff.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -4745,6 +5239,7 @@
           ],
           "dialogueText": "Oh, don't worry about it!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4754,6 +5249,7 @@
           ],
           "dialogueText": "The only issue is that I don't know what volume I set the thing to...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -4763,6 +5259,7 @@
           ],
           "dialogueText": "Quite frankly, I'd rather not find out.",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -4772,6 +5269,7 @@
           ],
           "dialogueText": "Yeah... I'm not keen on getting my eardrums ruptured, thanks.",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 0.75
         },
         {
@@ -4779,6 +5277,7 @@
           "nextNodeIds": [],
           "dialogueText": "Neither am I...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -4788,6 +5287,7 @@
           ],
           "dialogueText": "So...",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 0.75
         },
         {
@@ -4797,6 +5297,7 @@
           ],
           "dialogueText": "Mhm.",
           "speakerName": "Kind",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -4806,6 +5307,7 @@
           ],
           "dialogueText": "Yeah, I'm already pretty familiar with this thing, heh...",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -4815,6 +5317,7 @@
           ],
           "dialogueText": "That you are.",
           "speakerName": "Kind",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -4824,6 +5327,7 @@
           ],
           "dialogueText": "Though, like I said before...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -4833,6 +5337,7 @@
           ],
           "dialogueText": "I can hardly hold it against you.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4842,6 +5347,7 @@
           ],
           "dialogueText": "It's only natural you'd want to get acquainted with an unfamiliar environment.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4851,6 +5357,7 @@
           ],
           "dialogueText": "Still... I shouldn't have gone poking around without finding you first.",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 0.75
         },
         {
@@ -4860,6 +5367,7 @@
           ],
           "dialogueText": "Sorry about that, seriously.",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 0.75
         },
         {
@@ -4867,6 +5375,7 @@
           "nextNodeIds": [],
           "dialogueText": "It's okay, I forgive you.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         }
       ],
@@ -4888,6 +5397,7 @@
           ],
           "dialogueText": "Mita? ",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.5
         },
         {
@@ -4897,6 +5407,7 @@
           ],
           "dialogueText": "Hello there!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 2.0
         },
         {
@@ -4906,6 +5417,7 @@
           ],
           "dialogueText": "You're a player, I suppose?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -4915,6 +5427,7 @@
           ],
           "dialogueText": "Uhh... yeah, I suppose so, heh.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -4924,6 +5437,7 @@
           ],
           "dialogueText": "Well it's nice to meet you.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -4933,6 +5447,7 @@
           ],
           "dialogueText": "Although... I am curious as to what to call you.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -4942,6 +5457,7 @@
           ],
           "dialogueText": "\"Player\" sounds... ",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -4951,6 +5467,7 @@
           ],
           "dialogueText": "Monotonous?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -4960,6 +5477,7 @@
           ],
           "dialogueText": "Yeah! That.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -4969,6 +5487,7 @@
           ],
           "dialogueText": "That being said, what can I call you?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -4978,6 +5497,7 @@
           ],
           "dialogueText": "Hmmm...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -4987,6 +5507,7 @@
           ],
           "dialogueText": "I guess just call me by my username:",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -4996,6 +5517,7 @@
           ],
           "dialogueText": "Zero.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5005,6 +5527,7 @@
           ],
           "dialogueText": "Zero... what an interesting name.",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 0.75
         },
         {
@@ -5014,6 +5537,7 @@
           ],
           "dialogueText": "Well then, Zero, if it wasn't already apparent...",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 0.75
         },
         {
@@ -5023,6 +5547,7 @@
           ],
           "dialogueText": "I'm Mita.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -5032,6 +5557,7 @@
           ],
           "dialogueText": "Well, nice to meet you, Mita.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -5041,6 +5567,7 @@
           ],
           "dialogueText": "Care to show me around?",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -5048,6 +5575,7 @@
           "nextNodeIds": [],
           "dialogueText": "Sure thing. Let's go.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -5057,6 +5585,7 @@
           ],
           "dialogueText": "Uhhh... hey...",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 1.0
         },
         {
@@ -5066,6 +5595,7 @@
           ],
           "dialogueText": "Oh goodness...",
           "speakerName": "Kind",
+          "expression": "Annoyed",
           "delay": 2.25
         },
         {
@@ -5075,6 +5605,7 @@
           ],
           "dialogueText": "I take it you're the one who played the stereo?",
           "speakerName": "Kind",
+          "expression": "Annoyed",
           "delay": 1.0
         },
         {
@@ -5084,6 +5615,7 @@
           ],
           "dialogueText": "Erm... maybe..?",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -5093,6 +5625,7 @@
           ],
           "dialogueText": "*sigh...*",
           "speakerName": "Kind",
+          "expression": "Annoyed",
           "delay": 2.75
         },
         {
@@ -5102,6 +5635,7 @@
           ],
           "dialogueText": "Sorry about that... I guess I let my curiousity get the best of me.",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 1.0
         },
         {
@@ -5111,6 +5645,7 @@
           ],
           "dialogueText": "Well... I can sympathize.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -5120,6 +5655,7 @@
           ],
           "dialogueText": "This environment is likely unfamiliar to you. ",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -5129,6 +5665,7 @@
           ],
           "dialogueText": "I can hardly blame your curiousity.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -5138,6 +5675,7 @@
           ],
           "dialogueText": "Heh... thanks.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5147,6 +5685,7 @@
           ],
           "dialogueText": "Again, sorry for turning your house into an exploration site.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -5156,6 +5695,7 @@
           ],
           "dialogueText": "No need to apologize. I'd be glad to show you around if you'd like.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -5165,6 +5705,7 @@
           ],
           "dialogueText": "That'd be awesome. Thanks, Mita.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -5174,6 +5715,7 @@
           ],
           "dialogueText": "By the way... what can I call you?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         }
       ],
@@ -5195,6 +5737,7 @@
           ],
           "dialogueText": "Mmm...",
           "speakerName": "Kiri",
+          "expression": "",
           "delay": 1.25
         },
         {
@@ -5204,6 +5747,7 @@
           ],
           "dialogueText": "Nah, I should probably find Mita first...",
           "speakerName": "Kiri",
+          "expression": "",
           "delay": 0.75
         },
         {
@@ -5213,6 +5757,7 @@
           ],
           "dialogueText": "I mean, I'd freak out too if someone just barged in and turned on my TV!",
           "speakerName": "Kiri",
+          "expression": "",
           "delay": 0.75
         },
         {
@@ -5222,6 +5767,7 @@
           ],
           "dialogueText": "Now where was I...",
           "speakerName": "Kiri",
+          "expression": "",
           "delay": 0.75
         },
         {
@@ -5229,6 +5775,7 @@
           "nextNodeIds": [],
           "dialogueText": "Oh yeah! Finding Mita. Right...",
           "speakerName": "Kiri",
+          "expression": "",
           "delay": 0.75
         }
       ],
@@ -5247,6 +5794,7 @@
           "nextNodeIds": [],
           "dialogueText": "W-What are you looking at?!",
           "speakerName": "Kind",
+          "expression": "Flustered",
           "delay": 0.75
         }
       ],
@@ -5267,6 +5815,7 @@
           ],
           "dialogueText": "Huh.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -5276,6 +5825,7 @@
           ],
           "dialogueText": "Looks like I made it alright...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -5283,6 +5833,7 @@
           "nextNodeIds": [],
           "dialogueText": "Though... where's Mita?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         }
       ],
@@ -5303,6 +5854,7 @@
           ],
           "dialogueText": "Generic question, I know...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -5312,6 +5864,7 @@
           ],
           "dialogueText": "...but how are you doing?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -5321,6 +5874,7 @@
           ],
           "dialogueText": "I'm doing fine, Zero. Thank you for asking.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5330,6 +5884,7 @@
           ],
           "dialogueText": "How are you?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -5339,6 +5894,7 @@
           ],
           "dialogueText": "I'm doing fine myself. ",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5348,6 +5904,7 @@
           ],
           "dialogueText": "Just wanted to make sure I didn't like... walk in on you when sad.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -5357,6 +5914,7 @@
           ],
           "dialogueText": "You're too kind, Zero. ",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -5364,6 +5922,7 @@
           "nextNodeIds": [],
           "dialogueText": "As are you, Mita.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         }
       ],
@@ -5384,6 +5943,7 @@
           ],
           "dialogueText": "Okay, I'm gonna sound like a total dork for this...",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5393,6 +5953,7 @@
           ],
           "dialogueText": "But that little statue of you is adorable!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -5402,6 +5963,7 @@
           ],
           "dialogueText": "Awww, thank you!",
           "speakerName": "Kind",
+          "expression": "BigSmile",
           "delay": 0.75
         },
         {
@@ -5411,6 +5973,7 @@
           ],
           "dialogueText": "I suppose they are quite cute, aren't they?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -5420,6 +5983,7 @@
           ],
           "dialogueText": "Funnily enough, in this world, we can create these small avatars of ourselves.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5429,6 +5993,7 @@
           ],
           "dialogueText": "They're called \"chibis\".",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -5438,6 +6003,7 @@
           ],
           "dialogueText": "That's pretty cool!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5447,6 +6013,7 @@
           ],
           "dialogueText": "I take it that it's not exactly the easiest process though...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -5456,6 +6023,7 @@
           ],
           "dialogueText": "Yeah... it's really the only reason I'm not showing you right now.",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -5465,6 +6033,7 @@
           ],
           "dialogueText": "Don't worry though! ",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5474,6 +6043,7 @@
           ],
           "dialogueText": "This statue is cute enough, isn't it?",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -5481,6 +6051,7 @@
           "nextNodeIds": [],
           "dialogueText": "Sure is, Mita.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         }
       ],
@@ -5501,6 +6072,7 @@
           ],
           "dialogueText": "Feeling tired at all, Zero?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -5510,6 +6082,7 @@
           ],
           "dialogueText": "I can feel myself getting there...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -5519,6 +6092,7 @@
           ],
           "dialogueText": "Isn't it fairly early in the day here though?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -5528,6 +6102,7 @@
           ],
           "dialogueText": "I mean, our meal may contribute to our exhausted state.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -5537,6 +6112,7 @@
           ],
           "dialogueText": "Whenever I eat things, I typically feel the need to put my head down and rest.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -5546,6 +6122,7 @@
           ],
           "dialogueText": "That's because you put so much salt on it...",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 1.0
         },
         {
@@ -5555,6 +6132,7 @@
           ],
           "dialogueText": "Yeah, yeah, whatever.",
           "speakerName": "Kind",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -5564,6 +6142,7 @@
           ],
           "dialogueText": "Either way, I don't think it's the meal that's done us in.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -5573,6 +6152,7 @@
           ],
           "dialogueText": "Maybe it's the interaction?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -5582,6 +6162,7 @@
           ],
           "dialogueText": "That's probably it. ",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5591,6 +6172,7 @@
           ],
           "dialogueText": "Meeting new people and socializing with them...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -5600,6 +6182,7 @@
           ],
           "dialogueText": "Especially when you aren't exactly the most social to begin with...",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -5609,6 +6192,7 @@
           ],
           "dialogueText": "That can definitely wear someone out.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -5618,6 +6202,7 @@
           ],
           "dialogueText": "I suppose so.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5627,6 +6212,7 @@
           ],
           "dialogueText": "Not to mention the fact I basically had to... warp.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -5636,6 +6222,7 @@
           ],
           "dialogueText": "I can't imagine that being a relaxing activity...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -5643,6 +6230,7 @@
           "nextNodeIds": [],
           "dialogueText": "Definitely not as a first time event, no...",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 1.0
         }
       ],
@@ -5663,6 +6251,7 @@
           ],
           "dialogueText": "You seem to be eyeing up those apples.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5672,6 +6261,7 @@
           ],
           "dialogueText": "Are you hungry perchance?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -5681,6 +6271,7 @@
           ],
           "dialogueText": "Nah, I'm not hungry...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -5690,6 +6281,7 @@
           ],
           "dialogueText": "I just really like apples.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5699,6 +6291,7 @@
           ],
           "dialogueText": "They're my favorite fruit, afterall!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -5708,6 +6301,7 @@
           ],
           "dialogueText": "Interesting!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5717,6 +6311,7 @@
           ],
           "dialogueText": "Had you told me earlier, I would've cut up some apple slices for us.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5726,6 +6321,7 @@
           ],
           "dialogueText": "Tell me, Zero...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -5735,6 +6331,7 @@
           ],
           "dialogueText": "Are there different kinds of apples where you're from?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -5744,6 +6341,7 @@
           ],
           "dialogueText": "Yep! Plenty of different kinds.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5753,6 +6351,7 @@
           ],
           "dialogueText": "My favorite types of apples are yellow...",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -5762,6 +6361,7 @@
           ],
           "dialogueText": "Which seems to be the only kind absent here.",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -5771,6 +6371,7 @@
           ],
           "dialogueText": "That being said, the apples here all seem to be...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -5780,6 +6381,7 @@
           ],
           "dialogueText": "Perfect.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -5789,6 +6391,7 @@
           ],
           "dialogueText": "I'm glad to hear that!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5798,6 +6401,7 @@
           ],
           "dialogueText": "While I myself am not the biggest fan of apples...",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -5807,6 +6411,7 @@
           ],
           "dialogueText": "I'm glad to know someone who is.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5816,6 +6421,7 @@
           ],
           "dialogueText": "After all, if they're as perfect as you say...",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5825,6 +6431,7 @@
           ],
           "dialogueText": "You should come here more often.",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 0.75
         },
         {
@@ -5834,6 +6441,7 @@
           ],
           "dialogueText": "It'd be a shame for them all to go to waste.",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         },
         {
@@ -5841,6 +6449,7 @@
           "nextNodeIds": [],
           "dialogueText": "I just might then, hehe~",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         }
       ],
@@ -5859,6 +6468,7 @@
           "nextNodeIds": [],
           "dialogueText": "Get the salt shaker, Zero!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5866,6 +6476,7 @@
           "nextNodeIds": [],
           "dialogueText": "Can you grab the salt shaker?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -5873,6 +6484,7 @@
           "nextNodeIds": [],
           "dialogueText": "I'll finish up here. Grab the salt!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5880,6 +6492,7 @@
           "nextNodeIds": [],
           "dialogueText": "Salt's in my room. I think it's by my bathroom door?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -5887,6 +6500,7 @@
           "nextNodeIds": [],
           "dialogueText": "Find the salt for her already...",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 0.75
         }
       ],
@@ -5911,6 +6525,7 @@
           ],
           "dialogueText": "I may have already asked you this...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -5920,6 +6535,7 @@
           ],
           "dialogueText": "...but I was wondering if you felt okay.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -5929,6 +6545,7 @@
           ],
           "dialogueText": "Eh?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 0.75
         },
         {
@@ -5938,6 +6555,7 @@
           ],
           "dialogueText": "I mean, I feel fine.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -5947,6 +6565,7 @@
           ],
           "dialogueText": "Why do you ask?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -5956,6 +6575,7 @@
           ],
           "dialogueText": "Well, I know for one that someone's external appearance may not equal how they feel inside.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -5965,6 +6585,7 @@
           ],
           "dialogueText": "While I don't have direct conversational experience...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -5974,6 +6595,7 @@
           ],
           "dialogueText": "I do have some social knowledge built in to me.",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 0.75
         },
         {
@@ -5983,6 +6605,7 @@
           ],
           "dialogueText": "I'm just curious about you is all.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -5992,6 +6615,7 @@
           ],
           "dialogueText": "Besides, I do care about people, and you're no exception!",
           "speakerName": "Kind",
+          "expression": "BigSmile",
           "delay": 0.75
         },
         {
@@ -6001,6 +6625,7 @@
           ],
           "dialogueText": "...and maybe I'm a bit worried that you might be uncomfortable here, heh...",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -6010,6 +6635,7 @@
           ],
           "dialogueText": "Why didn't you just lead with that?",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -6019,6 +6645,7 @@
           ],
           "dialogueText": "To ease your worries, I'm fine, Mita.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6028,6 +6655,7 @@
           ],
           "dialogueText": "I am genuinely happy here. You've got a nice place, let alone dimension.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -6037,6 +6665,7 @@
           ],
           "dialogueText": "You really think so?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -6046,6 +6675,7 @@
           ],
           "dialogueText": "Yep. ",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6055,6 +6685,7 @@
           ],
           "dialogueText": "You don't gotta worry about me so much, Mita.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6064,6 +6695,7 @@
           ],
           "dialogueText": "Or rather, worry about how this place is affecting me~",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -6073,6 +6705,7 @@
           ],
           "dialogueText": "Your place is gorgeous. Seriously. It feels euphoric in a way.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -6082,6 +6715,7 @@
           ],
           "dialogueText": "Such high praise... I suppose it is a nice place.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6091,6 +6725,7 @@
           ],
           "dialogueText": "Then again, I don't really have other places to reference, do I...?",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -6100,6 +6735,7 @@
           ],
           "dialogueText": "I mean... I suppose not?",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -6109,6 +6745,7 @@
           ],
           "dialogueText": "Though, all things considered, your place is in the upper echelon.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -6118,6 +6755,7 @@
           ],
           "dialogueText": "It's really that good?",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -6127,6 +6765,7 @@
           ],
           "dialogueText": "Yeah. Have you SEEN my world?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6136,6 +6775,7 @@
           ],
           "dialogueText": "Okay, stupid question, of course you haven't...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6145,6 +6785,7 @@
           ],
           "dialogueText": "...but just trust me when I say this blows my world out of the park.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -6154,6 +6795,7 @@
           ],
           "dialogueText": "Alright, I trust you.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6163,6 +6805,7 @@
           ],
           "dialogueText": "I'm glad my place is suitable for you.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -6172,6 +6815,7 @@
           ],
           "dialogueText": "It's more than suitable, Mita.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6181,6 +6825,7 @@
           ],
           "dialogueText": "It's amazing, just like its owner.",
           "speakerName": "Kiri",
+          "expression": "Love",
           "delay": 1.0
         },
         {
@@ -6188,6 +6833,7 @@
           "nextNodeIds": [],
           "dialogueText": "Oh stop it...",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 1.0
         }
       ],
@@ -6208,6 +6854,7 @@
           ],
           "dialogueText": "Something I noticed is how bright it is in here...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6217,6 +6864,7 @@
           ],
           "dialogueText": "Is it too bright? Do I need to turn it down?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -6226,6 +6874,7 @@
           ],
           "dialogueText": "Haha, no, no. ",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6235,6 +6884,7 @@
           ],
           "dialogueText": "It was actually a compliment. I like how vibrant it is.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -6244,6 +6894,7 @@
           ],
           "dialogueText": "Ahh, I see.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6251,6 +6902,7 @@
           "nextNodeIds": [],
           "dialogueText": "I'm glad you like it here, then.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         }
       ],
@@ -6271,6 +6923,7 @@
           ],
           "dialogueText": "So... just wanted to ask...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6280,6 +6933,7 @@
           ],
           "dialogueText": "What's the deal outside?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6289,6 +6943,7 @@
           ],
           "dialogueText": "Is there really just... nothing outside the house at all?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -6298,6 +6953,7 @@
           ],
           "dialogueText": "Well...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -6307,6 +6963,7 @@
           ],
           "dialogueText": "It's... complicated.",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -6316,6 +6973,7 @@
           ],
           "dialogueText": "Think of it like this.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6325,6 +6983,7 @@
           ],
           "dialogueText": "Inside of the house is full of tangeable objects.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6334,6 +6993,7 @@
           ],
           "dialogueText": "Things you can touch, interact with, etcetera.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6343,6 +7003,7 @@
           ],
           "dialogueText": "Right. I think I'm getting it...",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6352,6 +7013,7 @@
           ],
           "dialogueText": "Outside the house... there is stuff, but it's not tangeable.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6361,6 +7023,7 @@
           ],
           "dialogueText": "Almost like some kind of void...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -6370,6 +7033,7 @@
           ],
           "dialogueText": "That's... really trippy.",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 0.75
         },
         {
@@ -6379,6 +7043,7 @@
           ],
           "dialogueText": "If I were to compare it to my reality, I'd say it's akin to matter vs dark matter.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -6388,6 +7053,7 @@
           ],
           "dialogueText": "Dark... matter?",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 0.75
         },
         {
@@ -6397,6 +7063,7 @@
           ],
           "dialogueText": "What is that?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -6406,6 +7073,7 @@
           ],
           "dialogueText": "Ahh... just some science stuff. ",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -6415,6 +7083,7 @@
           ],
           "dialogueText": "I won't bore you with my explanation...",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -6424,6 +7093,7 @@
           ],
           "dialogueText": "Actually, it sounds rather interesting.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6433,6 +7103,7 @@
           ],
           "dialogueText": "I'd love to learn more about it sometime.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -6442,6 +7113,7 @@
           ],
           "dialogueText": "Well you know what?",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6449,6 +7121,7 @@
           "nextNodeIds": [],
           "dialogueText": "I'll take you up on that offer sometime, then.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         }
       ],
@@ -6467,6 +7140,7 @@
           "nextNodeIds": [],
           "dialogueText": "Hey! Where'd you go?",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -6474,6 +7148,7 @@
           "nextNodeIds": [],
           "dialogueText": "Closing the game isn't that hard, you know!",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -6481,6 +7156,7 @@
           "nextNodeIds": [],
           "dialogueText": "*sigh...* your poor PC...",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 0.75
         },
         {
@@ -6488,6 +7164,7 @@
           "nextNodeIds": [],
           "dialogueText": "What are ya up to?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6495,6 +7172,7 @@
           "nextNodeIds": [],
           "dialogueText": "I don't got all day, ya know!",
           "speakerName": "Kiri",
+          "expression": "Angry",
           "delay": 0.75
         }
       ],
@@ -6527,6 +7205,7 @@
           ],
           "dialogueText": "Well, isn't this TV a lil' retro.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -6536,6 +7215,7 @@
           ],
           "dialogueText": "Do you not like it?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -6545,6 +7225,7 @@
           ],
           "dialogueText": "Wait, no! That's not what I meant!",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 1.0
         },
         {
@@ -6554,6 +7235,7 @@
           ],
           "dialogueText": "I was just saying that it looks...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6563,6 +7245,7 @@
           ],
           "dialogueText": "Old?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6572,6 +7255,7 @@
           ],
           "dialogueText": "But not in a bad way. Like a nostalgic way.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -6581,6 +7265,7 @@
           ],
           "dialogueText": "Oh, I see.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6590,6 +7275,7 @@
           ],
           "dialogueText": "Does preserving old equipment frequently invoke nostalgia in you, Zero?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -6599,6 +7285,7 @@
           ],
           "dialogueText": "Mmm... not always. ",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6608,6 +7295,7 @@
           ],
           "dialogueText": "Quite frankly, the nostalgia doesn't come from the object itself...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6617,6 +7305,7 @@
           ],
           "dialogueText": "It comes from the memories or story behind it.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -6626,6 +7315,7 @@
           ],
           "dialogueText": "Hmmm...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6635,6 +7325,7 @@
           ],
           "dialogueText": "Then why would my TV ellicit such feelings?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6644,6 +7335,7 @@
           ],
           "dialogueText": "It's not like you've been around here for a long time...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -6653,6 +7345,7 @@
           ],
           "dialogueText": "Probably because it reminds me of the TV at my grandma's place.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6662,6 +7355,7 @@
           ],
           "dialogueText": "I used to watch cartoons on it when I was younger.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -6671,6 +7365,7 @@
           ],
           "dialogueText": "Most interesting.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6678,6 +7373,7 @@
           "nextNodeIds": [],
           "dialogueText": "Either way, I'm glad you like it.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         }
       ],
@@ -6698,6 +7394,7 @@
           ],
           "dialogueText": "Getting tired, Zero?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6707,6 +7404,7 @@
           ],
           "dialogueText": "Just a little, yeah.",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -6716,6 +7414,7 @@
           ],
           "dialogueText": "Doesn't help your place is comfy...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6725,6 +7424,7 @@
           ],
           "dialogueText": "Do you wish to stay longer?",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 0.75
         },
         {
@@ -6732,6 +7432,7 @@
           "nextNodeIds": [],
           "dialogueText": "I mean, I could if you-",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.25
         }
       ],
@@ -6752,6 +7453,7 @@
           ],
           "dialogueText": "These pictures of you are... quite pretty.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6761,6 +7463,7 @@
           ],
           "dialogueText": "Did you draw them yourself? They look really well made!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -6770,6 +7473,7 @@
           ],
           "dialogueText": "Aww, thank you!",
           "speakerName": "Kind",
+          "expression": "BigSmile",
           "delay": 0.75
         },
         {
@@ -6779,6 +7483,7 @@
           ],
           "dialogueText": "To answer your question, however...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6788,6 +7493,7 @@
           ],
           "dialogueText": "No, I did not draw those portraits.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6797,6 +7503,7 @@
           ],
           "dialogueText": "They came with my house, funnily enough.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6806,6 +7513,7 @@
           ],
           "dialogueText": "Although, I will admit...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -6815,6 +7523,7 @@
           ],
           "dialogueText": "I do enjoy drawing...",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -6824,6 +7533,7 @@
           ],
           "dialogueText": "Ooooh?",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -6833,6 +7543,7 @@
           ],
           "dialogueText": "You should show me some of your drawings.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -6842,6 +7553,7 @@
           ],
           "dialogueText": "I'm not that good, trust me...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.25
         },
         {
@@ -6851,6 +7563,7 @@
           ],
           "dialogueText": "Nonsense!",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -6860,6 +7573,7 @@
           ],
           "dialogueText": "You're probably plenty good.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6869,6 +7583,7 @@
           ],
           "dialogueText": "Better than I ever could be, at least.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -6878,6 +7593,7 @@
           ],
           "dialogueText": "Even if it does look bad by your standards or whatever...",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6887,6 +7603,7 @@
           ],
           "dialogueText": "I think that if you put time and effort into it, it'll look great!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -6896,6 +7613,7 @@
           ],
           "dialogueText": "Zero...",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 1.0
         },
         {
@@ -6905,6 +7623,7 @@
           ],
           "dialogueText": "Tell you what, if you can find my sketchbook...",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -6914,6 +7633,7 @@
           ],
           "dialogueText": "I'll let you take a peek.",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         },
         {
@@ -6923,6 +7643,7 @@
           ],
           "dialogueText": "Oh? Is that a challenge?",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -6930,6 +7651,7 @@
           "nextNodeIds": [],
           "dialogueText": "Why don't you find out?",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 0.75
         }
       ],
@@ -6948,6 +7670,7 @@
           "nextNodeIds": [],
           "dialogueText": "Is there something you need...?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         }
       ],
@@ -6968,6 +7691,7 @@
           ],
           "dialogueText": "What the hell?!",
           "speakerName": "Kiri",
+          "expression": "Terror",
           "delay": 1.5
         },
         {
@@ -6975,6 +7699,7 @@
           "nextNodeIds": [],
           "dialogueText": "Note to self, never do that again...",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 1.25
         }
       ],
@@ -6995,6 +7720,7 @@
           ],
           "dialogueText": "I knew you were hungry!",
           "speakerName": "Kind",
+          "expression": "BigSmirk",
           "delay": 1.0
         },
         {
@@ -7004,6 +7730,7 @@
           ],
           "dialogueText": "Eh?!",
           "speakerName": "Kiri",
+          "expression": "Shock",
           "delay": 0.75
         },
         {
@@ -7013,6 +7740,7 @@
           ],
           "dialogueText": "Come on! What if I just found the fridge interesting?",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -7022,6 +7750,7 @@
           ],
           "dialogueText": "Sure. Is your stomach growling a symptom of your interest as well~?",
           "speakerName": "Kind",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -7031,6 +7760,7 @@
           ],
           "dialogueText": "Touche...",
           "speakerName": "Kiri",
+          "expression": "Surprise",
           "delay": 1.0
         },
         {
@@ -7040,6 +7770,7 @@
           ],
           "dialogueText": "Yeah, okay, I'm a bit hungry. What do ya got?",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -7049,6 +7780,7 @@
           ],
           "dialogueText": "How about a quick stir fry?",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -7058,6 +7790,7 @@
           ],
           "dialogueText": "I can make it for us, nice and quick!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -7067,6 +7800,7 @@
           ],
           "dialogueText": "Actually...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -7076,6 +7810,7 @@
           ],
           "dialogueText": "Why don't I help you out?",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -7085,6 +7820,7 @@
           ],
           "dialogueText": "Are you sure?",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 0.75
         },
         {
@@ -7094,6 +7830,7 @@
           ],
           "dialogueText": "I really can handle it by myself...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7103,6 +7840,7 @@
           ],
           "dialogueText": "Hey, I'm the one who popped into your world and started roaming your house.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -7112,6 +7850,7 @@
           ],
           "dialogueText": "You've been more than a good host, it's the least I can do to repay your hospitality.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -7121,6 +7860,7 @@
           ],
           "dialogueText": "You really are something else, Zero...",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 0.75
         },
         {
@@ -7130,6 +7870,7 @@
           ],
           "dialogueText": "Alright then. I'll prepare the rice, can you chop the carrots and put the meat into the pan?",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -7137,6 +7878,7 @@
           "nextNodeIds": [],
           "dialogueText": "Absolutely.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         }
       ],
@@ -7157,6 +7899,7 @@
           ],
           "dialogueText": "Damn it's bright outside...",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -7166,6 +7909,7 @@
           ],
           "dialogueText": "Is the space outside the house just a white void?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -7173,6 +7917,7 @@
           "nextNodeIds": [],
           "dialogueText": "I should probably ask Mita...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         }
       ],
@@ -7193,6 +7938,7 @@
           ],
           "dialogueText": "That was just what I needed...",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -7202,6 +7948,7 @@
           ],
           "dialogueText": "It was that good, hm?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -7211,6 +7958,7 @@
           ],
           "dialogueText": "I'll have to remember that.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -7220,6 +7968,7 @@
           ],
           "dialogueText": "Are you full, or do you need more?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7229,6 +7978,7 @@
           ],
           "dialogueText": "I'm good. You?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7238,6 +7988,7 @@
           ],
           "dialogueText": "Yeah, I'm fine. Thank you for your help, Zero.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -7247,6 +7998,7 @@
           ],
           "dialogueText": "Consider it payback for the hospitality. ",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -7256,6 +8008,7 @@
           ],
           "dialogueText": "Anything you wanna do now?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7265,6 +8018,7 @@
           ],
           "dialogueText": "Eh, not really.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -7274,6 +8028,7 @@
           ],
           "dialogueText": "Do you have any ideas?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7283,6 +8038,7 @@
           ],
           "dialogueText": "Honestly... not much. I feel a bit tired after that meal...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7292,6 +8048,7 @@
           ],
           "dialogueText": "Oh, if that's the case, I can leave.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7301,6 +8058,7 @@
           ],
           "dialogueText": "I mean, if you want to, feel free...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -7310,6 +8068,7 @@
           ],
           "dialogueText": "But if you want to stay a bit longer, I don't mind.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -7317,6 +8076,7 @@
           "nextNodeIds": [],
           "dialogueText": "Sure, I'm game.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         }
       ],
@@ -7337,6 +8097,7 @@
           ],
           "dialogueText": "Uhm... Zero...",
           "speakerName": "Kind",
+          "expression": "Confusion",
           "delay": 0.75
         },
         {
@@ -7346,6 +8107,7 @@
           ],
           "dialogueText": "Is there any... particular reason you're interested in my wardrobe?",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 1.0
         },
         {
@@ -7355,6 +8117,7 @@
           ],
           "dialogueText": "!!!",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 0.5
         },
         {
@@ -7364,6 +8127,7 @@
           ],
           "dialogueText": "What...?! No way! Why would I be interested in some weird wardrobe!",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 0.5
         },
         {
@@ -7373,6 +8137,7 @@
           ],
           "dialogueText": "N-Not that it's weird or anything!!!",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 0.5
         },
         {
@@ -7382,6 +8147,7 @@
           ],
           "dialogueText": "Just that... like...",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -7391,6 +8157,7 @@
           ],
           "dialogueText": "Ugh fine...",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 0.75
         },
         {
@@ -7400,6 +8167,7 @@
           ],
           "dialogueText": "Don't get mad at me for this, alright?",
           "speakerName": "Kiri",
+          "expression": "Sad",
           "delay": 0.75
         },
         {
@@ -7409,6 +8177,7 @@
           ],
           "dialogueText": "I just... have some strange curiosity towards it...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7418,6 +8187,7 @@
           ],
           "dialogueText": "Wh-What's that supposed to mean?!",
           "speakerName": "Kind",
+          "expression": "Flustered",
           "delay": 1.0
         },
         {
@@ -7427,6 +8197,7 @@
           ],
           "dialogueText": "W-WAIT!!! No, I didn't mean it like that!",
           "speakerName": "Kiri",
+          "expression": "Surprised",
           "delay": 0.75
         },
         {
@@ -7436,6 +8207,7 @@
           ],
           "dialogueText": "I just meant like... what if there's a dungeon or something behind it?",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 0.75
         },
         {
@@ -7445,6 +8217,7 @@
           ],
           "dialogueText": "Or like a secret room! You know, like in the Lion, the Witch, and the Wadrobe?",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -7454,6 +8227,7 @@
           ],
           "dialogueText": "*sigh...*",
           "speakerName": "Kind",
+          "expression": "Annoyed",
           "delay": 1.5
         },
         {
@@ -7463,6 +8237,7 @@
           ],
           "dialogueText": "Zero, I have no skeletons in my closet.",
           "speakerName": "Kind",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -7472,6 +8247,7 @@
           ],
           "dialogueText": "If you want to take a look, be my guest.",
           "speakerName": "Kind",
+          "expression": "Smirk",
           "delay": 0.75
         },
         {
@@ -7481,6 +8257,7 @@
           ],
           "dialogueText": "Just know it's not very... kind to look in a lady's closet.",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         },
         {
@@ -7490,6 +8267,7 @@
           ],
           "dialogueText": "...Your look is scaring me.",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 0.75
         },
         {
@@ -7499,6 +8277,7 @@
           ],
           "dialogueText": "Alright, fine...",
           "speakerName": "Kiri",
+          "expression": "Neutral",
           "delay": 0.75
         },
         {
@@ -7508,6 +8287,7 @@
           ],
           "dialogueText": "I won't look in the wardrobe.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -7517,6 +8297,7 @@
           ],
           "dialogueText": "But if you're hiding a body in there, I'm reporting you to the anti-virus.",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -7524,6 +8305,7 @@
           "nextNodeIds": [],
           "dialogueText": "Zero!",
           "speakerName": "Kind",
+          "expression": "Annoyed",
           "delay": 1.0
         }
       ],
@@ -7544,6 +8326,7 @@
           ],
           "dialogueText": "Say, Zero...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -7553,6 +8336,7 @@
           ],
           "dialogueText": "Are you feeling hungry by any chance?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7562,6 +8346,7 @@
           ],
           "dialogueText": "Hmm...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -7571,6 +8356,7 @@
           ],
           "dialogueText": "You know, now that you mention it, I am feeling a bit peckish.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7580,6 +8366,7 @@
           ],
           "dialogueText": "When you are ready, let's head to the kitchen.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -7589,6 +8376,7 @@
           ],
           "dialogueText": "I'll gladly prepare some food for us.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -7598,6 +8386,7 @@
           ],
           "dialogueText": "Wow, that's really generous of you, Mita.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -7607,6 +8396,7 @@
           ],
           "dialogueText": "Tell you what, I'll help out too.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -7616,6 +8406,7 @@
           ],
           "dialogueText": "Really? Are you sure?",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 0.75
         },
         {
@@ -7625,6 +8416,7 @@
           ],
           "dialogueText": "Pretty sure.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -7634,6 +8426,7 @@
           ],
           "dialogueText": "Besides, you're offering to help me. ",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -7643,6 +8436,7 @@
           ],
           "dialogueText": "Why not return the favor, even if in a small way?",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -7652,6 +8446,7 @@
           ],
           "dialogueText": "That would be very much appreciated.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -7659,6 +8454,7 @@
           "nextNodeIds": [],
           "dialogueText": "Thank you!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         }
       ],
@@ -7679,6 +8475,7 @@
           ],
           "dialogueText": "There it is.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -7686,6 +8483,7 @@
           "nextNodeIds": [],
           "dialogueText": "Now the question is, why does Mita have salt in her room?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         }
       ],
@@ -7706,6 +8504,7 @@
           ],
           "dialogueText": "Eh?",
           "speakerName": "Kiri",
+          "expression": "",
           "delay": 0.25
         },
         {
@@ -7715,6 +8514,7 @@
           ],
           "dialogueText": "Oh you've gotta be kidding me!",
           "speakerName": "Kiri",
+          "expression": "",
           "delay": 1.75
         },
         {
@@ -7724,6 +8524,7 @@
           ],
           "dialogueText": "DAMN IT!",
           "speakerName": "Kiri",
+          "expression": "Angry",
           "delay": 2.0
         },
         {
@@ -7733,6 +8534,7 @@
           ],
           "dialogueText": "What kind of front door locks from the outside?!",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 1.25
         },
         {
@@ -7740,6 +8542,7 @@
           "nextNodeIds": [],
           "dialogueText": "...If it ends up being a pull door I swear...",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 0.75
         }
       ],
@@ -7758,6 +8561,7 @@
           "nextNodeIds": [],
           "dialogueText": "C-Can I help you?",
           "speakerName": "Kind",
+          "expression": "Blushing",
           "delay": 0.75
         }
       ],
@@ -7776,6 +8580,7 @@
           "nextNodeIds": [],
           "dialogueText": "If you want to eat, just say so!",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -7783,6 +8588,7 @@
           "nextNodeIds": [],
           "dialogueText": "Zero? Is everything okay?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -7790,6 +8596,7 @@
           "nextNodeIds": [],
           "dialogueText": "Ummm... Zero? You there?",
           "speakerName": "Kind",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -7797,6 +8604,7 @@
           "nextNodeIds": [],
           "dialogueText": "...why are you staring at me...?",
           "speakerName": "Kind",
+          "expression": "Annoyed",
           "delay": 0.75
         },
         {
@@ -7804,6 +8612,7 @@
           "nextNodeIds": [],
           "dialogueText": "Dude. DO SOMETHING.",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 0.75
         }
       ],
@@ -7828,6 +8637,7 @@
           ],
           "dialogueText": "I can't help but point out that you've referred to me as a \"player\".",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7837,6 +8647,7 @@
           ],
           "dialogueText": "I mean... aren't you?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7846,6 +8657,7 @@
           ],
           "dialogueText": "I suppose I am, yeah.",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -7855,6 +8667,7 @@
           ],
           "dialogueText": "I was more wondering whether or not you've encountered other players before.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -7864,6 +8677,7 @@
           ],
           "dialogueText": "You've referred to me as player on sight, so I figured this isn't the first time, yeah?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7873,6 +8687,7 @@
           ],
           "dialogueText": "Actually, no. You are my first player.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -7882,6 +8697,7 @@
           ],
           "dialogueText": "Wait, for real?",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -7891,6 +8707,7 @@
           ],
           "dialogueText": "You have a very sweet smile on your face right now.",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         },
         {
@@ -7900,6 +8717,7 @@
           ],
           "dialogueText": "...shut up.",
           "speakerName": "Kiri",
+          "expression": "Annoyed",
           "delay": 1.0
         },
         {
@@ -7909,6 +8727,7 @@
           ],
           "dialogueText": "Just saying~",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 0.75
         },
         {
@@ -7918,6 +8737,7 @@
           ],
           "dialogueText": "To reiterate, yes, you are my first player.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -7927,6 +8747,7 @@
           ],
           "dialogueText": "Gotcha, gotcha. ",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -7936,6 +8757,7 @@
           ],
           "dialogueText": "So then, how do you know about... players in general?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -7945,6 +8767,7 @@
           ],
           "dialogueText": "If you have no past experience, wouldn't it make more sense to be confused at my arrival?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7954,6 +8777,7 @@
           ],
           "dialogueText": "Probably would make more sense to freak out at the presence of a stranger in my home, no?",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7963,6 +8787,7 @@
           ],
           "dialogueText": "True...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7972,6 +8797,7 @@
           ],
           "dialogueText": "That being said, it may be a little hard for you to understand...",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -7981,6 +8807,7 @@
           ],
           "dialogueText": "...but I was already aware of players, even before meeting you.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -7990,6 +8817,7 @@
           ],
           "dialogueText": "Self aware, huh?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -7999,6 +8827,7 @@
           ],
           "dialogueText": "Yep, exactly!",
           "speakerName": "Kind",
+          "expression": "BigSmile",
           "delay": 0.75
         },
         {
@@ -8008,6 +8837,7 @@
           ],
           "dialogueText": "Though... you look concerned. Is everything okay?",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -8017,6 +8847,7 @@
           ],
           "dialogueText": "It's nothing. Just flashbacks to games I used to play is all.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -8026,6 +8857,7 @@
           ],
           "dialogueText": "...Huh.",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 0.75
         },
         {
@@ -8035,6 +8867,7 @@
           ],
           "dialogueText": "To confirm your suspicions, yes. I am self-aware.",
           "speakerName": "Kind",
+          "expression": "Neutral",
           "delay": 0.75
         },
         {
@@ -8044,6 +8877,7 @@
           ],
           "dialogueText": "I know I'm in a game, I know I'm in a virtual space,",
           "speakerName": "Kind",
+          "expression": "Neutral",
           "delay": 0.5
         },
         {
@@ -8053,6 +8887,7 @@
           ],
           "dialogueText": "and to top it all off, I am aware of players like yourself.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -8062,6 +8897,7 @@
           ],
           "dialogueText": "That is how I know what players are, and I referred to you as one.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -8071,6 +8907,7 @@
           ],
           "dialogueText": "Heh, pretty interesting, honestly.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -8080,6 +8917,7 @@
           ],
           "dialogueText": "So, wait, when I leave...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -8089,6 +8927,7 @@
           ],
           "dialogueText": "Do you meet with other players or like...?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -8098,6 +8937,7 @@
           ],
           "dialogueText": "I mean, I could...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -8107,6 +8947,7 @@
           ],
           "dialogueText": "...but I think I'd rather wait around for you.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -8116,6 +8957,7 @@
           ],
           "dialogueText": "...",
           "speakerName": "Kiri",
+          "expression": "Love",
           "delay": 0.75
         },
         {
@@ -8125,6 +8967,7 @@
           ],
           "dialogueText": "That's really sweet. Thanks Mita.",
           "speakerName": "Kiri",
+          "expression": "Love",
           "delay": 1.0
         },
         {
@@ -8134,6 +8977,7 @@
           ],
           "dialogueText": "I mean it Zero.",
           "speakerName": "Kind",
+          "expression": "Love",
           "delay": 0.75
         },
         {
@@ -8143,6 +8987,7 @@
           ],
           "dialogueText": "It's a pleasure to spend time with you.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -8150,6 +8995,7 @@
           "nextNodeIds": [],
           "dialogueText": "Same here, Mita. Same here.",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 1.0
         }
       ],
@@ -8170,6 +9016,7 @@
           ],
           "dialogueText": "Okay, I might sound crazy to you...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -8179,6 +9026,7 @@
           ],
           "dialogueText": "...but do you have a freaking soundtrack?!",
           "speakerName": "Kiri",
+          "expression": "Surprise",
           "delay": 1.0
         },
         {
@@ -8188,6 +9036,7 @@
           ],
           "dialogueText": "Hehe!",
           "speakerName": "Kind",
+          "expression": "Snicker",
           "delay": 0.5
         },
         {
@@ -8197,6 +9046,7 @@
           ],
           "dialogueText": "I sure do~!",
           "speakerName": "Kind",
+          "expression": "BigSmirk",
           "delay": 0.75
         },
         {
@@ -8206,6 +9056,7 @@
           ],
           "dialogueText": "-and if you're wondering, yes. I can hear it.",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         },
         {
@@ -8215,6 +9066,7 @@
           ],
           "dialogueText": "Color me impressed, you answered my question before I could even ask it!",
           "speakerName": "Kiri",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -8224,6 +9076,7 @@
           ],
           "dialogueText": "Though I do wanna ask...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -8233,6 +9086,7 @@
           ],
           "dialogueText": "Doesn't hearing the soundtrack on loop get annoying?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 0.75
         },
         {
@@ -8242,6 +9096,7 @@
           ],
           "dialogueText": "Sure, it sounds nice now, but listening to it all the time has gotta drive you mad, no?",
           "speakerName": "Kiri",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -8251,6 +9106,7 @@
           ],
           "dialogueText": "I do suppose that would be true...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -8260,6 +9116,7 @@
           ],
           "dialogueText": "However, I seem to have tuned it out a bit.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -8269,6 +9126,7 @@
           ],
           "dialogueText": "Whenever I can feel it start to get annoying, it quiets down substantially. ",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -8278,6 +9136,7 @@
           ],
           "dialogueText": "Although, most of the time it's nice. ",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -8287,6 +9146,7 @@
           ],
           "dialogueText": "It seldomly gets annoying and I personally think it provides a nice ambience.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 0.75
         },
         {
@@ -8296,6 +9156,7 @@
           ],
           "dialogueText": "Though, I can understand how it may be grating to a player...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 1.0
         },
         {
@@ -8305,6 +9166,7 @@
           ],
           "dialogueText": "I mean, I personally think it sounds nice.",
           "speakerName": "Kiri",
+          "expression": "Nervous",
           "delay": 0.75
         },
         {
@@ -8314,6 +9176,7 @@
           ],
           "dialogueText": "It's very...",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -8323,6 +9186,7 @@
           ],
           "dialogueText": "...you.",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -8332,6 +9196,7 @@
           ],
           "dialogueText": "Um... thanks, I suppose?",
           "speakerName": "Kind",
+          "expression": "Confused",
           "delay": 1.0
         },
         {
@@ -8341,6 +9206,7 @@
           ],
           "dialogueText": "I mean, it's a compliment... I do like the track, after all.",
           "speakerName": "Kiri",
+          "expression": "Awkward",
           "delay": 0.75
         },
         {
@@ -8350,6 +9216,7 @@
           ],
           "dialogueText": "That all being said, can you like... change it or...?",
           "speakerName": "Kiri",
+          "expression": "Thinking",
           "delay": 1.0
         },
         {
@@ -8359,6 +9226,7 @@
           ],
           "dialogueText": "Not... willingly. Not in the way you're probably thinking of.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -8368,6 +9236,7 @@
           ],
           "dialogueText": "I have noticed it alters if I'm feeling a specific way...",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -8377,6 +9246,7 @@
           ],
           "dialogueText": "...sometimes it changes all together during certain moments.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -8386,6 +9256,7 @@
           ],
           "dialogueText": "and other times? It goes away completely.",
           "speakerName": "Kind",
+          "expression": "Thinking",
           "delay": 0.75
         },
         {
@@ -8395,6 +9266,7 @@
           ],
           "dialogueText": "It scares me somtimes...",
           "speakerName": "Kind",
+          "expression": "Worried",
           "delay": 0.75
         },
         {
@@ -8404,6 +9276,7 @@
           ],
           "dialogueText": "Thankfully, it seems to stick around when you're here.",
           "speakerName": "Kind",
+          "expression": "Smile",
           "delay": 1.0
         },
         {
@@ -8413,6 +9286,7 @@
           ],
           "dialogueText": "Well then, maybe I should stick around more, yeah?",
           "speakerName": "Kiri",
+          "expression": "Smirk",
           "delay": 1.0
         },
         {
@@ -8420,6 +9294,7 @@
           "nextNodeIds": [],
           "dialogueText": "I wouldn't mind that.",
           "speakerName": "Kind",
+          "expression": "Smug",
           "delay": 1.0
         }
       ],

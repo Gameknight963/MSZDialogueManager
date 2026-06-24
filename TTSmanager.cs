@@ -13,7 +13,7 @@ namespace MSZDialougeManager
             synth.Volume = 100;
         }
 
-        public static void GenerateAudio(DialogueEditor.NodeRef nodeRef, string outputFolder, string? voice = "Microsoft David Desktop")
+        public static void GenerateAudio(NodeRef nodeRef, string outputFolder, string? voice = "Microsoft David Desktop")
         {
             if (voice == null) return; 
 

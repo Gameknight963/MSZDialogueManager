@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogueEditor));
             textOfNodeBox = new TextBox();
             NodeTextLabel = new Label();
             label1 = new Label();
@@ -39,9 +38,14 @@
             toolTip1 = new ToolTip(components);
             delayBox = new TextBox();
             nextNodesIntArrayBox = new TextBox();
+            expressionDropDown = new ComboBox();
             Ok = new Button();
             Cancel = new Button();
             nextNodesLabel = new Label();
+            label2 = new Label();
+            linkLabel1 = new LinkLabel();
+            errorProvider1 = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // textOfNodeBox
@@ -77,7 +81,6 @@
             // 
             speakerDropDown.FormattingEnabled = true;
             speakerDropDown.ItemHeight = 13;
-            speakerDropDown.Items.AddRange(new object[] { "Kiri", "Kind" });
             speakerDropDown.Location = new Point(15, 115);
             speakerDropDown.Name = "speakerDropDown";
             speakerDropDown.Size = new Size(176, 21);
@@ -99,7 +102,7 @@
             // 
             delayLabel.AutoSize = true;
             delayLabel.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            delayLabel.Location = new Point(12, 139);
+            delayLabel.Location = new Point(12, 179);
             delayLabel.Name = "delayLabel";
             delayLabel.Size = new Size(39, 13);
             delayLabel.TabIndex = 1;
@@ -107,7 +110,7 @@
             // 
             // delayBox
             // 
-            delayBox.Location = new Point(15, 156);
+            delayBox.Location = new Point(15, 196);
             delayBox.Name = "delayBox";
             delayBox.Size = new Size(176, 22);
             delayBox.TabIndex = 5;
@@ -115,16 +118,25 @@
             // 
             // nextNodesIntArrayBox
             // 
-            nextNodesIntArrayBox.Location = new Point(15, 197);
+            nextNodesIntArrayBox.Location = new Point(15, 237);
             nextNodesIntArrayBox.Name = "nextNodesIntArrayBox";
             nextNodesIntArrayBox.Size = new Size(176, 22);
             nextNodesIntArrayBox.TabIndex = 5;
             toolTip1.SetToolTip(nextNodesIntArrayBox, "A comma separated list that can include indicies of any node in this tree.\r\n");
             // 
+            // expressionDropDown
+            // 
+            expressionDropDown.FormattingEnabled = true;
+            expressionDropDown.Location = new Point(15, 157);
+            expressionDropDown.Name = "expressionDropDown";
+            expressionDropDown.Size = new Size(176, 21);
+            expressionDropDown.TabIndex = 7;
+            toolTip1.SetToolTip(expressionDropDown, "The expression that the speaker will express when this node is played.");
+            // 
             // Ok
             // 
             Ok.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            Ok.Location = new Point(278, 221);
+            Ok.Location = new Point(278, 258);
             Ok.Name = "Ok";
             Ok.Size = new Size(75, 23);
             Ok.TabIndex = 6;
@@ -135,7 +147,7 @@
             // Cancel
             // 
             Cancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            Cancel.Location = new Point(359, 221);
+            Cancel.Location = new Point(359, 258);
             Cancel.Name = "Cancel";
             Cancel.Size = new Size(75, 23);
             Cancel.TabIndex = 6;
@@ -147,23 +159,52 @@
             // 
             nextNodesLabel.AutoSize = true;
             nextNodesLabel.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            nextNodesLabel.Location = new Point(15, 181);
+            nextNodesLabel.Location = new Point(15, 221);
             nextNodesLabel.Name = "nextNodesLabel";
             nextNodesLabel.Size = new Size(109, 13);
             nextNodesLabel.TabIndex = 1;
             nextNodesLabel.Text = "Next nodes indicies:";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(15, 137);
+            label2.Name = "label2";
+            label2.Size = new Size(65, 13);
+            label2.TabIndex = 1;
+            label2.Text = "Expression:";
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(197, 157);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(146, 13);
+            linkLabel1.TabIndex = 4;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Chose a custom expression";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.BlinkRate = 40;
+            errorProvider1.ContainerControl = this;
+            // 
             // NodePropertiesEditor
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(446, 256);
+            ClientSize = new Size(446, 293);
+            Controls.Add(expressionDropDown);
             Controls.Add(Cancel);
             Controls.Add(Ok);
             Controls.Add(nextNodesIntArrayBox);
             Controls.Add(delayBox);
+            Controls.Add(linkLabel1);
             Controls.Add(customSpeakerLink);
             Controls.Add(speakerDropDown);
+            Controls.Add(label2);
             Controls.Add(nextNodesLabel);
             Controls.Add(delayLabel);
             Controls.Add(label1);
@@ -172,8 +213,8 @@
             Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = Color.Black;
             Name = "NodePropertiesEditor";
-            Icon = (Icon)resources.GetObject("$this.Icon");
             Text = "Node Properties Editor";
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -193,5 +234,9 @@
         private System.Windows.Forms.Button Cancel;
         private Label nextNodesLabel;
         private TextBox nextNodesIntArrayBox;
+        private Label label2;
+        private LinkLabel linkLabel1;
+        private ComboBox expressionDropDown;
+        private ErrorProvider errorProvider1;
     }
 }

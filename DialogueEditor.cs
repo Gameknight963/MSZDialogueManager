@@ -2,13 +2,12 @@
 using MZDO;
 using NAudio.Wave;
 using Newtonsoft.Json;
+using System.Runtime.InteropServices;
 
 namespace MSZDialougeManager
 {
     public partial class DialogueEditor : ThemeableForm
     {
-        public record NodeRef(DialogueNodeDTO Node, int TreeIndex);
-
         public static DialoguePack? pack { get; private set; }
         public static List<NodeRef> nodes { get; private set; } = new();
 
@@ -25,9 +24,8 @@ namespace MSZDialougeManager
         {
             InitializeComponent();
             SetUIMode(UIMode.Init);
-            this.KeyPreview = true;
-            this.KeyDown += Form1_KeyDown;
-            this.Shown += Form1_Shown;
+            KeyPreview = true;
+            KeyDown += Form1_KeyDown;
             dialogueViewContextMenu.Opening += ContextMenu_Opening;
             dialogueViewContextMenu.Opening += DialogueViewContextMenu_Opening;
             groupContextMenu.Opening += ContextMenu_Opening;
@@ -35,7 +33,11 @@ namespace MSZDialougeManager
             dialogueView.ColumnWidthChanging += dialogueView_ColumnWidthChanging;
             dialogueView.ColumnWidthChanged += dialogueView_ColumnWidthChanged;
 
-            Directory.CreateDirectory(FilesystemManager.DataPath);
+            if (Directory.Exists(FilesystemManager.DataPath))
+            {
+                Directory.Delete(FilesystemManager.DataPath, true);
+                Directory.CreateDirectory(FilesystemManager.DataPath);
+            }
 
             if (AssociationHelper.IsFileAssociationRegistered() && !AssociationHelper.IsFileAssociationCurrent())
                 AssociationHelper.RegisterFileAssociation();
@@ -49,12 +51,6 @@ namespace MSZDialougeManager
                 ThemeManager.SetGlobalTheme(ThemeManager.Theme.Acrylic, ThemeManager.TextRenderMode.ShadowText);
 
             searchBox.SetPlaceholder("Search by dialogue text...");
-        }
-
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-            SetScrollHooked(ThemeManager.ActiveTheme != ThemeManager.Theme.Light);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -77,7 +73,8 @@ namespace MSZDialougeManager
         private void ContextMenu_Opening(object? sender, System.ComponentModel.CancelEventArgs e)
         {
             ContextMenuStrip? cms = (ContextMenuStrip)sender!;
-            DwmApi.SetAccentState(cms.Handle, DwmApi.AccentState.ACCENT_ENABLE_BLURBEHIND, 0x66000000);
+            DwmApi.SetAccentState(cms.Handle, DwmApi.AccentState.ACCENT_ENABLE_BLURBEHIND,
+                ResolvedTheme == ThemeManager.Theme.Light ? 0x64B38867 : 0x66000000);
             cms.BackColor = ThemeManager.AcrylicMainColor;
             cms.ForeColor = Color.White;
             cms.ShowImageMargin = false;
@@ -88,13 +85,10 @@ namespace MSZDialougeManager
             dialogueViewContextMenu.Tag = dialogueView.PointToClient(Cursor.Position);
         }
 
-        private void Form1_Shown(object? sender, EventArgs e)
-        {
-            if (Directory.Exists(FilesystemManager.DataPath))
-            {
-                Directory.Delete(FilesystemManager.DataPath, true);
-                Directory.CreateDirectory(FilesystemManager.DataPath);
-            }
+        protected override void OnLoad(EventArgs e)
+        {                
+            base.OnLoad(e);
+            SetTheme(ThemeManager.ActiveTheme);
         }
 
         private void Form1_KeyDown(object? sender, KeyEventArgs e)
@@ -112,7 +106,7 @@ namespace MSZDialougeManager
             if (e.KeyCode == Keys.Enter)
             {
                 if (dialogueView.SelectedItems.Count == 0) return;
-                PlayNodeAudio(GetSelectedNode());
+                PlayNodeAudio(GetSelectedNode()!);
             }
         }
 
@@ -158,6 +152,7 @@ namespace MSZDialougeManager
         private enum UIMode
         {
             ItemSelected,
+            ItemSelectedSearching,
             Idle,
             Init,
         }
@@ -192,13 +187,15 @@ namespace MSZDialougeManager
             propertiesContextMenuItem.Enabled = itemSelected;
             propertiesToolStripMenuItem.Enabled = itemSelected;
 
+            jumpToThisNodeToolStripMenuItem.Visible = mode == UIMode.ItemSelectedSearching;
+
             generateWithTTSToolStripMenuItem.Enabled = !init;
 
             removeAudioButton.Visible = false;
             if (!itemSelected) return;
 
-            NodeRef selected = GetSelectedNode();
-            UpdateNodesBox(nextNodesBox, GetSelectedNode());
+            NodeRef selected = GetSelectedNode()!;
+            UpdateNodesBox(nextNodesBox, GetSelectedNode()!);
 
             bool hasAudioClip = FilesystemManager.DoesNodeAudioExist(selected.TreeIndex, selected.Node.id);
             audioPlayButton.Visible = hasAudioClip;
@@ -275,28 +272,6 @@ namespace MSZDialougeManager
                 dialogueView.EndUpdate();
             }
         }
-        private HashSet<int> GetReachableNodes(int treeIndex)
-        {
-            HashSet<int> reachable = [];
-            Queue<int> queue = new();
-
-            foreach (int startId in pack!.trees[treeIndex].startNodeIds)
-                queue.Enqueue(startId);
-
-            while (queue.Count > 0)
-            {
-                int id = queue.Dequeue();
-                if (!reachable.Add(id)) continue;
-
-                NodeRef? node = nodes.FirstOrDefault(n => n.Node.id == id && n.TreeIndex == treeIndex);
-                if (node == null) continue;
-
-                foreach (int nextId in node.Node.nextNodeIds)
-                    queue.Enqueue(nextId);
-            }
-
-            return reachable;
-        }
 
         void UpdateNodeColors()
         {
@@ -331,6 +306,34 @@ namespace MSZDialougeManager
             }
         }
 
+        static List<NodeRef> FlattenPack(DialoguePack pack) =>
+            pack.trees
+            .SelectMany((tree, treeIndex) => tree.nodes.Select(node => new NodeRef(node, treeIndex)))
+            .ToList();
+
+        private static HashSet<int> GetReachableNodes(int treeIndex)
+        {
+            HashSet<int> reachable = [];
+            Queue<int> queue = new();
+
+            foreach (int startId in pack!.trees[treeIndex].startNodeIds)
+                queue.Enqueue(startId);
+
+            while (queue.Count > 0)
+            {
+                int id = queue.Dequeue();
+                if (!reachable.Add(id)) continue;
+
+                NodeRef? node = nodes.FirstOrDefault(n => n.Node.id == id && n.TreeIndex == treeIndex);
+                if (node == null) continue;
+
+                foreach (int nextId in node.Node.nextNodeIds)
+                    queue.Enqueue(nextId);
+            }
+
+            return reachable;
+        }
+
         public void AddToDialogueView(NodeRef nodeRef, ListViewGroup group)
         {
             ListViewItem item = new(nodeRef.Node.id.ToString()) { Group = group, Tag = nodeRef };
@@ -339,11 +342,6 @@ namespace MSZDialougeManager
             dialogueView.Items.Add(item);
             UpdateNodeColors();
         }
-
-        static List<NodeRef> FlattenPack(DialoguePack pack) =>
-            pack.trees
-                .SelectMany((tree, treeIndex) => tree.nodes.Select(node => new NodeRef(node, treeIndex)))
-                .ToList();
 
         async void Inittemplate()
         {
@@ -373,6 +371,7 @@ namespace MSZDialougeManager
                 dialogueView.Items[0].Selected = true;
                 dialogueView.Focus();
                 SetUIMode(UIMode.Idle);
+                Text = $"{fd.SafeFileName} - Miside Zero Dialogue Manager";
             }
             SetScrollHooked(ThemeManager.ActiveTheme != ThemeManager.Theme.Light);
             Cursor = Cursors.Default;
@@ -382,6 +381,7 @@ namespace MSZDialougeManager
         {
             Cursor = Cursors.WaitCursor;
             pack = FilesystemManager.LoadProj(path)!;
+            Text = $"{Path.GetFileName(path)} - Miside Zero Dialogue Manager";
             nodes = FlattenPack(pack);
             await UpdateDialogueView(nodes);
             UpdateNodeColors();
@@ -406,6 +406,7 @@ namespace MSZDialougeManager
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 FilesystemManager.SaveProj(dialog.FileName, pack!);
+                Text = $"{Path.GetFileName(dialog.FileName)} - Miside Zero Dialogue Manager";
                 workingFilePath = dialog.FileName;
             }
             SetScrollHooked(ThemeManager.ActiveTheme != ThemeManager.Theme.Light);
@@ -413,6 +414,7 @@ namespace MSZDialougeManager
 
         void LoadAudio(NodeRef nodeRef)
         {
+            ArgumentNullException.ThrowIfNull(nodeRef);
             StopAudio();
             SetScrollHooked(false);
             using OpenFileDialog dialog = new()
@@ -429,6 +431,7 @@ namespace MSZDialougeManager
 
         void RemoveAudio(NodeRef nodeRef)
         {
+            ArgumentNullException.ThrowIfNull(nodeRef);
             FilesystemManager.RemoveNodeAudio(nodeRef.TreeIndex, nodeRef.Node.id);
             SetUIMode(UIMode.ItemSelected);
             StopAudio();
@@ -436,8 +439,8 @@ namespace MSZDialougeManager
 
         void EditProperties()
         {
-            NodeRef nodeRef = GetSelectedNode();
-            NodePropertiesEditor editor = new(nodeRef.Node);
+            NodeRef nodeRef = GetSelectedNode() ?? throw new InvalidOperationException("Cannot edit properties when no node is selected.");
+            using NodePropertiesEditor editor = new(nodeRef.Node);
             editor.ShowDialog();
             if (editor.DialogResult == DialogResult.OK)
             {
@@ -460,8 +463,8 @@ namespace MSZDialougeManager
         private void loadButton_Click(object sender, EventArgs e) => LoadPack();
         private void toolStripLoadPack_Click(object sender, EventArgs e) => LoadPack();
 
-        private void selectAudioButton_Click(object sender, EventArgs e) => LoadAudio(GetSelectedNode());
-        private void assignAudioToolStripMenuItem_Click(object sender, EventArgs e) => LoadAudio(GetSelectedNode());
+        private void selectAudioButton_Click(object sender, EventArgs e) => LoadAudio(GetSelectedNode()!);
+        private void assignAudioToolStripMenuItem_Click(object sender, EventArgs e) => LoadAudio(GetSelectedNode()!);
 
         private void saveAsDialougePackToolStripMenuItem_Click(object sender, EventArgs e) => SavePack();
         private void saveButton_Click(object sender, EventArgs e) => SavePack();
@@ -469,14 +472,14 @@ namespace MSZDialougeManager
         private void initializetemplateToolStripMenuItem_Click(object sender, EventArgs e) => Inittemplate();
         private void templateButton_Click(object sender, EventArgs e) => Inittemplate();
 
-        private void audioPlayButton_Click(object sender, EventArgs e) => PlayNodeAudio(GetSelectedNode());
-        private void playAudioToolStripMenuItem_Click(object sender, EventArgs e) => PlayNodeAudio(GetSelectedNode());
+        private void audioPlayButton_Click(object sender, EventArgs e) => PlayNodeAudio(GetSelectedNode()!);
+        private void playAudioToolStripMenuItem_Click(object sender, EventArgs e) => PlayNodeAudio(GetSelectedNode()!);
 
         private void audioStopButton_Click(object sender, EventArgs e) => StopAudio();
         private void stopAudioToolStripMenuItem_Click(object sender, EventArgs e) => StopAudio();
 
-        private void removeAudioButton_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode());
-        private void removeAudioToolStripMenuItem_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode());
+        private void removeAudioButton_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode()!);
+        private void removeAudioToolStripMenuItem_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode()!);
 
         private void editPropertiesButton_Click(object sender, EventArgs e) => EditProperties();
 
@@ -501,7 +504,7 @@ namespace MSZDialougeManager
 
         void AddNode(ListViewGroup group)
         {
-            NodePropertiesEditor editor = new();
+            using NodePropertiesEditor editor = new();
             editor.ShowDialog();
             if (editor.DialogResult == DialogResult.OK)
             {
@@ -516,17 +519,13 @@ namespace MSZDialougeManager
 
         private void deleteThisNodeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (nodes.Count == 0)
-                return;
-
-            NodeRef nodeRef = GetSelectedNode();
+            if (nodes.Count == 0) return;
+            if (GetSelectedNode() is not NodeRef nodeRef) return;
             nodes.Remove(nodeRef);
+            pack!.trees[nodeRef.TreeIndex].nodes.RemoveAll(node => node.id == nodeRef.Node.id);
 
-            ListViewItem? item = dialogueView.Items.Cast<ListViewItem>()
-                .FirstOrDefault(i => (NodeRef)i.Tag! == nodeRef);
-
-            if (item != null)
-                dialogueView.Items.Remove(item);
+            ListViewItem? item = dialogueView.Items.Cast<ListViewItem>().FirstOrDefault(i => (NodeRef)i.Tag! == nodeRef);
+            if (item != null) dialogueView.Items.Remove(item);
 
             UpdateNodeColors();
             SetUIMode(UIMode.Idle);
@@ -535,7 +534,7 @@ namespace MSZDialougeManager
         private void generateWithTTSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (pack == null) return;
-            TTSEditor editor = new(pack);
+            using TTSEditor editor = new(pack);
             editor.ShowDialog();
             if (editor.DialogResult != DialogResult.OK) return;
 
@@ -546,8 +545,11 @@ namespace MSZDialougeManager
             UpdateUI();
         }
 
-        private NodeRef GetSelectedNode() =>
-            (NodeRef)dialogueView.SelectedItems[0].Tag!;
+        private NodeRef? GetSelectedNode()
+        {
+            if (dialogueView.SelectedItems.Count == 0) return null;
+            return (NodeRef?)dialogueView.SelectedItems[0].Tag;
+        }
 
         private void dialogueView_SelectedIndexChanged(object sender, EventArgs e) => UpdateUI();
 
@@ -563,10 +565,10 @@ namespace MSZDialougeManager
                 return;
             }
 
-            NodeRef nodeRef = GetSelectedNode();
+            NodeRef nodeRef = GetSelectedNode()!;
             textLabel.Text = $"{nodeRef.Node.speakerName}: {nodeRef.Node.dialogueText}";
             SetStatus($"Selected: node {nodeRef.Node.id}, spoken by {nodeRef.Node.speakerName}");
-            SetUIMode(UIMode.ItemSelected);
+            SetUIMode(string.IsNullOrEmpty(searchBox.Text) ? UIMode.ItemSelected : UIMode.ItemSelectedSearching);
         }
 
         private void nextNodesBox_DoubleClick(object sender, EventArgs e)
@@ -575,7 +577,7 @@ namespace MSZDialougeManager
             if (index == -1) return;
             NextNodesBoxItem item = (NextNodesBoxItem)nextNodesBox.Items[index];
             if (item.node == null) return;
-            NodeRef current = GetSelectedNode();
+            NodeRef current = GetSelectedNode()!;
             dialogueView.SelectedItems.Clear();
             NodeRef? target = nodes.FirstOrDefault(n => n.Node.id == item.node.id && n.TreeIndex == current.TreeIndex);
             ListViewItem? lvItem = dialogueView.Items.Cast<ListViewItem>()
@@ -583,15 +585,16 @@ namespace MSZDialougeManager
             if (lvItem != null)
             {
                 lvItem.Selected = true;
-                UpdateNodesBox(nextNodesBox, GetSelectedNode());
+                UpdateNodesBox(nextNodesBox, GetSelectedNode()!);
             }
         }
 
+        private bool _updatingText = false;
         private CancellationTokenSource? _searchCts;
 
-        private async void searchBox_TextChanged(object sender, EventArgs e)
+        private async Task SearchBoxTextChanged()
         {
-            if (pack == null || nodes.Count == 0) return;
+            if (pack == null || nodes.Count == 0 || _updatingText) return;
 
             _searchCts?.Cancel();
             _searchCts = new CancellationTokenSource();
@@ -608,9 +611,19 @@ namespace MSZDialougeManager
             }
             catch (OperationCanceledException) { }
         }
+        private async void searchBox_TextChanged(object sender, EventArgs e) => await SearchBoxTextChanged();
+
+        private async Task SetSearchBoxText(string text)
+        {
+            _updatingText = true;
+            searchBox.Text = text;
+            _updatingText = false;
+            await SearchBoxTextChanged();
+        }
 
         private void PlayNodeAudio(NodeRef nodeRef)
         {
+            ArgumentNullException.ThrowIfNull(nodeRef);
             string? audio = FilesystemManager.GetNodeAudioPath(nodeRef.TreeIndex, nodeRef.Node.id);
             if (audio == null) return;
             NAudioHelpers.PlayAudio(audio, ref waveOut, ref audioStream);
@@ -628,36 +641,55 @@ namespace MSZDialougeManager
 
         private void lightToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SetScrollHooked(false);
-            ThemeManager.SetGlobalTheme(ThemeManager.Theme.Light);
-            UpdateNodeColors();
+            SetTheme(ThemeManager.Theme.Light);
         }
 
         private void darkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SetScrollHooked(true);
-            ThemeManager.SetGlobalTheme(ThemeManager.Theme.Dark);
-            UpdateNodeColors();
+            SetTheme(ThemeManager.Theme.Dark);
         }
 
         private void blurToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SetScrollHooked(true);
-            ThemeManager.SetGlobalTheme(ThemeManager.Theme.Blur);
-            UpdateNodeColors();
+            SetTheme(ThemeManager.Theme.Blur);
         }
 
         private void acrylicToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SetScrollHooked(true);
-            ThemeManager.SetGlobalTheme(ThemeManager.Theme.Acrylic);
-            UpdateNodeColors();
+            SetTheme(ThemeManager.Theme.Acrylic);
         }
 
         private void blackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SetScrollHooked(true);
-            ThemeManager.SetGlobalTheme(ThemeManager.Theme.ExtendFrameDark);
+            SetTheme(ThemeManager.Theme.ExtendFrameDark);
+        }
+
+        private void SetTheme(ThemeManager.Theme theme)
+        {
+            switch (theme)
+            {
+                case ThemeManager.Theme.Light:
+                    SetScrollHooked(false);
+                    Marshal.ThrowExceptionForHR(SetWindowTheme(dialogueView.Handle, "Explorer", null));
+                    break;
+                case ThemeManager.Theme.Dark:
+                    SetScrollHooked(false);
+                    Marshal.ThrowExceptionForHR(SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
+                    break;
+                case ThemeManager.Theme.Blur:
+                    SetScrollHooked(true);
+                    Marshal.ThrowExceptionForHR(SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
+                    break;
+                case ThemeManager.Theme.Acrylic:
+                    SetScrollHooked(true);
+                    Marshal.ThrowExceptionForHR(SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
+                    break;
+                case ThemeManager.Theme.ExtendFrameDark:
+                    SetScrollHooked(false);
+                    Marshal.ThrowExceptionForHR(SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
+                    break;
+            }
+            ThemeManager.SetGlobalTheme(theme);
             UpdateNodeColors();
         }
 
@@ -679,7 +711,7 @@ namespace MSZDialougeManager
             ListViewGroup group = (ListViewGroup)groupContextMenu.Tag!;
             int treeIndex = (int)group.Tag!;
             DialogueTreeDTO tree = pack!.trees[treeIndex];
-            TreePropertiesEditor editor = new(tree);
+            using TreePropertiesEditor editor = new(tree);
             editor.ShowDialog();
             if (editor.DialogResult == DialogResult.OK)
             {
@@ -687,6 +719,24 @@ namespace MSZDialougeManager
                 UpdateUI();
                 UpdateNodeColors();
             }
+        }
+
+        private async void jumpToThisNodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NodeRef nodeRef = GetSelectedNode()!;
+            await SetSearchBoxText("");
+            ListViewItem item = dialogueView.Items.Cast<ListViewItem>().FirstOrDefault(i => (NodeRef)i.Tag! == nodeRef)!;
+            item.EnsureVisible();
+            item.Selected = true;
+        }
+
+        private void previewTreeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListViewGroup group = (ListViewGroup)groupContextMenu.Tag!;
+            int treeIndex = (int)group.Tag!;
+            DialogueTreeDTO tree = pack!.trees[treeIndex];
+            using TreePreview preview = new(tree, treeIndex);
+            preview.ShowDialog();
         }
     }
 }
