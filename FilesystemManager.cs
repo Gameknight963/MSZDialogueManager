@@ -110,6 +110,18 @@ namespace MSZDialougeManager
             return true;
         }
 
+        public static bool TryGetSpeakerChirp(string speakerName, [NotNullWhen(true)] out string? path)
+        {
+            string[] files = Directory.GetFiles(SpeakPath, $"{speakerName}.*");
+            if (files.Length == 0)
+            {
+                path = null;
+                return false;
+            }
+            path = files[0];
+            return true;
+        }
+
         public static void AddNodeAudio(int treeIndex, int nodeId, string audioPath)
         {
             RemoveNodeAudio(treeIndex, nodeId);
