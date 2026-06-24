@@ -348,8 +348,7 @@ namespace MSZDialougeManager
         async void Inittemplate()
         {
             SetUIMode(UIMode.Idle);
-            pack = JsonConvert.DeserializeObject<DialoguePack>(File.ReadAllText(FilesystemManager.Template))!;
-            pack.PackFormat = MZDO.Core.PackFormatVersion; // update pack format to latest right away
+            pack = FilesystemManager.CreateTemplete();
             nodes = FlattenPack(pack);
             await UpdateDialogueView(nodes);
             dialogueView.Items[0].Selected = true;
