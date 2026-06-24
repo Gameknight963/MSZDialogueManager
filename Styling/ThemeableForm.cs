@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,8 @@ namespace MSZDialougeManager.Styling
         protected readonly ControlStyle _headerStyle = new();
 
         private bool _useTextRenderer = true;
-        private static bool IsDesignTime => LicenseManager.UsageMode == LicenseUsageMode.Designtime;
+        private static bool IsDesignTime => LicenseManager.UsageMode == LicenseUsageMode.Designtime || Process.GetCurrentProcess().ProcessName 
+            is "DesignToolsServer" or "devenv";
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ThemeManager.Theme ActiveTheme { get; set; }
