@@ -1,9 +1,7 @@
 ﻿using MSZDialougeManager.Styling;
 using MZDO;
 using NAudio.Wave;
-using Newtonsoft.Json.Linq;
 using System.Diagnostics;
-using System.Diagnostics.Eventing.Reader;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
 
@@ -70,6 +68,8 @@ namespace MSZDialougeManager
                     Marshal.ThrowExceptionForHR(DwmApi.SetWindowTheme(dialogueView.Handle, "DarkMode_Explorer", null));
                     break;
             }
+
+            BeginDialogue();
         }
 
         protected override void OnThemeWasApplied()
@@ -213,7 +213,7 @@ namespace MSZDialougeManager
         {
             bool selected = dialogueView.SelectedItems.Count > 0;
             playButton.Enabled = selected;
-            if (!selected || updating) return;
+            if (!selected || updating || !stopButton.Enabled) return;
             playCts?.Cancel();
             BeginDialogue();
         }
