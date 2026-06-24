@@ -96,7 +96,7 @@
             customSpeakerLink.TabIndex = 4;
             customSpeakerLink.TabStop = true;
             customSpeakerLink.Text = "Choose a custom speaker";
-            customSpeakerLink.LinkClicked += customSpeakerLink_LinkClicked;
+            customSpeakerLink.LinkClicked += CustomSpeakerLink_LinkClicked;
             // 
             // delayLabel
             // 
@@ -184,7 +184,7 @@
             linkLabel1.TabIndex = 4;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Chose a custom expression";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            linkLabel1.LinkClicked += LinkLabel1_LinkClicked;
             // 
             // errorProvider1
             // 

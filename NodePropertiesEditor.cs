@@ -18,11 +18,11 @@ namespace MSZDialougeManager
             if (node == null) return;
             textOfNodeBox.Text = node.dialogueText;
 
-            speakerDropDown.Items.AddRange(DialogueEditor.nodes.Select(x => x.Node.speakerName).Distinct().ToArray());
+            speakerDropDown.Items.AddRange(DialogueEditor.Nodes.Select(x => x.Node.speakerName).Distinct().ToArray());
             speakerDropDown.SelectedItem = node.speakerName;
             delayBox.Text = node.delay.ToString();
             nextNodesIntArrayBox.Text = string.Join(", ", node.nextNodeIds);
-            expressionDropDown.Items.AddRange(DialogueEditor.nodes.Select(x => x.Node.expression).Distinct().ToArray());
+            expressionDropDown.Items.AddRange(DialogueEditor.Nodes.Select(x => x.Node.expression).Distinct().ToArray());
             expressionDropDown.SelectedItem = node.expression;
         }
 
@@ -33,7 +33,7 @@ namespace MSZDialougeManager
             modifiedNode.speakerName = speakerDropDown.SelectedItem!.ToString()!;
             modifiedNode.expression = expressionDropDown.Text;
 
-            float.TryParse(delayBox.Text, out modifiedNode.delay);
+            _ = float.TryParse(delayBox.Text, out modifiedNode.delay);
 
             List<int> values = new();
 
@@ -98,7 +98,7 @@ namespace MSZDialougeManager
             this.Close();
         }
 
-        private void customSpeakerLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void CustomSpeakerLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string? input = CoolInputBox.Prompt("Enter a custom speaker name.", "Custom Speaker");
             if (input == null) return;
@@ -106,7 +106,7 @@ namespace MSZDialougeManager
             speakerDropDown.SelectedItem = input;
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string? input = CoolInputBox.Prompt("Enter a custom expression. Not recommended unless you know what you're doing.", "Custom Expression");
             if (input == null) return;

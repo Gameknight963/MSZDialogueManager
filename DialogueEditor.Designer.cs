@@ -80,6 +80,7 @@
             treePropertiesToolStripMenuItem = new ToolStripMenuItem();
             addNodeToThisTreeToolStripMenuItem = new ToolStripMenuItem();
             previewTreeToolStripMenuItem = new ToolStripMenuItem();
+            changeChirpsToolStripMenuItem = new ToolStripMenuItem();
             dialogueViewContextMenu.SuspendLayout();
             panel1.SuspendLayout();
             menuStrip.SuspendLayout();
@@ -98,8 +99,8 @@
             dialogueView.TabIndex = 0;
             dialogueView.UseCompatibleStateImageBehavior = false;
             dialogueView.View = View.Details;
-            dialogueView.SelectedIndexChanged += dialogueView_SelectedIndexChanged;
-            dialogueView.MouseUp += dialogueView_MouseUp;
+            dialogueView.SelectedIndexChanged += DialogueView_SelectedIndexChanged;
+            dialogueView.MouseUp += DialogueView_MouseUp;
             // 
             // indexColumn
             // 
@@ -128,7 +129,7 @@
             jumpToThisNodeToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.J;
             jumpToThisNodeToolStripMenuItem.Size = new Size(207, 22);
             jumpToThisNodeToolStripMenuItem.Text = "Jump to this node";
-            jumpToThisNodeToolStripMenuItem.Click += jumpToThisNodeToolStripMenuItem_Click;
+            jumpToThisNodeToolStripMenuItem.Click += JumpToThisNodeToolStripMenuItem_Click;
             // 
             // addNodeContextMenuItem
             // 
@@ -136,7 +137,7 @@
             addNodeContextMenuItem.ShortcutKeys = Keys.Control | Keys.A;
             addNodeContextMenuItem.Size = new Size(207, 22);
             addNodeContextMenuItem.Text = "Add node here";
-            addNodeContextMenuItem.Click += addNodeContextMenuItem_Click;
+            addNodeContextMenuItem.Click += AddNodeContextMenuItem_Click;
             // 
             // deleteThisNodeToolStripMenuItem
             // 
@@ -144,7 +145,7 @@
             deleteThisNodeToolStripMenuItem.ShortcutKeys = Keys.Delete;
             deleteThisNodeToolStripMenuItem.Size = new Size(207, 22);
             deleteThisNodeToolStripMenuItem.Text = "Delete this node";
-            deleteThisNodeToolStripMenuItem.Click += deleteThisNodeToolStripMenuItem_Click;
+            deleteThisNodeToolStripMenuItem.Click += DeleteThisNodeToolStripMenuItem_Click;
             // 
             // propertiesContextMenuItem
             // 
@@ -152,7 +153,7 @@
             propertiesContextMenuItem.ShortcutKeys = Keys.Control | Keys.P;
             propertiesContextMenuItem.Size = new Size(207, 22);
             propertiesContextMenuItem.Text = "Node properties";
-            propertiesContextMenuItem.Click += editPropertiesButton_Click;
+            propertiesContextMenuItem.Click += EditPropertiesButton_Click;
             // 
             // statusLabel
             // 
@@ -173,7 +174,7 @@
             loadButton.TabIndex = 0;
             loadButton.Text = "Load from dialouge pack...";
             loadButton.UseVisualStyleBackColor = true;
-            loadButton.Click += loadButton_Click;
+            loadButton.Click += LoadButton_Click;
             // 
             // templateButton
             // 
@@ -184,7 +185,7 @@
             templateButton.TabIndex = 0;
             templateButton.Text = "Initialize template";
             templateButton.UseVisualStyleBackColor = true;
-            templateButton.Click += templateButton_Click;
+            templateButton.Click += TemplateButton_Click;
             // 
             // panel1
             // 
@@ -216,7 +217,7 @@
             audioStopButton.TabIndex = 5;
             audioStopButton.Text = "■ Stop";
             audioStopButton.UseVisualStyleBackColor = true;
-            audioStopButton.Click += audioStopButton_Click;
+            audioStopButton.Click += AudioStopButton_Click;
             // 
             // audioPlayButton
             // 
@@ -226,7 +227,7 @@
             audioPlayButton.TabIndex = 5;
             audioPlayButton.Text = "▶ Play";
             audioPlayButton.UseVisualStyleBackColor = true;
-            audioPlayButton.Click += audioPlayButton_Click;
+            audioPlayButton.Click += AudioPlayButton_Click;
             // 
             // editPropertiesButton
             // 
@@ -237,7 +238,7 @@
             editPropertiesButton.TabIndex = 4;
             editPropertiesButton.Text = "Edit node properties...";
             editPropertiesButton.UseVisualStyleBackColor = true;
-            editPropertiesButton.Click += editPropertiesButton_Click;
+            editPropertiesButton.Click += EditPropertiesButton_Click;
             // 
             // removeAudioButton
             // 
@@ -248,7 +249,7 @@
             removeAudioButton.TabIndex = 4;
             removeAudioButton.Text = "Remove file";
             removeAudioButton.UseVisualStyleBackColor = true;
-            removeAudioButton.Click += removeAudioButton_Click;
+            removeAudioButton.Click += RemoveAudioButton_Click;
             // 
             // selectAudioButton
             // 
@@ -258,7 +259,7 @@
             selectAudioButton.TabIndex = 4;
             selectAudioButton.Text = "Select an audio file...";
             selectAudioButton.UseVisualStyleBackColor = true;
-            selectAudioButton.Click += selectAudioButton_Click;
+            selectAudioButton.Click += SelectAudioButton_Click;
             // 
             // nextNodesBox
             // 
@@ -268,7 +269,7 @@
             nextNodesBox.Name = "nextNodesBox";
             nextNodesBox.Size = new Size(199, 56);
             nextNodesBox.TabIndex = 3;
-            nextNodesBox.DoubleClick += nextNodesBox_DoubleClick;
+            nextNodesBox.DoubleClick += NextNodesBox_DoubleClick;
             // 
             // audioFileHeader
             // 
@@ -328,7 +329,7 @@
             searchBox.Name = "searchBox";
             searchBox.Size = new Size(220, 22);
             searchBox.TabIndex = 3;
-            searchBox.TextChanged += searchBox_TextChanged;
+            searchBox.TextChanged += SearchBox_TextChanged;
             // 
             // menuStrip
             // 
@@ -352,7 +353,7 @@
             toolStripLoadPack.ShortcutKeys = Keys.Control | Keys.O;
             toolStripLoadPack.Size = new Size(258, 22);
             toolStripLoadPack.Text = "Load from dialogue pack...";
-            toolStripLoadPack.Click += toolStripLoadPack_Click;
+            toolStripLoadPack.Click += ToolStripLoadPack_Click;
             // 
             // initializetemplateToolStripMenuItem
             // 
@@ -360,7 +361,7 @@
             initializetemplateToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Shift | Keys.T;
             initializetemplateToolStripMenuItem.Size = new Size(258, 22);
             initializetemplateToolStripMenuItem.Text = "Initialize template";
-            initializetemplateToolStripMenuItem.Click += initializetemplateToolStripMenuItem_Click;
+            initializetemplateToolStripMenuItem.Click += InitializetemplateToolStripMenuItem_Click;
             // 
             // saveAsDialougePackToolStripMenuItem
             // 
@@ -368,11 +369,11 @@
             saveAsDialougePackToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S;
             saveAsDialougePackToolStripMenuItem.Size = new Size(258, 22);
             saveAsDialougePackToolStripMenuItem.Text = "Save as dialouge pack...";
-            saveAsDialougePackToolStripMenuItem.Click += saveAsDialougePackToolStripMenuItem_Click;
+            saveAsDialougePackToolStripMenuItem.Click += SaveAsDialougePackToolStripMenuItem_Click;
             // 
             // toolsToolStripMenuItem
             // 
-            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { generateWithTTSToolStripMenuItem });
+            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { changeChirpsToolStripMenuItem, generateWithTTSToolStripMenuItem });
             toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             toolsToolStripMenuItem.Size = new Size(46, 20);
             toolsToolStripMenuItem.Text = "Tools";
@@ -383,7 +384,7 @@
             generateWithTTSToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.G;
             generateWithTTSToolStripMenuItem.Size = new Size(216, 22);
             generateWithTTSToolStripMenuItem.Text = "Generate with SAPI";
-            generateWithTTSToolStripMenuItem.Click += generateWithTTSToolStripMenuItem_Click;
+            generateWithTTSToolStripMenuItem.Click += GenerateWithTTSToolStripMenuItem_Click;
             // 
             // nodeToolStripMenuItem
             // 
@@ -397,28 +398,28 @@
             playAudioToolStripMenuItem.Name = "playAudioToolStripMenuItem";
             playAudioToolStripMenuItem.Size = new Size(180, 22);
             playAudioToolStripMenuItem.Text = "Play audio";
-            playAudioToolStripMenuItem.Click += playAudioToolStripMenuItem_Click;
+            playAudioToolStripMenuItem.Click += PlayAudioToolStripMenuItem_Click;
             // 
             // stopAudioToolStripMenuItem
             // 
             stopAudioToolStripMenuItem.Name = "stopAudioToolStripMenuItem";
             stopAudioToolStripMenuItem.Size = new Size(180, 22);
             stopAudioToolStripMenuItem.Text = "Stop audio";
-            stopAudioToolStripMenuItem.Click += stopAudioToolStripMenuItem_Click;
+            stopAudioToolStripMenuItem.Click += StopAudioToolStripMenuItem_Click;
             // 
             // assignAudioToolStripMenuItem
             // 
             assignAudioToolStripMenuItem.Name = "assignAudioToolStripMenuItem";
             assignAudioToolStripMenuItem.Size = new Size(180, 22);
             assignAudioToolStripMenuItem.Text = "Assign audio";
-            assignAudioToolStripMenuItem.Click += assignAudioToolStripMenuItem_Click;
+            assignAudioToolStripMenuItem.Click += AssignAudioToolStripMenuItem_Click;
             // 
             // removeAudioToolStripMenuItem
             // 
             removeAudioToolStripMenuItem.Name = "removeAudioToolStripMenuItem";
             removeAudioToolStripMenuItem.Size = new Size(180, 22);
             removeAudioToolStripMenuItem.Text = "Remove audio";
-            removeAudioToolStripMenuItem.Click += removeAudioToolStripMenuItem_Click;
+            removeAudioToolStripMenuItem.Click += RemoveAudioToolStripMenuItem_Click;
             // 
             // propertiesToolStripMenuItem
             // 
@@ -426,7 +427,7 @@
             propertiesToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.P;
             propertiesToolStripMenuItem.Size = new Size(180, 22);
             propertiesToolStripMenuItem.Text = "Properties";
-            propertiesToolStripMenuItem.Click += editPropertiesButton_Click;
+            propertiesToolStripMenuItem.Click += EditPropertiesButton_Click;
             // 
             // settingsToolStripMenuItem
             // 
@@ -441,7 +442,7 @@
             shellToolStripMenuItem.Name = "shellToolStripMenuItem";
             shellToolStripMenuItem.Size = new Size(180, 22);
             shellToolStripMenuItem.Text = "File association";
-            shellToolStripMenuItem.Click += shellToolStripMenuItem_Click;
+            shellToolStripMenuItem.Click += ShellToolStripMenuItem_Click;
             // 
             // themeToolStripMenuItem
             // 
@@ -453,64 +454,70 @@
             // lightToolStripMenuItem
             // 
             lightToolStripMenuItem.Name = "lightToolStripMenuItem";
-            lightToolStripMenuItem.Size = new Size(180, 22);
+            lightToolStripMenuItem.Size = new Size(110, 22);
             lightToolStripMenuItem.Text = "Light";
-            lightToolStripMenuItem.Click += lightToolStripMenuItem_Click;
+            lightToolStripMenuItem.Click += LightToolStripMenuItem_Click;
             // 
             // darkToolStripMenuItem
             // 
             darkToolStripMenuItem.Name = "darkToolStripMenuItem";
-            darkToolStripMenuItem.Size = new Size(180, 22);
+            darkToolStripMenuItem.Size = new Size(110, 22);
             darkToolStripMenuItem.Text = "Dark";
-            darkToolStripMenuItem.Click += darkToolStripMenuItem_Click;
+            darkToolStripMenuItem.Click += DarkToolStripMenuItem_Click;
             // 
             // blurToolStripMenuItem
             // 
             blurToolStripMenuItem.Name = "blurToolStripMenuItem";
-            blurToolStripMenuItem.Size = new Size(180, 22);
+            blurToolStripMenuItem.Size = new Size(110, 22);
             blurToolStripMenuItem.Text = "Blur";
-            blurToolStripMenuItem.Click += blurToolStripMenuItem_Click;
+            blurToolStripMenuItem.Click += BlurToolStripMenuItem_Click;
             // 
             // acrylicToolStripMenuItem
             // 
             acrylicToolStripMenuItem.Name = "acrylicToolStripMenuItem";
-            acrylicToolStripMenuItem.Size = new Size(180, 22);
+            acrylicToolStripMenuItem.Size = new Size(110, 22);
             acrylicToolStripMenuItem.Text = "Acrylic";
-            acrylicToolStripMenuItem.Click += acrylicToolStripMenuItem_Click;
+            acrylicToolStripMenuItem.Click += AcrylicToolStripMenuItem_Click;
             // 
             // blackToolStripMenuItem
             // 
             blackToolStripMenuItem.Name = "blackToolStripMenuItem";
-            blackToolStripMenuItem.Size = new Size(180, 22);
+            blackToolStripMenuItem.Size = new Size(110, 22);
             blackToolStripMenuItem.Text = "Black";
-            blackToolStripMenuItem.Click += blackToolStripMenuItem_Click;
+            blackToolStripMenuItem.Click += BlackToolStripMenuItem_Click;
             // 
             // groupContextMenu
             // 
             groupContextMenu.Items.AddRange(new ToolStripItem[] { treePropertiesToolStripMenuItem, addNodeToThisTreeToolStripMenuItem, previewTreeToolStripMenuItem });
             groupContextMenu.Name = "groupContextMenu";
-            groupContextMenu.Size = new Size(186, 92);
+            groupContextMenu.Size = new Size(186, 70);
             // 
             // treePropertiesToolStripMenuItem
             // 
             treePropertiesToolStripMenuItem.Name = "treePropertiesToolStripMenuItem";
             treePropertiesToolStripMenuItem.Size = new Size(185, 22);
             treePropertiesToolStripMenuItem.Text = "Tree properties";
-            treePropertiesToolStripMenuItem.Click += treePropertiesToolStripMenuItem_Click;
+            treePropertiesToolStripMenuItem.Click += TreePropertiesToolStripMenuItem_Click;
             // 
             // addNodeToThisTreeToolStripMenuItem
             // 
             addNodeToThisTreeToolStripMenuItem.Name = "addNodeToThisTreeToolStripMenuItem";
             addNodeToThisTreeToolStripMenuItem.Size = new Size(185, 22);
             addNodeToThisTreeToolStripMenuItem.Text = "Add node to this tree";
-            addNodeToThisTreeToolStripMenuItem.Click += addNodeToThisTreeToolStripMenuItem_Click;
+            addNodeToThisTreeToolStripMenuItem.Click += AddNodeToThisTreeToolStripMenuItem_Click;
             // 
             // previewTreeToolStripMenuItem
             // 
             previewTreeToolStripMenuItem.Name = "previewTreeToolStripMenuItem";
             previewTreeToolStripMenuItem.Size = new Size(185, 22);
             previewTreeToolStripMenuItem.Text = "Preview tree";
-            previewTreeToolStripMenuItem.Click += previewTreeToolStripMenuItem_Click;
+            previewTreeToolStripMenuItem.Click += PreviewTreeToolStripMenuItem_Click;
+            // 
+            // changeChirpsToolStripMenuItem
+            // 
+            changeChirpsToolStripMenuItem.Name = "changeChirpsToolStripMenuItem";
+            changeChirpsToolStripMenuItem.Size = new Size(216, 22);
+            changeChirpsToolStripMenuItem.Text = "Change speaker chirps";
             // 
             // DialogueEditor
             // 
@@ -591,6 +598,7 @@
         private ToolStripMenuItem addNodeToThisTreeToolStripMenuItem;
         private ToolStripMenuItem jumpToThisNodeToolStripMenuItem;
         private ToolStripMenuItem previewTreeToolStripMenuItem;
+        private ToolStripMenuItem changeChirpsToolStripMenuItem;
     }
 }
 
