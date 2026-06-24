@@ -1,13 +1,18 @@
-﻿using Newtonsoft.Json;
+﻿using MSZDialougeManager.Properties;
 using MZDO;
+using Newtonsoft.Json;
+using System.IO;
 using System.IO.Compression;
+using System.Runtime.InteropServices.Marshalling;
+using System.Xml.Linq;
 
 namespace MSZDialougeManager
 {
-    public class FilesystemManager
+    public static class FilesystemManager
     {
         public static readonly string BaseDir = AppDomain.CurrentDomain.BaseDirectory;
         public static readonly string DataPath = Path.Combine(BaseDir, "Data");
+        public static readonly string SpeakPath = Path.Combine(DataPath, "Speak");
         public static readonly string Template = Path.Combine(BaseDir, "templateNodes.json");
 
         /// <summary>
@@ -43,19 +48,72 @@ namespace MSZDialougeManager
         {
             if (Directory.Exists(DataPath)) Directory.Delete(DataPath, true);
             Directory.CreateDirectory(DataPath);
+            Directory.CreateDirectory(SpeakPath);
             ZipFile.ExtractToDirectory(path, DataPath);
             string json = File.ReadAllText(NodesJsonPath);
             DialoguePack? pack = JsonConvert.DeserializeObject<DialoguePack>(json);
             if (pack == null) return null;
-            pack.PackFormat = MZDO.Core.PackFormatVersion; // update pack format to latest right away
+            if (pack.PackFormat == 2)
+            {
+                if (MessageBox.Show("Migrate v2 pack to v3? Pressing Cancel will exit.", "Confirmation", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                    return null;
+                pack.PackFormat = MZDO.Core.PackFormatVersion;
+                CreateDefaultChirps();
+            }
             IsFileLoaded = true;
             return pack;
         }
 
+        public static DialoguePack CreateTemplete()
+        {
+            if (Directory.Exists(DataPath)) Directory.Delete(DataPath, true);
+            CreateDefaultChirps(); // createdefaultchirps creates SpeakPath
+            DialoguePack pack = JsonConvert.DeserializeObject<DialoguePack>(File.ReadAllText(Template))!;
+            pack.PackFormat = MZDO.Core.PackFormatVersion;
+            return pack;
+        }
+
+        static void CreateDefaultChirps()
+        {
+            Directory.CreateDirectory(SpeakPath);
+            UnmanagedMemoryStream stream = Resources.MitaSpeak;
+            using FileStream fileStream = new(Path.Combine(SpeakPath, "MitaSpeak.wav"), FileMode.Create, FileAccess.Write);
+            stream.CopyTo(fileStream);
+            UnmanagedMemoryStream stream2 = Resources.KiriSpeak;
+            using FileStream fileStream2 = new(Path.Combine(SpeakPath, "KiriSpeak.wav"), FileMode.Create, FileAccess.Write);
+            stream2.CopyTo(fileStream2);
+        }
+
+        public static bool DoesSpeakerChirpExist(string speakerName)
+        {
+            return Directory.GetFiles(SpeakPath, $"{speakerName}.*").Length > 0;
+        }
+
+        public static string? GetSpeakerChirp(string speakerName)
+        {
+            string[] files = Directory.GetFiles(SpeakPath, $"{speakerName}.*");
+            if (files.Length == 0) return null;
+            return files[0];
+        }
+
+        public static void SetSpeakerChirp(string speakerName, string sourceFilePath)
+        {
+            DeleteSpeakerChirp(speakerName);
+            string destination = Path.Combine(SpeakPath, $"{speakerName}{Path.GetExtension(sourceFilePath)}");
+            File.Copy(sourceFilePath, destination);
+        }
+
+        public static bool DeleteSpeakerChirp(string speakerName)
+        {
+            string[] existingFiles = Directory.GetFiles(DataPath, $"{speakerName}.*");
+            if (existingFiles.Length == 0) return false;
+            foreach (string file in existingFiles) File.Delete(file);
+            return true;
+        }
+
         public static void AddNodeAudio(int treeIndex, int nodeId, string audioPath)
         {
-            string[] existingFiles = Directory.GetFiles(DataPath, $"{treeIndex}_{nodeId}.*");
-            foreach (string file in existingFiles) File.Delete(file);
+            RemoveNodeAudio(treeIndex, nodeId);
             string destination = Path.Combine(DataPath, $"{treeIndex}_{nodeId}{Path.GetExtension(audioPath)}");
             File.Copy(audioPath, destination);
         }
