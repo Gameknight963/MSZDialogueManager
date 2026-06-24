@@ -693,6 +693,9 @@ namespace MSZDialougeManager
             UpdateNodeColors();
         }
 
+        [DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
+        static extern int SetWindowTheme(IntPtr hwnd, string? pszSubAppName, string? pszSubIdList);
+
         private void dialogueView_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)

@@ -1,7 +1,8 @@
 ﻿using MSZDialougeManager.Properties;
 using MZDO;
 using Newtonsoft.Json;
-using System.IO;
+using System.IO.Compression;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MSZDialougeManager
 {
