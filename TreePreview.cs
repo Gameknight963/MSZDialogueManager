@@ -82,27 +82,26 @@ namespace MSZDialougeManager
 
             CancellationToken token = playCts.Token;
 
-            Task typingTask = Task.Run(async () =>
+            async Task TypingLoop()
             {
                 Stopwatch sw = Stopwatch.StartNew();
                 long nextCharMs = typeSpeedMs;
-
                 foreach (char c in node.dialogueText)
                 {
                     long remaining = nextCharMs - sw.ElapsedMilliseconds;
                     if (remaining > 0)
                         await Task.Delay((int)remaining, token);
-
-                    dialogueLabel.Invoke(() => dialogueLabel.Text += c);
+                    token.ThrowIfCancellationRequested();
+                    dialogueLabel.Text += c;
                     nextCharMs += typeSpeedMs;
                 }
-            }, token);
+            }
+            Task typingTask = TypingLoop();
 
             int chirpIntervalMs = (int)((_tree.chirpTime ?? 0.115f) * 1000);
-            Task chirpTask = Task.Run(async () =>
+            async Task ChirpLoop()
             {
                 if (!hasChirp) return;
-
                 Stopwatch sw = Stopwatch.StartNew();
                 long nextChirpMs = chirpIntervalMs;
                 int totalDuration = typeSpeedMs * node.dialogueText.Length;
@@ -111,13 +110,13 @@ namespace MSZDialougeManager
                     long remaining = nextChirpMs - sw.ElapsedMilliseconds;
                     if (remaining > 0)
                         await Task.Delay((int)remaining, token);
-
                     IWavePlayer? chirpWaveOut = null;
                     WaveStream? chirpAudioStream = null;
                     NAudioHelpers.PlayAudio(path2!, ref chirpWaveOut, ref chirpAudioStream);
                     nextChirpMs += chirpIntervalMs;
                 }
-            }, token);
+            }
+            Task chirpTask = ChirpLoop();
 
             await Task.WhenAll(typingTask, chirpTask);
             await Task.Delay((int)(node.delay * 1000), token);
