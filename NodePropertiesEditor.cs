@@ -33,7 +33,7 @@ namespace MSZDialougeManager
             modifiedNode.speakerName = speakerDropDown.SelectedItem!.ToString()!;
             modifiedNode.expression = expressionDropDown.Text;
 
-            _ = float.TryParse(delayBox.Text, out modifiedNode.delay);
+            modifiedNode.delay = float.Parse(delayBox.Text);
 
             List<int> values = new();
 
