@@ -3,6 +3,7 @@ using MZDO.Shared;
 using NAudio.Wave;
 using System.Diagnostics;
 using System.Drawing.Text;
+using System.Threading.Tasks;
 using static MSZDialougeManager.ThemeSwitchers;
 
 namespace MSZDialougeManager
@@ -104,8 +105,10 @@ namespace MSZDialougeManager
             updating = false;
             DialogueNodeDTO node = nodesById[id];
             dialogueLabel.Text = string.Empty;
+            bool hasAudio = false;
             if (FilesystemManager.TryGetNodeAudioPath(_treeIndex, id, out string? path))
             {
+                hasAudio = true;
                 NAudioHelpers.PlayAudio(path, ref waveOut, ref audioStream);
             }
             
@@ -132,7 +135,7 @@ namespace MSZDialougeManager
             int chirpIntervalMs = (int)((_tree.chirpTime ?? 0.115f) * 1000);
             async Task ChirpLoop()
             {
-                if (!hasChirp) return;
+                if (!hasChirp || hasAudio) return;
                 Stopwatch sw = Stopwatch.StartNew();
                 long nextChirpMs = chirpIntervalMs;
                 int totalDuration = typeSpeedMs * node.dialogueText.Length;
@@ -159,7 +162,8 @@ namespace MSZDialougeManager
             base.OnFormClosing(e);
         }
 
-        private async void BeginDialogue()
+
+        private async Task BeginDialogue()
         {
             stopButton.Enabled = true;
             int index = dialogueView.SelectedItems[0].Index;
@@ -182,9 +186,9 @@ namespace MSZDialougeManager
             }
         }
 
-        private void PlayButton_Click(object sender, EventArgs e)
+        private async void PlayButton_Click(object sender, EventArgs e)
         {
-            BeginDialogue();
+            await BeginDialogue();
         }
 
         private void StopButton_Click(object sender, EventArgs e)
@@ -222,13 +226,16 @@ namespace MSZDialougeManager
             }
         }
 
+        private Task dialogueTask = Task.CompletedTask;
+
         private void DialogueView_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool selected = dialogueView.SelectedItems.Count > 0;
             playButton.Enabled = selected;
             if (!selected || updating || !stopButton.Enabled) return;
             playCts?.Cancel();
-            BeginDialogue();
+            dialogueTask = dialogueTask.ContinueWith(_ => BeginDialogue(),
+                TaskScheduler.FromCurrentSynchronizationContext()).Unwrap();
         }
     }
 }
