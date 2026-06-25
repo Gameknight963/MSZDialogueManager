@@ -122,8 +122,6 @@ namespace MSZDialougeManager
 
         private void ResizeTextColumn()
         {
-            if (dialogueView.Columns.Count < 3) return;
-
             int totalOtherColumns = 0;
             for (int i = 0; i < dialogueView.Columns.Count - 1; i++)
                 totalOtherColumns += dialogueView.Columns[i].Width;
