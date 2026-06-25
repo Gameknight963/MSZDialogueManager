@@ -366,13 +366,18 @@ namespace MSZDialougeManager
             };
             if (fd.ShowDialog() == DialogResult.OK)
             {
-                Pack = FilesystemManager.LoadProj(fd.FileName)!;
-                Nodes = FlattenPack(Pack);
-                Text = $"{fd.SafeFileName} - Miside Zero Dialogue Manager";
-                if (!await UpdateDialogueView(Nodes, true)) return;
-                dialogueView.Items[0].Selected = true;
-                dialogueView.Focus();
-                SetUIMode(UIMode.Idle);
+                Pack = FilesystemManager.LoadProj(fd.FileName);
+                if (Pack != null)
+                {
+                    Nodes = FlattenPack(Pack);
+                    Text = $"{fd.SafeFileName} - Miside Zero Dialogue Manager";
+                    if (!await UpdateDialogueView(Nodes, true)) return;
+                    dialogueView.Items[0].Selected = true;
+                    dialogueView.Focus();
+                    SetUIMode(UIMode.Idle);
+                }
+                else
+                    SetUIMode(UIMode.Init);
             }
             SetScrollHooked(ThemeManager.ActiveTheme != ThemeManager.Theme.Light);
             Cursor = Cursors.Default;
@@ -381,14 +386,20 @@ namespace MSZDialougeManager
         async void LoadPack(string path)
         {
             Cursor = Cursors.WaitCursor;
-            Pack = FilesystemManager.LoadProj(path)!;
-            Text = $"{Path.GetFileName(path)} - Miside Zero Dialogue Manager";
-            Nodes = FlattenPack(Pack);
-            if (!await UpdateDialogueView(Nodes, true)) return;
-            UpdateNodeColors();
-            dialogueView.Items[0].Selected = true;
-            dialogueView.Focus();
-            SetUIMode(UIMode.Idle);
+            Pack = FilesystemManager.LoadProj(path);
+            if (Pack != null)
+            {
+                Text = $"{Path.GetFileName(path)} - Miside Zero Dialogue Manager";
+                Nodes = FlattenPack(Pack);
+                if (!await UpdateDialogueView(Nodes, true)) return; // form closing probably
+                UpdateNodeColors();
+                dialogueView.Items[0].Selected = true;
+                dialogueView.Focus();
+                SetUIMode(UIMode.Idle);
+            }
+            else
+                SetUIMode(UIMode.Init);
+
             Cursor = Cursors.Default;
         }
 
