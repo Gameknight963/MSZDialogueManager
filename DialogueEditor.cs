@@ -50,6 +50,17 @@ namespace MSZDialougeManager
             searchBox.SetPlaceholder("Search by dialogue text...");
         }
 
+        const int WM_SIZE = 0x0005;
+
+        const int WM_EXITSIZEMOVE = 0x0232;
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == WM_EXITSIZEMOVE || m.Msg == WM_SIZE)
+                ResizeTextColumn();
+            base.WndProc(ref m);
+        }
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             File.WriteAllText(lastThemeFile, ThemeManager.ActiveTheme.ToString());
@@ -126,14 +137,6 @@ namespace MSZDialougeManager
         private void DialogueView_ColumnWidthChanged(object? sender, ColumnWidthChangedEventArgs e)
         {
             if (e.ColumnIndex != 2) ResizeTextColumn();
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            const int WM_EXITSIZEMOVE = 0x0232;
-            if (m.Msg == WM_EXITSIZEMOVE)
-                ResizeTextColumn();
-            base.WndProc(ref m);
         }
 
         private enum UIMode
