@@ -62,6 +62,7 @@
             saveAsDialougePackToolStripMenuItem = new ToolStripMenuItem();
             toolsToolStripMenuItem = new ToolStripMenuItem();
             changeChirpsToolStripMenuItem = new ToolStripMenuItem();
+            editProjectMetadataToolStripMenuItem = new ToolStripMenuItem();
             generateWithTTSToolStripMenuItem = new ToolStripMenuItem();
             settingsToolStripMenuItem = new ToolStripMenuItem();
             shellToolStripMenuItem = new ToolStripMenuItem();
@@ -367,7 +368,7 @@
             // 
             // toolsToolStripMenuItem
             // 
-            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { changeChirpsToolStripMenuItem, generateWithTTSToolStripMenuItem });
+            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { changeChirpsToolStripMenuItem, editProjectMetadataToolStripMenuItem, generateWithTTSToolStripMenuItem });
             toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             toolsToolStripMenuItem.Size = new Size(46, 20);
             toolsToolStripMenuItem.Text = "Tools";
@@ -378,6 +379,13 @@
             changeChirpsToolStripMenuItem.Size = new Size(216, 22);
             changeChirpsToolStripMenuItem.Text = "Change speaker chirps";
             changeChirpsToolStripMenuItem.Click += ChangeChirpsToolStripMenuItem_Click;
+            // 
+            // editProjectMetadataToolStripMenuItem
+            // 
+            editProjectMetadataToolStripMenuItem.Name = "editProjectMetadataToolStripMenuItem";
+            editProjectMetadataToolStripMenuItem.Size = new Size(216, 22);
+            editProjectMetadataToolStripMenuItem.Text = "Edit project metadata";
+            editProjectMetadataToolStripMenuItem.Click += EditProjectMetadataToolStripMenuItem_Click;
             // 
             // generateWithTTSToolStripMenuItem
             // 
@@ -398,7 +406,7 @@
             // 
             shellToolStripMenuItem.CheckOnClick = true;
             shellToolStripMenuItem.Name = "shellToolStripMenuItem";
-            shellToolStripMenuItem.Size = new Size(154, 22);
+            shellToolStripMenuItem.Size = new Size(180, 22);
             shellToolStripMenuItem.Text = "File association";
             shellToolStripMenuItem.Click += ShellToolStripMenuItem_Click;
             // 
@@ -412,35 +420,35 @@
             // lightToolStripMenuItem
             // 
             lightToolStripMenuItem.Name = "lightToolStripMenuItem";
-            lightToolStripMenuItem.Size = new Size(110, 22);
+            lightToolStripMenuItem.Size = new Size(180, 22);
             lightToolStripMenuItem.Text = "Light";
             lightToolStripMenuItem.Click += LightToolStripMenuItem_Click;
             // 
             // darkToolStripMenuItem
             // 
             darkToolStripMenuItem.Name = "darkToolStripMenuItem";
-            darkToolStripMenuItem.Size = new Size(110, 22);
+            darkToolStripMenuItem.Size = new Size(180, 22);
             darkToolStripMenuItem.Text = "Dark";
             darkToolStripMenuItem.Click += DarkToolStripMenuItem_Click;
             // 
             // blurToolStripMenuItem
             // 
             blurToolStripMenuItem.Name = "blurToolStripMenuItem";
-            blurToolStripMenuItem.Size = new Size(110, 22);
+            blurToolStripMenuItem.Size = new Size(180, 22);
             blurToolStripMenuItem.Text = "Blur";
             blurToolStripMenuItem.Click += BlurToolStripMenuItem_Click;
             // 
             // acrylicToolStripMenuItem
             // 
             acrylicToolStripMenuItem.Name = "acrylicToolStripMenuItem";
-            acrylicToolStripMenuItem.Size = new Size(110, 22);
+            acrylicToolStripMenuItem.Size = new Size(180, 22);
             acrylicToolStripMenuItem.Text = "Acrylic";
             acrylicToolStripMenuItem.Click += AcrylicToolStripMenuItem_Click;
             // 
             // blackToolStripMenuItem
             // 
             blackToolStripMenuItem.Name = "blackToolStripMenuItem";
-            blackToolStripMenuItem.Size = new Size(110, 22);
+            blackToolStripMenuItem.Size = new Size(180, 22);
             blackToolStripMenuItem.Text = "Black";
             blackToolStripMenuItem.Click += BlackToolStripMenuItem_Click;
             // 
@@ -545,6 +553,7 @@
         private ToolStripMenuItem jumpToThisNodeToolStripMenuItem;
         private ToolStripMenuItem previewTreeToolStripMenuItem;
         private ToolStripMenuItem changeChirpsToolStripMenuItem;
+        private ToolStripMenuItem editProjectMetadataToolStripMenuItem;
     }
 }
 

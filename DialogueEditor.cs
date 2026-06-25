@@ -174,7 +174,8 @@ namespace MSZDialougeManager
             propertiesContextMenuItem.Visible =
             propertiesContextMenuItem.Enabled = itemSelected;
 
-            changeChirpsToolStripMenuItem.Enabled = FilesystemManager.IsFileLoaded;
+            changeChirpsToolStripMenuItem.Enabled = 
+            editProjectMetadataToolStripMenuItem.Enabled = FilesystemManager.IsFileLoaded;
 
             templateButton.Visible =
             loadButton.Visible = init;
@@ -702,6 +703,13 @@ namespace MSZDialougeManager
         {
             using ChangeChirpsForm a = new(Pack!);
             a.ShowDialog();
+        }
+
+        private void EditProjectMetadataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using PackMetadataEditor editor = new(Pack!);
+            editor.ShowDialog();
+            Pack = editor.ResultPack;
         }
     }
 }
