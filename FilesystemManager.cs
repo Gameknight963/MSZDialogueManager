@@ -99,7 +99,7 @@ namespace MSZDialougeManager
         {
             DeleteSpeakerChirp(speakerName);
             string destination = Path.Combine(SpeakPath, $"{speakerName}{Path.GetExtension(sourceFilePath)}");
-            File.Copy(sourceFilePath, destination);
+            File.Copy(sourceFilePath, destination, true);
         }
 
         public static bool DeleteSpeakerChirp(string speakerName)
