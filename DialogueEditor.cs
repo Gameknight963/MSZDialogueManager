@@ -177,7 +177,7 @@ namespace MSZDialougeManager
             if (!itemSelected) return;
 
             NodeRef selected = GetSelectedNode()!;
-            UpdateNodesBox(nextNodesBox, GetSelectedNode()!);
+            UpdateNextNodesBox(GetSelectedNode()!);
 
             bool hasAudioClip = FilesystemManager.DoesNodeAudioExist(selected.TreeIndex, selected.Node.id);
             audioPlayButton.Visible = hasAudioClip;
@@ -204,19 +204,19 @@ namespace MSZDialougeManager
             return lastGroup;
         }
 
-        static void UpdateNodesBox(ListBox nodesBox, NodeRef current)
+        void UpdateNextNodesBox(NodeRef current)
         {
-            nodesBox.BeginUpdate();
-            nodesBox.Items.Clear();
+            nextNodesBox.BeginUpdate();
+            nextNodesBox.Items.Clear();
             foreach (int id in current.Node.nextNodeIds)
             {
                 NodeRef? nodeRef = Nodes.FirstOrDefault(n => n.Node.id == id && n.TreeIndex == current.TreeIndex);
                 NextNodesBoxItem item = nodeRef == null
                     ? new() { text = $"[{id}] ⚠ This node no longer exists", node = null }
                     : new() { text = $"[{id}] {nodeRef.Node.speakerName}: {nodeRef.Node.dialogueText}", node = nodeRef.Node };
-                nodesBox.Items.Add(item);
+                nextNodesBox.Items.Add(item);
             }
-            nodesBox.EndUpdate();
+            nextNodesBox.EndUpdate();
         }
 
         public async Task UpdateDialogueView(List<NodeRef> nodes, CancellationToken ct = default)
@@ -459,7 +459,7 @@ namespace MSZDialougeManager
         private void RemoveAudioButton_Click(object sender, EventArgs e) => RemoveAudio(GetSelectedNode()!);
 
         private void PropertiesContextMenuItem_Click(object sender, EventArgs e) => EditProperties();
-        private void editPropertiesButton_Click(object sender, EventArgs e) => EditProperties();
+        private void EditPropertiesButton_Click(object sender, EventArgs e) => EditProperties();
 
         private void AddNodeContextMenuItem_Click(object sender, EventArgs e)
         {
@@ -563,7 +563,7 @@ namespace MSZDialougeManager
             if (lvItem != null)
             {
                 lvItem.Selected = true;
-                UpdateNodesBox(nextNodesBox, GetSelectedNode()!);
+                UpdateNextNodesBox(GetSelectedNode()!);
             }
         }
 

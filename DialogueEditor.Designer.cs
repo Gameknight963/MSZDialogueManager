@@ -232,7 +232,7 @@
             editPropertiesButton.TabIndex = 4;
             editPropertiesButton.Text = "Edit node properties...";
             editPropertiesButton.UseVisualStyleBackColor = true;
-            editPropertiesButton.Click += editPropertiesButton_Click;
+            editPropertiesButton.Click += EditPropertiesButton_Click;
             // 
             // removeAudioButton
             // 
