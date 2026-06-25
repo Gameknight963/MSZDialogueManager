@@ -1,6 +1,7 @@
 ﻿using MSZDialougeManager.Styling;
 using MZDO;
 using NAudio.Wave;
+using System.Reflection;
 using static MSZDialougeManager.ThemeSwitchers;
 
 namespace MSZDialougeManager
@@ -30,6 +31,8 @@ namespace MSZDialougeManager
             dialogueView.ColumnWidthChanging += DialogueView_ColumnWidthChanging;
             dialogueView.ColumnWidthChanged += DialogueView_ColumnWidthChanged;
 
+            FormClosing += DialogueEditor_FormClosing;
+
             if (Directory.Exists(FilesystemManager.DataPath))
             {
                 Directory.Delete(FilesystemManager.DataPath, true);
@@ -48,6 +51,11 @@ namespace MSZDialougeManager
                 ThemeManager.SetGlobalTheme(ThemeManager.Theme.Acrylic, ThemeManager.TextRenderMode.ShadowText);
 
             searchBox.SetPlaceholder("Search by dialogue text...");
+        }
+
+        private void DialogueEditor_FormClosing(object? sender, FormClosingEventArgs e)
+        {
+            _dialogueLvCts.Cancel();
         }
 
         const int WM_SIZE = 0x0005;
@@ -224,8 +232,10 @@ namespace MSZDialougeManager
             nextNodesBox.EndUpdate();
         }
 
-        public async Task UpdateDialogueView(List<NodeRef> nodes, CancellationToken ct = default)
+        public async Task<bool> UpdateDialogueView(List<NodeRef> nodes, bool catchOperationCancelled)
         {
+            _dialogueLvCts ??= new CancellationTokenSource();
+            CancellationToken ct = _dialogueLvCts.Token;
             dialogueView.BeginUpdate();
             UseWaitCursor = true;
             Cursor = Cursors.WaitCursor;
@@ -251,12 +261,18 @@ namespace MSZDialougeManager
                     if (++i % 50 == 0)
                         await Task.Delay(1, ct);
                 }
+                return true;
+            }
+            catch (OperationCanceledException)
+            {
+                if (!catchOperationCancelled) throw;
+                return false;
             }
             finally
             {
                 Cursor = Cursors.Default;
                 UseWaitCursor = false;
-                dialogueView.EndUpdate();
+                if (!dialogueView.IsDisposed) dialogueView.EndUpdate();
             }
         }
 
@@ -335,7 +351,7 @@ namespace MSZDialougeManager
             SetUIMode(UIMode.Idle);
             Pack = FilesystemManager.CreateTemplete();
             Nodes = FlattenPack(Pack);
-            await UpdateDialogueView(Nodes);
+            if (!await UpdateDialogueView(Nodes, true)) return;
             dialogueView.Items[0].Selected = true;
             dialogueView.Focus();
         }
@@ -354,11 +370,11 @@ namespace MSZDialougeManager
             {
                 Pack = FilesystemManager.LoadProj(fd.FileName)!;
                 Nodes = FlattenPack(Pack);
-                await UpdateDialogueView(Nodes);
+                Text = $"{fd.SafeFileName} - Miside Zero Dialogue Manager";
+                if (!await UpdateDialogueView(Nodes, true)) return;
                 dialogueView.Items[0].Selected = true;
                 dialogueView.Focus();
                 SetUIMode(UIMode.Idle);
-                Text = $"{fd.SafeFileName} - Miside Zero Dialogue Manager";
             }
             SetScrollHooked(ThemeManager.ActiveTheme != ThemeManager.Theme.Light);
             Cursor = Cursors.Default;
@@ -370,7 +386,7 @@ namespace MSZDialougeManager
             Pack = FilesystemManager.LoadProj(path)!;
             Text = $"{Path.GetFileName(path)} - Miside Zero Dialogue Manager";
             Nodes = FlattenPack(Pack);
-            await UpdateDialogueView(Nodes);
+            if (!await UpdateDialogueView(Nodes, true)) return;
             UpdateNodeColors();
             dialogueView.Items[0].Selected = true;
             dialogueView.Focus();
@@ -573,14 +589,14 @@ namespace MSZDialougeManager
         }
 
         private bool _updatingText = false;
-        private CancellationTokenSource? _searchCts;
+        private CancellationTokenSource _dialogueLvCts = new();
 
         private async Task SearchBoxTextChanged()
         {
             if (Pack == null || Nodes.Count == 0 || _updatingText) return;
 
-            _searchCts?.Cancel();
-            _searchCts = new CancellationTokenSource();
+            _dialogueLvCts.Cancel();
+            _dialogueLvCts = new CancellationTokenSource();
 
             string filter = searchBox.Text?.ToLower() ?? "";
             List<NodeRef> filtered = string.IsNullOrEmpty(filter)
@@ -589,7 +605,7 @@ namespace MSZDialougeManager
 
             try
             {
-                await UpdateDialogueView(filtered, _searchCts.Token);
+                if (!await UpdateDialogueView(filtered, true)) return;
                 SetUIMode(UIMode.Idle);
             }
             catch (OperationCanceledException) { }
