@@ -52,12 +52,14 @@ namespace MSZDialougeManager
 
         const int WM_SIZE = 0x0005;
 
+        const int SIZE_MINIMIZED = 1;
+        const int SIZE_MAXIMIZED = 2;
+
         const int WM_EXITSIZEMOVE = 0x0232;
 
         protected override void WndProc(ref Message m)
         {
-            if (m.Msg == WM_EXITSIZEMOVE || m.Msg == WM_SIZE)
-                ResizeTextColumn();
+            if (m.Msg == WM_EXITSIZEMOVE || (m.Msg == WM_SIZE && m.WParam.ToInt32() is SIZE_MINIMIZED or SIZE_MAXIMIZED)) ResizeTextColumn();
             base.WndProc(ref m);
         }
 
