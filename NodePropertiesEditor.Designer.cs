@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NodePropertiesEditor));
             textOfNodeBox = new TextBox();
             NodeTextLabel = new Label();
             label1 = new Label();
@@ -212,6 +213,7 @@
             Controls.Add(textOfNodeBox);
             Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = Color.Black;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "NodePropertiesEditor";
             Text = "Node Properties Editor";
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();

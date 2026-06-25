@@ -134,6 +134,7 @@
             Controls.Add(cancelButton);
             Controls.Add(acceptButton);
             Controls.Add(tableLayoutPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PackMetadataEditor";
             Text = "PackMetadataEditor";
             tableLayoutPanel1.ResumeLayout(false);

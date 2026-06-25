@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeChirpsForm));
             speakerLv = new ListView();
             assignedColumn = new ColumnHeader();
             speakerColumn = new ColumnHeader();
@@ -115,6 +116,7 @@
             Controls.Add(playBtn);
             Controls.Add(closeBtn);
             Controls.Add(speakerLv);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ChangeChirpsForm";
             Text = "Change Speaker Chirps";
             ResumeLayout(false);
