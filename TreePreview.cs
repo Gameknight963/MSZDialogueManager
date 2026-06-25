@@ -53,9 +53,41 @@ namespace MSZDialougeManager
             BeginDialogue();
         }
 
+        const int WM_SIZE = 0x0005;
+
+        const int SIZE_MINIMIZED = 1;
+        const int SIZE_MAXIMIZED = 2;
+
+        const int WM_EXITSIZEMOVE = 0x0232;
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == WM_EXITSIZEMOVE || (m.Msg == WM_SIZE && m.WParam.ToInt32() is SIZE_MINIMIZED or SIZE_MAXIMIZED)) ResizeTextColumn();
+            base.WndProc(ref m);
+        }
+
+        private const int MinTextColumnWidth = 50;
+
+        private void ResizeTextColumn()
+        {
+            int totalOtherColumns = 0;
+            for (int i = 0; i < dialogueView.Columns.Count - 1; i++)
+                totalOtherColumns += dialogueView.Columns[i].Width;
+
+            int remaining = dialogueView.ClientSize.Width - totalOtherColumns;
+
+            bool needsScroll = remaining < MinTextColumnWidth;
+            if (needsScroll) remaining = MinTextColumnWidth;
+
+            dialogueView.Columns[2].Width = remaining;
+
+            ScrollbarHelper.Set(dialogueView, ScrollbarHelper.Scrollbar.Horz, needsScroll);
+        }
+
         protected override void OnThemeWasApplied(ThemeManager.Theme resolvedTheme)
         {
-            panel1.BackColor = SystemColors.ActiveCaption;
+            if (resolvedTheme == ThemeManager.Theme.Light)
+                panel1.BackColor = SystemColors.ActiveCaption;
         }
 
         private const int typeSpeedMs = 25;        
@@ -181,11 +213,12 @@ namespace MSZDialougeManager
                 bool hasBrokenRefs = node.nextNodeIds != null && node.nextNodeIds.Any(id => !allIds.Contains(id));
                 bool isReachable = reachable.Contains(node.id);
 
+                Color foreColor = ResolvedTheme == ThemeManager.Theme.Light ? SystemColors.ControlText : Color.White;
                 item.ForeColor = hasBrokenRefs ? Color.Orange
                     : isStartNode ? Color.Green
                     : !isReachable ? Color.Red
                     : isTerminal ? Color.Blue
-                    : dialogueView.ForeColor;
+                    : foreColor;
             }
         }
 
