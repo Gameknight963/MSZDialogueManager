@@ -36,12 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Miside Zero Dialogue Override">
-      <HintPath>Miside Zero Dialogue Override.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -71,5 +65,11 @@
 
   <ItemGroup>
     <None Include="C:\Users\gameknight963\projects\MSZDialogueManager\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MZDO.Shared">
+      <HintPath>MZDO.Shared.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

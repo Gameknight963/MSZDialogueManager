@@ -1,5 +1,5 @@
 ﻿using MSZDialougeManager.Styling;
-using MZDO;
+using MZDO.Shared;
 
 namespace MSZDialougeManager
 {

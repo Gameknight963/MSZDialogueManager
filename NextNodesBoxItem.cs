@@ -1,4 +1,4 @@
-﻿using MZDO;
+﻿using MZDO.Shared;
 
 namespace MSZDialougeManager
 {

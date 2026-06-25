@@ -1,11 +1,11 @@
 ﻿using MSZDialougeManager.Styling;
-using MZDO;
+using MZDO.Shared;
 
 namespace MSZDialougeManager
 {
     public partial class TTSEditor : ThemeableForm
     {
-        HashSet<string> speakers = new HashSet<string>();
+        readonly HashSet<string> speakers = new HashSet<string>();
 
         /// <summary>
         /// First item is speaker, second item is voice

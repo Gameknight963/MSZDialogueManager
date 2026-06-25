@@ -1,5 +1,5 @@
 ﻿using MSZDialougeManager.Styling;
-using MZDO;
+using MZDO.Shared;
 using NAudio.Wave;
 using System.Diagnostics;
 using System.Drawing.Text;

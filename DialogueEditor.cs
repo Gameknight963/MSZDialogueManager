@@ -1,7 +1,6 @@
 ﻿using MSZDialougeManager.Styling;
-using MZDO;
+using MZDO.Shared;
 using NAudio.Wave;
-using System.Reflection;
 using static MSZDialougeManager.ThemeSwitchers;
 
 namespace MSZDialougeManager

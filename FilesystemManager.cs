@@ -1,5 +1,5 @@
 ﻿using MSZDialougeManager.Properties;
-using MZDO;
+using MZDO.Shared;
 using Newtonsoft.Json;
 using System.IO.Compression;
 using System.Diagnostics.CodeAnalysis;
@@ -55,7 +55,7 @@ namespace MSZDialougeManager
             {
                 if (MessageBox.Show("Migrate v2 pack to v3? Pressing Cancel will exit.", "Confirmation", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
                     return null;
-                pack.PackFormat = MZDO.Core.PackFormatVersion;
+                pack.PackFormat = PacksInfo.PacksFormatVersion;
                 CreateDefaultChirps();
             }
             IsFileLoaded = true;
@@ -67,7 +67,7 @@ namespace MSZDialougeManager
             if (Directory.Exists(DataPath)) Directory.Delete(DataPath, true);
             CreateDefaultChirps(); // createdefaultchirps creates SpeakPath
             DialoguePack pack = JsonConvert.DeserializeObject<DialoguePack>(File.ReadAllText(Template))!;
-            pack.PackFormat = MZDO.Core.PackFormatVersion;
+            pack.PackFormat = PacksInfo.PacksFormatVersion;
             IsFileLoaded = true;
             return pack;
         }
