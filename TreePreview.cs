@@ -3,7 +3,6 @@ using MZDO;
 using NAudio.Wave;
 using System.Diagnostics;
 using System.Drawing.Text;
-using System.Runtime.InteropServices;
 using static MSZDialougeManager.ThemeSwitchers;
 
 namespace MSZDialougeManager
@@ -54,7 +53,7 @@ namespace MSZDialougeManager
             BeginDialogue();
         }
 
-        protected override void OnThemeWasApplied()
+        protected override void OnThemeWasApplied(ThemeManager.Theme resolvedTheme)
         {
             panel1.BackColor = SystemColors.ActiveCaption;
         }

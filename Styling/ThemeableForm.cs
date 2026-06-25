@@ -30,7 +30,7 @@ namespace MSZDialougeManager.Styling
             Load += (sender, e) => ApplyTheme(ThemeManager.ActiveTheme, ThemeManager.ActiveTextRenderMode);
         }
 
-        protected virtual void OnThemeWasApplied() { }
+        protected virtual void OnThemeWasApplied(ThemeManager.Theme resolvedTheme) { }
 
         private void ApplyControlTheme(Control c, ThemeManager.Theme theme)
         {
@@ -250,7 +250,7 @@ namespace MSZDialougeManager.Styling
 
             ApplyControlTheme(this, resolvedTheme);
             ThemeManager.ApplyThemeToForm(this, resolvedTheme);
-            OnThemeWasApplied();
+            OnThemeWasApplied(resolvedTheme);
         }
 
         private void DrawShadowText(Graphics g, string text, Font font, Rectangle bounds, Color textColor)
