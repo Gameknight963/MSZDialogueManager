@@ -51,9 +51,15 @@ namespace MSZDialougeManager
             string json = File.ReadAllText(NodesJsonPath);
             DialoguePack? pack = JsonConvert.DeserializeObject<DialoguePack>(json);
             if (pack == null) return null;
+            if (pack.PackFormat > PacksInfo.PacksFormatVersion)
+            {
+                if (MessageBox.Show($"This pack (v{pack.PackFormat}) has a greater version than that of the editor (v{PacksInfo.PacksFormatVersion}).\n" +
+                    $"Load it anyway?", "Confirmation", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                    return null;
+            }
             if (pack.PackFormat == 2)
             {
-                if (MessageBox.Show("Migrate v2 pack to v3? Pressing Cancel will exit.", "Confirmation", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                if (MessageBox.Show("Migrate v2 pack to v3?", "Confirmation", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
                     return null;
                 pack.PackFormat = PacksInfo.PacksFormatVersion;
                 CreateDefaultChirps();
