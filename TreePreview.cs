@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Drawing.Text;
 using System.Threading.Tasks;
 using static MSZDialougeManager.ThemeSwitchers;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace MSZDialougeManager
 {
@@ -181,7 +182,11 @@ namespace MSZDialougeManager
                     break;
                 }
 
-                if (selectedNode.nextNodeIds.Length == 0) break;
+                if (selectedNode.nextNodeIds.Length == 0)
+                {
+                    stopButton.Enabled = false;
+                    break;
+                }
                 index = selectedNode.nextNodeIds[0];
             }
         }
