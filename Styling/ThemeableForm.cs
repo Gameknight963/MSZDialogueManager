@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace MSZDialougeManager.Styling
 {
@@ -27,6 +21,7 @@ namespace MSZDialougeManager.Styling
         public ThemeableForm()
         {
             if (IsDesignTime) return;
+            ActiveTheme = ThemeManager.ActiveTheme;
             Load += (sender, e) => ApplyTheme(ThemeManager.ActiveTheme, ThemeManager.ActiveTextRenderMode);
         }
 
