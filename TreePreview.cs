@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.Drawing.Text;
 using System.Threading.Tasks;
 using static MSZDialougeManager.ThemeSwitchers;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace MSZDialougeManager
 {
@@ -148,6 +147,10 @@ namespace MSZDialougeManager
                     IWavePlayer? chirpWaveOut = null;
                     WaveStream? chirpAudioStream = null;
                     NAudioHelpers.PlayAudio(path2!, ref chirpWaveOut, ref chirpAudioStream);
+                    chirpWaveOut!.PlaybackStopped += (_, _) =>
+                    {
+                        NAudioHelpers.StopAudio(ref chirpWaveOut, ref chirpAudioStream);
+                    };
                     nextChirpMs += chirpIntervalMs;
                 }
             }
