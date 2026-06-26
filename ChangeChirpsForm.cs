@@ -39,11 +39,9 @@ namespace MSZDialougeManager
 
         private void SpeakerLv_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (speakerLv.SelectedIndices.Count == 0)
-            {
-                playBtn.Enabled = assignBtn.Enabled = removeBtn.Enabled = false;
-                return;
-            }
+            bool selected = speakerLv.SelectedIndices.Count > 0;
+            playBtn.Enabled = assignBtn.Enabled = removeBtn.Enabled = selected;
+            if (!selected) return;
             playBtn.Enabled = removeBtn.Enabled = FilesystemManager.DoesSpeakerChirpExist(speakerLv.SelectedItems[0].SubItems[1].Text); ;
         }
 
