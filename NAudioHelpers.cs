@@ -16,9 +16,9 @@ namespace MSZDialougeManager
 
         public static void PlayAudio(string file, ref IWavePlayer? waveOut, ref WaveStream? audioStream)
         {
+            ArgumentNullException.ThrowIfNull(file);
             if (!File.Exists(file))
                 throw new FileNotFoundException($"{file}: no such file", file);
-            ArgumentNullException.ThrowIfNull(file);
 
             StopAudio(ref waveOut, ref audioStream);
 
@@ -26,7 +26,6 @@ namespace MSZDialougeManager
 
             audioStream = new RawSourceWaveStream(new MemoryStream(cached.PcmData), cached.Format);
             waveOut = new WaveOutEvent();
-            waveOut.Init(audioStream);
             waveOut.Init(audioStream);
             waveOut.Play();
         }
