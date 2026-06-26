@@ -67,7 +67,11 @@ namespace MSZDialougeManager
         private void RemoveBtn_Click(object sender, EventArgs e)
         {
             if (speakerLv.SelectedIndices.Count == 0) return;
-            FilesystemManager.DeleteSpeakerChirp(speakerLv.SelectedItems[0].SubItems[1].Text);
+            if (!FilesystemManager.DeleteSpeakerChirp(speakerLv.SelectedItems[0].SubItems[1].Text))
+            {
+                MessageBox.Show("Failed to delete: file not found", "Deletion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             playBtn.Enabled = removeBtn.Enabled = false;
             speakerLv.SelectedItems[0].Text = "No";
         }

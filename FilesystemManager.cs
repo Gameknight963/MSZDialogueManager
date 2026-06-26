@@ -110,7 +110,7 @@ namespace MSZDialougeManager
 
         public static bool DeleteSpeakerChirp(string speakerName)
         {
-            string[] existingFiles = Directory.GetFiles(DataPath, $"{speakerName}.*");
+            string[] existingFiles = Directory.GetFiles(SpeakPath, $"{speakerName}.*");
             if (existingFiles.Length == 0) return false;
             foreach (string file in existingFiles) File.Delete(file);
             return true;
