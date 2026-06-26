@@ -1,3 +1,8 @@
+# Development has moved
+This repo is stale and will not be updated. Development has moved to the MZDO repo:
+
+https://github.com/Gameknight963/MZDO
+
 # Miside Zero Dialogue Manager
 
 For use with [Miside Zero Dialogue Override](https://github.com/Gameknight963/Miside-Zero-Dialogue-Override)
