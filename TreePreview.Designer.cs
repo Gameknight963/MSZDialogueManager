@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TreePreview));
             dialogueView = new ListView();
             idColumn = new ColumnHeader();
             speakerColumn = new ColumnHeader();
@@ -135,6 +136,7 @@
             Controls.Add(panel1);
             Controls.Add(dialogueView);
             ForeColor = Color.Black;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "TreePreview";
             Text = "Tree Player";
             panel1.ResumeLayout(false);
