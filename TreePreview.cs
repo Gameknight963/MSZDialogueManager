@@ -52,7 +52,7 @@ namespace MSZDialougeManager
             dialogueView.Items[0].Selected = true;
             stopButton.Enabled = false;
             SetFormThemeAndStuff(ThemeManager.ActiveTheme, dialogueView);
-            BeginDialogue();
+            _ = BeginDialogue();
         }
 
         const int WM_SIZE = 0x0005;
@@ -187,7 +187,14 @@ namespace MSZDialougeManager
                     stopButton.Enabled = false;
                     break;
                 }
-                index = selectedNode.nextNodeIds[0];
+                if (selectedNode.nextNodeIds.Length > 1)
+                {
+                    using TreeBranchSelection selection = new(selectedNode.nextNodeIds.Select(x => nodesById[x]).ToArray());
+                    if (selection.ShowDialog() == DialogResult.Cancel) return;
+                    index = selection.SelectedId;
+                }
+                else
+                    index = selectedNode.nextNodeIds[0];
             }
         }
 
