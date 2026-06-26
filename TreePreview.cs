@@ -27,7 +27,7 @@ namespace MSZDialougeManager
             InitializeComponent();
             _tree = tree;
             _treeIndex = treeIndex;
-            _pfc.AddFontFile("FontRu.ttf");
+            _pfc.AddFontFile(Path.Combine(FilesystemManager.BaseDir, "FontRu.ttf"));
             dialogueLabel.Font = new Font(_pfc.Families[0], 14, FontStyle.Regular);
             StartPosition = FormStartPosition.CenterParent;
             List<string> speakers = tree.nodes.Select(x => x.speakerName).Distinct().ToList();
